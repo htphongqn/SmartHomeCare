@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="sitecms.master.cs" Inherits="sitecms" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <link href="../styles/site.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/siteadmin.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/gridview.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head1" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="menu" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="main" Runat="Server">
+    <div class="left">
+
+        Admin Home Menu:<br /><br />
+
+        <asp:TreeView ID="trvMenu" runat="server" Width="100%" ForeColor="#333333">
+                    <Nodes>
+                        
+                        <asp:TreeNode Text="Parameter" Value="0" 
+                            NavigateUrl="~/cms/parameter.aspx">
+                                                    
+                        </asp:TreeNode>
+                        <asp:TreeNode Text="Message notification" Value="1" NavigateUrl="~/cms/adminmessages.aspx">
+                           
+                        </asp:TreeNode>
+                        <asp:TreeNode Text="Email's Templates" Value="2" NavigateUrl="~/cms/emailtemplex.aspx">
+                        </asp:TreeNode>
+                        <asp:TreeNode Text="Users" Value="Root" NavigateUrl="~/cms/account.aspx" >
+                           
+                        </asp:TreeNode>
+                         <asp:TreeNode Text="Registation Code" Value="3" NavigateUrl="~/cms/register_code.aspx" >
+                           
+                        </asp:TreeNode>
+                        <asp:TreeNode Text="Code Reference Guide" Value="4" NavigateUrl="~/cms/Document/html/index.html" Target="_blank" ToolTip="Click to open in new tab." >
+                         
+                        </asp:TreeNode>
+                    </Nodes>
+                    <RootNodeStyle NodeSpacing="5px" />
+                    <SelectedNodeStyle Font-Bold="True" />
+                </asp:TreeView>
+
+    </div>
+    <div class="right">
+        <asp:ContentPlaceHolder id="right1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="footer" Runat="Server">
+    <div class="footer"><a href="#">Home</a> | <a href="#">Site Map</a> | <a href="#">Terms & Conditions</a> | <a href="#">Log out</a></div>
+</asp:Content>
+

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SmartHomeCare", "SmartHomeCare\", "{E31AFDE4-D760-49AA-9FFE-A325398932C2}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = ""
+		Debug.AspNetCompiler.VirtualPath = "/SmartHomeCare"
+		Debug.AspNetCompiler.PhysicalPath = "SmartHomeCare\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\SmartHomeCare\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/SmartHomeCare"
+		Release.AspNetCompiler.PhysicalPath = "SmartHomeCare\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\SmartHomeCare\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "8250"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = SmartHomeCare1.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E31AFDE4-D760-49AA-9FFE-A325398932C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E31AFDE4-D760-49AA-9FFE-A325398932C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E31AFDE4-D760-49AA-9FFE-A325398932C2}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E31AFDE4-D760-49AA-9FFE-A325398932C2}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

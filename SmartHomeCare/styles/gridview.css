@@ -1,0 +1,294 @@
+﻿.gridview table
+{
+    margin:1% 9% 1% 1%;
+    text-align:left;
+    border-collapse:collapse;
+}
+.gridview table th
+{
+   background:url(../resources/images/submit2.png) #006699;
+   color:White;
+   border:1px solid black;
+   text-align:center;
+   height:25px;
+}
+.gridview table td
+{
+    height:25px;
+    font-size:12px;
+    text-align:center;
+}
+.gridview table tbody
+{
+    height:100px;
+    overflow:hidden;
+}
+.gridview table table
+{
+    width:100px;
+    font-family:Georgia,Times New Roman;
+}
+.gridview table table td
+{
+    width:0px;
+}
+.gridview table tr:nth-child(2n+1){
+        background:#f3f3f3;
+}
+.gridview tbody tr:hover
+{
+    cursor:pointer;
+    background:#EDE2B9;
+}
+.gridview table table td a
+{
+    
+    padding:2px 10px;
+    border:1px solid #000080;
+    text-decoration:none;
+    background:#0A7EB5;
+    color:White;
+    font-weight:bold;
+    margin:2px;
+}
+.gridview table table td span
+{
+    font-weight:bold;
+    padding:2px 10px;
+    border:1px solid #CFA400;
+    background:#CFA400;
+}
+.body_table
+{
+    text-align:center;
+}
+.body_table_
+{
+    border-collapse:collapse;
+    border:1px solid gray;
+    
+}
+.body_table_ td,th
+{
+    font-size:0.8em;
+    border:1px solid gray;
+    text-align:center;
+    height:40px;
+}
+.body_table_ th
+{
+    background:#f3f3f3;
+}
+.gridDataTime
+{
+    
+}
+.gridDataTime th
+{
+   background:url(../resources/images/submit2.png) #006699;
+   color:#fff;
+}
+.gridDataTime td
+{
+    
+}
+.gridDataTime tr:nth-child(2n+1)
+{
+    
+}
+.gridDataTime tr:hover td
+{
+    background:silver;
+    cursor:pointer;
+}
+.gridDataTime tr:last-child
+{
+    background:silver;
+}
+.table_item
+{
+    min-width:650px;
+    /*border:1px solid #145DAF;*/
+    background:#f3f3f3;
+}
+.table_item_sleep
+{
+    min-width:650px;
+    
+    background:#f3f3f3;
+}
+.title_grv
+{
+     background:#1E60A4;
+     border-bottom:1px solid silver;
+}
+.title_grv table
+{
+   text-align:center;
+   background:url(../resources/images/title.png) #1E60A4;
+   color:#fff;
+   padding-top:5px;
+   font-weight:bold;
+   padding-bottom:5px;
+   font-size:0.9em;
+   width:100%;
+}
+.content_grv
+{
+    height:367px;
+    overflow:scroll;
+    background:#fff;
+   
+}
+#print_table
+{
+     font-size:0.8em;
+}
+.content_grv_sleep
+{
+    height:340px;
+    overflow:scroll;
+    background:#fff;
+}
+.content_grv table
+{
+    font-family:Arial,Tahoma;
+    width:100%;
+    font-size:0.8em;
+    border-color:#145DAF;
+    border-left:0px;
+    
+}
+.content_grv table td
+{
+     border-color:silver;
+     text-align:center;
+}
+.content_grv table tr:nth-child(2n){
+        background:#F7F0D5;
+}
+.footer_grv table
+{
+    width:100%;
+}
+.loading
+{
+    position:relative;
+    z-index:9999999;
+    top:-450px;
+    left:200px;
+}
+.loading2
+{
+    position:relative;
+    z-index:9999999;
+    top:-850px;
+    left:500px;
+}
+.content_grv_sleep table
+{
+    font-family:Arial,Tahoma;
+    width:100%;
+    font-size:0.8em;
+    border-color:#145DAF;
+    border-left:0px;
+    
+}
+.content_grv_sleep table td
+{
+     border-color:silver;
+     text-align:center;
+}
+.content_grv_sleep table tr:nth-child(2n){
+        background:#F7F0D5;
+}
+/*---------------- Cms gridview --------------------*/
+.cms_gridview
+{
+    margin-bottom:10px;
+    margin-top:5px;
+}
+.cms_gridview table
+{
+    text-align:left;
+    border-collapse:collapse;
+    font-family:Tahoma,arial;
+}
+.cms_gridview table th
+{
+   background:url(../resources/images/title_n.png) #006699;
+   color:White;
+   border:1px solid gray;
+   text-align:center;
+   font-size:1em;
+   height:35px;
+}
+.cms_gridview table th a
+{
+    color:#D3AC19;
+    text-decoration:none;
+}
+.cms_gridview table td
+{
+    height:25px;
+    font-size:0.7em;
+    text-align:center;
+    border:1px solid gray;
+}
+.cms_gridview table tbody
+{
+    height:100px;
+    overflow:hidden;
+}
+.cms_gridview table table
+{
+    
+    font-family:Georgia,Times New Roman;
+}
+.cms_gridview table table td
+{
+    width:0px;
+}
+.cms_gridview table tr:nth-child(2n+1){
+        background:#F7F0D5;
+}
+.cms_gridview tbody tr:hover
+{
+    cursor:pointer;
+    background:#f3f3f3;
+}
+.cms_gridview table table td a
+{
+    
+    padding:2px 10px;
+    border:1px solid #000080;
+    text-decoration:none;
+    background:#0A7EB5;
+    color:White;
+    font-weight:bold;
+    margin:2px;
+    border-radius:5px;
+}
+.cms_gridview table table tbody
+{
+    height:25px;
+    background:#f3f3f3;
+}
+.cms_gridview table table td
+{
+    background:#f3f3f3;
+    font-size:1em;
+    border:0px solid gray;
+}
+.cms_gridview table table td span
+{
+    font-weight:bold;
+    padding:2px 10px;
+    border-radius:5px;
+    border:1px solid #CFA400;
+    background:#CFA400;
+}
+.cms_gridview table tr:last-child
+{
+    background:#f3f3f3;
+}

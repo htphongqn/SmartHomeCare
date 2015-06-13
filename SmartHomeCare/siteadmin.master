@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="siteadmin.master.cs" Inherits="siteadmin" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <link href="styles/siteadmin.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head1" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="menu" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="main" Runat="Server">
+    <div class="left">
+
+        <%--Admin Home Menu:--%><br /><br />
+
+       <asp:TreeView ID="treeview1" runat="server" ExpandDepth="0" Width="100%" 
+            ForeColor="#333333"  CssClass="tree_view" EnableTheming="True">
+            <Nodes>
+                <asp:TreeNode NavigateUrl="~/adminusermanagement.aspx" Text="User Management" 
+                    Value="0" ImageUrl="~/resources/images/Global-Manager-icon.png">
+                </asp:TreeNode>
+                <asp:TreeNode Text="Reports" Value="1" SelectAction="Expand" ImageUrl="~/resources/images/icon_report.png">
+                    <asp:TreeNode NavigateUrl="#" Text="Statistics" Value="0"></asp:TreeNode>
+                </asp:TreeNode>
+                <asp:TreeNode Text="Logs" Value="2" SelectAction="Expand" 
+                    ImageUrl="~/resources/images/log_file_icon.jpg">
+                    <asp:TreeNode NavigateUrl="~/adminwebadminlogs.aspx" Text="Webadmin Logs" Value="0"></asp:TreeNode>
+                    <asp:TreeNode NavigateUrl="~/adminsynclogs.aspx" Text="Sync Logs" Value="1"></asp:TreeNode>
+                </asp:TreeNode>
+                <asp:TreeNode Text="System Tools" Value="3" SelectAction="Expand" 
+                    ImageUrl="~/resources/images/tool.jpg">
+                    <asp:TreeNode NavigateUrl="#" Text="Security" Value="0"></asp:TreeNode>
+                    <asp:TreeNode NavigateUrl="#" Text="Configure" Value="1"></asp:TreeNode>
+                </asp:TreeNode>
+                <asp:TreeNode Text="Message Center" Value="4" SelectAction="Expand" ImageUrl="~/resources/images/icon_messages.ico">
+                    <asp:TreeNode NavigateUrl="~/admincompose.aspx" Text="Compose"  Value="0"></asp:TreeNode>
+                    <asp:TreeNode NavigateUrl="~/admininbox.aspx" Text="Inbox" Value="1"></asp:TreeNode>
+                    <asp:TreeNode NavigateUrl="~/adminsentmessages.aspx" Text="Sent Messages" Value="2"></asp:TreeNode>
+                    <asp:TreeNode NavigateUrl="~/admintrash.aspx" Text="Trash"  Value="3"></asp:TreeNode>
+                </asp:TreeNode>
+                <asp:TreeNode Text="My account" NavigateUrl="~/adminmyaccount.aspx" Value="5" ImageUrl="~/resources/images/icon_account.jpg">
+                </asp:TreeNode>
+            </Nodes>
+            <RootNodeStyle NodeSpacing="5px" />
+            <SelectedNodeStyle Font-Bold="True" />
+        </asp:TreeView>
+
+
+    </div>
+    <div class="right">
+        <asp:ContentPlaceHolder id="right1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="footer" Runat="Server">
+    <div class="footer"><a href="adminusermanagement.aspx">Home</a> | <a href="adminsynclogs.aspx">Site Map</a> | <a href="#">Terms & Conditions</a> | <a href="home.aspx?status=logout">Log out</a></div>
+</asp:Content>
+

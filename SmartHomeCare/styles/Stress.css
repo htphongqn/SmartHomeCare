@@ -1,0 +1,100 @@
+﻿.Healthy
+{
+    width:25px;
+    height:25px;
+}
+
+.UnderOverWeight
+{
+    width:25px;
+    height:25px;
+}
+
+.Obese
+{
+    width:30px;
+    height:300px;
+    vertical-align:bottom;
+    border-bottom:1px solid;
+}
+
+.ColumnData
+{
+    width:15px;
+    background-color:Green;
+    font-size:10px;
+}
+
+.ColumnHeader
+{
+   -webkit-transform:rotate(-90deg);
+   -moz-transform:rotate(-90deg);
+   -o-transform: rotate(-90deg);
+   -ms-transform: rotate(-90deg);
+   display:block;
+   /*position:absolute;*/
+   padding-top:40px;
+   z-index:99;
+}
+
+.LabelTitle
+{
+    width:20px;
+    font-size:8pt;
+    writing-mode:tb-rl;
+   -webkit-transform:rotate(-45deg);
+   -moz-transform:rotate(-45deg);
+   -o-transform: rotate(-45deg);
+   -ms-transform: rotate(-135deg);
+   display:block;
+   padding-top:40px;
+   padding-right:20px;
+   padding-left:0px;
+   /*position:absolute;*/
+   margin-left:-45px;
+   z-index:99;
+}
+
+.Chart
+{
+    overflow-x:scroll;
+    height:420px;
+    min-width:500px;
+    max-width:600px;
+    padding-left:30px;
+}
+
+.DatalistChart
+{
+    overflow: hidden;
+}
+
+.TitleChart
+{
+    width:95px;
+    text-align:center;
+    height:50px;
+    vertical-align:bottom;
+}
+
+#linearBg2 {
+  /* fallback */
+  background-color: #ffffff;
+  background: url(images/linear_bg_2.png);
+  background-repeat: repeat-x;
+
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#CCC));
+
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #CCC, #ffffff);
+
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #CCC, #ffffff);
+
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #CCC, #ffffff);
+
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #CCC, #ffffff);
+}

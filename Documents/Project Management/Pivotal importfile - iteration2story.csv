@@ -1,0 +1,26 @@
+Id,Story,Labels,Iteration,Iteration Start,Iteration End,Story Type,Estimate,Current State,Created at,Accepted at,Deadline,Requested By,Owned By,Description
+,Feature 02: Body measurement - Settings,feature settings,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Phong Huynh,Feature 02: Body measurement - Settings
+,Feature 02: Body measurement - Settings,feature settings,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Phong Huynh,Feature 02: Body measurement - Settings
+,Feature 03: Heart Rate Monitoring - Settings,feature settings,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Phong Huynh,Feature 03: Heart Rate Monitoring - Settings
+,Feature 04: Oxygen Monitoring - Settings,feature settings,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Phong Huynh,Feature 04: Oxygen Monitoring - Settings
+,Feature 05: Fitness Monitoring - Settings,feature settings,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Phong Huynh,Feature 05: Fitness Monitoring - Settings
+,Feature 06: Stress Monitoring - Settings,feature settings,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Phong Huynh,Feature 06: Stress Monitoring - Settings
+,Feature 07: Sleep Monitoring - Settings,feature settings,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Phong Huynh,Feature 07: Sleep Monitoring - Settings
+,Feature 08: Position Monitoring - Settings,feature settings,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Phong Huynh,Feature 08: Position Monitoring - Settings
+,Feature 09: Fertility Monitoring - Settings,feature settings,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Phong Huynh,Feature 09: Fertility Monitoring - Settings
+,Feature 02: Body measurement - Graph Report,feature graph,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Chi Bui,Feature 02: Body measurement - Graph Report
+,Feature 03: Heart Rate Monitoring - Graph Report,feature graph,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Chi Bui,Feature 03: Heart Rate Monitoring - Graph Report
+,Feature 04: Oxygen Monitoring - Graph Report,feature graph,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Chi Bui,Feature 04: Oxygen Monitoring - Graph Report
+,Feature 05: Fitness Monitoring - Graph Report,feature graph,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Chi Bui,Feature 05: Fitness Monitoring - Graph Report
+,Feature 06: Stress Monitoring - Graph Report,feature graph,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Chi Bui,Feature 06: Stress Monitoring - Graph Report
+,Feature 07: Sleep Monitoring - Graph Report,feature graph,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Chi Bui,Feature 07: Sleep Monitoring - Graph Report
+,Feature 08: Position Monitoring - Graph Report,feature graph,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Chi Bui,Feature 08: Position Monitoring - Graph Report
+,Feature 09: Fertility Monitoring - Graph Report,feature graph,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Chi Bui,Feature 09: Fertility Monitoring - Graph Report
+,Feature 02: Body measurement - Table Report,feature table,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Ric Ly,Feature 02: Body measurement - Table Report
+,Feature 03: Heart Rate Monitoring - Table Report,feature table,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Ric Ly,Feature 03: Heart Rate Monitoring - Table Report
+,Feature 04: Oxygen Monitoring - Table Report,feature table,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Ric Ly,Feature 04: Oxygen Monitoring - Table Report
+,Feature 05: Fitness Monitoring - Table Report,feature table,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Ric Ly,Feature 05: Fitness Monitoring - Table Report
+,Feature 06: Stress Monitoring - Table Report,feature table,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Ric Ly,Feature 06: Stress Monitoring - Table Report
+,Feature 07: Sleep Monitoring - Table Report,feature table,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Ric Ly,Feature 07: Sleep Monitoring - Table Report
+,Feature 08: Position Monitoring - Table Report,feature table,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Ric Ly,Feature 08: Position Monitoring - Table Report
+,Feature 09: Fertility Monitoring - Table Report,feature table,2,31-Oct-12,22-Nov-13,feature,2,unstarted,31-Oct-12,,,Tin Nguyen,Ric Ly,Feature 09: Fertility Monitoring - Table Report

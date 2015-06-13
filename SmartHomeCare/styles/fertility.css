@@ -1,0 +1,123 @@
+﻿.fertility
+{
+    padding:0;
+}
+.dates_fertility
+{
+    padding:10px;
+    text-align:right;
+    padding-right:30px;
+    font-size:0.9em;
+    height:30px;
+}
+.contents_fertility
+{
+    width:100%;
+    margin-top:-19px;
+}
+.tops_fertility
+{
+   
+}
+.titles_fertility
+{
+    width:179px;
+    float:left;
+    background:#f3f3f3;
+}
+.titles_fertility table
+{
+    width:100%;
+    border-collapse:collapse;
+    font-size:0.9em;
+    background:url(../resources/images/title_b.png);
+    color:#fff;
+}
+.contents_fertility table td
+{
+    border:1px solid #175DA8;
+    text-align:center;
+    border-left:none;
+}
+
+.contents_fertility table th
+{
+    border:1px solid #175DA8;
+    text-align:left;
+    font-size:1em;
+    height:20px;
+    border-left:none;
+}
+.text_underline_none
+{
+    text-decoration:none;
+}
+.datas_fertility
+{
+    width:544px;
+    float:left;
+    height:126px;
+    overflow:hidden;
+    border-left:0px;
+    background:#fff;
+    
+}
+.datas_fertility table
+{
+    border-collapse:collapse;
+    background:#fff;
+}
+.datas_fertility table td
+{
+    width:200px;
+    font-size:0.9em;
+    height:20px;
+}
+.border_fertility
+{
+    border-top:none;
+}
+.contents_fertility table
+{
+    
+}
+.bottoms_fertility
+{
+    border-top:1px solid gray;
+    margin-top:15px;
+    padding-top:25px;
+    width:100%;
+   
+}
+
+.DaysInMonth
+{
+    border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	background:#ccc;
+	text-align:center;
+	vertical-align:middle;
+	display:table-cell;
+}
+.datas_fertility1
+{
+    width:544px;
+    float:left;
+    height:162px;
+    overflow:hidden;
+    border-left:0px;
+    background:#fff;
+   
+}
+.datas_fertility1 table
+{
+    border-collapse:collapse;
+    background:#fff;
+}
+.datas_fertility1 table td,th
+{
+    height:20px;
+    font-size:0.9em;
+    width:200px;
+}

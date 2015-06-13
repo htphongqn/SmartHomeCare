@@ -1,0 +1,66 @@
+﻿.input
+{
+    background: #FFFFFF;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+
+    color: #666;
+    height:18px;
+    outline: none;
+}
+.styled-select select {
+   background: transparent;
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+  }
+.search
+{   width:97%;
+    border:1px solid #22749E;
+    border-radius:5px;
+    padding:5px;
+    margin-bottom:10px;
+}
+.btn_view
+{
+    height:48px;
+    width:70px;
+    text-align:center;
+    background: url(../resources/images/btn_view.png) #006699;
+    margin-left:10px;
+    border-radius:5px;
+}
+ .dropdown{    
+    background: url(../resources/images/selectArrowDown.png) no-repeat 95% center #fff;
+    width:150px;
+    border: 1px solid #f3f3f3; 
+    overflow: hidden; 
+    border-radius:5px;
+    outline:none;
+    list-style:none;
+   
+}
+.dropdown select{
+    border:0px; 
+    width:168px; 
+    background:none;
+}
+.lbdate
+{
+    top:20px;
+    margin-left:15px;
+    position:relative;
+}
+.listbox
+{
+    border:1px solid gray;
+    box-shadow:5px 5px 5px -4px gray;
+    -moz-box-shadow:5px 5px 5px -4px gray;
+    -webkit-box-shadow:5px 5px 5px -4px gray;
+    margin-bottom:20px;
+}

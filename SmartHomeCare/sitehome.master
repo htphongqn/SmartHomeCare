@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="sitehome.master.cs" Inherits="sitehome" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <link href="styles/sitehome.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        function not_record() {
+
+            jAlert('Record not on file.', 'Notification message');
+        }
+
+    </script>
+    <asp:ContentPlaceHolder id="head1" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="menu" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="main" Runat="Server">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td class="left" valign="top">
+                <div class="tblleft">
+                    Picture
+                </div>
+            </td>
+            <td class="center">
+                <asp:ContentPlaceHolder id="center1" runat="server">
+                        
+                </asp:ContentPlaceHolder>
+            </td>
+            <td class="right" valign="top">
+                <asp:ContentPlaceHolder id="right1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>        
+    </table>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="footer" Runat="Server">
+    <div class="footer">Public Home Footer<br />
+        <%= Security.GetVersion() %>
+        <%--<%= "Website was last updated on: " + System.IO.Directory.GetLastWriteTime(Server.MapPath("~/"))%>--%>
+    </div>
+</asp:Content>
+

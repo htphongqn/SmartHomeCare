@@ -1,0 +1,24 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="sitelogin.master.cs" Inherits="Admin_sitelogin" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <link href="../styles/site.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        table
+        {
+            text-align:left;
+        }
+        table tr
+        {
+            padding:5px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="menu" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="main" Runat="Server">
+        <asp:ContentPlaceHolder id="right1" runat="server">
+        </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="footer" Runat="Server">
+</asp:Content>
+

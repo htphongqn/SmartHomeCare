@@ -1,0 +1,30 @@
+﻿.ajax__balloon_popup .custom {
+    background-image:url("balloon-1.png") #fff;
+}
+
+/* SMALL SIZE */
+.ajax__balloon_popup .custom .small {
+    width:200px;
+    height:150px;
+    background-image: url('balloon-1.png') #fff;
+    background-position:top left; 
+    background-repeat:no-repeat; 
+    text-align: justify;
+}
+.ajax__balloon_popup .custom .small .bottom_right .ajax__content {
+    padding: 35px;
+}
+.ajax__balloon_popup .custom .small .bottom_left .ajax__content {
+    padding: 35px;
+}
+.ajax__balloon_popup .custom .small .top_right .ajax__content {
+    padding: 35px;
+}
+.ajax__balloon_popup .custom .small .top_left .ajax__content {
+    padding: 35px;
+}
+#main_paneluser
+{
+    width:200px;
+    height:200px;
+}

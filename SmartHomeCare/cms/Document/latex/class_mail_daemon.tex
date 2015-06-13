@@ -1,0 +1,134 @@
+\hypertarget{class_mail_daemon}{\section{Mail\-Daemon Class Reference}
+\label{class_mail_daemon}\index{Mail\-Daemon@{Mail\-Daemon}}
+}
+
+
+process send mail  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_mail_daemon_abd4af0c277915e06e5a238a6808212e9}{registration} (string email, string name, string webcode)
+\item 
+static void \hyperlink{class_mail_daemon_a5a855b66d82f24f1a49b3efca018d408}{forgotusername} (string email, string name, string username)
+\item 
+static void \hyperlink{class_mail_daemon_a5a6f07382cfdf3a38aa90b4e8bc282c5}{forgotpassword} (string email, string name, string passhint)
+\item 
+static void \hyperlink{class_mail_daemon_ae869b56204cb7ef5229acd5029f57c7e}{invitenewmember} (string email, string code, string name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+process send mail 
+
+Definition at line 15 of file Mail\-Daemon.\-cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_mail_daemon_a5a6f07382cfdf3a38aa90b4e8bc282c5}{\index{Mail\-Daemon@{Mail\-Daemon}!forgotpassword@{forgotpassword}}
+\index{forgotpassword@{forgotpassword}!MailDaemon@{Mail\-Daemon}}
+\subsubsection[{forgotpassword}]{\setlength{\rightskip}{0pt plus 5cm}static void Mail\-Daemon.\-forgotpassword (
+\begin{DoxyParamCaption}
+\item[{string}]{email, }
+\item[{string}]{name, }
+\item[{string}]{passhint}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_mail_daemon_a5a6f07382cfdf3a38aa90b4e8bc282c5}
+send mail, get back password \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_mail_daemon_a5a6f07382cfdf3a38aa90b4e8bc282c5}{forgotpassword()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em email} & is email account \\
+\hline
+{\em name} & is name account \\
+\hline
+{\em passhint} & sent mail \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 300 of file Mail\-Daemon.\-cs.
+
+\hypertarget{class_mail_daemon_a5a855b66d82f24f1a49b3efca018d408}{\index{Mail\-Daemon@{Mail\-Daemon}!forgotusername@{forgotusername}}
+\index{forgotusername@{forgotusername}!MailDaemon@{Mail\-Daemon}}
+\subsubsection[{forgotusername}]{\setlength{\rightskip}{0pt plus 5cm}static void Mail\-Daemon.\-forgotusername (
+\begin{DoxyParamCaption}
+\item[{string}]{email, }
+\item[{string}]{name, }
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_mail_daemon_a5a855b66d82f24f1a49b3efca018d408}
+send mail, get back username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_mail_daemon_a5a855b66d82f24f1a49b3efca018d408}{forgotusername()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em email} & is email account \\
+\hline
+{\em name} & is name account \\
+\hline
+{\em username} & sent mail \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 254 of file Mail\-Daemon.\-cs.
+
+\hypertarget{class_mail_daemon_ae869b56204cb7ef5229acd5029f57c7e}{\index{Mail\-Daemon@{Mail\-Daemon}!invitenewmember@{invitenewmember}}
+\index{invitenewmember@{invitenewmember}!MailDaemon@{Mail\-Daemon}}
+\subsubsection[{invitenewmember}]{\setlength{\rightskip}{0pt plus 5cm}static void Mail\-Daemon.\-invitenewmember (
+\begin{DoxyParamCaption}
+\item[{string}]{email, }
+\item[{string}]{code, }
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_mail_daemon_ae869b56204cb7ef5229acd5029f57c7e}
+send mail, invite new member \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_mail_daemon_ae869b56204cb7ef5229acd5029f57c7e}{invitenewmember()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em email} & is invite \\
+\hline
+{\em code} & permission \\
+\hline
+{\em name} & is Invitations \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 344 of file Mail\-Daemon.\-cs.
+
+\hypertarget{class_mail_daemon_abd4af0c277915e06e5a238a6808212e9}{\index{Mail\-Daemon@{Mail\-Daemon}!registration@{registration}}
+\index{registration@{registration}!MailDaemon@{Mail\-Daemon}}
+\subsubsection[{registration}]{\setlength{\rightskip}{0pt plus 5cm}static void Mail\-Daemon.\-registration (
+\begin{DoxyParamCaption}
+\item[{string}]{email, }
+\item[{string}]{name, }
+\item[{string}]{webcode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_mail_daemon_abd4af0c277915e06e5a238a6808212e9}
+send mail, enable registration \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_mail_daemon_abd4af0c277915e06e5a238a6808212e9}{registration()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em email} & is email registration \\
+\hline
+{\em name} & is name recipient \\
+\hline
+{\em webcode} & is enable account \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 212 of file Mail\-Daemon.\-cs.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+E\-:/\-Mint/\-Home care/\-Smart\-Home\-Care/\-App\-\_\-\-Code/Mail\-Daemon.\-cs\end{DoxyCompactItemize}

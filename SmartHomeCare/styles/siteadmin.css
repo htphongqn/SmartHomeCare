@@ -1,0 +1,17 @@
+﻿.left
+{
+    width:220px;
+    float:left;
+    padding-left:10px;
+    padding-top:20px;
+}
+.right
+{
+    width:730px;
+    float:right;
+    padding-top:10px;
+}
+.rightpaddingleft
+{
+    padding-left:10px;   
+}

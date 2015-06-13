@@ -1,0 +1,3471 @@
+\hypertarget{class_d_b_class}{\section{D\-B\-Class Class Reference}
+\label{class_d_b_class}\index{D\-B\-Class@{D\-B\-Class}}
+}
+
+
+select, insert, update, delete database sql server  
+
+
+Inheritance diagram for D\-B\-Class\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_d_b_class}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual object \hyperlink{class_d_b_class_a3995c60b4a603b90560f5180ae929348}{Execute\-Scalar} (string Procedure\-Name, params object\mbox{[}$\,$\mbox{]} Parameters)
+\item 
+virtual int \hyperlink{class_d_b_class_a9fe3e632d65861059ff2f8eb6c266a7b}{Execute\-Non\-Query} (string Procedure\-Name, params object\mbox{[}$\,$\mbox{]} Parameters)
+\item 
+virtual Data\-Row \hyperlink{class_d_b_class_a3d3793d07d5bdfcb8e904f1272f1e314}{Get\-Data\-Row} (string Procedure\-Name, params object\mbox{[}$\,$\mbox{]} Parameters)
+\item 
+virtual Data\-Row \hyperlink{class_d_b_class_af7d28bb6d82d5ed48310a9807148afea}{Get\-Data\-Row} (int Row\-Index, string Procedure\-Name, params object\mbox{[}$\,$\mbox{]} Parameters)
+\item 
+\hypertarget{class_d_b_class_a103c8b1a6b0d077064d2bef4b3b76c6b}{object {\bfseries Get\-Value\-From\-D\-B} (string sql)}\label{class_d_b_class_a103c8b1a6b0d077064d2bef4b3b76c6b}
+
+\item 
+int \hyperlink{class_d_b_class_ad7007450fd0cc27c1659da147b0d00e1}{Change\-Password} (string username, string passcurrent, string passnew, string passhint)
+\item 
+int \hyperlink{class_d_b_class_a24d9d653a4be300dd6136af86afadd1b}{Delete\-\_\-\-Users\-Authorizes\-\_\-\-By\-Id} (int autoid)
+\item 
+int \hyperlink{class_d_b_class_a26cddcc85c3f1be4d246912113d3a231}{Insert\-Update\-\_\-\-Users} (string username, string userpass, string passhint, int usertypeid, bool isactive)
+\item 
+int \hyperlink{class_d_b_class_a8900e70ea5308637f732de925c2e217b}{Insert\-Update\-\_\-\-Users\-Contact} (string username, string name, string email, string phone, string address, bool Is\-Main)
+\item 
+int \hyperlink{class_d_b_class_a9254bd810d437740310edb4fc6b19623}{Insert\-Update\-\_\-\-Users\-Info} (string username, string firstname, string lastname, Date\-Time?dateofbirth, bool isgender, string emailaddress, string streetaddress, string citycode, string statecode, string zipcode, string county, string countrycode, string homephone, string mobilephone, string registrationcode)
+\item 
+Data\-Row \hyperlink{class_d_b_class_a968aacf4f03ce8b3d11fdfeb72bd7301}{Get\-Info\-\_\-\-Users\-All\-\_\-\-By\-User\-Name} (string username)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a68c8c13196578b5e88d1f8b831c95088}{Get\-List\-\_\-\-Member\-Type} ()
+\item 
+Data\-Row \hyperlink{class_d_b_class_a0db4839a470f33aa8e982bebddaaa001}{Get\-Info\-\_\-\-Rule\-\_\-\-By\-User\-Name} (string username)
+\item 
+Data\-Table \hyperlink{class_d_b_class_af38a7f3159f4c030237c6dd91db26a9d}{Get\-List\-\_\-\-Billing\-Account\-Types} ()
+\item 
+Data\-Row \hyperlink{class_d_b_class_a954ef42cfdb46f0757f30f088a60da27}{Get\-Info\-\_\-\-Users\-Contact\-\_\-\-By\-User\-Name} (string username)
+\item 
+Data\-Set \hyperlink{class_d_b_class_a6b82464db643c0331528f6a2fa6e7c69}{Get\-List\-\_\-\-Authorized\-User} (string username)
+\item 
+Data\-Set \hyperlink{class_d_b_class_a8306b2abf31bf8c5762e10945dcc6b69}{Get\-List\-\_\-\-Countries} ()
+\item 
+Data\-Set \hyperlink{class_d_b_class_ac33ddf061999a06d82c2e50f435972cc}{Get\-List\-\_\-\-Country\-States} ()
+\item 
+Data\-Set \hyperlink{class_d_b_class_a98f847d55e901665e418585ab706d4f4}{Get\-List\-\_\-\-Credit\-Card\-Type} ()
+\item 
+Data\-Set \hyperlink{class_d_b_class_a69f8d21cf730d614bdef36908ac343b3}{Get\-List\-\_\-\-Country\-States\-\_\-\-By\-Country\-Code} (string countrycode)
+\item 
+Data\-Row \hyperlink{class_d_b_class_ae4be85d37203b9423b92f4dd84a9a00d}{Insert\-\_\-\-Users\-Authorizes} (string username, string authorizeduser)
+\item 
+Data\-Row \hyperlink{class_d_b_class_aada5d4b0954419f23fcf368df799bd0c}{Login\-\_\-\-Website} (string username, string userpass, string loginfromcomputerip)
+\item 
+Data\-Row \hyperlink{class_d_b_class_ae7cb22c9fabc0e90288382a3d52c497c}{Register\-\_\-\-Account\-\_\-\-Users} (string username, string userpass, string passhint, string firstname, string lastname, Date\-Time?dateofbirth, bool isgender, string emailaddress, string streetaddress, string citycode, string statecode, string zipcode, string county, string countrycode, string homephone, string mobilephone, string registeredip, string registrationcode)
+\item 
+object \hyperlink{class_d_b_class_a08bd9c83614e63a7d978da2cde32d395}{Register\-\_\-\-Validation\-\_\-\-User\-Name} (string username)
+\item 
+object \hyperlink{class_d_b_class_a6e15594a3adc8194e932b15597421971}{Is\-Exists\-\_\-\-Email} (string email)
+\item 
+Data\-Row \hyperlink{class_d_b_class_a11e3e7a443614ac51a5a20155afb68b3}{Submit\-\_\-\-Forgot\-\_\-\-Password} (string username, Date\-Time?dateofbirth)
+\item 
+Data\-Row \hyperlink{class_d_b_class_a4946c6d4c6f92b0c79f64e8fe5bba494}{Submit\-\_\-\-Forgot\-\_\-\-User\-Name} (string firstname, string lastname, Date\-Time?dateofbirth, string zipcode)
+\item 
+Data\-Set \hyperlink{class_d_b_class_a46e602b287204bdccd5f684ed5cfddd1}{Get\-List\-\_\-\-Paramaters} (int Id, string Para\-Code, string Description)
+\item 
+Data\-Set \hyperlink{class_d_b_class_a37ba813f04c86f37ae0ff356c924daa3}{Get\-List\-\_\-\-Admin\-Messages} (int Id, string Code, string Title)
+\item 
+int \hyperlink{class_d_b_class_a839d19f3269b0cffbd7fad1600102b1a}{Insert\-Update\-\_\-\-Admin\-Messages} (int Id, string Code, string Title, string Title\-V\-N, bool Approved, string Note)
+\item 
+Data\-Set \hyperlink{class_d_b_class_a5988e32a4d26e9369010d22c45cd5047}{Get\-List\-\_\-\-Users\-\_\-\-Admin} (string User\-Name, string Last\-Name, string First\-Name, Date\-Time?From\-Date\-Of\-Birth, Date\-Time?To\-Date\-Of\-Birth)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a878b22ac712481c277f9178b1b43fe07}{Get\-List\-\_\-\-Users} (int userid, string username, bool?isactive, string email, Date\-Time?createdatefrom, Date\-Time?createdateto)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a5b9b462ffd2a0818dd1198a5d85db9b0}{Get\-List\-\_\-\-Register\-Codes} (string Rule, bool?Is\-Using, bool?Disable)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a2d6d02138ea4f327cf81801671551727}{Get\-List\-\_\-\-User\-\_\-\-Login} (string Username, Date\-Time?Login\-Date\-From, Date\-Time?Logind\-Date\-To)
+\item 
+int \hyperlink{class_d_b_class_a4c5f9a9dc76a0b8585eeaf9fd3dcda9e}{Is\-Active\-\_\-\-User\-\_\-\-By\-Ids} (string Ids, bool is\-Active)
+\item 
+int \hyperlink{class_d_b_class_aa3330dd5a4961020f5da0bf0d0c66695}{Insert\-Update\-\_\-\-Paramaters} (int Id, string Param\-Code, string Description, string Value, bool Active, string Note)
+\item 
+int \hyperlink{class_d_b_class_a7ccd4c71dd6fae6380139ec0090d9b61}{Delete\-Paramaters} (int Auto\-Id)
+\item 
+int \hyperlink{class_d_b_class_aa77b93fa5b15252418e3fd8e24ffd8ac}{Set\-\_\-\-Register\-Code\-\_\-\-Using} (string Code)
+\item 
+Data\-Row \hyperlink{class_d_b_class_a14e9b463bcc808a13b42d55caca9b4ac}{Insert\-\_\-\-Message\-Center} (string Mail\-From, string Subject, string Mail\-To, string Message\-Center)
+\item 
+Data\-Row \hyperlink{class_d_b_class_a7db629c9df6c2c852dcf7eea76fb14a9}{Delete\-\_\-\-Message\-Center\-\_\-\-By\-Ids} (string Message\-Ids)
+\item 
+Data\-Row \hyperlink{class_d_b_class_a701df7b6a8ca9fc4ba08897cae80dfe8}{Delete\-\_\-\-Message\-Center\-\_\-\-Trash\-\_\-\-By\-Ids} (string Message\-Ids)
+\item 
+Data\-Row \hyperlink{class_d_b_class_a615a48cab9c51ef041a71bf4448cf4c4}{Get\-Info\-\_\-\-Pay\-Bill\-\_\-\-Credit\-Card} (string username)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a55a667ccc7d91f17f481a874f287890f}{Get\-Info\-\_\-\-Billing\-Accounts} (string username)
+\item 
+Data\-Row \hyperlink{class_d_b_class_a2fc3997462f0ee4b552309ea63529a3a}{Get\-Info\-\_\-\-Billing\-Accounts\-\_\-\-User} (string username)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a0401b205dab60659fa1b0d5e08a6380e}{Get\-List\-\_\-\-Billing\-Account\-Details} (string Account\-Number)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a1325a85d94c5ca023962fe8b9be00d20}{Get\-List\-\_\-\-Billing\-Payments} (string Account\-Number)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a8cc689495dd00f72cbb7ce4a1cf49e83}{Get\-List\-\_\-\-Message\-Center\-\_\-\-Inbox} (string User\-Name)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a20a41495a3c7eeeb6e5d514374533e45}{Get\-List\-\_\-\-Message\-Center\-\_\-\-Alarm} (string User\-Name)
+\item 
+Data\-Table \hyperlink{class_d_b_class_ac6c5150b83d380d419fe3f2c21115e75}{Get\-List\-\_\-\-Message\-Center\-\_\-\-Sent} (string User\-Name)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a945f0e551b6a114e9fc29a5a38928535}{Get\-List\-\_\-\-Message\-Center\-\_\-\-Trash} (string User\-Name)
+\item 
+Data\-Row \hyperlink{class_d_b_class_af0371885100aee5897fad3d19f1cabc4}{Get\-Info\-\_\-\-Message\-Center\-\_\-\-By\-Id} (int Message\-Id)
+\item 
+object \hyperlink{class_d_b_class_a708536f33fd79b8bbe0ddaff66ed643b}{Get\-Email\-\_\-\-By\-User\-Name} (string User\-Name)
+\item 
+int \hyperlink{class_d_b_class_a5be6a98dd7109e6bae4e4ff3ba9ef06a}{Update\-Global\-Setting} (string User\-Name)
+\item 
+Data\-Table \hyperlink{class_d_b_class_ac0a226a5b8778e0aa4bff3db3d0abb45}{Get\-List\-\_\-\-User\-Temperature} (string User\-Name, Date\-Time?From\-Date, Date\-Time?To\-Date)
+\item 
+int \hyperlink{class_d_b_class_a2efd80a5427a8bedc880acefd862553b}{Insert\-Update\-\_\-\-User\-Setting\-Color} (string User\-Name, int Skin\-Temp\-Color\-Id, int Amb\-Temp\-Color\-Id, int Background\-Color\-Id)
+\item 
+int \hyperlink{class_d_b_class_a3a0623cddd000fbd65ef3fbfc118e09d}{Update\-\_\-\-Billing\-Account\-\_\-\-Management} (string Account\-Number, int Billing\-Type\-Id, Date\-Time?Eff\-Date, decimal Amount\-Charge, bool Is\-Pay\-Bill, string Notes)
+\item 
+int \hyperlink{class_d_b_class_a3d44f9f299daf15fecc7bd0cc3c6ab2f}{Add\-Manual\-\_\-\-Billing\-Account\-\_\-\-Management} (string Account\-Number, Date\-Time?Date, decimal Amount\-Charge, string Notes)
+\item 
+Data\-Row \hyperlink{class_d_b_class_ae02372dc18e31565b4831363761727ce}{Get\-Info\-\_\-\-User\-Setting\-Color} (string User\-Name)
+\item 
+Data\-Row \hyperlink{class_d_b_class_ab25c43efd861fb5974df1edc2983a64d}{Get\-Info\-\_\-\-User\-Track\-My\-Health\-\_\-\-Measurement} (string User\-Name)
+\item 
+int \hyperlink{class_d_b_class_a4568088b863f4eced0d05dc68a255f7d}{Insert\-Update\-\_\-\-User\-Track\-My\-Health\-\_\-\-Measurement} (string User\-Name, bool Metric, bool U\-S)
+\item 
+Data\-Table \hyperlink{class_d_b_class_ac1ac9c6415e1f9754d2b40c3bb1ed5e4}{Get\-List\-\_\-\-User\-Track\-Others} (string User\-Name)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a7beb5ee76c22290fbd4105d939f6f1db}{Get\-Info\-\_\-\-User\-All\-\_\-\-By\-User\-Name} (string User\-Name)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a2c851e40cf0bde4ad893668dea5f4c8a}{Get\-Info\-\_\-\-Billing\-Info\-\_\-\-By\-Id} (string Payment\-Id)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a92d17fbc58b19d0706febb49eac3af0c}{Get\-List\-\_\-\-Email\-Templates} ()
+\item 
+Data\-Table \hyperlink{class_d_b_class_af38b686d7f8458e55251e3b5b3c554d4}{Get\-Info\-\_\-\-Email\-Templates} (int Id)
+\item 
+int \hyperlink{class_d_b_class_adfc194b09f95c76cda91e3876e717399}{Insert\-Update\-\_\-\-Email\-Templates} (int id, string code, string subject, string body, string note)
+\item 
+bool \hyperlink{class_d_b_class_ad9d03a94de073831692a0ba77d9971eb}{Is\-Active\-\_\-\-User\-\_\-\-By\-Web\-Code} (string Web\-Code)
+\item 
+string \hyperlink{class_d_b_class_a516612b7d6008c48982987c8526a789e}{Insert\-\_\-\-Billing\-Info} (string Name\-Card, string Address, string Address\-Line2, string City, string State\-Code, string Z\-I\-P\-Code, string Country\-Code, string Phone, string Email, int Card\-Type\-Id, string Card\-Number, string Expiration\-Month, string Expiration\-Year, string Sercurity\-Code, string Account\-Number, decimal Amount\-Pay)
+\item 
+Data\-Row \hyperlink{class_d_b_class_a0fa08325a7d843fa631763b708fc32be}{Get\-Info\-\_\-\-User\-Overview} (string Username)
+\item 
+int \hyperlink{class_d_b_class_accdb33f185e3d071c73ed1c8c05c8db0}{Update\-\_\-\-User\-Overview} (string User\-Name\-Old, string User\-Name\-New, string Email, string Warning, string Password)
+\item 
+int \hyperlink{class_d_b_class_a547a707a154ff5ce5620445a986f9d80}{Get\-Value\-\_\-\-Paramter\-\_\-\-By\-Code} (string code)
+\item 
+string \hyperlink{class_d_b_class_a780a2360541eac03a5f601e807daa315}{Invite\-\_\-\-Membertype} (string member\-Type)
+\item 
+Data\-Row \hyperlink{class_d_b_class_a4d51d814947ee0d6b8e4fc40c69a9042}{Invalid\-\_\-\-Registration\-Code} (string registercode)
+\item 
+int \hyperlink{class_d_b_class_a0e5e201e2c1a800ef5f3bd6d27735a10}{Is\-Allow\-Check\-Status\-Registration\-Code\-In\-Send\-Email} ()
+\item 
+decimal \hyperlink{class_d_b_class_a95cc7b89b936bed76372b6cee5fac8bb}{Get\-\_\-\-Total\-Amount\-Due\-\_\-\-By\-Account\-Number} (string Account\-Number)
+\item 
+int \hyperlink{class_d_b_class_aead8cbe00c4eae2083023a1d4064da98}{Get\-Count\-\_\-\-Email\-Trash\-\_\-\-By\-User\-Name} (string User\-Name)
+\item 
+int \hyperlink{class_d_b_class_aa7e7e02bfe40b7f2cbbcb968245bcedf}{Get\-Count\-\_\-\-Email\-Sent\-\_\-\-By\-User\-Name} (string User\-Name)
+\item 
+int \hyperlink{class_d_b_class_a8eca9d29902373dde46eb6ff616b7f42}{Get\-Count\-\_\-\-Email\-Alarm\-\_\-\-By\-User\-Name} (string User\-Name)
+\item 
+int \hyperlink{class_d_b_class_a9314af57c8a3bc7bc95233f67892ed81}{Get\-Count\-\_\-\-Email\-New\-\_\-\-By\-User\-Name} (string User\-Name)
+\item 
+string \hyperlink{class_d_b_class_ae23b78ebc687ddc3e6ed4cc7db52eec8}{Get\-\_\-\-Registration\-Code\-\_\-\-By\-Member\-Type} (string membertype)
+\item 
+string \hyperlink{class_d_b_class_a8b1c1583c7deaf27f452d121c1ad06b3}{Get\-\_\-\-Registration\-Code\-\_\-\-Automatic} ()
+\item 
+bool \hyperlink{class_d_b_class_a18ad84f7d11d749b4a1d7eb633b5e6b4}{Get\-\_\-\-Is\-U\-S\-\_\-\-User\-Track\-My\-Health\-\_\-\-By\-User\-Name} (string username)
+\item 
+bool \hyperlink{class_d_b_class_ae14263d3318dc4b2ed3747c677bf98a2}{Is\-Invalid\-\_\-\-Email\-Address} (string username, string emailaddress)
+\item 
+string \hyperlink{class_d_b_class_aa1a72fda8621249f462071e883d14ead}{Cornfirm\-\_\-\-Delete} ()
+\item 
+string \hyperlink{class_d_b_class_a29ee46245e52b057a2a7e0d42cc72307}{Edit\-\_\-\-Success} ()
+\item 
+virtual Data\-Row \hyperlink{class_d_b_class_a101e80735fe6e717d5763d53eb772793}{Get\-Message\-By\-Code} (string message\-\_\-code)
+\item 
+Data\-Table \hyperlink{class_d_b_class_ab0a19e84d20ad1d00da1f6f2239153b3}{Get\-List\-\_\-\-Unit\-Time} ()
+\item 
+Data\-Table \hyperlink{class_d_b_class_aa17c75e306a63775128a29aa3682b98b}{Get\-List\-\_\-\-Unit\-Date} ()
+\item 
+int \hyperlink{class_d_b_class_ad222e776de0cc554f15903c20bd672f0}{Insert\-Update\-\_\-\-User\-Track\-My\-Health\-\_\-\-Threshold} (string User\-Name, decimal?Samplerate, int?Sample\-Rate\-Id, decimal?Low\-Value, decimal?High\-Value, decimal?Very\-High\-Value)
+\item 
+Data\-Row \hyperlink{class_d_b_class_ad9671a70651f9956eec03dbb5de3859e}{Get\-Info\-\_\-\-User\-Track\-My\-Health} (string User\-Name)
+\item 
+Data\-Table \hyperlink{class_d_b_class_af3711e9da9e4cc100a375496842590f5}{Get\-List\-\_\-\-Temperature\-\_\-\-Datetime} (string Username, Date\-Time?From\-Date, Date\-Time?To\-Date)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a9bad7290fc0114ab60d343157dee22b1}{Get\-List\-\_\-\-Body\-B\-F\-Type} ()
+\item 
+Data\-Table \hyperlink{class_d_b_class_aa2a657479fe0ef609218bce4530f53ba}{Get\-List\-\_\-\-Body\-B\-M\-R\-Type} ()
+\item 
+Data\-Table \hyperlink{class_d_b_class_a0af97a662055ff2a3a41bcc3a28beaea}{Get\-List\-\_\-\-Datetime\-\_\-\-Body\-Measurement} (string username, Date\-Time?fromdate, Date\-Time?todate)
+\item 
+Data\-Table \hyperlink{class_d_b_class_ac3ab5f6a5dddad118d2a63c41b0b9f02}{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Table} (string username, Date\-Time?date)
+\item 
+Data\-Set \hyperlink{class_d_b_class_a416e75f38a46c9ab6607c740e175854f}{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Datatable} (string username, Date\-Time?fromdate, Date\-Time?todate)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a0aabc831282182370eed262235495d33}{Get\-List\-\_\-\-Body\-Fat\-Eval} ()
+\item 
+Data\-Table \hyperlink{class_d_b_class_a85a6d769571f77eef926f08f7a88fe28}{Get\-List\-\_\-\-Body\-I\-W\-Type} ()
+\item 
+Data\-Table \hyperlink{class_d_b_class_a977ea5e7570c7bf8d20c9788161f60f6}{Get\-List\-\_\-\-Body\-Activity\-Factor\-Type} ()
+\item 
+Data\-Row \hyperlink{class_d_b_class_a1a96f514a3e855d11e45b296e3541b97}{Get\-Info\-\_\-\-Body\-Measurement} (string username)
+\item 
+int \hyperlink{class_d_b_class_a84a76caf413099a2f0f923f8a8c73f5a}{Insert\-Update\-\_\-\-Body\-Measurement\-\_\-\-U\-S} (int auto\-Id, string username, int?iwtypeid, int?bftypeid, int?bmrtypeid, int?fatevalid, int?activityfactortypeid, decimal?weight, decimal?heightfeet, decimal?heightinch, decimal?waist, decimal?hip, decimal?neck)
+\item 
+int \hyperlink{class_d_b_class_ac5833ce5d59ffc3703ca38bf5b337bc4}{Insert\-Update\-\_\-\-Body\-Measurement\-\_\-\-Metric} (int auto\-Id, string username, int?iwtypeid, int?bftypeid, int?bmrtypeid, int?fatevalid, int?activityfactortypeid, decimal?weight, decimal?height, decimal?waist, decimal?hip, decimal?neck)
+\item 
+Data\-Table \hyperlink{class_d_b_class_aa2228c10fe161653f3ee1a8938249747}{Get\-Info\-\_\-\-Body\-Measurement\-\_\-\-Graph} (string username)
+\item 
+Data\-Table \hyperlink{class_d_b_class_ae1b916fb79600663f47ddefb396223a1}{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Graph} (string User\-Name, Date\-Time?fromdate, Date\-Time?todate)
+\item 
+Data\-Table \hyperlink{class_d_b_class_aac1dfaf591ff86449a25f64d58c0c728}{Get\-List\-\_\-\-Heart\-Rate\-H\-R\-Est\-Type} ()
+\item 
+Data\-Table \hyperlink{class_d_b_class_a630396e518cffa1b479e83203c4010b4}{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Datetime} (string User\-Name, Date\-Time?From\-Date, Date\-Time?To\-Date)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a9b7a23e13570beaa84677ee74d69476f}{Get\-List\-\_\-\-Unit\-B\-P\-M} ()
+\item 
+Data\-Row \hyperlink{class_d_b_class_a3e9f42bdd55ea3ced5e793bbbaa304e9}{Get\-Info\-\_\-\-Heart\-Rate} (string username)
+\item 
+int \hyperlink{class_d_b_class_aeb4a6084887a7e3c430af1513b4d7157}{Insert\-Update\-\_\-\-Heart\-Rate} (int auto\-Id, string username, decimal?samplerate, int?sr\-Unit\-Time\-Id, int?max\-H\-R\-Estimation\-Id, int?high\-Rest\-H\-R, int?low\-Rest\-H\-R, decimal?hrvanalysis\-Interal, int?hrv\-Unit\-Time\-Id)
+\item 
+Data\-Table \hyperlink{class_d_b_class_aa0781e64398da82d4b983a8b31a4ea4a}{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Table} (string username, Date\-Time?fromdate, Date\-Time?todate)
+\item 
+Data\-Set \hyperlink{class_d_b_class_a5910d9e2fcad738599583bb202daf3c9}{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-H\-R\-V\-\_\-\-Table} (string username, Date\-Time?fromdate, Date\-Time?todate)
+\item 
+Data\-Set \hyperlink{class_d_b_class_a1aa2f0b88239718cb99cde4a77899437}{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-H\-R\-V\-\_\-\-Graph} (string User\-Name, Date\-Time?fromdate, Date\-Time?todate)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a78b75c0c3f63847fb9d747200630bdd7}{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Graph} (string User\-Name, Date\-Time?fromdate, Date\-Time?todate)
+\item 
+Data\-Row \hyperlink{class_d_b_class_a8e9823ed71afddef6b015fd2af946c3e}{Get\-Info\-\_\-\-Sp\-O2\-\_\-\-Tracking\-Mode\-Type} (int Id)
+\item 
+Data\-Row \hyperlink{class_d_b_class_aee73d7edc2d2f75e0c26d2d31597039e}{Get\-Info\-\_\-\-Sp\-O2} (string username)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a052d4479aabdcaeb5f05ca76c0d8e166}{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Tracking\-Mode\-Type} ()
+\item 
+object \hyperlink{class_d_b_class_a0e272870de72fd2dfe58a8077219d379}{Insert\-Update\-\_\-\-Sp\-O2} (int auto\-Id, string username, decimal?Sample\-Rate, int?Sample\-Rate\-Id, int?Tracking\-Type\-Id, decimal?Threshold, decimal?Measurement\-Value, int?Measurement\-Id)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a2c9db13225c35720f41b7e051df5740f}{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Table} (string User\-Name, Date\-Time?fromdate, Date\-Time?todate)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a6f06d1414a7be6b9ddfed14f682e2205}{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Graph} (string User\-Name, Date\-Time?fromdate, Date\-Time?todate)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a816b02ee42e328f3283c8ec99423f720}{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Datetime} (string User\-Name, Date\-Time?From\-Date, Date\-Time?To\-Date)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a7962b2e3bd666862aeb6ef63a6fc5a30}{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-Type} ()
+\item 
+Data\-Table \hyperlink{class_d_b_class_afe95c3d2857408582667370a34a4d88f}{Get\-List\-\_\-\-Fitness\-\_\-\-Datetime} (string User\-Name, Date\-Time?From\-Date, Date\-Time?To\-Date)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a71298419ee709564e5c3074993c8e6d7}{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type} ()
+\item 
+Data\-Table \hyperlink{class_d_b_class_a11af85d867a3a0c6c6a0e58d7cdeb5f8}{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type\-\_\-\-Mutil} ()
+\item 
+Data\-Table \hyperlink{class_d_b_class_accf3ec92d4f585456ec3ff188e680fd3}{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type\-\_\-\-Single} ()
+\item 
+Data\-Table \hyperlink{class_d_b_class_aee30d253f34099e058adde2106c19e4f}{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Target\-Type} ()
+\item 
+Data\-Table \hyperlink{class_d_b_class_a6814ee4c5e499dee4dca88ecb8f931e3}{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Remind\-Type} ()
+\item 
+Data\-Table \hyperlink{class_d_b_class_a82ded31f7b4ff63404618f1f668f4002}{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Calory\-Burn\-Type} ()
+\item 
+Data\-Row \hyperlink{class_d_b_class_ab7a630ce1c5e96d2a3430824a326299a}{Get\-Info\-\_\-\-Fitness} (string username)
+\item 
+int \hyperlink{class_d_b_class_a2d9bfec6c5e881fe884b8ad900368e49}{Insert\-Update\-\_\-\-Fitness} (int auto\-Id, string username, int?H\-R\-Exercise\-Id, int?H\-R\-Target\-Id, int?P\-M\-Target\-Id, int?P\-M\-Remind\-Id, int?P\-M\-Calory\-Burn\-Id)
+\item 
+Data\-Table \hyperlink{class_d_b_class_aca185474fc9923019ac4b4998d7212f5}{Get\-List\-\_\-\-Fitness\-\_\-\-Pedometer\-\_\-\-Table} (string User\-Name, Date\-Time?fromdate, Date\-Time?todate)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a6b96de68a2a33aaa4438da7100c376c3}{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Table} (string User\-Name, Date\-Time?fromdate, Date\-Time?todate)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a83af91ca1c0b7b98c951d8c70287218b}{Get\-List\-\_\-\-Fitness\-\_\-\-Pedometer\-\_\-\-Graph\-\_\-\-By\-Parameter\-Code} (string User\-Name, Date\-Time?From\-Date, Date\-Time?To\-Date, string Parameter\-Code)
+\item 
+Data\-Row \hyperlink{class_d_b_class_a7f44358ae70f852c5318bab2673d86ef}{Get\-Info\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-By\-Fitness\-Id} (int fitness\-Id)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a5be81c16e8893940b65e6cd7492d0517}{Get\-Info\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-By\-Fitness\-H\-R\-Program\-Id} (int fitness\-H\-R\-Program\-Id)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a7a5f310fffc8ab3a20bd33ac6e4312b6}{Get\-List\-\_\-\-Fitness\-\_\-\-Zone\-Type} ()
+\item 
+int \hyperlink{class_d_b_class_a2011973f0271030aa62150f5289d476f}{Insert\-Update\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program} (int fitness\-Id, string user\-Name, int?number\-Of\-Stage, string program\-Name, string transition\-Audio)
+\item 
+int \hyperlink{class_d_b_class_a779173f60fc7e7d810f6c131f5d06896}{Insert\-Update\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-Details} (int fitness\-H\-R\-Program\-Id, string stages, string zone\-Ids, string time\-Values, string time\-Ids)
+\item 
+Data\-Row \hyperlink{class_d_b_class_acf04cf47637571f88a6070d17e7ecd9d}{Get\-Info\-\_\-\-Stress} (string username)
+\item 
+int \hyperlink{class_d_b_class_adc8d1ca8c834e65325767f8187caf996}{Insert\-Update\-\_\-\-Stress} (int auto\-Id, string username, decimal?Measure\-Duration, int?M\-D\-Unit\-Time\-Id, decimal?H\-R\-Sample\-Rate, int?H\-R\-S\-R\-Unit\-Time\-Id, decimal?G\-S\-R\-Sample\-Rate, int?G\-S\-R\-S\-R\-Unit\-Time\-Id, decimal?Accel\-Sample\-Rate, int?A\-S\-R\-Unit\-Time\-Id)
+\item 
+Data\-Table \hyperlink{class_d_b_class_ad7d82013b592fb68b018a7a3a13f288a}{Get\-List\-\_\-\-Stress\-\_\-\-Rawdata\-\_\-\-Table} (string User\-Name, Date\-Time?fromdate, Date\-Time?todate)
+\item 
+Data\-Table \hyperlink{class_d_b_class_ae17050a8d003121b52345fca852c79ac}{Get\-List\-\_\-\-Stress\-\_\-\-Table} (string User\-Name, Date\-Time?From\-Date, Date\-Time?To\-Date)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a197e91d6f8a237667be07dfa2bed6f43}{Get\-List\-\_\-\-Stress\-\_\-\-Rawdata\-\_\-\-Graph} (string User\-Name, Date\-Time?fromdate, Date\-Time?todate)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a1795f539e4d1d2026a81813aa941729f}{Get\-List\-\_\-\-Stress\-\_\-\-Datetime} (string User\-Name, Date\-Time?From\-Date, Date\-Time?To\-Date)
+\item 
+Data\-Row \hyperlink{class_d_b_class_a5facb048821017872ad28def8ed62069}{Get\-Info\-\_\-\-Fertility} (string username)
+\item 
+object \hyperlink{class_d_b_class_af1fff159bbd1c80d087c8ca4b429482e}{Insert\-Update\-\_\-\-Fertility} (int Auto\-Id, string username, bool Is\-Input\-Auto)
+\item 
+Data\-Table \hyperlink{class_d_b_class_ae1fcea41ffa99821225730266d6d8d51}{Get\-List\-\_\-\-Fertility\-\_\-\-Table} (string User\-Name, Date\-Time?From\-Date, Date\-Time?To\-Date)
+\item 
+Data\-Table \hyperlink{class_d_b_class_aebf1652426c1b3f3bfb9a8866b60def1}{Get\-List\-\_\-\-Fertility\-\_\-\-Temperature} (string User\-Name, Date\-Time From\-Date, Date\-Time To\-Date)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a6f81c3255588664f2c43d3c0440c9c43}{Get\-List\-\_\-\-Fertility\-\_\-\-Graph} (string User\-Name, Date\-Time From\-Date, Date\-Time To\-Date)
+\item 
+Data\-Row \hyperlink{class_d_b_class_acbbbf8d9d956c84edccb36e85bc240e3}{Get\-Info\-\_\-\-Position} (string username)
+\item 
+int \hyperlink{class_d_b_class_a42021171f10d36c06c7c77b9628743f9}{Insert\-Update\-\_\-\-Position} (int auto\-Id, string username, decimal?Sample\-Rate, int?Sample\-Rate\-Id, bool Is\-Supine, bool Is\-Prone, bool Is\-Left, bool Is\-Right, bool Is\-Up, bool Is\-Down)
+\item 
+Data\-Table \hyperlink{class_d_b_class_ab13e332c43c442cebd09a18406a6860e}{Get\-List\-\_\-\-Position\-\_\-\-Table} (string User\-Name, Date\-Time?fromdate, Date\-Time?todate)
+\item 
+Data\-Table \hyperlink{class_d_b_class_ae651f2f8ee54772f41b82ce0c03dcab9}{Get\-List\-\_\-\-Position\-\_\-\-Graph} (string User\-Name, Date\-Time?From\-Date, Date\-Time?To\-Date)
+\item 
+Data\-Table \hyperlink{class_d_b_class_aa7a8aba6f4ab18f61d5a358d6ac7c613}{Get\-List\-\_\-\-Position\-\_\-\-X\-Y\-Z\-\_\-\-Rawdata\-\_\-\-Table} (string User\-Name, Date\-Time?fromdate, Date\-Time?todate)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a59adf109e871a062c0cda615e710f895}{Get\-List\-\_\-\-Position\-\_\-\-Datetime} (string User\-Name, Date\-Time?From\-Date, Date\-Time?To\-Date)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a82e1217fb79406dc76a8afc1315b2c46}{Get\-List\-\_\-\-Sleep\-\_\-\-Datetime} (string User\-Name, Date\-Time?From\-Date, Date\-Time?To\-Date)
+\item 
+Data\-Row \hyperlink{class_d_b_class_af30a4aa2b39b452b77380ae85ff365f4}{Get\-Info\-\_\-\-Sleep} (string username)
+\item 
+int \hyperlink{class_d_b_class_a00b39101f9f39e20fc7e10307ab3c06f}{Insert\-Update\-\_\-\-Sleep} (int auto\-Id, string username, decimal?H\-R\-Sample\-Rate, int?H\-R\-Sample\-Rate\-Id, decimal?G\-S\-R\-Sample\-Rate, int?G\-S\-R\-Sample\-Rate\-Id, decimal?Acc\-Sample\-Rate, int?Acc\-Sample\-Rate\-Id, decimal?Skin\-Temp\-Sample\-Rate, int?Skin\-Temp\-Sample\-Rate\-Id, bool Is\-Alarm\-Setting, decimal?Sleep\-Duration, int?Sleep\-Duration\-Id)
+\item 
+Data\-Table \hyperlink{class_d_b_class_a0e2606c8a08dfa94868f871b6ab8f848}{Get\-List\-\_\-\-Sleep\-\_\-\-Manual\-\_\-\-By\-Sleep\-Id} (int Sleep\-Id)
+\item 
+int \hyperlink{class_d_b_class_a68f701aa5999c1bdc92e2d880b7d41af}{Insert\-Update\-\_\-\-Sleep\-\_\-\-Manual} (int sleep\-Id, string names, string unit\-Date\-Ids, string unit\-Time\-Values, string unit\-Time\-Ids)
+\item 
+Data\-Table \hyperlink{class_d_b_class_ae619d8b6adac22347a9b9a302d45a5f5}{Get\-List\-\_\-\-Sleep\-\_\-\-Rawdata} (string User\-Name, Date\-Time?fromdate, Date\-Time?todate)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Data\-Table \hyperlink{class_d_b_class_ab3e7318b0c12986f5b4bbf566a1aec32}{Get\-Data\-Table} (int Table\-Index, string Procedure\-Name, params object\mbox{[}$\,$\mbox{]} Parameters)
+\item 
+static Data\-Table \hyperlink{class_d_b_class_a7ba7be30e81075831d240a4c905ac650}{Get\-Data\-Table} (string Procedure\-Name, params object\mbox{[}$\,$\mbox{]} Parameters)
+\item 
+static Data\-Set \hyperlink{class_d_b_class_a4061cee8189ba6ee8c6ebf19be8567dc}{Get\-Data\-Set} (string Procedure\-Name, params object\mbox{[}$\,$\mbox{]} Parameters)
+\item 
+static string \hyperlink{class_d_b_class_a2d0699b41086dd4e043fa2c653543f94}{Get\-Message\-By\-Code2} (string message\-\_\-code)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+select, insert, update, delete database sql server 
+
+Definition at line 14 of file D\-B\-Class.\-cs.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_d_b_class_a3d44f9f299daf15fecc7bd0cc3c6ab2f}{\index{D\-B\-Class@{D\-B\-Class}!Add\-Manual\-\_\-\-Billing\-Account\-\_\-\-Management@{Add\-Manual\-\_\-\-Billing\-Account\-\_\-\-Management}}
+\index{Add\-Manual\-\_\-\-Billing\-Account\-\_\-\-Management@{Add\-Manual\-\_\-\-Billing\-Account\-\_\-\-Management}!DBClass@{D\-B\-Class}}
+\subsubsection[{Add\-Manual\-\_\-\-Billing\-Account\-\_\-\-Management}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Add\-Manual\-\_\-\-Billing\-Account\-\_\-\-Management (
+\begin{DoxyParamCaption}
+\item[{string}]{Account\-Number, }
+\item[{Date\-Time?}]{Date, }
+\item[{decimal}]{Amount\-Charge, }
+\item[{string}]{Notes}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a3d44f9f299daf15fecc7bd0cc3c6ab2f}
+add manual billing account \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a3d44f9f299daf15fecc7bd0cc3c6ab2f}{Add\-Manual\-\_\-\-Billing\-Account\-\_\-\-Management()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 641 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ad7007450fd0cc27c1659da147b0d00e1}{\index{D\-B\-Class@{D\-B\-Class}!Change\-Password@{Change\-Password}}
+\index{Change\-Password@{Change\-Password}!DBClass@{D\-B\-Class}}
+\subsubsection[{Change\-Password}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Change\-Password (
+\begin{DoxyParamCaption}
+\item[{string}]{username, }
+\item[{string}]{passcurrent, }
+\item[{string}]{passnew, }
+\item[{string}]{passhint}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ad7007450fd0cc27c1659da147b0d00e1}
+change password user \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ad7007450fd0cc27c1659da147b0d00e1}{Change\-Password()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em username} & need change password \\
+\hline
+{\em pascurrent} & password current \\
+\hline
+{\em passnew} & password new need change \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 130 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aa1a72fda8621249f462071e883d14ead}{\index{D\-B\-Class@{D\-B\-Class}!Cornfirm\-\_\-\-Delete@{Cornfirm\-\_\-\-Delete}}
+\index{Cornfirm\-\_\-\-Delete@{Cornfirm\-\_\-\-Delete}!DBClass@{D\-B\-Class}}
+\subsubsection[{Cornfirm\-\_\-\-Delete}]{\setlength{\rightskip}{0pt plus 5cm}string D\-B\-Class.\-Cornfirm\-\_\-\-Delete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aa1a72fda8621249f462071e883d14ead}
+message box confirm delete \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_aa1a72fda8621249f462071e883d14ead}{Cornfirm\-\_\-\-Delete()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+string value 
+\end{DoxyReturn}
+
+
+Definition at line 930 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a7db629c9df6c2c852dcf7eea76fb14a9}{\index{D\-B\-Class@{D\-B\-Class}!Delete\-\_\-\-Message\-Center\-\_\-\-By\-Ids@{Delete\-\_\-\-Message\-Center\-\_\-\-By\-Ids}}
+\index{Delete\-\_\-\-Message\-Center\-\_\-\-By\-Ids@{Delete\-\_\-\-Message\-Center\-\_\-\-By\-Ids}!DBClass@{D\-B\-Class}}
+\subsubsection[{Delete\-\_\-\-Message\-Center\-\_\-\-By\-Ids}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Delete\-\_\-\-Message\-Center\-\_\-\-By\-Ids (
+\begin{DoxyParamCaption}
+\item[{string}]{Message\-Ids}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a7db629c9df6c2c852dcf7eea76fb14a9}
+delete message by array id \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a7db629c9df6c2c852dcf7eea76fb14a9}{Delete\-\_\-\-Message\-Center\-\_\-\-By\-Ids()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 476 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a701df7b6a8ca9fc4ba08897cae80dfe8}{\index{D\-B\-Class@{D\-B\-Class}!Delete\-\_\-\-Message\-Center\-\_\-\-Trash\-\_\-\-By\-Ids@{Delete\-\_\-\-Message\-Center\-\_\-\-Trash\-\_\-\-By\-Ids}}
+\index{Delete\-\_\-\-Message\-Center\-\_\-\-Trash\-\_\-\-By\-Ids@{Delete\-\_\-\-Message\-Center\-\_\-\-Trash\-\_\-\-By\-Ids}!DBClass@{D\-B\-Class}}
+\subsubsection[{Delete\-\_\-\-Message\-Center\-\_\-\-Trash\-\_\-\-By\-Ids}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Delete\-\_\-\-Message\-Center\-\_\-\-Trash\-\_\-\-By\-Ids (
+\begin{DoxyParamCaption}
+\item[{string}]{Message\-Ids}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a701df7b6a8ca9fc4ba08897cae80dfe8}
+delete message trash by array trash id \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a701df7b6a8ca9fc4ba08897cae80dfe8}{Delete\-\_\-\-Message\-Center\-\_\-\-Trash\-\_\-\-By\-Ids()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 485 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a24d9d653a4be300dd6136af86afadd1b}{\index{D\-B\-Class@{D\-B\-Class}!Delete\-\_\-\-Users\-Authorizes\-\_\-\-By\-Id@{Delete\-\_\-\-Users\-Authorizes\-\_\-\-By\-Id}}
+\index{Delete\-\_\-\-Users\-Authorizes\-\_\-\-By\-Id@{Delete\-\_\-\-Users\-Authorizes\-\_\-\-By\-Id}!DBClass@{D\-B\-Class}}
+\subsubsection[{Delete\-\_\-\-Users\-Authorizes\-\_\-\-By\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Delete\-\_\-\-Users\-Authorizes\-\_\-\-By\-Id (
+\begin{DoxyParamCaption}
+\item[{int}]{autoid}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a24d9d653a4be300dd6136af86afadd1b}
+delete user authorize by id \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a24d9d653a4be300dd6136af86afadd1b}{Delete\-\_\-\-Users\-Authorizes\-\_\-\-By\-Id()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em autoid} & id user authorize need delete \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 142 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a7ccd4c71dd6fae6380139ec0090d9b61}{\index{D\-B\-Class@{D\-B\-Class}!Delete\-Paramaters@{Delete\-Paramaters}}
+\index{Delete\-Paramaters@{Delete\-Paramaters}!DBClass@{D\-B\-Class}}
+\subsubsection[{Delete\-Paramaters}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Delete\-Paramaters (
+\begin{DoxyParamCaption}
+\item[{int}]{Auto\-Id}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a7ccd4c71dd6fae6380139ec0090d9b61}
+delete parameter by id \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a7ccd4c71dd6fae6380139ec0090d9b61}{Delete\-Paramaters()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 448 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a29ee46245e52b057a2a7e0d42cc72307}{\index{D\-B\-Class@{D\-B\-Class}!Edit\-\_\-\-Success@{Edit\-\_\-\-Success}}
+\index{Edit\-\_\-\-Success@{Edit\-\_\-\-Success}!DBClass@{D\-B\-Class}}
+\subsubsection[{Edit\-\_\-\-Success}]{\setlength{\rightskip}{0pt plus 5cm}string D\-B\-Class.\-Edit\-\_\-\-Success (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a29ee46245e52b057a2a7e0d42cc72307}
+message box confirm edit \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a29ee46245e52b057a2a7e0d42cc72307}{Edit\-\_\-\-Success()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+string value 
+\end{DoxyReturn}
+
+
+Definition at line 939 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a9fe3e632d65861059ff2f8eb6c266a7b}{\index{D\-B\-Class@{D\-B\-Class}!Execute\-Non\-Query@{Execute\-Non\-Query}}
+\index{Execute\-Non\-Query@{Execute\-Non\-Query}!DBClass@{D\-B\-Class}}
+\subsubsection[{Execute\-Non\-Query}]{\setlength{\rightskip}{0pt plus 5cm}virtual int D\-B\-Class.\-Execute\-Non\-Query (
+\begin{DoxyParamCaption}
+\item[{string}]{Procedure\-Name, }
+\item[{params object\mbox{[}$\,$\mbox{]}}]{Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_d_b_class_a9fe3e632d65861059ff2f8eb6c266a7b}
+execute procedure insert, update, delete \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a9fe3e632d65861059ff2f8eb6c266a7b}{Execute\-Non\-Query()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 37 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a3995c60b4a603b90560f5180ae929348}{\index{D\-B\-Class@{D\-B\-Class}!Execute\-Scalar@{Execute\-Scalar}}
+\index{Execute\-Scalar@{Execute\-Scalar}!DBClass@{D\-B\-Class}}
+\subsubsection[{Execute\-Scalar}]{\setlength{\rightskip}{0pt plus 5cm}virtual object D\-B\-Class.\-Execute\-Scalar (
+\begin{DoxyParamCaption}
+\item[{string}]{Procedure\-Name, }
+\item[{params object\mbox{[}$\,$\mbox{]}}]{Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_d_b_class_a3995c60b4a603b90560f5180ae929348}
+execute procedure insert, update, delete \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a3995c60b4a603b90560f5180ae929348}{Execute\-Scalar()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a18ad84f7d11d749b4a1d7eb633b5e6b4}{\index{D\-B\-Class@{D\-B\-Class}!Get\-\_\-\-Is\-U\-S\-\_\-\-User\-Track\-My\-Health\-\_\-\-By\-User\-Name@{Get\-\_\-\-Is\-U\-S\-\_\-\-User\-Track\-My\-Health\-\_\-\-By\-User\-Name}}
+\index{Get\-\_\-\-Is\-U\-S\-\_\-\-User\-Track\-My\-Health\-\_\-\-By\-User\-Name@{Get\-\_\-\-Is\-U\-S\-\_\-\-User\-Track\-My\-Health\-\_\-\-By\-User\-Name}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-\_\-\-Is\-U\-S\-\_\-\-User\-Track\-My\-Health\-\_\-\-By\-User\-Name}]{\setlength{\rightskip}{0pt plus 5cm}bool D\-B\-Class.\-Get\-\_\-\-Is\-U\-S\-\_\-\-User\-Track\-My\-Health\-\_\-\-By\-User\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a18ad84f7d11d749b4a1d7eb633b5e6b4}
+check user is U\-S \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a18ad84f7d11d749b4a1d7eb633b5e6b4}{Get\-\_\-\-Is\-U\-S\-\_\-\-User\-Track\-My\-Health\-\_\-\-By\-User\-Name()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+bool value 
+\end{DoxyReturn}
+
+
+Definition at line 903 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a8b1c1583c7deaf27f452d121c1ad06b3}{\index{D\-B\-Class@{D\-B\-Class}!Get\-\_\-\-Registration\-Code\-\_\-\-Automatic@{Get\-\_\-\-Registration\-Code\-\_\-\-Automatic}}
+\index{Get\-\_\-\-Registration\-Code\-\_\-\-Automatic@{Get\-\_\-\-Registration\-Code\-\_\-\-Automatic}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-\_\-\-Registration\-Code\-\_\-\-Automatic}]{\setlength{\rightskip}{0pt plus 5cm}string D\-B\-Class.\-Get\-\_\-\-Registration\-Code\-\_\-\-Automatic (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a8b1c1583c7deaf27f452d121c1ad06b3}
+get string register code automatic \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a8b1c1583c7deaf27f452d121c1ad06b3}{Get\-\_\-\-Registration\-Code\-\_\-\-Automatic()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+string value 
+\end{DoxyReturn}
+
+
+Definition at line 891 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ae23b78ebc687ddc3e6ed4cc7db52eec8}{\index{D\-B\-Class@{D\-B\-Class}!Get\-\_\-\-Registration\-Code\-\_\-\-By\-Member\-Type@{Get\-\_\-\-Registration\-Code\-\_\-\-By\-Member\-Type}}
+\index{Get\-\_\-\-Registration\-Code\-\_\-\-By\-Member\-Type@{Get\-\_\-\-Registration\-Code\-\_\-\-By\-Member\-Type}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-\_\-\-Registration\-Code\-\_\-\-By\-Member\-Type}]{\setlength{\rightskip}{0pt plus 5cm}string D\-B\-Class.\-Get\-\_\-\-Registration\-Code\-\_\-\-By\-Member\-Type (
+\begin{DoxyParamCaption}
+\item[{string}]{membertype}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ae23b78ebc687ddc3e6ed4cc7db52eec8}
+get string code by membertype \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ae23b78ebc687ddc3e6ed4cc7db52eec8}{Get\-\_\-\-Registration\-Code\-\_\-\-By\-Member\-Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+string value 
+\end{DoxyReturn}
+
+
+Definition at line 879 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a95cc7b89b936bed76372b6cee5fac8bb}{\index{D\-B\-Class@{D\-B\-Class}!Get\-\_\-\-Total\-Amount\-Due\-\_\-\-By\-Account\-Number@{Get\-\_\-\-Total\-Amount\-Due\-\_\-\-By\-Account\-Number}}
+\index{Get\-\_\-\-Total\-Amount\-Due\-\_\-\-By\-Account\-Number@{Get\-\_\-\-Total\-Amount\-Due\-\_\-\-By\-Account\-Number}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-\_\-\-Total\-Amount\-Due\-\_\-\-By\-Account\-Number}]{\setlength{\rightskip}{0pt plus 5cm}decimal D\-B\-Class.\-Get\-\_\-\-Total\-Amount\-Due\-\_\-\-By\-Account\-Number (
+\begin{DoxyParamCaption}
+\item[{string}]{Account\-Number}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a95cc7b89b936bed76372b6cee5fac8bb}
+get total amount due by account number \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a95cc7b89b936bed76372b6cee5fac8bb}{Get\-\_\-\-Total\-Amount\-Due\-\_\-\-By\-Account\-Number()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+decimal value 
+\end{DoxyReturn}
+
+
+Definition at line 820 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a8eca9d29902373dde46eb6ff616b7f42}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Count\-\_\-\-Email\-Alarm\-\_\-\-By\-User\-Name@{Get\-Count\-\_\-\-Email\-Alarm\-\_\-\-By\-User\-Name}}
+\index{Get\-Count\-\_\-\-Email\-Alarm\-\_\-\-By\-User\-Name@{Get\-Count\-\_\-\-Email\-Alarm\-\_\-\-By\-User\-Name}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Count\-\_\-\-Email\-Alarm\-\_\-\-By\-User\-Name}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Get\-Count\-\_\-\-Email\-Alarm\-\_\-\-By\-User\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a8eca9d29902373dde46eb6ff616b7f42}
+get total email alarm by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a8eca9d29902373dde46eb6ff616b7f42}{Get\-Count\-\_\-\-Email\-Alarm\-\_\-\-By\-User\-Name()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 
+\end{DoxyReturn}
+
+
+Definition at line 855 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a9314af57c8a3bc7bc95233f67892ed81}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Count\-\_\-\-Email\-New\-\_\-\-By\-User\-Name@{Get\-Count\-\_\-\-Email\-New\-\_\-\-By\-User\-Name}}
+\index{Get\-Count\-\_\-\-Email\-New\-\_\-\-By\-User\-Name@{Get\-Count\-\_\-\-Email\-New\-\_\-\-By\-User\-Name}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Count\-\_\-\-Email\-New\-\_\-\-By\-User\-Name}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Get\-Count\-\_\-\-Email\-New\-\_\-\-By\-User\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a9314af57c8a3bc7bc95233f67892ed81}
+get total email new by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a9314af57c8a3bc7bc95233f67892ed81}{Get\-Count\-\_\-\-Email\-New\-\_\-\-By\-User\-Name()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 
+\end{DoxyReturn}
+
+
+Definition at line 867 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aa7e7e02bfe40b7f2cbbcb968245bcedf}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Count\-\_\-\-Email\-Sent\-\_\-\-By\-User\-Name@{Get\-Count\-\_\-\-Email\-Sent\-\_\-\-By\-User\-Name}}
+\index{Get\-Count\-\_\-\-Email\-Sent\-\_\-\-By\-User\-Name@{Get\-Count\-\_\-\-Email\-Sent\-\_\-\-By\-User\-Name}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Count\-\_\-\-Email\-Sent\-\_\-\-By\-User\-Name}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Get\-Count\-\_\-\-Email\-Sent\-\_\-\-By\-User\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aa7e7e02bfe40b7f2cbbcb968245bcedf}
+get total email send by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_aa7e7e02bfe40b7f2cbbcb968245bcedf}{Get\-Count\-\_\-\-Email\-Sent\-\_\-\-By\-User\-Name()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 
+\end{DoxyReturn}
+
+
+Definition at line 843 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aead8cbe00c4eae2083023a1d4064da98}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Count\-\_\-\-Email\-Trash\-\_\-\-By\-User\-Name@{Get\-Count\-\_\-\-Email\-Trash\-\_\-\-By\-User\-Name}}
+\index{Get\-Count\-\_\-\-Email\-Trash\-\_\-\-By\-User\-Name@{Get\-Count\-\_\-\-Email\-Trash\-\_\-\-By\-User\-Name}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Count\-\_\-\-Email\-Trash\-\_\-\-By\-User\-Name}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Get\-Count\-\_\-\-Email\-Trash\-\_\-\-By\-User\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aead8cbe00c4eae2083023a1d4064da98}
+get total email trash by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_aead8cbe00c4eae2083023a1d4064da98}{Get\-Count\-\_\-\-Email\-Trash\-\_\-\-By\-User\-Name()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 
+\end{DoxyReturn}
+
+
+Definition at line 831 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a3d3793d07d5bdfcb8e904f1272f1e314}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Data\-Row@{Get\-Data\-Row}}
+\index{Get\-Data\-Row@{Get\-Data\-Row}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Data\-Row}]{\setlength{\rightskip}{0pt plus 5cm}virtual Data\-Row D\-B\-Class.\-Get\-Data\-Row (
+\begin{DoxyParamCaption}
+\item[{string}]{Procedure\-Name, }
+\item[{params object\mbox{[}$\,$\mbox{]}}]{Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_d_b_class_a3d3793d07d5bdfcb8e904f1272f1e314}
+get data by procedure \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a3d3793d07d5bdfcb8e904f1272f1e314}{Get\-Data\-Row()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Data\-Row 
+\end{DoxyReturn}
+
+
+Definition at line 46 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_af7d28bb6d82d5ed48310a9807148afea}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Data\-Row@{Get\-Data\-Row}}
+\index{Get\-Data\-Row@{Get\-Data\-Row}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Data\-Row}]{\setlength{\rightskip}{0pt plus 5cm}virtual Data\-Row D\-B\-Class.\-Get\-Data\-Row (
+\begin{DoxyParamCaption}
+\item[{int}]{Row\-Index, }
+\item[{string}]{Procedure\-Name, }
+\item[{params object\mbox{[}$\,$\mbox{]}}]{Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_d_b_class_af7d28bb6d82d5ed48310a9807148afea}
+get datarow in datatable by rowindex \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a3d3793d07d5bdfcb8e904f1272f1e314}{Get\-Data\-Row()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Data\-Row 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a4061cee8189ba6ee8c6ebf19be8567dc}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Data\-Set@{Get\-Data\-Set}}
+\index{Get\-Data\-Set@{Get\-Data\-Set}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Data\-Set}]{\setlength{\rightskip}{0pt plus 5cm}static Data\-Set D\-B\-Class.\-Get\-Data\-Set (
+\begin{DoxyParamCaption}
+\item[{string}]{Procedure\-Name, }
+\item[{params object\mbox{[}$\,$\mbox{]}}]{Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_d_b_class_a4061cee8189ba6ee8c6ebf19be8567dc}
+get dataset by procedure \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a4061cee8189ba6ee8c6ebf19be8567dc}{Get\-Data\-Set()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Data\-Set 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ab3e7318b0c12986f5b4bbf566a1aec32}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Data\-Table@{Get\-Data\-Table}}
+\index{Get\-Data\-Table@{Get\-Data\-Table}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Data\-Table}]{\setlength{\rightskip}{0pt plus 5cm}static Data\-Table D\-B\-Class.\-Get\-Data\-Table (
+\begin{DoxyParamCaption}
+\item[{int}]{Table\-Index, }
+\item[{string}]{Procedure\-Name, }
+\item[{params object\mbox{[}$\,$\mbox{]}}]{Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_d_b_class_ab3e7318b0c12986f5b4bbf566a1aec32}
+get datatable in dataset by tableindex \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ab3e7318b0c12986f5b4bbf566a1aec32}{Get\-Data\-Table()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Data\-Table 
+\end{DoxyReturn}
+
+
+Definition at line 75 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a7ba7be30e81075831d240a4c905ac650}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Data\-Table@{Get\-Data\-Table}}
+\index{Get\-Data\-Table@{Get\-Data\-Table}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Data\-Table}]{\setlength{\rightskip}{0pt plus 5cm}static Data\-Table D\-B\-Class.\-Get\-Data\-Table (
+\begin{DoxyParamCaption}
+\item[{string}]{Procedure\-Name, }
+\item[{params object\mbox{[}$\,$\mbox{]}}]{Parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_d_b_class_a7ba7be30e81075831d240a4c905ac650}
+get datatable by procedure \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ab3e7318b0c12986f5b4bbf566a1aec32}{Get\-Data\-Table()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Data\-Table 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a708536f33fd79b8bbe0ddaff66ed643b}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Email\-\_\-\-By\-User\-Name@{Get\-Email\-\_\-\-By\-User\-Name}}
+\index{Get\-Email\-\_\-\-By\-User\-Name@{Get\-Email\-\_\-\-By\-User\-Name}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Email\-\_\-\-By\-User\-Name}]{\setlength{\rightskip}{0pt plus 5cm}object D\-B\-Class.\-Get\-Email\-\_\-\-By\-User\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a708536f33fd79b8bbe0ddaff66ed643b}
+get email by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a708536f33fd79b8bbe0ddaff66ed643b}{Get\-Email\-\_\-\-By\-User\-Name()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+object value is email 
+\end{DoxyReturn}
+
+
+Definition at line 591 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a55a667ccc7d91f17f481a874f287890f}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Billing\-Accounts@{Get\-Info\-\_\-\-Billing\-Accounts}}
+\index{Get\-Info\-\_\-\-Billing\-Accounts@{Get\-Info\-\_\-\-Billing\-Accounts}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Billing\-Accounts}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-Info\-\_\-\-Billing\-Accounts (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a55a667ccc7d91f17f481a874f287890f}
+get info billing account \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a615a48cab9c51ef041a71bf4448cf4c4}{Get\-Info\-\_\-\-Pay\-Bill\-\_\-\-Credit\-Card()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 504 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a2fc3997462f0ee4b552309ea63529a3a}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Billing\-Accounts\-\_\-\-User@{Get\-Info\-\_\-\-Billing\-Accounts\-\_\-\-User}}
+\index{Get\-Info\-\_\-\-Billing\-Accounts\-\_\-\-User@{Get\-Info\-\_\-\-Billing\-Accounts\-\_\-\-User}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Billing\-Accounts\-\_\-\-User}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-Billing\-Accounts\-\_\-\-User (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a2fc3997462f0ee4b552309ea63529a3a}
+get info billing account user \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a2fc3997462f0ee4b552309ea63529a3a}{Get\-Info\-\_\-\-Billing\-Accounts\-\_\-\-User()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 513 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a2c851e40cf0bde4ad893668dea5f4c8a}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Billing\-Info\-\_\-\-By\-Id@{Get\-Info\-\_\-\-Billing\-Info\-\_\-\-By\-Id}}
+\index{Get\-Info\-\_\-\-Billing\-Info\-\_\-\-By\-Id@{Get\-Info\-\_\-\-Billing\-Info\-\_\-\-By\-Id}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Billing\-Info\-\_\-\-By\-Id}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-Info\-\_\-\-Billing\-Info\-\_\-\-By\-Id (
+\begin{DoxyParamCaption}
+\item[{string}]{Payment\-Id}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a2c851e40cf0bde4ad893668dea5f4c8a}
+get info billing by payment id \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a2c851e40cf0bde4ad893668dea5f4c8a}{Get\-Info\-\_\-\-Billing\-Info\-\_\-\-By\-Id()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 699 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a1a96f514a3e855d11e45b296e3541b97}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Body\-Measurement@{Get\-Info\-\_\-\-Body\-Measurement}}
+\index{Get\-Info\-\_\-\-Body\-Measurement@{Get\-Info\-\_\-\-Body\-Measurement}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Body\-Measurement}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-Body\-Measurement (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a1a96f514a3e855d11e45b296e3541b97}
+get info body measurement by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a1a96f514a3e855d11e45b296e3541b97}{Get\-Info\-\_\-\-Body\-Measurement()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1094 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aa2228c10fe161653f3ee1a8938249747}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Body\-Measurement\-\_\-\-Graph@{Get\-Info\-\_\-\-Body\-Measurement\-\_\-\-Graph}}
+\index{Get\-Info\-\_\-\-Body\-Measurement\-\_\-\-Graph@{Get\-Info\-\_\-\-Body\-Measurement\-\_\-\-Graph}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Body\-Measurement\-\_\-\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-Info\-\_\-\-Body\-Measurement\-\_\-\-Graph (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aa2228c10fe161653f3ee1a8938249747}
+get info body measurement give graph \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_aa2228c10fe161653f3ee1a8938249747}{Get\-Info\-\_\-\-Body\-Measurement\-\_\-\-Graph()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1121 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_af38b686d7f8458e55251e3b5b3c554d4}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Email\-Templates@{Get\-Info\-\_\-\-Email\-Templates}}
+\index{Get\-Info\-\_\-\-Email\-Templates@{Get\-Info\-\_\-\-Email\-Templates}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Email\-Templates}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-Info\-\_\-\-Email\-Templates (
+\begin{DoxyParamCaption}
+\item[{int}]{Id}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_af38b686d7f8458e55251e3b5b3c554d4}
+get info email templete \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_af38b686d7f8458e55251e3b5b3c554d4}{Get\-Info\-\_\-\-Email\-Templates()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 719 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a5facb048821017872ad28def8ed62069}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Fertility@{Get\-Info\-\_\-\-Fertility}}
+\index{Get\-Info\-\_\-\-Fertility@{Get\-Info\-\_\-\-Fertility}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Fertility}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-Fertility (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a5facb048821017872ad28def8ed62069}
+get info Fertility by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a5facb048821017872ad28def8ed62069}{Get\-Info\-\_\-\-Fertility()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 1522 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ab7a630ce1c5e96d2a3430824a326299a}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Fitness@{Get\-Info\-\_\-\-Fitness}}
+\index{Get\-Info\-\_\-\-Fitness@{Get\-Info\-\_\-\-Fitness}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Fitness}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-Fitness (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ab7a630ce1c5e96d2a3430824a326299a}
+get info fitness by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ab7a630ce1c5e96d2a3430824a326299a}{Get\-Info\-\_\-\-Fitness()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 1368 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a5be81c16e8893940b65e6cd7492d0517}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-By\-Fitness\-H\-R\-Program\-Id@{Get\-Info\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-By\-Fitness\-H\-R\-Program\-Id}}
+\index{Get\-Info\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-By\-Fitness\-H\-R\-Program\-Id@{Get\-Info\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-By\-Fitness\-H\-R\-Program\-Id}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-By\-Fitness\-H\-R\-Program\-Id}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-Info\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-By\-Fitness\-H\-R\-Program\-Id (
+\begin{DoxyParamCaption}
+\item[{int}]{fitness\-H\-R\-Program\-Id}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a5be81c16e8893940b65e6cd7492d0517}
+get info fitness hrexercise program by fitness program id \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a5be81c16e8893940b65e6cd7492d0517}{Get\-Info\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-By\-Fitness\-H\-R\-Program\-Id()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1423 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a7f44358ae70f852c5318bab2673d86ef}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-By\-Fitness\-Id@{Get\-Info\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-By\-Fitness\-Id}}
+\index{Get\-Info\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-By\-Fitness\-Id@{Get\-Info\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-By\-Fitness\-Id}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-By\-Fitness\-Id}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-By\-Fitness\-Id (
+\begin{DoxyParamCaption}
+\item[{int}]{fitness\-Id}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a7f44358ae70f852c5318bab2673d86ef}
+get info fitness hrexercise program by fitness id \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a7f44358ae70f852c5318bab2673d86ef}{Get\-Info\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-By\-Fitness\-Id()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 1414 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a3e9f42bdd55ea3ced5e793bbbaa304e9}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Heart\-Rate@{Get\-Info\-\_\-\-Heart\-Rate}}
+\index{Get\-Info\-\_\-\-Heart\-Rate@{Get\-Info\-\_\-\-Heart\-Rate}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Heart\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-Heart\-Rate (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a3e9f42bdd55ea3ced5e793bbbaa304e9}
+get info heart rate by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a3e9f42bdd55ea3ced5e793bbbaa304e9}{Get\-Info\-\_\-\-Heart\-Rate()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 1170 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_af0371885100aee5897fad3d19f1cabc4}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Message\-Center\-\_\-\-By\-Id@{Get\-Info\-\_\-\-Message\-Center\-\_\-\-By\-Id}}
+\index{Get\-Info\-\_\-\-Message\-Center\-\_\-\-By\-Id@{Get\-Info\-\_\-\-Message\-Center\-\_\-\-By\-Id}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Message\-Center\-\_\-\-By\-Id}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-Message\-Center\-\_\-\-By\-Id (
+\begin{DoxyParamCaption}
+\item[{int}]{Message\-Id}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_af0371885100aee5897fad3d19f1cabc4}
+get info message by id \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_af0371885100aee5897fad3d19f1cabc4}{Get\-Info\-\_\-\-Message\-Center\-\_\-\-By\-Id()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 582 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a615a48cab9c51ef041a71bf4448cf4c4}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Pay\-Bill\-\_\-\-Credit\-Card@{Get\-Info\-\_\-\-Pay\-Bill\-\_\-\-Credit\-Card}}
+\index{Get\-Info\-\_\-\-Pay\-Bill\-\_\-\-Credit\-Card@{Get\-Info\-\_\-\-Pay\-Bill\-\_\-\-Credit\-Card}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Pay\-Bill\-\_\-\-Credit\-Card}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-Pay\-Bill\-\_\-\-Credit\-Card (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a615a48cab9c51ef041a71bf4448cf4c4}
+get info pay bill card \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a615a48cab9c51ef041a71bf4448cf4c4}{Get\-Info\-\_\-\-Pay\-Bill\-\_\-\-Credit\-Card()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 494 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_acbbbf8d9d956c84edccb36e85bc240e3}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Position@{Get\-Info\-\_\-\-Position}}
+\index{Get\-Info\-\_\-\-Position@{Get\-Info\-\_\-\-Position}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Position}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-Position (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_acbbbf8d9d956c84edccb36e85bc240e3}
+get info Position by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_acbbbf8d9d956c84edccb36e85bc240e3}{Get\-Info\-\_\-\-Position()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 1571 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a0db4839a470f33aa8e982bebddaaa001}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Rule\-\_\-\-By\-User\-Name@{Get\-Info\-\_\-\-Rule\-\_\-\-By\-User\-Name}}
+\index{Get\-Info\-\_\-\-Rule\-\_\-\-By\-User\-Name@{Get\-Info\-\_\-\-Rule\-\_\-\-By\-User\-Name}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Rule\-\_\-\-By\-User\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-Rule\-\_\-\-By\-User\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a0db4839a470f33aa8e982bebddaaa001}
+get info rule by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a0db4839a470f33aa8e982bebddaaa001}{Get\-Info\-\_\-\-Rule\-\_\-\-By\-User\-Name()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 211 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_af30a4aa2b39b452b77380ae85ff365f4}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Sleep@{Get\-Info\-\_\-\-Sleep}}
+\index{Get\-Info\-\_\-\-Sleep@{Get\-Info\-\_\-\-Sleep}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Sleep}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-Sleep (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_af30a4aa2b39b452b77380ae85ff365f4}
+get info sleep by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_af30a4aa2b39b452b77380ae85ff365f4}{Get\-Info\-\_\-\-Sleep()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 1640 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aee73d7edc2d2f75e0c26d2d31597039e}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Sp\-O2@{Get\-Info\-\_\-\-Sp\-O2}}
+\index{Get\-Info\-\_\-\-Sp\-O2@{Get\-Info\-\_\-\-Sp\-O2}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Sp\-O2}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-Sp\-O2 (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aee73d7edc2d2f75e0c26d2d31597039e}
+get info oxygen by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_aee73d7edc2d2f75e0c26d2d31597039e}{Get\-Info\-\_\-\-Sp\-O2()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 1238 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a8e9823ed71afddef6b015fd2af946c3e}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Sp\-O2\-\_\-\-Tracking\-Mode\-Type@{Get\-Info\-\_\-\-Sp\-O2\-\_\-\-Tracking\-Mode\-Type}}
+\index{Get\-Info\-\_\-\-Sp\-O2\-\_\-\-Tracking\-Mode\-Type@{Get\-Info\-\_\-\-Sp\-O2\-\_\-\-Tracking\-Mode\-Type}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Sp\-O2\-\_\-\-Tracking\-Mode\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-Sp\-O2\-\_\-\-Tracking\-Mode\-Type (
+\begin{DoxyParamCaption}
+\item[{int}]{Id}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a8e9823ed71afddef6b015fd2af946c3e}
+get info oxygen tracking mode type by id \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a8e9823ed71afddef6b015fd2af946c3e}{Get\-Info\-\_\-\-Sp\-O2\-\_\-\-Tracking\-Mode\-Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 1229 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_acf04cf47637571f88a6070d17e7ecd9d}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Stress@{Get\-Info\-\_\-\-Stress}}
+\index{Get\-Info\-\_\-\-Stress@{Get\-Info\-\_\-\-Stress}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Stress}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-Stress (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_acf04cf47637571f88a6070d17e7ecd9d}
+get info stress by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_acf04cf47637571f88a6070d17e7ecd9d}{Get\-Info\-\_\-\-Stress()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 1463 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a7beb5ee76c22290fbd4105d939f6f1db}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-User\-All\-\_\-\-By\-User\-Name@{Get\-Info\-\_\-\-User\-All\-\_\-\-By\-User\-Name}}
+\index{Get\-Info\-\_\-\-User\-All\-\_\-\-By\-User\-Name@{Get\-Info\-\_\-\-User\-All\-\_\-\-By\-User\-Name}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-User\-All\-\_\-\-By\-User\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-Info\-\_\-\-User\-All\-\_\-\-By\-User\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a7beb5ee76c22290fbd4105d939f6f1db}
+get info user by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a7beb5ee76c22290fbd4105d939f6f1db}{Get\-Info\-\_\-\-User\-All\-\_\-\-By\-User\-Name()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 689 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a0fa08325a7d843fa631763b708fc32be}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-User\-Overview@{Get\-Info\-\_\-\-User\-Overview}}
+\index{Get\-Info\-\_\-\-User\-Overview@{Get\-Info\-\_\-\-User\-Overview}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-User\-Overview}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-User\-Overview (
+\begin{DoxyParamCaption}
+\item[{string}]{Username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a0fa08325a7d843fa631763b708fc32be}
+get info user overview by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a0fa08325a7d843fa631763b708fc32be}{Get\-Info\-\_\-\-User\-Overview()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 758 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a968aacf4f03ce8b3d11fdfeb72bd7301}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Users\-All\-\_\-\-By\-User\-Name@{Get\-Info\-\_\-\-Users\-All\-\_\-\-By\-User\-Name}}
+\index{Get\-Info\-\_\-\-Users\-All\-\_\-\-By\-User\-Name@{Get\-Info\-\_\-\-Users\-All\-\_\-\-By\-User\-Name}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Users\-All\-\_\-\-By\-User\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-Users\-All\-\_\-\-By\-User\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a968aacf4f03ce8b3d11fdfeb72bd7301}
+get user info by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a968aacf4f03ce8b3d11fdfeb72bd7301}{Get\-Info\-\_\-\-Users\-All\-\_\-\-By\-User\-Name()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow info user 
+\end{DoxyReturn}
+
+
+Definition at line 192 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a954ef42cfdb46f0757f30f088a60da27}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-Users\-Contact\-\_\-\-By\-User\-Name@{Get\-Info\-\_\-\-Users\-Contact\-\_\-\-By\-User\-Name}}
+\index{Get\-Info\-\_\-\-Users\-Contact\-\_\-\-By\-User\-Name@{Get\-Info\-\_\-\-Users\-Contact\-\_\-\-By\-User\-Name}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-Users\-Contact\-\_\-\-By\-User\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-Users\-Contact\-\_\-\-By\-User\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a954ef42cfdb46f0757f30f088a60da27}
+get info user contact by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a954ef42cfdb46f0757f30f088a60da27}{Get\-Info\-\_\-\-Users\-Contact\-\_\-\-By\-User\-Name()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 230 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ae02372dc18e31565b4831363761727ce}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-User\-Setting\-Color@{Get\-Info\-\_\-\-User\-Setting\-Color}}
+\index{Get\-Info\-\_\-\-User\-Setting\-Color@{Get\-Info\-\_\-\-User\-Setting\-Color}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-User\-Setting\-Color}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-User\-Setting\-Color (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ae02372dc18e31565b4831363761727ce}
+get info color by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ae02372dc18e31565b4831363761727ce}{Get\-Info\-\_\-\-User\-Setting\-Color()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow info color by username 
+\end{DoxyReturn}
+
+
+Definition at line 650 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ad9671a70651f9956eec03dbb5de3859e}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-User\-Track\-My\-Health@{Get\-Info\-\_\-\-User\-Track\-My\-Health}}
+\index{Get\-Info\-\_\-\-User\-Track\-My\-Health@{Get\-Info\-\_\-\-User\-Track\-My\-Health}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-User\-Track\-My\-Health}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-User\-Track\-My\-Health (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ad9671a70651f9956eec03dbb5de3859e}
+get info track health by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ad9671a70651f9956eec03dbb5de3859e}{Get\-Info\-\_\-\-User\-Track\-My\-Health()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow info track health by username 
+\end{DoxyReturn}
+
+
+Definition at line 999 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ab25c43efd861fb5974df1edc2983a64d}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Info\-\_\-\-User\-Track\-My\-Health\-\_\-\-Measurement@{Get\-Info\-\_\-\-User\-Track\-My\-Health\-\_\-\-Measurement}}
+\index{Get\-Info\-\_\-\-User\-Track\-My\-Health\-\_\-\-Measurement@{Get\-Info\-\_\-\-User\-Track\-My\-Health\-\_\-\-Measurement}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Info\-\_\-\-User\-Track\-My\-Health\-\_\-\-Measurement}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Get\-Info\-\_\-\-User\-Track\-My\-Health\-\_\-\-Measurement (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ab25c43efd861fb5974df1edc2983a64d}
+get info track health measurement by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ab25c43efd861fb5974df1edc2983a64d}{Get\-Info\-\_\-\-User\-Track\-My\-Health\-\_\-\-Measurement()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow info track health measurement 
+\end{DoxyReturn}
+
+
+Definition at line 659 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a37ba813f04c86f37ae0ff356c924daa3}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Admin\-Messages@{Get\-List\-\_\-\-Admin\-Messages}}
+\index{Get\-List\-\_\-\-Admin\-Messages@{Get\-List\-\_\-\-Admin\-Messages}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Admin\-Messages}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Set D\-B\-Class.\-Get\-List\-\_\-\-Admin\-Messages (
+\begin{DoxyParamCaption}
+\item[{int}]{Id, }
+\item[{string}]{Code, }
+\item[{string}]{Title}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a37ba813f04c86f37ae0ff356c924daa3}
+get list message, admin message \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a37ba813f04c86f37ae0ff356c924daa3}{Get\-List\-\_\-\-Admin\-Messages()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+dataset 
+\end{DoxyReturn}
+
+
+Definition at line 366 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a6b82464db643c0331528f6a2fa6e7c69}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Authorized\-User@{Get\-List\-\_\-\-Authorized\-User}}
+\index{Get\-List\-\_\-\-Authorized\-User@{Get\-List\-\_\-\-Authorized\-User}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Authorized\-User}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Set D\-B\-Class.\-Get\-List\-\_\-\-Authorized\-User (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a6b82464db643c0331528f6a2fa6e7c69}
+get list user authorize \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a6b82464db643c0331528f6a2fa6e7c69}{Get\-List\-\_\-\-Authorized\-User()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+dataset 
+\end{DoxyReturn}
+
+
+Definition at line 240 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a0401b205dab60659fa1b0d5e08a6380e}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Billing\-Account\-Details@{Get\-List\-\_\-\-Billing\-Account\-Details}}
+\index{Get\-List\-\_\-\-Billing\-Account\-Details@{Get\-List\-\_\-\-Billing\-Account\-Details}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Billing\-Account\-Details}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Billing\-Account\-Details (
+\begin{DoxyParamCaption}
+\item[{string}]{Account\-Number}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a0401b205dab60659fa1b0d5e08a6380e}
+get list billing account details \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a0401b205dab60659fa1b0d5e08a6380e}{Get\-List\-\_\-\-Billing\-Account\-Details()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 523 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_af38a7f3159f4c030237c6dd91db26a9d}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Billing\-Account\-Types@{Get\-List\-\_\-\-Billing\-Account\-Types}}
+\index{Get\-List\-\_\-\-Billing\-Account\-Types@{Get\-List\-\_\-\-Billing\-Account\-Types}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Billing\-Account\-Types}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Billing\-Account\-Types (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_af38a7f3159f4c030237c6dd91db26a9d}
+get list billing type \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_af38a7f3159f4c030237c6dd91db26a9d}{Get\-List\-\_\-\-Billing\-Account\-Types()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 221 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a1325a85d94c5ca023962fe8b9be00d20}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Billing\-Payments@{Get\-List\-\_\-\-Billing\-Payments}}
+\index{Get\-List\-\_\-\-Billing\-Payments@{Get\-List\-\_\-\-Billing\-Payments}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Billing\-Payments}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Billing\-Payments (
+\begin{DoxyParamCaption}
+\item[{string}]{Account\-Number}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a1325a85d94c5ca023962fe8b9be00d20}
+get list billing payment \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a1325a85d94c5ca023962fe8b9be00d20}{Get\-List\-\_\-\-Billing\-Payments()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 533 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a977ea5e7570c7bf8d20c9788161f60f6}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Body\-Activity\-Factor\-Type@{Get\-List\-\_\-\-Body\-Activity\-Factor\-Type}}
+\index{Get\-List\-\_\-\-Body\-Activity\-Factor\-Type@{Get\-List\-\_\-\-Body\-Activity\-Factor\-Type}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Body\-Activity\-Factor\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Body\-Activity\-Factor\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a977ea5e7570c7bf8d20c9788161f60f6}
+get list body activity factor type \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a977ea5e7570c7bf8d20c9788161f60f6}{Get\-List\-\_\-\-Body\-Activity\-Factor\-Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1085 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a9bad7290fc0114ab60d343157dee22b1}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Body\-B\-F\-Type@{Get\-List\-\_\-\-Body\-B\-F\-Type}}
+\index{Get\-List\-\_\-\-Body\-B\-F\-Type@{Get\-List\-\_\-\-Body\-B\-F\-Type}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Body\-B\-F\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Body\-B\-F\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a9bad7290fc0114ab60d343157dee22b1}
+get list B\-F Type measurement method \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a9bad7290fc0114ab60d343157dee22b1}{Get\-List\-\_\-\-Body\-B\-F\-Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1021 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aa2a657479fe0ef609218bce4530f53ba}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Body\-B\-M\-R\-Type@{Get\-List\-\_\-\-Body\-B\-M\-R\-Type}}
+\index{Get\-List\-\_\-\-Body\-B\-M\-R\-Type@{Get\-List\-\_\-\-Body\-B\-M\-R\-Type}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Body\-B\-M\-R\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Body\-B\-M\-R\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aa2a657479fe0ef609218bce4530f53ba}
+get list B\-M\-R Type measurement method \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_aa2a657479fe0ef609218bce4530f53ba}{Get\-List\-\_\-\-Body\-B\-M\-R\-Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1030 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a0aabc831282182370eed262235495d33}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Body\-Fat\-Eval@{Get\-List\-\_\-\-Body\-Fat\-Eval}}
+\index{Get\-List\-\_\-\-Body\-Fat\-Eval@{Get\-List\-\_\-\-Body\-Fat\-Eval}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Body\-Fat\-Eval}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Body\-Fat\-Eval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a0aabc831282182370eed262235495d33}
+get list body fateval \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a0aabc831282182370eed262235495d33}{Get\-List\-\_\-\-Body\-Fat\-Eval()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1067 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a85a6d769571f77eef926f08f7a88fe28}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Body\-I\-W\-Type@{Get\-List\-\_\-\-Body\-I\-W\-Type}}
+\index{Get\-List\-\_\-\-Body\-I\-W\-Type@{Get\-List\-\_\-\-Body\-I\-W\-Type}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Body\-I\-W\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Body\-I\-W\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a85a6d769571f77eef926f08f7a88fe28}
+get list body iw type \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a85a6d769571f77eef926f08f7a88fe28}{Get\-List\-\_\-\-Body\-I\-W\-Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1076 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a416e75f38a46c9ab6607c740e175854f}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Datatable@{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Datatable}}
+\index{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Datatable@{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Datatable}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Datatable}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Set D\-B\-Class.\-Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Datatable (
+\begin{DoxyParamCaption}
+\item[{string}]{username, }
+\item[{Date\-Time?}]{fromdate, }
+\item[{Date\-Time?}]{todate}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a416e75f38a46c9ab6607c740e175854f}
+get list data measurement follow table display \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a416e75f38a46c9ab6607c740e175854f}{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Datatable()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1058 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ae1b916fb79600663f47ddefb396223a1}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Graph@{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Graph}}
+\index{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Graph@{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Graph}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Graph (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{fromdate, }
+\item[{Date\-Time?}]{todate}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ae1b916fb79600663f47ddefb396223a1}
+get list body measurement give graph \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ae1b916fb79600663f47ddefb396223a1}{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Graph()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1130 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ac3ab5f6a5dddad118d2a63c41b0b9f02}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Table@{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Table}}
+\index{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Table@{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Table}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Table}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Table (
+\begin{DoxyParamCaption}
+\item[{string}]{username, }
+\item[{Date\-Time?}]{date}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ac3ab5f6a5dddad118d2a63c41b0b9f02}
+get list data measurement follow table display \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ac3ab5f6a5dddad118d2a63c41b0b9f02}{Get\-List\-\_\-\-Body\-Measurement\-\_\-\-Table()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1048 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a8306b2abf31bf8c5762e10945dcc6b69}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Countries@{Get\-List\-\_\-\-Countries}}
+\index{Get\-List\-\_\-\-Countries@{Get\-List\-\_\-\-Countries}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Countries}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Set D\-B\-Class.\-Get\-List\-\_\-\-Countries (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a8306b2abf31bf8c5762e10945dcc6b69}
+get list couontry \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a8306b2abf31bf8c5762e10945dcc6b69}{Get\-List\-\_\-\-Countries()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+dataset 
+\end{DoxyReturn}
+
+
+Definition at line 250 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ac33ddf061999a06d82c2e50f435972cc}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Country\-States@{Get\-List\-\_\-\-Country\-States}}
+\index{Get\-List\-\_\-\-Country\-States@{Get\-List\-\_\-\-Country\-States}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Country\-States}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Set D\-B\-Class.\-Get\-List\-\_\-\-Country\-States (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ac33ddf061999a06d82c2e50f435972cc}
+get list states \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ac33ddf061999a06d82c2e50f435972cc}{Get\-List\-\_\-\-Country\-States()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+dataset 
+\end{DoxyReturn}
+
+
+Definition at line 260 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a69f8d21cf730d614bdef36908ac343b3}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Country\-States\-\_\-\-By\-Country\-Code@{Get\-List\-\_\-\-Country\-States\-\_\-\-By\-Country\-Code}}
+\index{Get\-List\-\_\-\-Country\-States\-\_\-\-By\-Country\-Code@{Get\-List\-\_\-\-Country\-States\-\_\-\-By\-Country\-Code}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Country\-States\-\_\-\-By\-Country\-Code}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Set D\-B\-Class.\-Get\-List\-\_\-\-Country\-States\-\_\-\-By\-Country\-Code (
+\begin{DoxyParamCaption}
+\item[{string}]{countrycode}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a69f8d21cf730d614bdef36908ac343b3}
+get list states by country code \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a69f8d21cf730d614bdef36908ac343b3}{Get\-List\-\_\-\-Country\-States\-\_\-\-By\-Country\-Code()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+dataset 
+\end{DoxyReturn}
+
+
+Definition at line 279 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a98f847d55e901665e418585ab706d4f4}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Credit\-Card\-Type@{Get\-List\-\_\-\-Credit\-Card\-Type}}
+\index{Get\-List\-\_\-\-Credit\-Card\-Type@{Get\-List\-\_\-\-Credit\-Card\-Type}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Credit\-Card\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Set D\-B\-Class.\-Get\-List\-\_\-\-Credit\-Card\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a98f847d55e901665e418585ab706d4f4}
+get list card type \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a98f847d55e901665e418585ab706d4f4}{Get\-List\-\_\-\-Credit\-Card\-Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+dataset 
+\end{DoxyReturn}
+
+
+Definition at line 269 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a0af97a662055ff2a3a41bcc3a28beaea}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Datetime\-\_\-\-Body\-Measurement@{Get\-List\-\_\-\-Datetime\-\_\-\-Body\-Measurement}}
+\index{Get\-List\-\_\-\-Datetime\-\_\-\-Body\-Measurement@{Get\-List\-\_\-\-Datetime\-\_\-\-Body\-Measurement}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Datetime\-\_\-\-Body\-Measurement}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Datetime\-\_\-\-Body\-Measurement (
+\begin{DoxyParamCaption}
+\item[{string}]{username, }
+\item[{Date\-Time?}]{fromdate, }
+\item[{Date\-Time?}]{todate}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a0af97a662055ff2a3a41bcc3a28beaea}
+get list datetime measurement method \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a0af97a662055ff2a3a41bcc3a28beaea}{Get\-List\-\_\-\-Datetime\-\_\-\-Body\-Measurement()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1039 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a92d17fbc58b19d0706febb49eac3af0c}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Email\-Templates@{Get\-List\-\_\-\-Email\-Templates}}
+\index{Get\-List\-\_\-\-Email\-Templates@{Get\-List\-\_\-\-Email\-Templates}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Email\-Templates}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Email\-Templates (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a92d17fbc58b19d0706febb49eac3af0c}
+get list email templete \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a92d17fbc58b19d0706febb49eac3af0c}{Get\-List\-\_\-\-Email\-Templates()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 709 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a6f81c3255588664f2c43d3c0440c9c43}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Fertility\-\_\-\-Graph@{Get\-List\-\_\-\-Fertility\-\_\-\-Graph}}
+\index{Get\-List\-\_\-\-Fertility\-\_\-\-Graph@{Get\-List\-\_\-\-Fertility\-\_\-\-Graph}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Fertility\-\_\-\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Fertility\-\_\-\-Graph (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time}]{From\-Date, }
+\item[{Date\-Time}]{To\-Date}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a6f81c3255588664f2c43d3c0440c9c43}
+get list Fertility give graph \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a6f81c3255588664f2c43d3c0440c9c43}{Get\-List\-\_\-\-Fertility\-\_\-\-Graph()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1558 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ae1fcea41ffa99821225730266d6d8d51}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Fertility\-\_\-\-Table@{Get\-List\-\_\-\-Fertility\-\_\-\-Table}}
+\index{Get\-List\-\_\-\-Fertility\-\_\-\-Table@{Get\-List\-\_\-\-Fertility\-\_\-\-Table}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Fertility\-\_\-\-Table}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Fertility\-\_\-\-Table (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{From\-Date, }
+\item[{Date\-Time?}]{To\-Date}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ae1fcea41ffa99821225730266d6d8d51}
+get list Fertility give table \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ae1fcea41ffa99821225730266d6d8d51}{Get\-List\-\_\-\-Fertility\-\_\-\-Table()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1540 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aebf1652426c1b3f3bfb9a8866b60def1}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Fertility\-\_\-\-Temperature@{Get\-List\-\_\-\-Fertility\-\_\-\-Temperature}}
+\index{Get\-List\-\_\-\-Fertility\-\_\-\-Temperature@{Get\-List\-\_\-\-Fertility\-\_\-\-Temperature}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Fertility\-\_\-\-Temperature}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Fertility\-\_\-\-Temperature (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time}]{From\-Date, }
+\item[{Date\-Time}]{To\-Date}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aebf1652426c1b3f3bfb9a8866b60def1}
+get list Fertility tempertaure \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_aebf1652426c1b3f3bfb9a8866b60def1}{Get\-List\-\_\-\-Fertility\-\_\-\-Temperature()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1549 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_afe95c3d2857408582667370a34a4d88f}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Fitness\-\_\-\-Datetime@{Get\-List\-\_\-\-Fitness\-\_\-\-Datetime}}
+\index{Get\-List\-\_\-\-Fitness\-\_\-\-Datetime@{Get\-List\-\_\-\-Fitness\-\_\-\-Datetime}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Fitness\-\_\-\-Datetime}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Fitness\-\_\-\-Datetime (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{From\-Date, }
+\item[{Date\-Time?}]{To\-Date}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_afe95c3d2857408582667370a34a4d88f}
+get list fitness datetime \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_afe95c3d2857408582667370a34a4d88f}{Get\-List\-\_\-\-Fitness\-\_\-\-Datetime()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1305 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a6b96de68a2a33aaa4438da7100c376c3}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Table@{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Table}}
+\index{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Table@{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Table}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Table}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Table (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{fromdate, }
+\item[{Date\-Time?}]{todate}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a6b96de68a2a33aaa4438da7100c376c3}
+get list fitness hrexercise give table \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a6b96de68a2a33aaa4438da7100c376c3}{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Table()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1396 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a7962b2e3bd666862aeb6ef63a6fc5a30}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-Type@{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-Type}}
+\index{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-Type@{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-Type}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a7962b2e3bd666862aeb6ef63a6fc5a30}
+get list fitness hrexercise type \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a7962b2e3bd666862aeb6ef63a6fc5a30}{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1296 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a71298419ee709564e5c3074993c8e6d7}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type@{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type}}
+\index{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type@{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a71298419ee709564e5c3074993c8e6d7}
+get list fitness hr target type \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a71298419ee709564e5c3074993c8e6d7}{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1314 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a11af85d867a3a0c6c6a0e58d7cdeb5f8}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type\-\_\-\-Mutil@{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type\-\_\-\-Mutil}}
+\index{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type\-\_\-\-Mutil@{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type\-\_\-\-Mutil}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type\-\_\-\-Mutil}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type\-\_\-\-Mutil (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a11af85d867a3a0c6c6a0e58d7cdeb5f8}
+get list fitness hr target type mutil \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a11af85d867a3a0c6c6a0e58d7cdeb5f8}{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type\-\_\-\-Mutil()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1323 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_accf3ec92d4f585456ec3ff188e680fd3}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type\-\_\-\-Single@{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type\-\_\-\-Single}}
+\index{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type\-\_\-\-Single@{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type\-\_\-\-Single}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type\-\_\-\-Single}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type\-\_\-\-Single (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_accf3ec92d4f585456ec3ff188e680fd3}
+get list fitness hr target type single \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_accf3ec92d4f585456ec3ff188e680fd3}{Get\-List\-\_\-\-Fitness\-\_\-\-H\-R\-Target\-Type\-\_\-\-Single()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1332 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a83af91ca1c0b7b98c951d8c70287218b}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Fitness\-\_\-\-Pedometer\-\_\-\-Graph\-\_\-\-By\-Parameter\-Code@{Get\-List\-\_\-\-Fitness\-\_\-\-Pedometer\-\_\-\-Graph\-\_\-\-By\-Parameter\-Code}}
+\index{Get\-List\-\_\-\-Fitness\-\_\-\-Pedometer\-\_\-\-Graph\-\_\-\-By\-Parameter\-Code@{Get\-List\-\_\-\-Fitness\-\_\-\-Pedometer\-\_\-\-Graph\-\_\-\-By\-Parameter\-Code}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Fitness\-\_\-\-Pedometer\-\_\-\-Graph\-\_\-\-By\-Parameter\-Code}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Fitness\-\_\-\-Pedometer\-\_\-\-Graph\-\_\-\-By\-Parameter\-Code (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{From\-Date, }
+\item[{Date\-Time?}]{To\-Date, }
+\item[{string}]{Parameter\-Code}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a83af91ca1c0b7b98c951d8c70287218b}
+get list fitness pedometer graph by parameter code \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a83af91ca1c0b7b98c951d8c70287218b}{Get\-List\-\_\-\-Fitness\-\_\-\-Pedometer\-\_\-\-Graph\-\_\-\-By\-Parameter\-Code()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1405 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aca185474fc9923019ac4b4998d7212f5}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Fitness\-\_\-\-Pedometer\-\_\-\-Table@{Get\-List\-\_\-\-Fitness\-\_\-\-Pedometer\-\_\-\-Table}}
+\index{Get\-List\-\_\-\-Fitness\-\_\-\-Pedometer\-\_\-\-Table@{Get\-List\-\_\-\-Fitness\-\_\-\-Pedometer\-\_\-\-Table}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Fitness\-\_\-\-Pedometer\-\_\-\-Table}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Fitness\-\_\-\-Pedometer\-\_\-\-Table (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{fromdate, }
+\item[{Date\-Time?}]{todate}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aca185474fc9923019ac4b4998d7212f5}
+get list fitness pedometer give table \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_aca185474fc9923019ac4b4998d7212f5}{Get\-List\-\_\-\-Fitness\-\_\-\-Pedometer\-\_\-\-Table()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1387 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a82ded31f7b4ff63404618f1f668f4002}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Calory\-Burn\-Type@{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Calory\-Burn\-Type}}
+\index{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Calory\-Burn\-Type@{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Calory\-Burn\-Type}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Calory\-Burn\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Calory\-Burn\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a82ded31f7b4ff63404618f1f668f4002}
+get list fitness pm calory burn type \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a82ded31f7b4ff63404618f1f668f4002}{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Calory\-Burn\-Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1359 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a6814ee4c5e499dee4dca88ecb8f931e3}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Remind\-Type@{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Remind\-Type}}
+\index{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Remind\-Type@{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Remind\-Type}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Remind\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Remind\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a6814ee4c5e499dee4dca88ecb8f931e3}
+get list fitness pm remind type \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a6814ee4c5e499dee4dca88ecb8f931e3}{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Remind\-Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1350 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aee30d253f34099e058adde2106c19e4f}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Target\-Type@{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Target\-Type}}
+\index{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Target\-Type@{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Target\-Type}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Target\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Target\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aee30d253f34099e058adde2106c19e4f}
+get list fitness pm target type \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_aee30d253f34099e058adde2106c19e4f}{Get\-List\-\_\-\-Fitness\-\_\-\-P\-M\-Target\-Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1341 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a7a5f310fffc8ab3a20bd33ac6e4312b6}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Fitness\-\_\-\-Zone\-Type@{Get\-List\-\_\-\-Fitness\-\_\-\-Zone\-Type}}
+\index{Get\-List\-\_\-\-Fitness\-\_\-\-Zone\-Type@{Get\-List\-\_\-\-Fitness\-\_\-\-Zone\-Type}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Fitness\-\_\-\-Zone\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Fitness\-\_\-\-Zone\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a7a5f310fffc8ab3a20bd33ac6e4312b6}
+get list fitness zone type \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a7a5f310fffc8ab3a20bd33ac6e4312b6}{Get\-List\-\_\-\-Fitness\-\_\-\-Zone\-Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1432 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a630396e518cffa1b479e83203c4010b4}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Datetime@{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Datetime}}
+\index{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Datetime@{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Datetime}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Datetime}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Datetime (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{From\-Date, }
+\item[{Date\-Time?}]{To\-Date}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a630396e518cffa1b479e83203c4010b4}
+get list heartrate datetime \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a630396e518cffa1b479e83203c4010b4}{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Datetime()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1152 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a78b75c0c3f63847fb9d747200630bdd7}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Graph@{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Graph}}
+\index{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Graph@{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Graph}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Graph (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{fromdate, }
+\item[{Date\-Time?}]{todate}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a78b75c0c3f63847fb9d747200630bdd7}
+get list heart rate give graph \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a78b75c0c3f63847fb9d747200630bdd7}{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Graph()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1216 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a1aa2f0b88239718cb99cde4a77899437}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Heart\-Rate\-\_\-\-H\-R\-V\-\_\-\-Graph@{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-H\-R\-V\-\_\-\-Graph}}
+\index{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-H\-R\-V\-\_\-\-Graph@{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-H\-R\-V\-\_\-\-Graph}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-H\-R\-V\-\_\-\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Set D\-B\-Class.\-Get\-List\-\_\-\-Heart\-Rate\-\_\-\-H\-R\-V\-\_\-\-Graph (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{fromdate, }
+\item[{Date\-Time?}]{todate}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a1aa2f0b88239718cb99cde4a77899437}
+get list heart rate hrv give graph \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a1aa2f0b88239718cb99cde4a77899437}{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-H\-R\-V\-\_\-\-Graph()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+dataset 
+\end{DoxyReturn}
+
+
+Definition at line 1207 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a5910d9e2fcad738599583bb202daf3c9}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Heart\-Rate\-\_\-\-H\-R\-V\-\_\-\-Table@{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-H\-R\-V\-\_\-\-Table}}
+\index{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-H\-R\-V\-\_\-\-Table@{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-H\-R\-V\-\_\-\-Table}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-H\-R\-V\-\_\-\-Table}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Set D\-B\-Class.\-Get\-List\-\_\-\-Heart\-Rate\-\_\-\-H\-R\-V\-\_\-\-Table (
+\begin{DoxyParamCaption}
+\item[{string}]{username, }
+\item[{Date\-Time?}]{fromdate, }
+\item[{Date\-Time?}]{todate}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a5910d9e2fcad738599583bb202daf3c9}
+get list heart rate hrv give table \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a5910d9e2fcad738599583bb202daf3c9}{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-H\-R\-V\-\_\-\-Table()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+dataset 
+\end{DoxyReturn}
+
+
+Definition at line 1198 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aa0781e64398da82d4b983a8b31a4ea4a}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Table@{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Table}}
+\index{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Table@{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Table}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Table}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Table (
+\begin{DoxyParamCaption}
+\item[{string}]{username, }
+\item[{Date\-Time?}]{fromdate, }
+\item[{Date\-Time?}]{todate}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aa0781e64398da82d4b983a8b31a4ea4a}
+get list heart rate give table \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_aa0781e64398da82d4b983a8b31a4ea4a}{Get\-List\-\_\-\-Heart\-Rate\-\_\-\-Table()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1189 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aac1dfaf591ff86449a25f64d58c0c728}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Heart\-Rate\-H\-R\-Est\-Type@{Get\-List\-\_\-\-Heart\-Rate\-H\-R\-Est\-Type}}
+\index{Get\-List\-\_\-\-Heart\-Rate\-H\-R\-Est\-Type@{Get\-List\-\_\-\-Heart\-Rate\-H\-R\-Est\-Type}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Heart\-Rate\-H\-R\-Est\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Heart\-Rate\-H\-R\-Est\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aac1dfaf591ff86449a25f64d58c0c728}
+get list heart rate hrest type \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_aac1dfaf591ff86449a25f64d58c0c728}{Get\-List\-\_\-\-Heart\-Rate\-H\-R\-Est\-Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1143 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a68c8c13196578b5e88d1f8b831c95088}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Member\-Type@{Get\-List\-\_\-\-Member\-Type}}
+\index{Get\-List\-\_\-\-Member\-Type@{Get\-List\-\_\-\-Member\-Type}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Member\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Member\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a68c8c13196578b5e88d1f8b831c95088}
+get list member type \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a68c8c13196578b5e88d1f8b831c95088}{Get\-List\-\_\-\-Member\-Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 202 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a20a41495a3c7eeeb6e5d514374533e45}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Message\-Center\-\_\-\-Alarm@{Get\-List\-\_\-\-Message\-Center\-\_\-\-Alarm}}
+\index{Get\-List\-\_\-\-Message\-Center\-\_\-\-Alarm@{Get\-List\-\_\-\-Message\-Center\-\_\-\-Alarm}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Message\-Center\-\_\-\-Alarm}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Message\-Center\-\_\-\-Alarm (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a20a41495a3c7eeeb6e5d514374533e45}
+get list message alarm \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a20a41495a3c7eeeb6e5d514374533e45}{Get\-List\-\_\-\-Message\-Center\-\_\-\-Alarm()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 553 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a8cc689495dd00f72cbb7ce4a1cf49e83}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Message\-Center\-\_\-\-Inbox@{Get\-List\-\_\-\-Message\-Center\-\_\-\-Inbox}}
+\index{Get\-List\-\_\-\-Message\-Center\-\_\-\-Inbox@{Get\-List\-\_\-\-Message\-Center\-\_\-\-Inbox}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Message\-Center\-\_\-\-Inbox}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Message\-Center\-\_\-\-Inbox (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a8cc689495dd00f72cbb7ce4a1cf49e83}
+get list message inbox \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a8cc689495dd00f72cbb7ce4a1cf49e83}{Get\-List\-\_\-\-Message\-Center\-\_\-\-Inbox()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 543 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ac6c5150b83d380d419fe3f2c21115e75}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Message\-Center\-\_\-\-Sent@{Get\-List\-\_\-\-Message\-Center\-\_\-\-Sent}}
+\index{Get\-List\-\_\-\-Message\-Center\-\_\-\-Sent@{Get\-List\-\_\-\-Message\-Center\-\_\-\-Sent}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Message\-Center\-\_\-\-Sent}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Message\-Center\-\_\-\-Sent (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ac6c5150b83d380d419fe3f2c21115e75}
+get list message sent \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ac6c5150b83d380d419fe3f2c21115e75}{Get\-List\-\_\-\-Message\-Center\-\_\-\-Sent()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 563 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a945f0e551b6a114e9fc29a5a38928535}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Message\-Center\-\_\-\-Trash@{Get\-List\-\_\-\-Message\-Center\-\_\-\-Trash}}
+\index{Get\-List\-\_\-\-Message\-Center\-\_\-\-Trash@{Get\-List\-\_\-\-Message\-Center\-\_\-\-Trash}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Message\-Center\-\_\-\-Trash}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Message\-Center\-\_\-\-Trash (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a945f0e551b6a114e9fc29a5a38928535}
+get list message trash \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a945f0e551b6a114e9fc29a5a38928535}{Get\-List\-\_\-\-Message\-Center\-\_\-\-Trash()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 573 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a46e602b287204bdccd5f684ed5cfddd1}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Paramaters@{Get\-List\-\_\-\-Paramaters}}
+\index{Get\-List\-\_\-\-Paramaters@{Get\-List\-\_\-\-Paramaters}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Paramaters}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Set D\-B\-Class.\-Get\-List\-\_\-\-Paramaters (
+\begin{DoxyParamCaption}
+\item[{int}]{Id, }
+\item[{string}]{Para\-Code, }
+\item[{string}]{Description}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a46e602b287204bdccd5f684ed5cfddd1}
+get list parameter \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a46e602b287204bdccd5f684ed5cfddd1}{Get\-List\-\_\-\-Paramaters()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+dataset 
+\end{DoxyReturn}
+
+
+Definition at line 356 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a59adf109e871a062c0cda615e710f895}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Position\-\_\-\-Datetime@{Get\-List\-\_\-\-Position\-\_\-\-Datetime}}
+\index{Get\-List\-\_\-\-Position\-\_\-\-Datetime@{Get\-List\-\_\-\-Position\-\_\-\-Datetime}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Position\-\_\-\-Datetime}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Position\-\_\-\-Datetime (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{From\-Date, }
+\item[{Date\-Time?}]{To\-Date}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a59adf109e871a062c0cda615e710f895}
+get list Position datetime \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a59adf109e871a062c0cda615e710f895}{Get\-List\-\_\-\-Position\-\_\-\-Datetime()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1617 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ae651f2f8ee54772f41b82ce0c03dcab9}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Position\-\_\-\-Graph@{Get\-List\-\_\-\-Position\-\_\-\-Graph}}
+\index{Get\-List\-\_\-\-Position\-\_\-\-Graph@{Get\-List\-\_\-\-Position\-\_\-\-Graph}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Position\-\_\-\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Position\-\_\-\-Graph (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{From\-Date, }
+\item[{Date\-Time?}]{To\-Date}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ae651f2f8ee54772f41b82ce0c03dcab9}
+get list Position give graph \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ae651f2f8ee54772f41b82ce0c03dcab9}{Get\-List\-\_\-\-Position\-\_\-\-Graph()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1599 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ab13e332c43c442cebd09a18406a6860e}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Position\-\_\-\-Table@{Get\-List\-\_\-\-Position\-\_\-\-Table}}
+\index{Get\-List\-\_\-\-Position\-\_\-\-Table@{Get\-List\-\_\-\-Position\-\_\-\-Table}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Position\-\_\-\-Table}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Position\-\_\-\-Table (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{fromdate, }
+\item[{Date\-Time?}]{todate}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ab13e332c43c442cebd09a18406a6860e}
+get list data Position give table \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ab13e332c43c442cebd09a18406a6860e}{Get\-List\-\_\-\-Position\-\_\-\-Table()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1590 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aa7a8aba6f4ab18f61d5a358d6ac7c613}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Position\-\_\-\-X\-Y\-Z\-\_\-\-Rawdata\-\_\-\-Table@{Get\-List\-\_\-\-Position\-\_\-\-X\-Y\-Z\-\_\-\-Rawdata\-\_\-\-Table}}
+\index{Get\-List\-\_\-\-Position\-\_\-\-X\-Y\-Z\-\_\-\-Rawdata\-\_\-\-Table@{Get\-List\-\_\-\-Position\-\_\-\-X\-Y\-Z\-\_\-\-Rawdata\-\_\-\-Table}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Position\-\_\-\-X\-Y\-Z\-\_\-\-Rawdata\-\_\-\-Table}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Position\-\_\-\-X\-Y\-Z\-\_\-\-Rawdata\-\_\-\-Table (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{fromdate, }
+\item[{Date\-Time?}]{todate}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aa7a8aba6f4ab18f61d5a358d6ac7c613}
+get list Position give table \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_aa7a8aba6f4ab18f61d5a358d6ac7c613}{Get\-List\-\_\-\-Position\-\_\-\-X\-Y\-Z\-\_\-\-Rawdata\-\_\-\-Table()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1608 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a5b9b462ffd2a0818dd1198a5d85db9b0}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Register\-Codes@{Get\-List\-\_\-\-Register\-Codes}}
+\index{Get\-List\-\_\-\-Register\-Codes@{Get\-List\-\_\-\-Register\-Codes}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Register\-Codes}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Register\-Codes (
+\begin{DoxyParamCaption}
+\item[{string}]{Rule, }
+\item[{bool?}]{Is\-Using, }
+\item[{bool?}]{Disable}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a5b9b462ffd2a0818dd1198a5d85db9b0}
+get list code register \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a5b9b462ffd2a0818dd1198a5d85db9b0}{Get\-List\-\_\-\-Register\-Codes()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 406 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a82e1217fb79406dc76a8afc1315b2c46}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Sleep\-\_\-\-Datetime@{Get\-List\-\_\-\-Sleep\-\_\-\-Datetime}}
+\index{Get\-List\-\_\-\-Sleep\-\_\-\-Datetime@{Get\-List\-\_\-\-Sleep\-\_\-\-Datetime}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Sleep\-\_\-\-Datetime}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Sleep\-\_\-\-Datetime (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{From\-Date, }
+\item[{Date\-Time?}]{To\-Date}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a82e1217fb79406dc76a8afc1315b2c46}
+get list sleep datetime \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a82e1217fb79406dc76a8afc1315b2c46}{Get\-List\-\_\-\-Sleep\-\_\-\-Datetime()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1631 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a0e2606c8a08dfa94868f871b6ab8f848}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Sleep\-\_\-\-Manual\-\_\-\-By\-Sleep\-Id@{Get\-List\-\_\-\-Sleep\-\_\-\-Manual\-\_\-\-By\-Sleep\-Id}}
+\index{Get\-List\-\_\-\-Sleep\-\_\-\-Manual\-\_\-\-By\-Sleep\-Id@{Get\-List\-\_\-\-Sleep\-\_\-\-Manual\-\_\-\-By\-Sleep\-Id}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Sleep\-\_\-\-Manual\-\_\-\-By\-Sleep\-Id}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Sleep\-\_\-\-Manual\-\_\-\-By\-Sleep\-Id (
+\begin{DoxyParamCaption}
+\item[{int}]{Sleep\-Id}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a0e2606c8a08dfa94868f871b6ab8f848}
+get list sleep manual by id \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a0e2606c8a08dfa94868f871b6ab8f848}{Get\-List\-\_\-\-Sleep\-\_\-\-Manual\-\_\-\-By\-Sleep\-Id()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1659 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ae619d8b6adac22347a9b9a302d45a5f5}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Sleep\-\_\-\-Rawdata@{Get\-List\-\_\-\-Sleep\-\_\-\-Rawdata}}
+\index{Get\-List\-\_\-\-Sleep\-\_\-\-Rawdata@{Get\-List\-\_\-\-Sleep\-\_\-\-Rawdata}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Sleep\-\_\-\-Rawdata}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Sleep\-\_\-\-Rawdata (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{fromdate, }
+\item[{Date\-Time?}]{todate}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ae619d8b6adac22347a9b9a302d45a5f5}
+get list sleep \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ae619d8b6adac22347a9b9a302d45a5f5}{Get\-List\-\_\-\-Sleep\-\_\-\-Rawdata()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1678 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a816b02ee42e328f3283c8ec99423f720}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Sp\-O2\-\_\-\-Datetime@{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Datetime}}
+\index{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Datetime@{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Datetime}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Datetime}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Sp\-O2\-\_\-\-Datetime (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{From\-Date, }
+\item[{Date\-Time?}]{To\-Date}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a816b02ee42e328f3283c8ec99423f720}
+get list oxygen \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a816b02ee42e328f3283c8ec99423f720}{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Datetime()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1283 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a6f06d1414a7be6b9ddfed14f682e2205}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Sp\-O2\-\_\-\-Graph@{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Graph}}
+\index{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Graph@{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Graph}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Sp\-O2\-\_\-\-Graph (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{fromdate, }
+\item[{Date\-Time?}]{todate}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a6f06d1414a7be6b9ddfed14f682e2205}
+get list oxygen give graph \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a6f06d1414a7be6b9ddfed14f682e2205}{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Graph()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1274 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a2c9db13225c35720f41b7e051df5740f}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Sp\-O2\-\_\-\-Table@{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Table}}
+\index{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Table@{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Table}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Table}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Sp\-O2\-\_\-\-Table (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{fromdate, }
+\item[{Date\-Time?}]{todate}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a2c9db13225c35720f41b7e051df5740f}
+get list oxygen give table \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a2c9db13225c35720f41b7e051df5740f}{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Table()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1265 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a052d4479aabdcaeb5f05ca76c0d8e166}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Sp\-O2\-\_\-\-Tracking\-Mode\-Type@{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Tracking\-Mode\-Type}}
+\index{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Tracking\-Mode\-Type@{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Tracking\-Mode\-Type}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Tracking\-Mode\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Sp\-O2\-\_\-\-Tracking\-Mode\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a052d4479aabdcaeb5f05ca76c0d8e166}
+get list oxygen tracking mode type \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a052d4479aabdcaeb5f05ca76c0d8e166}{Get\-List\-\_\-\-Sp\-O2\-\_\-\-Tracking\-Mode\-Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1247 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a1795f539e4d1d2026a81813aa941729f}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Stress\-\_\-\-Datetime@{Get\-List\-\_\-\-Stress\-\_\-\-Datetime}}
+\index{Get\-List\-\_\-\-Stress\-\_\-\-Datetime@{Get\-List\-\_\-\-Stress\-\_\-\-Datetime}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Stress\-\_\-\-Datetime}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Stress\-\_\-\-Datetime (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{From\-Date, }
+\item[{Date\-Time?}]{To\-Date}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a1795f539e4d1d2026a81813aa941729f}
+get list stress \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a1795f539e4d1d2026a81813aa941729f}{Get\-List\-\_\-\-Stress\-\_\-\-Datetime()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1509 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a197e91d6f8a237667be07dfa2bed6f43}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Stress\-\_\-\-Rawdata\-\_\-\-Graph@{Get\-List\-\_\-\-Stress\-\_\-\-Rawdata\-\_\-\-Graph}}
+\index{Get\-List\-\_\-\-Stress\-\_\-\-Rawdata\-\_\-\-Graph@{Get\-List\-\_\-\-Stress\-\_\-\-Rawdata\-\_\-\-Graph}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Stress\-\_\-\-Rawdata\-\_\-\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Stress\-\_\-\-Rawdata\-\_\-\-Graph (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{fromdate, }
+\item[{Date\-Time?}]{todate}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a197e91d6f8a237667be07dfa2bed6f43}
+get list stress give graph \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a197e91d6f8a237667be07dfa2bed6f43}{Get\-List\-\_\-\-Stress\-\_\-\-Rawdata\-\_\-\-Graph()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1500 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ad7d82013b592fb68b018a7a3a13f288a}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Stress\-\_\-\-Rawdata\-\_\-\-Table@{Get\-List\-\_\-\-Stress\-\_\-\-Rawdata\-\_\-\-Table}}
+\index{Get\-List\-\_\-\-Stress\-\_\-\-Rawdata\-\_\-\-Table@{Get\-List\-\_\-\-Stress\-\_\-\-Rawdata\-\_\-\-Table}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Stress\-\_\-\-Rawdata\-\_\-\-Table}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Stress\-\_\-\-Rawdata\-\_\-\-Table (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{fromdate, }
+\item[{Date\-Time?}]{todate}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ad7d82013b592fb68b018a7a3a13f288a}
+get list stress give table \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ad7d82013b592fb68b018a7a3a13f288a}{Get\-List\-\_\-\-Stress\-\_\-\-Rawdata\-\_\-\-Table()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1482 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ae17050a8d003121b52345fca852c79ac}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Stress\-\_\-\-Table@{Get\-List\-\_\-\-Stress\-\_\-\-Table}}
+\index{Get\-List\-\_\-\-Stress\-\_\-\-Table@{Get\-List\-\_\-\-Stress\-\_\-\-Table}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Stress\-\_\-\-Table}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Stress\-\_\-\-Table (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{From\-Date, }
+\item[{Date\-Time?}]{To\-Date}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ae17050a8d003121b52345fca852c79ac}
+get list stress give table \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ae17050a8d003121b52345fca852c79ac}{Get\-List\-\_\-\-Stress\-\_\-\-Table()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1491 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_af3711e9da9e4cc100a375496842590f5}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Temperature\-\_\-\-Datetime@{Get\-List\-\_\-\-Temperature\-\_\-\-Datetime}}
+\index{Get\-List\-\_\-\-Temperature\-\_\-\-Datetime@{Get\-List\-\_\-\-Temperature\-\_\-\-Datetime}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Temperature\-\_\-\-Datetime}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Temperature\-\_\-\-Datetime (
+\begin{DoxyParamCaption}
+\item[{string}]{Username, }
+\item[{Date\-Time?}]{From\-Date, }
+\item[{Date\-Time?}]{To\-Date}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_af3711e9da9e4cc100a375496842590f5}
+get list track health temperature \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_af3711e9da9e4cc100a375496842590f5}{Get\-List\-\_\-\-Temperature\-\_\-\-Datetime()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1008 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a9b7a23e13570beaa84677ee74d69476f}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Unit\-B\-P\-M@{Get\-List\-\_\-\-Unit\-B\-P\-M}}
+\index{Get\-List\-\_\-\-Unit\-B\-P\-M@{Get\-List\-\_\-\-Unit\-B\-P\-M}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Unit\-B\-P\-M}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Unit\-B\-P\-M (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a9b7a23e13570beaa84677ee74d69476f}
+get list B\-P\-M \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a9b7a23e13570beaa84677ee74d69476f}{Get\-List\-\_\-\-Unit\-B\-P\-M()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 1161 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aa17c75e306a63775128a29aa3682b98b}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Unit\-Date@{Get\-List\-\_\-\-Unit\-Date}}
+\index{Get\-List\-\_\-\-Unit\-Date@{Get\-List\-\_\-\-Unit\-Date}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Unit\-Date}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Unit\-Date (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aa17c75e306a63775128a29aa3682b98b}
+get list date \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_aa17c75e306a63775128a29aa3682b98b}{Get\-List\-\_\-\-Unit\-Date()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable value 
+\end{DoxyReturn}
+
+
+Definition at line 978 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ab0a19e84d20ad1d00da1f6f2239153b3}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Unit\-Time@{Get\-List\-\_\-\-Unit\-Time}}
+\index{Get\-List\-\_\-\-Unit\-Time@{Get\-List\-\_\-\-Unit\-Time}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Unit\-Time}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Unit\-Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ab0a19e84d20ad1d00da1f6f2239153b3}
+get list time \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ab0a19e84d20ad1d00da1f6f2239153b3}{Get\-List\-\_\-\-Unit\-Time()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable value 
+\end{DoxyReturn}
+
+
+Definition at line 969 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a2d6d02138ea4f327cf81801671551727}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-User\-\_\-\-Login@{Get\-List\-\_\-\-User\-\_\-\-Login}}
+\index{Get\-List\-\_\-\-User\-\_\-\-Login@{Get\-List\-\_\-\-User\-\_\-\-Login}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-User\-\_\-\-Login}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-User\-\_\-\-Login (
+\begin{DoxyParamCaption}
+\item[{string}]{Username, }
+\item[{Date\-Time?}]{Login\-Date\-From, }
+\item[{Date\-Time?}]{Logind\-Date\-To}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a2d6d02138ea4f327cf81801671551727}
+get list user login website \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a2d6d02138ea4f327cf81801671551727}{Get\-List\-\_\-\-User\-\_\-\-Login()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 416 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a878b22ac712481c277f9178b1b43fe07}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Users@{Get\-List\-\_\-\-Users}}
+\index{Get\-List\-\_\-\-Users@{Get\-List\-\_\-\-Users}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Users}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-Users (
+\begin{DoxyParamCaption}
+\item[{int}]{userid, }
+\item[{string}]{username, }
+\item[{bool?}]{isactive, }
+\item[{string}]{email, }
+\item[{Date\-Time?}]{createdatefrom, }
+\item[{Date\-Time?}]{createdateto}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a878b22ac712481c277f9178b1b43fe07}
+get list user \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a878b22ac712481c277f9178b1b43fe07}{Get\-List\-\_\-\-Users()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 396 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a5988e32a4d26e9369010d22c45cd5047}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-Users\-\_\-\-Admin@{Get\-List\-\_\-\-Users\-\_\-\-Admin}}
+\index{Get\-List\-\_\-\-Users\-\_\-\-Admin@{Get\-List\-\_\-\-Users\-\_\-\-Admin}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-Users\-\_\-\-Admin}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Set D\-B\-Class.\-Get\-List\-\_\-\-Users\-\_\-\-Admin (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{string}]{Last\-Name, }
+\item[{string}]{First\-Name, }
+\item[{Date\-Time?}]{From\-Date\-Of\-Birth, }
+\item[{Date\-Time?}]{To\-Date\-Of\-Birth}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a5988e32a4d26e9369010d22c45cd5047}
+get list all user \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a5988e32a4d26e9369010d22c45cd5047}{Get\-List\-\_\-\-Users\-\_\-\-Admin()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+dataset 
+\end{DoxyReturn}
+
+
+Definition at line 386 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ac0a226a5b8778e0aa4bff3db3d0abb45}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-User\-Temperature@{Get\-List\-\_\-\-User\-Temperature}}
+\index{Get\-List\-\_\-\-User\-Temperature@{Get\-List\-\_\-\-User\-Temperature}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-User\-Temperature}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-User\-Temperature (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{Date\-Time?}]{From\-Date, }
+\item[{Date\-Time?}]{To\-Date}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ac0a226a5b8778e0aa4bff3db3d0abb45}
+get list user temperature \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ac0a226a5b8778e0aa4bff3db3d0abb45}{Get\-List\-\_\-\-User\-Temperature()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 611 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ac1ac9c6415e1f9754d2b40c3bb1ed5e4}{\index{D\-B\-Class@{D\-B\-Class}!Get\-List\-\_\-\-User\-Track\-Others@{Get\-List\-\_\-\-User\-Track\-Others}}
+\index{Get\-List\-\_\-\-User\-Track\-Others@{Get\-List\-\_\-\-User\-Track\-Others}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-List\-\_\-\-User\-Track\-Others}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Table D\-B\-Class.\-Get\-List\-\_\-\-User\-Track\-Others (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ac1ac9c6415e1f9754d2b40c3bb1ed5e4}
+get list uset track others by username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ac1ac9c6415e1f9754d2b40c3bb1ed5e4}{Get\-List\-\_\-\-User\-Track\-Others()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datatable 
+\end{DoxyReturn}
+
+
+Definition at line 679 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a101e80735fe6e717d5763d53eb772793}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Message\-By\-Code@{Get\-Message\-By\-Code}}
+\index{Get\-Message\-By\-Code@{Get\-Message\-By\-Code}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Message\-By\-Code}]{\setlength{\rightskip}{0pt plus 5cm}virtual Data\-Row D\-B\-Class.\-Get\-Message\-By\-Code (
+\begin{DoxyParamCaption}
+\item[{string}]{message\-\_\-code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_d_b_class_a101e80735fe6e717d5763d53eb772793}
+get message by code \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a101e80735fe6e717d5763d53eb772793}{Get\-Message\-By\-Code()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow value 
+\end{DoxyReturn}
+
+
+Definition at line 948 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a2d0699b41086dd4e043fa2c653543f94}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Message\-By\-Code2@{Get\-Message\-By\-Code2}}
+\index{Get\-Message\-By\-Code2@{Get\-Message\-By\-Code2}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Message\-By\-Code2}]{\setlength{\rightskip}{0pt plus 5cm}static string D\-B\-Class.\-Get\-Message\-By\-Code2 (
+\begin{DoxyParamCaption}
+\item[{string}]{message\-\_\-code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_d_b_class_a2d0699b41086dd4e043fa2c653543f94}
+get message by code \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a2d0699b41086dd4e043fa2c653543f94}{Get\-Message\-By\-Code2()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+string value 
+\end{DoxyReturn}
+
+
+Definition at line 957 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a547a707a154ff5ce5620445a986f9d80}{\index{D\-B\-Class@{D\-B\-Class}!Get\-Value\-\_\-\-Paramter\-\_\-\-By\-Code@{Get\-Value\-\_\-\-Paramter\-\_\-\-By\-Code}}
+\index{Get\-Value\-\_\-\-Paramter\-\_\-\-By\-Code@{Get\-Value\-\_\-\-Paramter\-\_\-\-By\-Code}!DBClass@{D\-B\-Class}}
+\subsubsection[{Get\-Value\-\_\-\-Paramter\-\_\-\-By\-Code}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Get\-Value\-\_\-\-Paramter\-\_\-\-By\-Code (
+\begin{DoxyParamCaption}
+\item[{string}]{code}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a547a707a154ff5ce5620445a986f9d80}
+get value parameter by code \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a547a707a154ff5ce5620445a986f9d80}{Get\-Value\-\_\-\-Paramter\-\_\-\-By\-Code()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value code 
+\end{DoxyReturn}
+
+
+Definition at line 778 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a516612b7d6008c48982987c8526a789e}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-\_\-\-Billing\-Info@{Insert\-\_\-\-Billing\-Info}}
+\index{Insert\-\_\-\-Billing\-Info@{Insert\-\_\-\-Billing\-Info}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-\_\-\-Billing\-Info}]{\setlength{\rightskip}{0pt plus 5cm}string D\-B\-Class.\-Insert\-\_\-\-Billing\-Info (
+\begin{DoxyParamCaption}
+\item[{string}]{Name\-Card, }
+\item[{string}]{Address, }
+\item[{string}]{Address\-Line2, }
+\item[{string}]{City, }
+\item[{string}]{State\-Code, }
+\item[{string}]{Z\-I\-P\-Code, }
+\item[{string}]{Country\-Code, }
+\item[{string}]{Phone, }
+\item[{string}]{Email, }
+\item[{int}]{Card\-Type\-Id, }
+\item[{string}]{Card\-Number, }
+\item[{string}]{Expiration\-Month, }
+\item[{string}]{Expiration\-Year, }
+\item[{string}]{Sercurity\-Code, }
+\item[{string}]{Account\-Number, }
+\item[{decimal}]{Amount\-Pay}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a516612b7d6008c48982987c8526a789e}
+insert billing \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a516612b7d6008c48982987c8526a789e}{Insert\-\_\-\-Billing\-Info()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 749 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a14e9b463bcc808a13b42d55caca9b4ac}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-\_\-\-Message\-Center@{Insert\-\_\-\-Message\-Center}}
+\index{Insert\-\_\-\-Message\-Center@{Insert\-\_\-\-Message\-Center}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-\_\-\-Message\-Center}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Insert\-\_\-\-Message\-Center (
+\begin{DoxyParamCaption}
+\item[{string}]{Mail\-From, }
+\item[{string}]{Subject, }
+\item[{string}]{Mail\-To, }
+\item[{string}]{Message\-Center}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a14e9b463bcc808a13b42d55caca9b4ac}
+sent mail from user to user \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a14e9b463bcc808a13b42d55caca9b4ac}{Insert\-\_\-\-Message\-Center()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 467 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ae4be85d37203b9423b92f4dd84a9a00d}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-\_\-\-Users\-Authorizes@{Insert\-\_\-\-Users\-Authorizes}}
+\index{Insert\-\_\-\-Users\-Authorizes@{Insert\-\_\-\-Users\-Authorizes}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-\_\-\-Users\-Authorizes}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Insert\-\_\-\-Users\-Authorizes (
+\begin{DoxyParamCaption}
+\item[{string}]{username, }
+\item[{string}]{authorizeduser}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ae4be85d37203b9423b92f4dd84a9a00d}
+insert user authorize \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ae4be85d37203b9423b92f4dd84a9a00d}{Insert\-\_\-\-Users\-Authorizes()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 288 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a839d19f3269b0cffbd7fad1600102b1a}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Admin\-Messages@{Insert\-Update\-\_\-\-Admin\-Messages}}
+\index{Insert\-Update\-\_\-\-Admin\-Messages@{Insert\-Update\-\_\-\-Admin\-Messages}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Admin\-Messages}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-Admin\-Messages (
+\begin{DoxyParamCaption}
+\item[{int}]{Id, }
+\item[{string}]{Code, }
+\item[{string}]{Title, }
+\item[{string}]{Title\-V\-N, }
+\item[{bool}]{Approved, }
+\item[{string}]{Note}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a839d19f3269b0cffbd7fad1600102b1a}
+insert message, admin message \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a839d19f3269b0cffbd7fad1600102b1a}{Insert\-Update\-\_\-\-Admin\-Messages()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 376 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ac5833ce5d59ffc3703ca38bf5b337bc4}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Body\-Measurement\-\_\-\-Metric@{Insert\-Update\-\_\-\-Body\-Measurement\-\_\-\-Metric}}
+\index{Insert\-Update\-\_\-\-Body\-Measurement\-\_\-\-Metric@{Insert\-Update\-\_\-\-Body\-Measurement\-\_\-\-Metric}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Body\-Measurement\-\_\-\-Metric}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-Body\-Measurement\-\_\-\-Metric (
+\begin{DoxyParamCaption}
+\item[{int}]{auto\-Id, }
+\item[{string}]{username, }
+\item[{int?}]{iwtypeid, }
+\item[{int?}]{bftypeid, }
+\item[{int?}]{bmrtypeid, }
+\item[{int?}]{fatevalid, }
+\item[{int?}]{activityfactortypeid, }
+\item[{decimal?}]{weight, }
+\item[{decimal?}]{height, }
+\item[{decimal?}]{waist, }
+\item[{decimal?}]{hip, }
+\item[{decimal?}]{neck}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ac5833ce5d59ffc3703ca38bf5b337bc4}
+insert update body measurement follow format Metric \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ac5833ce5d59ffc3703ca38bf5b337bc4}{Insert\-Update\-\_\-\-Body\-Measurement\-\_\-\-Metric()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 1112 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a84a76caf413099a2f0f923f8a8c73f5a}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Body\-Measurement\-\_\-\-U\-S@{Insert\-Update\-\_\-\-Body\-Measurement\-\_\-\-U\-S}}
+\index{Insert\-Update\-\_\-\-Body\-Measurement\-\_\-\-U\-S@{Insert\-Update\-\_\-\-Body\-Measurement\-\_\-\-U\-S}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Body\-Measurement\-\_\-\-U\-S}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-Body\-Measurement\-\_\-\-U\-S (
+\begin{DoxyParamCaption}
+\item[{int}]{auto\-Id, }
+\item[{string}]{username, }
+\item[{int?}]{iwtypeid, }
+\item[{int?}]{bftypeid, }
+\item[{int?}]{bmrtypeid, }
+\item[{int?}]{fatevalid, }
+\item[{int?}]{activityfactortypeid, }
+\item[{decimal?}]{weight, }
+\item[{decimal?}]{heightfeet, }
+\item[{decimal?}]{heightinch, }
+\item[{decimal?}]{waist, }
+\item[{decimal?}]{hip, }
+\item[{decimal?}]{neck}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a84a76caf413099a2f0f923f8a8c73f5a}
+insert update body measurement follow format U\-S \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a84a76caf413099a2f0f923f8a8c73f5a}{Insert\-Update\-\_\-\-Body\-Measurement\-\_\-\-U\-S()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 1103 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_adfc194b09f95c76cda91e3876e717399}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Email\-Templates@{Insert\-Update\-\_\-\-Email\-Templates}}
+\index{Insert\-Update\-\_\-\-Email\-Templates@{Insert\-Update\-\_\-\-Email\-Templates}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Email\-Templates}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-Email\-Templates (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{string}]{code, }
+\item[{string}]{subject, }
+\item[{string}]{body, }
+\item[{string}]{note}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_adfc194b09f95c76cda91e3876e717399}
+get info email templete \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_adfc194b09f95c76cda91e3876e717399}{Insert\-Update\-\_\-\-Email\-Templates()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 729 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_af1fff159bbd1c80d087c8ca4b429482e}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Fertility@{Insert\-Update\-\_\-\-Fertility}}
+\index{Insert\-Update\-\_\-\-Fertility@{Insert\-Update\-\_\-\-Fertility}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Fertility}]{\setlength{\rightskip}{0pt plus 5cm}object D\-B\-Class.\-Insert\-Update\-\_\-\-Fertility (
+\begin{DoxyParamCaption}
+\item[{int}]{Auto\-Id, }
+\item[{string}]{username, }
+\item[{bool}]{Is\-Input\-Auto}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_af1fff159bbd1c80d087c8ca4b429482e}
+insert update Fertility \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_af1fff159bbd1c80d087c8ca4b429482e}{Insert\-Update\-\_\-\-Fertility()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+
+
+Definition at line 1531 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a2d9bfec6c5e881fe884b8ad900368e49}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Fitness@{Insert\-Update\-\_\-\-Fitness}}
+\index{Insert\-Update\-\_\-\-Fitness@{Insert\-Update\-\_\-\-Fitness}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Fitness}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-Fitness (
+\begin{DoxyParamCaption}
+\item[{int}]{auto\-Id, }
+\item[{string}]{username, }
+\item[{int?}]{H\-R\-Exercise\-Id, }
+\item[{int?}]{H\-R\-Target\-Id, }
+\item[{int?}]{P\-M\-Target\-Id, }
+\item[{int?}]{P\-M\-Remind\-Id, }
+\item[{int?}]{P\-M\-Calory\-Burn\-Id}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a2d9bfec6c5e881fe884b8ad900368e49}
+insert update fitness \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a2d9bfec6c5e881fe884b8ad900368e49}{Insert\-Update\-\_\-\-Fitness()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 1377 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a2011973f0271030aa62150f5289d476f}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program@{Insert\-Update\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program}}
+\index{Insert\-Update\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program@{Insert\-Update\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program (
+\begin{DoxyParamCaption}
+\item[{int}]{fitness\-Id, }
+\item[{string}]{user\-Name, }
+\item[{int?}]{number\-Of\-Stage, }
+\item[{string}]{program\-Name, }
+\item[{string}]{transition\-Audio}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a2011973f0271030aa62150f5289d476f}
+insert update fitness hrexercise program \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a2011973f0271030aa62150f5289d476f}{Insert\-Update\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 1441 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a779173f60fc7e7d810f6c131f5d06896}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-Details@{Insert\-Update\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-Details}}
+\index{Insert\-Update\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-Details@{Insert\-Update\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-Details}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-Details}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-Details (
+\begin{DoxyParamCaption}
+\item[{int}]{fitness\-H\-R\-Program\-Id, }
+\item[{string}]{stages, }
+\item[{string}]{zone\-Ids, }
+\item[{string}]{time\-Values, }
+\item[{string}]{time\-Ids}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a779173f60fc7e7d810f6c131f5d06896}
+insert update fitness hrexercise program details \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a779173f60fc7e7d810f6c131f5d06896}{Insert\-Update\-\_\-\-Fitness\-\_\-\-H\-R\-Exercise\-\_\-\-Program\-\_\-\-Details()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 1451 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aeb4a6084887a7e3c430af1513b4d7157}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Heart\-Rate@{Insert\-Update\-\_\-\-Heart\-Rate}}
+\index{Insert\-Update\-\_\-\-Heart\-Rate@{Insert\-Update\-\_\-\-Heart\-Rate}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Heart\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-Heart\-Rate (
+\begin{DoxyParamCaption}
+\item[{int}]{auto\-Id, }
+\item[{string}]{username, }
+\item[{decimal?}]{samplerate, }
+\item[{int?}]{sr\-Unit\-Time\-Id, }
+\item[{int?}]{max\-H\-R\-Estimation\-Id, }
+\item[{int?}]{high\-Rest\-H\-R, }
+\item[{int?}]{low\-Rest\-H\-R, }
+\item[{decimal?}]{hrvanalysis\-Interal, }
+\item[{int?}]{hrv\-Unit\-Time\-Id}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aeb4a6084887a7e3c430af1513b4d7157}
+insert update heart rate \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_aeb4a6084887a7e3c430af1513b4d7157}{Insert\-Update\-\_\-\-Heart\-Rate()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 1179 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aa3330dd5a4961020f5da0bf0d0c66695}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Paramaters@{Insert\-Update\-\_\-\-Paramaters}}
+\index{Insert\-Update\-\_\-\-Paramaters@{Insert\-Update\-\_\-\-Paramaters}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Paramaters}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-Paramaters (
+\begin{DoxyParamCaption}
+\item[{int}]{Id, }
+\item[{string}]{Param\-Code, }
+\item[{string}]{Description, }
+\item[{string}]{Value, }
+\item[{bool}]{Active, }
+\item[{string}]{Note}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aa3330dd5a4961020f5da0bf0d0c66695}
+insert update parameter \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_aa3330dd5a4961020f5da0bf0d0c66695}{Insert\-Update\-\_\-\-Paramaters()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 438 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a42021171f10d36c06c7c77b9628743f9}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Position@{Insert\-Update\-\_\-\-Position}}
+\index{Insert\-Update\-\_\-\-Position@{Insert\-Update\-\_\-\-Position}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Position}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-Position (
+\begin{DoxyParamCaption}
+\item[{int}]{auto\-Id, }
+\item[{string}]{username, }
+\item[{decimal?}]{Sample\-Rate, }
+\item[{int?}]{Sample\-Rate\-Id, }
+\item[{bool}]{Is\-Supine, }
+\item[{bool}]{Is\-Prone, }
+\item[{bool}]{Is\-Left, }
+\item[{bool}]{Is\-Right, }
+\item[{bool}]{Is\-Up, }
+\item[{bool}]{Is\-Down}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a42021171f10d36c06c7c77b9628743f9}
+insert update Position \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a42021171f10d36c06c7c77b9628743f9}{Insert\-Update\-\_\-\-Position()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 1580 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a00b39101f9f39e20fc7e10307ab3c06f}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Sleep@{Insert\-Update\-\_\-\-Sleep}}
+\index{Insert\-Update\-\_\-\-Sleep@{Insert\-Update\-\_\-\-Sleep}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Sleep}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-Sleep (
+\begin{DoxyParamCaption}
+\item[{int}]{auto\-Id, }
+\item[{string}]{username, }
+\item[{decimal?}]{H\-R\-Sample\-Rate, }
+\item[{int?}]{H\-R\-Sample\-Rate\-Id, }
+\item[{decimal?}]{G\-S\-R\-Sample\-Rate, }
+\item[{int?}]{G\-S\-R\-Sample\-Rate\-Id, }
+\item[{decimal?}]{Acc\-Sample\-Rate, }
+\item[{int?}]{Acc\-Sample\-Rate\-Id, }
+\item[{decimal?}]{Skin\-Temp\-Sample\-Rate, }
+\item[{int?}]{Skin\-Temp\-Sample\-Rate\-Id, }
+\item[{bool}]{Is\-Alarm\-Setting, }
+\item[{decimal?}]{Sleep\-Duration, }
+\item[{int?}]{Sleep\-Duration\-Id}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a00b39101f9f39e20fc7e10307ab3c06f}
+insert update sleep \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a00b39101f9f39e20fc7e10307ab3c06f}{Insert\-Update\-\_\-\-Sleep()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 1649 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a68f701aa5999c1bdc92e2d880b7d41af}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Sleep\-\_\-\-Manual@{Insert\-Update\-\_\-\-Sleep\-\_\-\-Manual}}
+\index{Insert\-Update\-\_\-\-Sleep\-\_\-\-Manual@{Insert\-Update\-\_\-\-Sleep\-\_\-\-Manual}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Sleep\-\_\-\-Manual}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-Sleep\-\_\-\-Manual (
+\begin{DoxyParamCaption}
+\item[{int}]{sleep\-Id, }
+\item[{string}]{names, }
+\item[{string}]{unit\-Date\-Ids, }
+\item[{string}]{unit\-Time\-Values, }
+\item[{string}]{unit\-Time\-Ids}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a68f701aa5999c1bdc92e2d880b7d41af}
+insert update sleep manual \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a68f701aa5999c1bdc92e2d880b7d41af}{Insert\-Update\-\_\-\-Sleep\-\_\-\-Manual()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 1668 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a0e272870de72fd2dfe58a8077219d379}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Sp\-O2@{Insert\-Update\-\_\-\-Sp\-O2}}
+\index{Insert\-Update\-\_\-\-Sp\-O2@{Insert\-Update\-\_\-\-Sp\-O2}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Sp\-O2}]{\setlength{\rightskip}{0pt plus 5cm}object D\-B\-Class.\-Insert\-Update\-\_\-\-Sp\-O2 (
+\begin{DoxyParamCaption}
+\item[{int}]{auto\-Id, }
+\item[{string}]{username, }
+\item[{decimal?}]{Sample\-Rate, }
+\item[{int?}]{Sample\-Rate\-Id, }
+\item[{int?}]{Tracking\-Type\-Id, }
+\item[{decimal?}]{Threshold, }
+\item[{decimal?}]{Measurement\-Value, }
+\item[{int?}]{Measurement\-Id}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a0e272870de72fd2dfe58a8077219d379}
+insert update oxygen \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a0e272870de72fd2dfe58a8077219d379}{Insert\-Update\-\_\-\-Sp\-O2()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+
+
+Definition at line 1256 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_adc8d1ca8c834e65325767f8187caf996}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Stress@{Insert\-Update\-\_\-\-Stress}}
+\index{Insert\-Update\-\_\-\-Stress@{Insert\-Update\-\_\-\-Stress}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Stress}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-Stress (
+\begin{DoxyParamCaption}
+\item[{int}]{auto\-Id, }
+\item[{string}]{username, }
+\item[{decimal?}]{Measure\-Duration, }
+\item[{int?}]{M\-D\-Unit\-Time\-Id, }
+\item[{decimal?}]{H\-R\-Sample\-Rate, }
+\item[{int?}]{H\-R\-S\-R\-Unit\-Time\-Id, }
+\item[{decimal?}]{G\-S\-R\-Sample\-Rate, }
+\item[{int?}]{G\-S\-R\-S\-R\-Unit\-Time\-Id, }
+\item[{decimal?}]{Accel\-Sample\-Rate, }
+\item[{int?}]{A\-S\-R\-Unit\-Time\-Id}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_adc8d1ca8c834e65325767f8187caf996}
+insert update stress \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_adc8d1ca8c834e65325767f8187caf996}{Insert\-Update\-\_\-\-Stress()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 1472 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a26cddcc85c3f1be4d246912113d3a231}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Users@{Insert\-Update\-\_\-\-Users}}
+\index{Insert\-Update\-\_\-\-Users@{Insert\-Update\-\_\-\-Users}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Users}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-Users (
+\begin{DoxyParamCaption}
+\item[{string}]{username, }
+\item[{string}]{userpass, }
+\item[{string}]{passhint, }
+\item[{int}]{usertypeid, }
+\item[{bool}]{isactive}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a26cddcc85c3f1be4d246912113d3a231}
+insert, update user \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a26cddcc85c3f1be4d246912113d3a231}{Insert\-Update\-\_\-\-Users()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em username} & if username exist then update, else insert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 154 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a8900e70ea5308637f732de925c2e217b}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Users\-Contact@{Insert\-Update\-\_\-\-Users\-Contact}}
+\index{Insert\-Update\-\_\-\-Users\-Contact@{Insert\-Update\-\_\-\-Users\-Contact}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Users\-Contact}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-Users\-Contact (
+\begin{DoxyParamCaption}
+\item[{string}]{username, }
+\item[{string}]{name, }
+\item[{string}]{email, }
+\item[{string}]{phone, }
+\item[{string}]{address, }
+\item[{bool}]{Is\-Main}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a8900e70ea5308637f732de925c2e217b}
+insert, update user contact \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a8900e70ea5308637f732de925c2e217b}{Insert\-Update\-\_\-\-Users\-Contact()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em username} & if username exist then update, else insert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 166 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a2efd80a5427a8bedc880acefd862553b}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-User\-Setting\-Color@{Insert\-Update\-\_\-\-User\-Setting\-Color}}
+\index{Insert\-Update\-\_\-\-User\-Setting\-Color@{Insert\-Update\-\_\-\-User\-Setting\-Color}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-User\-Setting\-Color}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-User\-Setting\-Color (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{int}]{Skin\-Temp\-Color\-Id, }
+\item[{int}]{Amb\-Temp\-Color\-Id, }
+\item[{int}]{Background\-Color\-Id}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a2efd80a5427a8bedc880acefd862553b}
+insert update color for user \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a2efd80a5427a8bedc880acefd862553b}{Insert\-Update\-\_\-\-User\-Setting\-Color()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 621 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a9254bd810d437740310edb4fc6b19623}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-Users\-Info@{Insert\-Update\-\_\-\-Users\-Info}}
+\index{Insert\-Update\-\_\-\-Users\-Info@{Insert\-Update\-\_\-\-Users\-Info}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-Users\-Info}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-Users\-Info (
+\begin{DoxyParamCaption}
+\item[{string}]{username, }
+\item[{string}]{firstname, }
+\item[{string}]{lastname, }
+\item[{Date\-Time?}]{dateofbirth, }
+\item[{bool}]{isgender, }
+\item[{string}]{emailaddress, }
+\item[{string}]{streetaddress, }
+\item[{string}]{citycode, }
+\item[{string}]{statecode, }
+\item[{string}]{zipcode, }
+\item[{string}]{county, }
+\item[{string}]{countrycode, }
+\item[{string}]{homephone, }
+\item[{string}]{mobilephone, }
+\item[{string}]{registrationcode}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a9254bd810d437740310edb4fc6b19623}
+insert, update user info \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a9254bd810d437740310edb4fc6b19623}{Insert\-Update\-\_\-\-Users\-Info()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em username} & if username exist then update, else insert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 178 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a4568088b863f4eced0d05dc68a255f7d}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-User\-Track\-My\-Health\-\_\-\-Measurement@{Insert\-Update\-\_\-\-User\-Track\-My\-Health\-\_\-\-Measurement}}
+\index{Insert\-Update\-\_\-\-User\-Track\-My\-Health\-\_\-\-Measurement@{Insert\-Update\-\_\-\-User\-Track\-My\-Health\-\_\-\-Measurement}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-User\-Track\-My\-Health\-\_\-\-Measurement}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-User\-Track\-My\-Health\-\_\-\-Measurement (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{bool}]{Metric, }
+\item[{bool}]{U\-S}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a4568088b863f4eced0d05dc68a255f7d}
+insert update track health measurement \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a4568088b863f4eced0d05dc68a255f7d}{Insert\-Update\-\_\-\-User\-Track\-My\-Health\-\_\-\-Measurement()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 669 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ad222e776de0cc554f15903c20bd672f0}{\index{D\-B\-Class@{D\-B\-Class}!Insert\-Update\-\_\-\-User\-Track\-My\-Health\-\_\-\-Threshold@{Insert\-Update\-\_\-\-User\-Track\-My\-Health\-\_\-\-Threshold}}
+\index{Insert\-Update\-\_\-\-User\-Track\-My\-Health\-\_\-\-Threshold@{Insert\-Update\-\_\-\-User\-Track\-My\-Health\-\_\-\-Threshold}!DBClass@{D\-B\-Class}}
+\subsubsection[{Insert\-Update\-\_\-\-User\-Track\-My\-Health\-\_\-\-Threshold}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Insert\-Update\-\_\-\-User\-Track\-My\-Health\-\_\-\-Threshold (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name, }
+\item[{decimal?}]{Samplerate, }
+\item[{int?}]{Sample\-Rate\-Id, }
+\item[{decimal?}]{Low\-Value, }
+\item[{decimal?}]{High\-Value, }
+\item[{decimal?}]{Very\-High\-Value}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ad222e776de0cc554f15903c20bd672f0}
+insert update track health threshold \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ad222e776de0cc554f15903c20bd672f0}{Insert\-Update\-\_\-\-User\-Track\-My\-Health\-\_\-\-Threshold()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 990 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a4d51d814947ee0d6b8e4fc40c69a9042}{\index{D\-B\-Class@{D\-B\-Class}!Invalid\-\_\-\-Registration\-Code@{Invalid\-\_\-\-Registration\-Code}}
+\index{Invalid\-\_\-\-Registration\-Code@{Invalid\-\_\-\-Registration\-Code}!DBClass@{D\-B\-Class}}
+\subsubsection[{Invalid\-\_\-\-Registration\-Code}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Invalid\-\_\-\-Registration\-Code (
+\begin{DoxyParamCaption}
+\item[{string}]{registercode}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a4d51d814947ee0d6b8e4fc40c69a9042}
+check register code exist \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a4d51d814947ee0d6b8e4fc40c69a9042}{Invalid\-\_\-\-Registration\-Code()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 797 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a780a2360541eac03a5f601e807daa315}{\index{D\-B\-Class@{D\-B\-Class}!Invite\-\_\-\-Membertype@{Invite\-\_\-\-Membertype}}
+\index{Invite\-\_\-\-Membertype@{Invite\-\_\-\-Membertype}!DBClass@{D\-B\-Class}}
+\subsubsection[{Invite\-\_\-\-Membertype}]{\setlength{\rightskip}{0pt plus 5cm}string D\-B\-Class.\-Invite\-\_\-\-Membertype (
+\begin{DoxyParamCaption}
+\item[{string}]{member\-Type}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a780a2360541eac03a5f601e807daa315}
+invite member type \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a780a2360541eac03a5f601e807daa315}{Invite\-\_\-\-Membertype()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 788 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a4c5f9a9dc76a0b8585eeaf9fd3dcda9e}{\index{D\-B\-Class@{D\-B\-Class}!Is\-Active\-\_\-\-User\-\_\-\-By\-Ids@{Is\-Active\-\_\-\-User\-\_\-\-By\-Ids}}
+\index{Is\-Active\-\_\-\-User\-\_\-\-By\-Ids@{Is\-Active\-\_\-\-User\-\_\-\-By\-Ids}!DBClass@{D\-B\-Class}}
+\subsubsection[{Is\-Active\-\_\-\-User\-\_\-\-By\-Ids}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Is\-Active\-\_\-\-User\-\_\-\-By\-Ids (
+\begin{DoxyParamCaption}
+\item[{string}]{Ids, }
+\item[{bool}]{is\-Active}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a4c5f9a9dc76a0b8585eeaf9fd3dcda9e}
+active 1 array id \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a4c5f9a9dc76a0b8585eeaf9fd3dcda9e}{Is\-Active\-\_\-\-User\-\_\-\-By\-Ids()}  ids array id 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em isactive} & true active, false deavtive \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 428 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ad9d03a94de073831692a0ba77d9971eb}{\index{D\-B\-Class@{D\-B\-Class}!Is\-Active\-\_\-\-User\-\_\-\-By\-Web\-Code@{Is\-Active\-\_\-\-User\-\_\-\-By\-Web\-Code}}
+\index{Is\-Active\-\_\-\-User\-\_\-\-By\-Web\-Code@{Is\-Active\-\_\-\-User\-\_\-\-By\-Web\-Code}!DBClass@{D\-B\-Class}}
+\subsubsection[{Is\-Active\-\_\-\-User\-\_\-\-By\-Web\-Code}]{\setlength{\rightskip}{0pt plus 5cm}bool D\-B\-Class.\-Is\-Active\-\_\-\-User\-\_\-\-By\-Web\-Code (
+\begin{DoxyParamCaption}
+\item[{string}]{Web\-Code}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ad9d03a94de073831692a0ba77d9971eb}
+active user register by webcode \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ad9d03a94de073831692a0ba77d9971eb}{Is\-Active\-\_\-\-User\-\_\-\-By\-Web\-Code()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+bool value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 739 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a0e5e201e2c1a800ef5f3bd6d27735a10}{\index{D\-B\-Class@{D\-B\-Class}!Is\-Allow\-Check\-Status\-Registration\-Code\-In\-Send\-Email@{Is\-Allow\-Check\-Status\-Registration\-Code\-In\-Send\-Email}}
+\index{Is\-Allow\-Check\-Status\-Registration\-Code\-In\-Send\-Email@{Is\-Allow\-Check\-Status\-Registration\-Code\-In\-Send\-Email}!DBClass@{D\-B\-Class}}
+\subsubsection[{Is\-Allow\-Check\-Status\-Registration\-Code\-In\-Send\-Email}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Is\-Allow\-Check\-Status\-Registration\-Code\-In\-Send\-Email (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a0e5e201e2c1a800ef5f3bd6d27735a10}
+check webcode when register \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a0e5e201e2c1a800ef5f3bd6d27735a10}{Is\-Allow\-Check\-Status\-Registration\-Code\-In\-Send\-Email()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 809 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a6e15594a3adc8194e932b15597421971}{\index{D\-B\-Class@{D\-B\-Class}!Is\-Exists\-\_\-\-Email@{Is\-Exists\-\_\-\-Email}}
+\index{Is\-Exists\-\_\-\-Email@{Is\-Exists\-\_\-\-Email}!DBClass@{D\-B\-Class}}
+\subsubsection[{Is\-Exists\-\_\-\-Email}]{\setlength{\rightskip}{0pt plus 5cm}object D\-B\-Class.\-Is\-Exists\-\_\-\-Email (
+\begin{DoxyParamCaption}
+\item[{string}]{email}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a6e15594a3adc8194e932b15597421971}
+check email is exist \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a6e15594a3adc8194e932b15597421971}{Is\-Exists\-\_\-\-Email()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+object value 1 exist, 0 not exist 
+\end{DoxyReturn}
+
+
+Definition at line 328 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ae14263d3318dc4b2ed3747c677bf98a2}{\index{D\-B\-Class@{D\-B\-Class}!Is\-Invalid\-\_\-\-Email\-Address@{Is\-Invalid\-\_\-\-Email\-Address}}
+\index{Is\-Invalid\-\_\-\-Email\-Address@{Is\-Invalid\-\_\-\-Email\-Address}!DBClass@{D\-B\-Class}}
+\subsubsection[{Is\-Invalid\-\_\-\-Email\-Address}]{\setlength{\rightskip}{0pt plus 5cm}bool D\-B\-Class.\-Is\-Invalid\-\_\-\-Email\-Address (
+\begin{DoxyParamCaption}
+\item[{string}]{username, }
+\item[{string}]{emailaddress}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ae14263d3318dc4b2ed3747c677bf98a2}
+check email by username, change email address \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ae14263d3318dc4b2ed3747c677bf98a2}{Is\-Invalid\-\_\-\-Email\-Address()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+bool value 
+\end{DoxyReturn}
+
+
+Definition at line 915 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aada5d4b0954419f23fcf368df799bd0c}{\index{D\-B\-Class@{D\-B\-Class}!Login\-\_\-\-Website@{Login\-\_\-\-Website}}
+\index{Login\-\_\-\-Website@{Login\-\_\-\-Website}!DBClass@{D\-B\-Class}}
+\subsubsection[{Login\-\_\-\-Website}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Login\-\_\-\-Website (
+\begin{DoxyParamCaption}
+\item[{string}]{username, }
+\item[{string}]{userpass, }
+\item[{string}]{loginfromcomputerip}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aada5d4b0954419f23fcf368df799bd0c}
+login website \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_aada5d4b0954419f23fcf368df799bd0c}{Login\-\_\-\-Website()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow info user login 
+\end{DoxyReturn}
+
+
+Definition at line 297 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_ae7cb22c9fabc0e90288382a3d52c497c}{\index{D\-B\-Class@{D\-B\-Class}!Register\-\_\-\-Account\-\_\-\-Users@{Register\-\_\-\-Account\-\_\-\-Users}}
+\index{Register\-\_\-\-Account\-\_\-\-Users@{Register\-\_\-\-Account\-\_\-\-Users}!DBClass@{D\-B\-Class}}
+\subsubsection[{Register\-\_\-\-Account\-\_\-\-Users}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Register\-\_\-\-Account\-\_\-\-Users (
+\begin{DoxyParamCaption}
+\item[{string}]{username, }
+\item[{string}]{userpass, }
+\item[{string}]{passhint, }
+\item[{string}]{firstname, }
+\item[{string}]{lastname, }
+\item[{Date\-Time?}]{dateofbirth, }
+\item[{bool}]{isgender, }
+\item[{string}]{emailaddress, }
+\item[{string}]{streetaddress, }
+\item[{string}]{citycode, }
+\item[{string}]{statecode, }
+\item[{string}]{zipcode, }
+\item[{string}]{county, }
+\item[{string}]{countrycode, }
+\item[{string}]{homephone, }
+\item[{string}]{mobilephone, }
+\item[{string}]{registeredip, }
+\item[{string}]{registrationcode}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_ae7cb22c9fabc0e90288382a3d52c497c}
+register new user \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_ae7cb22c9fabc0e90288382a3d52c497c}{Register\-\_\-\-Account\-\_\-\-Users()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow user info register 
+\end{DoxyReturn}
+
+
+Definition at line 306 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a08bd9c83614e63a7d978da2cde32d395}{\index{D\-B\-Class@{D\-B\-Class}!Register\-\_\-\-Validation\-\_\-\-User\-Name@{Register\-\_\-\-Validation\-\_\-\-User\-Name}}
+\index{Register\-\_\-\-Validation\-\_\-\-User\-Name@{Register\-\_\-\-Validation\-\_\-\-User\-Name}!DBClass@{D\-B\-Class}}
+\subsubsection[{Register\-\_\-\-Validation\-\_\-\-User\-Name}]{\setlength{\rightskip}{0pt plus 5cm}object D\-B\-Class.\-Register\-\_\-\-Validation\-\_\-\-User\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{username}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a08bd9c83614e63a7d978da2cde32d395}
+check username register \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a08bd9c83614e63a7d978da2cde32d395}{Register\-\_\-\-Validation\-\_\-\-User\-Name()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+object value 1 username validation, 0 unvalidation 
+\end{DoxyReturn}
+
+
+Definition at line 319 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_aa77b93fa5b15252418e3fd8e24ffd8ac}{\index{D\-B\-Class@{D\-B\-Class}!Set\-\_\-\-Register\-Code\-\_\-\-Using@{Set\-\_\-\-Register\-Code\-\_\-\-Using}}
+\index{Set\-\_\-\-Register\-Code\-\_\-\-Using@{Set\-\_\-\-Register\-Code\-\_\-\-Using}!DBClass@{D\-B\-Class}}
+\subsubsection[{Set\-\_\-\-Register\-Code\-\_\-\-Using}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Set\-\_\-\-Register\-Code\-\_\-\-Using (
+\begin{DoxyParamCaption}
+\item[{string}]{Code}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_aa77b93fa5b15252418e3fd8e24ffd8ac}
+delete parameter by id \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a7ccd4c71dd6fae6380139ec0090d9b61}{Delete\-Paramaters()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 458 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a11e3e7a443614ac51a5a20155afb68b3}{\index{D\-B\-Class@{D\-B\-Class}!Submit\-\_\-\-Forgot\-\_\-\-Password@{Submit\-\_\-\-Forgot\-\_\-\-Password}}
+\index{Submit\-\_\-\-Forgot\-\_\-\-Password@{Submit\-\_\-\-Forgot\-\_\-\-Password}!DBClass@{D\-B\-Class}}
+\subsubsection[{Submit\-\_\-\-Forgot\-\_\-\-Password}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Submit\-\_\-\-Forgot\-\_\-\-Password (
+\begin{DoxyParamCaption}
+\item[{string}]{username, }
+\item[{Date\-Time?}]{dateofbirth}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a11e3e7a443614ac51a5a20155afb68b3}
+check info user forgot password \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a11e3e7a443614ac51a5a20155afb68b3}{Submit\-\_\-\-Forgot\-\_\-\-Password()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 337 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a4946c6d4c6f92b0c79f64e8fe5bba494}{\index{D\-B\-Class@{D\-B\-Class}!Submit\-\_\-\-Forgot\-\_\-\-User\-Name@{Submit\-\_\-\-Forgot\-\_\-\-User\-Name}}
+\index{Submit\-\_\-\-Forgot\-\_\-\-User\-Name@{Submit\-\_\-\-Forgot\-\_\-\-User\-Name}!DBClass@{D\-B\-Class}}
+\subsubsection[{Submit\-\_\-\-Forgot\-\_\-\-User\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Data\-Row D\-B\-Class.\-Submit\-\_\-\-Forgot\-\_\-\-User\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{firstname, }
+\item[{string}]{lastname, }
+\item[{Date\-Time?}]{dateofbirth, }
+\item[{string}]{zipcode}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a4946c6d4c6f92b0c79f64e8fe5bba494}
+check info user forgot username \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a4946c6d4c6f92b0c79f64e8fe5bba494}{Submit\-\_\-\-Forgot\-\_\-\-User\-Name()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+datarow 
+\end{DoxyReturn}
+
+
+Definition at line 346 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a3a0623cddd000fbd65ef3fbfc118e09d}{\index{D\-B\-Class@{D\-B\-Class}!Update\-\_\-\-Billing\-Account\-\_\-\-Management@{Update\-\_\-\-Billing\-Account\-\_\-\-Management}}
+\index{Update\-\_\-\-Billing\-Account\-\_\-\-Management@{Update\-\_\-\-Billing\-Account\-\_\-\-Management}!DBClass@{D\-B\-Class}}
+\subsubsection[{Update\-\_\-\-Billing\-Account\-\_\-\-Management}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Update\-\_\-\-Billing\-Account\-\_\-\-Management (
+\begin{DoxyParamCaption}
+\item[{string}]{Account\-Number, }
+\item[{int}]{Billing\-Type\-Id, }
+\item[{Date\-Time?}]{Eff\-Date, }
+\item[{decimal}]{Amount\-Charge, }
+\item[{bool}]{Is\-Pay\-Bill, }
+\item[{string}]{Notes}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a3a0623cddd000fbd65ef3fbfc118e09d}
+update billing account \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a3a0623cddd000fbd65ef3fbfc118e09d}{Update\-\_\-\-Billing\-Account\-\_\-\-Management()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 631 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_accdb33f185e3d071c73ed1c8c05c8db0}{\index{D\-B\-Class@{D\-B\-Class}!Update\-\_\-\-User\-Overview@{Update\-\_\-\-User\-Overview}}
+\index{Update\-\_\-\-User\-Overview@{Update\-\_\-\-User\-Overview}!DBClass@{D\-B\-Class}}
+\subsubsection[{Update\-\_\-\-User\-Overview}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Update\-\_\-\-User\-Overview (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name\-Old, }
+\item[{string}]{User\-Name\-New, }
+\item[{string}]{Email, }
+\item[{string}]{Warning, }
+\item[{string}]{Password}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_accdb33f185e3d071c73ed1c8c05c8db0}
+update user overview \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_accdb33f185e3d071c73ed1c8c05c8db0}{Update\-\_\-\-User\-Overview()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 768 of file D\-B\-Class.\-cs.
+
+\hypertarget{class_d_b_class_a5be6a98dd7109e6bae4e4ff3ba9ef06a}{\index{D\-B\-Class@{D\-B\-Class}!Update\-Global\-Setting@{Update\-Global\-Setting}}
+\index{Update\-Global\-Setting@{Update\-Global\-Setting}!DBClass@{D\-B\-Class}}
+\subsubsection[{Update\-Global\-Setting}]{\setlength{\rightskip}{0pt plus 5cm}int D\-B\-Class.\-Update\-Global\-Setting (
+\begin{DoxyParamCaption}
+\item[{string}]{User\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_d_b_class_a5be6a98dd7109e6bae4e4ff3ba9ef06a}
+update global setting \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_d_b_class_a5be6a98dd7109e6bae4e4ff3ba9ef06a}{Update\-Global\-Setting()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+int value 1 success, 0 failure 
+\end{DoxyReturn}
+
+
+Definition at line 601 of file D\-B\-Class.\-cs.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+E\-:/\-Mint/\-Home care/\-Smart\-Home\-Care/\-App\-\_\-\-Code/D\-B\-Class.\-cs\end{DoxyCompactItemize}

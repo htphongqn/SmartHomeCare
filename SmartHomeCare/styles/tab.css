@@ -1,0 +1,131 @@
+﻿        .mytab .ajax__tab_header
+        {
+            font-family: "Helvetica Neue" , Arial, Sans-Serif;
+            font-size: 14px;
+            font-weight:bold;
+            display: block;
+
+        }
+        .mytab .ajax__tab_header .ajax__tab_outer
+        {
+            border-color: #222;
+            color: #222;
+            padding-left: 10px;
+            margin-right: 3px;
+            background:#d7d7d7;
+            border:solid 1px #d7d7d7;
+            border-radius:5px;
+            
+        }
+        .mytab .ajax__tab_header .ajax__tab_inner
+        {
+            border-color: #666;
+            color: #666;
+            padding: 3px 10px 2px 0px;
+        }
+        .mytab .ajax__tab_hover .ajax__tab_outer
+        {
+            background-color:#D3AC17;
+             
+        }
+        
+        .mytab .ajax__tab_hover .ajax__tab_inner
+        {
+            color: #fff;
+        }
+        .mytab .ajax__tab_active .ajax__tab_outer
+        {
+            border-bottom-color: #ffffff;
+            background:url(../resources/images/submit2.png) #005E8F;
+            border:solid 1px #005E8F;
+            
+        }
+        .mytab .ajax__tab_active .ajax__tab_outer a
+        {
+            color:#fff;
+        }
+        .mytab .ajax__tab_active .ajax__tab_inner
+        {
+            color: #000;
+            border-color: #333;
+        }
+        .mytab .ajax__tab_body
+        {
+            font-family: verdana,tahoma,helvetica;
+            font-size: 10pt;
+            background-color: #fff;
+            border-top-width: 0;
+            border:1px solid #22749E;
+            border-radius:5px;
+            padding:5px;
+            margin-top:10px;
+            margin-bottom:10px;
+        }
+        /*--------------------------------*/
+        .subtab .ajax__tab_header
+        {
+            font-family: "Helvetica Neue" , Arial, Sans-Serif;
+            font-size: 14px;
+            font-weight:bold;
+            display: block;
+            text-align:center;
+
+        }
+        .subtab .ajax__tab_header a
+        {
+            color:gray;
+            text-decoration:underline;
+        }
+        .subtab .ajax__tab_header .ajax__tab_outer
+        {
+            border-color: #222;
+            color: #000;
+           
+            padding-left: 0px;
+            margin-right: 3px;
+            background:#fff;
+            border:0;
+            border-radius:0px;
+        }
+        .subtab .ajax__tab_header .ajax__tab_inner
+        {
+            
+            
+        }
+        .subtab .ajax__tab_hover .ajax__tab_outer
+        {
+            
+             
+        }
+        
+        .subtab .ajax__tab_hover .ajax__tab_inner
+        {
+            
+        }
+        .subtab .ajax__tab_active .ajax__tab_outer
+        {
+           
+            
+        }
+        
+        .subtab .ajax__tab_active .ajax__tab_outer a
+        {
+            text-decoration:none;
+            color:#1179BE;
+        }
+        .subtab .ajax__tab_active .ajax__tab_inner
+        {
+            
+        }
+        .subtab .ajax__tab_body
+        {
+            font-family: verdana,tahoma,helvetica;
+            font-size: 10pt;
+            background-color: #fff;
+            border-top-width: 0;
+            border-radius:5px;
+            margin-top:10px;
+            margin-bottom:10px;
+        }
+        
+

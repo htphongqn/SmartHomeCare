@@ -1,0 +1,164 @@
+﻿.Supine 
+{
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background-color:Blue;
+	margin-bottom:180px;
+	/* width and height can be anything, as long as they're equal */
+}
+
+.Prone 
+{
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background-color:Red;
+	margin-bottom:140px;
+	/* width and height can be anything, as long as they're equal */
+}
+
+.Left 
+{
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background-color:Purple;
+	margin-bottom:100px;
+	/* width and height can be anything, as long as they're equal */
+}
+
+.Right 
+{
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background-color:Orange;
+	margin-bottom:60px;
+	/* width and height can be anything, as long as they're equal */
+}
+
+.Up 
+{
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background-color:Green;
+	margin-bottom:20px;
+	/* width and height can be anything, as long as they're equal */
+}
+
+.Down 
+{
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background-color:Maroon;
+	margin-bottom:-20px;
+	/* width and height can be anything, as long as they're equal */
+}
+
+.Undefined 
+{
+	border-radius: 50%;
+	width: 20px;
+	height: 0px;
+	background-color:Transparent;
+	/* width and height can be anything, as long as they're equal */
+}
+
+.Healthy
+{
+    width:25px;
+    height:25px;
+}
+
+.UnderOverWeight
+{
+    width:25px;
+    height:25px;
+}
+
+.Obese
+{
+    width:30px;
+    height:39px;
+    vertical-align:bottom;
+}
+
+.ColumnData
+{
+    width:15px;
+    background-color:Green;
+    font-size:10px;
+}
+
+.ColumnHeader
+{
+   display:block;
+   /*position:absolute;*/
+   z-index:99;
+   height:40px;
+}
+
+.LabelTitle
+{
+    width:20px;
+    font-size:8pt;
+    writing-mode:tb-rl;
+   -webkit-transform:rotate(-45deg);
+   -moz-transform:rotate(-45deg);
+   -o-transform: rotate(-45deg);
+   -ms-transform: rotate(-135deg);
+   display:block;
+   padding-top:40px;
+   padding-right:20px;
+   padding-left:0px;
+   /*position:absolute;*/
+   margin-left:-45px;
+   z-index:99;
+}
+
+.Chart
+{
+    overflow-x:scroll;
+    height:320px;
+    min-width:500px;
+    max-width:600px;
+}
+
+.DatalistChart
+{
+    overflow: hidden;
+}
+
+.TitleChart
+{
+    width:95px;
+    text-align:center;
+    height:50px;
+    vertical-align:bottom;
+}
+
+#linearBg2 {
+  /* fallback */
+  border-radius: 2%;
+  background-color: #ffffff;
+  background: url(images/linear_bg_2.png);
+  background-repeat: repeat-x;
+
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#CCC));
+
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #CCC, #ffffff);
+
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #CCC, #ffffff);
+
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #CCC, #ffffff);
+
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #CCC, #ffffff);
+}

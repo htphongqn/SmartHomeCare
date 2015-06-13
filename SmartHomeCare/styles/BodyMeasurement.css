@@ -1,0 +1,129 @@
+﻿.Healthy
+{
+    min-width:25px;
+    min-height:25px;
+}
+
+.UnderOverWeight
+{
+    min-width:25px;
+    min-height:25px;
+}
+
+.Obese
+{
+    min-width:25px;
+    min-height:25px;
+}
+
+.Legend
+{
+    width:10px;
+    height:10px;
+}
+
+.LabelTitle
+{
+    width:20px;
+    font-size:8pt;
+    writing-mode:tb-rl;
+   -webkit-transform:rotate(-45deg);
+   -moz-transform:rotate(-45deg);
+   -o-transform: rotate(-45deg);
+   -ms-transform: rotate(-45deg);
+   display:block;
+   padding-top:40px;
+   padding-right:20px;
+   padding-left:0px;
+   /*position:absolute;*/
+   margin-left:-40px;
+   z-index:99;
+}
+
+.Chart
+{
+    overflow-x:scroll;
+    height:300px;
+    max-width:400px;
+}
+
+.TitleChart
+{
+    width:95px;
+    text-align:center;
+    height:30px;
+}
+.title_data
+{
+    float:left;
+    width:70px;
+    text-align:center;
+    margin:0;
+    padding:0;
+    
+}
+.title_data table
+{
+    width:100%;
+    border-collapse:collapse;
+    background:url(../resources/images/title_b.png);
+    color:#fff;
+    font-size:0.8em;
+    font-weight:bold;
+}
+.title_data table td
+{
+    border:1px solid #1458A2;
+    height:30px;
+}
+.title_data table th
+{
+    border:1px solid #1458A2;
+    
+}
+.body_measurement
+{
+    background:#f3f3f3;
+    
+}
+.body_data
+{
+    
+    overflow:scroll;
+    float:left;
+    width:650px;
+    
+}
+.data_main
+{
+    
+}
+.data_main table
+{
+    text-align:center;
+    border-collapse:collapse;
+    margin-right:-1px;
+    background:#fff;
+    
+}
+.data_main table td
+{
+    border:1px solid silver;
+    font-size:0.65em;
+    overflow:hidden;
+    height:30px;
+    border-left:1px solid silver;
+    border-right:1px solid silver;
+}
+.data_main table th
+{
+    border:1px solid #1559A2;
+    background:#1559A2;
+    color:#fff;
+    border-left:1px solid silver;
+    border-right:1px solid silver;
+}
+.value_body
+{
+    background:#F7F0D5;
+}
