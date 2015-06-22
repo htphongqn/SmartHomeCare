@@ -414,7 +414,8 @@ public partial class usertrackmyhealth_fitness : System.Web.UI.Page
         private void LoadStepCountsDefault(string ParameterCode)
         {
             WebChartFitness.Chart.Series.RemoveAllSeries();
-            DataTable dt = _db.GetList_Fitness_Pedometer_Graph_Default(userName(), ParameterCode);
+            //DataTable dt = _db.GetList_Fitness_Pedometer_Graph_Default(userName(), ParameterCode);
+            DataTable dt = _db.GetList_Fitness_Pedometer_Graph_ByParameterCode(userName(), null, null, ParameterCode);
             if (dt != null && dt.Rows.Count > 0)
             {
                 pnEmptyData.Visible = false;
@@ -599,7 +600,8 @@ public partial class usertrackmyhealth_fitness : System.Web.UI.Page
         private void Load_HRExercise_Default(int index)
         {
             grvHRExercise.PageIndex = index;
-            DataTable table = _db.GetList_Fitness_HRExercise_Default(userName());
+            //DataTable table = _db.GetList_Fitness_HRExercise_Default(userName());
+            DataTable table = _db.GetList_Fitness_HRExercise_Table(userName(), null, null);
             Add_grvHRExercise(table);
             pager(index);
         }
@@ -609,7 +611,8 @@ public partial class usertrackmyhealth_fitness : System.Web.UI.Page
         private void Load_TablePedometer_Default(int index)
         {
             grvPedometer.PageIndex = index;
-            DataTable table = _db.GetList_Fitness_Pedometer_Default(userName());
+            //DataTable table = _db.GetList_Fitness_Pedometer_Default(userName());
+            DataTable table = _db.GetList_Fitness_Pedometer_Table(userName(), null, null);
             Add_grvPedometer(table);
             pager2(index);
         }

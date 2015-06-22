@@ -279,7 +279,8 @@ public partial class usertrackmyhealth_sleep : System.Web.UI.Page
 
     private void LoadDrawDataDefault()
     {
-        DataTable dt = _db.GetList_Sleep_Rawdata_Default(userName());
+        //DataTable dt = _db.GetList_Sleep_Rawdata_Default(userName());
+        DataTable dt = _db.GetList_Sleep_Rawdata(userName(), null, null);
         if (dt != null && dt.Rows.Count > 0)
         {
             LoadDrawDataFromDatatable(dt);

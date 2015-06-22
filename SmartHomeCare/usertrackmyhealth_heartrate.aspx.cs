@@ -187,7 +187,8 @@ public partial class usertrackmyhealth_heartrate : System.Web.UI.Page
     //Load HeartRate HRV Default
     private void LoadHRVDataDefault()
     {
-        DataTable dt = _db.GetList_HeartRate_HRV_Default(userName());
+        //DataTable dt = _db.GetList_HeartRate_HRV_Default(userName());
+        DataTable dt = _db.GetList_HeartRate_HRV_Table(userName(), null, null).Tables[1];
         if (dt == null || dt.Rows.Count <= 0)
         {
             pnHRVData.Visible = false;
@@ -302,7 +303,8 @@ public partial class usertrackmyhealth_heartrate : System.Web.UI.Page
 
     private void LoadHeartRateDataDefault()
     {
-        DataTable dt = _db.GetList_HeartRate_HRV_Default(userName());         
+        //DataTable dt = _db.GetList_HeartRate_HRV_Default(userName());     
+        DataTable dt = _db.GetList_HeartRate_HRV_Table(userName(), null, null).Tables[0]; 
         if (dt == null || dt.Rows.Count <= 0)
         {
             pnHRVData.Visible = false;
@@ -609,7 +611,8 @@ public partial class usertrackmyhealth_heartrate : System.Web.UI.Page
         private void Load_TableHRV_Default(int index)
         {
             grvHVRData.PageIndex = index;
-            DataTable dt = _db.GetList_HeartRate_HRV_Default(userName());
+            //DataTable dt = _db.GetList_HeartRate_HRV_Default(userName());
+            DataTable dt = _db.GetList_HeartRate_HRV_Table(userName(), null, null).Tables[1];
             Add_grvTableHRV(dt);
             pager2(index);
         }
@@ -626,7 +629,8 @@ public partial class usertrackmyhealth_heartrate : System.Web.UI.Page
         private void Load_TableHeartRate_Default(int index)
         {
             grvTable.PageIndex = index;
-            DataTable table = _db.GetList_HeartRate_Default(userName());
+            //DataTable table = _db.GetList_HeartRate_Default(userName());
+            DataTable table = _db.GetList_HeartRate_Table(userName(), null, null);
             Add_grvTable(table);
             pager(index);
         }

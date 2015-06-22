@@ -208,7 +208,8 @@ public partial class usertrackmyhealth_spo2 : System.Web.UI.Page
 
     private void LoadSPO2GraphDefault()
     {
-        DataTable dt = _db.GetList_SpO2_Default(userName());
+        //DataTable dt = _db.GetList_SpO2_Default(userName());
+        DataTable dt = _db.GetList_SpO2_Table(userName(), null, null);
         if (dt == null || dt.Rows.Count <= 0)
         {
             pnGraphSpO2.Visible = false;

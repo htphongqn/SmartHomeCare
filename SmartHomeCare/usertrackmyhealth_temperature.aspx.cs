@@ -151,7 +151,8 @@ public partial class usertrackmyhealth_temperature_graph : System.Web.UI.Page
         DataRow row = (DataRow)Session["User"];
         if (row != null)
         {
-            DataTable dt = _db.GetList_Temperature_Default(userName());
+            //DataTable dt = _db.GetList_Temperature_Default(userName());
+            DataTable dt = _db.GetList_UserTemperature(userName(), null, null);
             if (dt.Rows.Count > 0)
             {
                 //lbDataEmpty.Visible = false;
@@ -174,7 +175,8 @@ public partial class usertrackmyhealth_temperature_graph : System.Web.UI.Page
         DataRow row = (DataRow)Session["User"];
         if (row != null)
         {
-            DataTable dt = _db.GetList_Temperature_Default(userName());
+            //DataTable dt = _db.GetList_Temperature_Default(userName());
+            DataTable dt = _db.GetList_UserTemperature(userName(), null, null);
             if (dt.Rows.Count > 0)
             {
                 grvTemp.PageIndex = i;

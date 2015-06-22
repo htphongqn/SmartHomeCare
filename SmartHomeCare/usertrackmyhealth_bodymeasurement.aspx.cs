@@ -134,7 +134,8 @@ public partial class usertrackmyhealth_bodymeasurement : System.Web.UI.Page
         DataRow row = (DataRow)Session["User"];
         if (row != null)
         {
-            DataTable dt = _db.GetList_BodyMeasurement_Graph_Default(userName());
+            //DataTable dt = _db.GetList_BodyMeasurement_Graph_Default(userName());
+            DataTable dt = _db.GetList_BodyMeasurement_Graph(userName(), null, null);
             if (dt == null || dt.Rows.Count <= 0)
             {
                 pnChart.Visible = false;
@@ -400,7 +401,8 @@ public partial class usertrackmyhealth_bodymeasurement : System.Web.UI.Page
     }
     private void loadBodyMeasurementTableDefault()
     {
-            DataTable dt = _db.GetList_BodyMeasurement_Datatable_Default(getUserName());
+            //DataTable dt = _db.GetList_BodyMeasurement_Datatable_Default(getUserName());
+            DataTable dt = _db.GetList_BodyMeasurement_Datatable(getUserName(), null, null).Tables[0];
             int width = 0;
             string table = "";
             if (dt.Rows.Count > 0)

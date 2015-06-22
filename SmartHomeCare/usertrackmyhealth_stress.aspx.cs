@@ -219,8 +219,8 @@ public partial class usertrackmyhealth_stress : System.Web.UI.Page
         private void LoadDataStressDefault()
         {
             DrawData = false;
-            DataTable dt = _db.GetList_Stress_Default(userName());
-
+            //DataTable dt = _db.GetList_Stress_Default(userName());
+            DataTable dt = _db.GetList_Stress_Table(userName(), null, null);
             if (dt != null && dt.Rows.Count > 0)
             {
                 AddSeriesLowHighToWebChart(dt);
@@ -313,7 +313,8 @@ public partial class usertrackmyhealth_stress : System.Web.UI.Page
         private void LoadDrawDataDefault()
         {
             DrawData = true;
-            DataTable dt = _db.GetList_Stress_RawData_Default(userName());
+            //DataTable dt = _db.GetList_Stress_RawData_Default(userName());
+            DataTable dt = _db.GetList_Stress_Rawdata_Table(userName(), null, null);
             if (dt != null && dt.Rows.Count > 0)
             {
                 ChartDrawData.DataSource = dt;

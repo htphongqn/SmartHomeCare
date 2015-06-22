@@ -307,7 +307,8 @@ public partial class usertrackmyhealth_position : System.Web.UI.Page
 
     private void LoadPositionGraphDefault()
     {
-        DataTable dt = _db.GetList_Position_Default(userName());
+        //DataTable dt = _db.GetList_Position_Default(userName());
+        DataTable dt = _db.GetList_Position_Table(userName(), null, null);
         if (dt != null && dt.Rows.Count > 0)
         {
             foreach (DataRow row in dt.Rows)
@@ -388,7 +389,8 @@ public partial class usertrackmyhealth_position : System.Web.UI.Page
             toTime = DateTime.MaxValue.Date;
         if (fromTime == DateTime.MinValue)
             fromTime = DateTime.Now.Date;
-        DataTable dt = _db.GetList_Position_XYZ_Rawdata_Graph_Default(userName());
+        //DataTable dt = _db.GetList_Position_XYZ_Rawdata_Graph_Default(userName());
+        DataTable dt = _db.GetList_Position_XYZ_Rawdata_Table(userName(), null, null);
         if (dt != null && dt.Rows.Count > 0)
         {
             ChartDrawData.DataSource = dt;

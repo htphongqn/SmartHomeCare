@@ -18,8 +18,7 @@ public partial class usertrackothers_bodymeasurement : System.Web.UI.Page
     static int i = 1;
     private DataTable dataTime = new DataTable();
     protected void Page_Load(object sender, EventArgs e)
-    {
-        
+    {     
 
         if (Session["User"] == null)
         {
@@ -155,7 +154,8 @@ public partial class usertrackothers_bodymeasurement : System.Web.UI.Page
         DataRow row = (DataRow)Session["User"];
         if (row != null)
         {
-            DataTable dt = _db.GetList_BodyMeasurement_Graph_Default(getUserName());
+            //DataTable dt = _db.GetList_BodyMeasurement_Graph_Default(getUserName());
+            DataTable dt = _db.GetList_BodyMeasurement_Graph(getUserName(), null, null);
             if (dt == null || dt.Rows.Count <= 0)
             {
                 pnChart.Visible = false;
