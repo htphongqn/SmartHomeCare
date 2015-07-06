@@ -9,6 +9,7 @@
         }
 
     </script>
+    <link href="styles/css.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder id="head1" runat="server">
     </asp:ContentPlaceHolder>
 </asp:Content>
@@ -17,26 +18,26 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="main" Runat="Server">
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-            <td class="left" valign="top">
+<%--            <td class="left" valign="top">
                 <div class="tblleft">
                     Picture
                 </div>
-            </td>
+            </td>--%>
             <td class="center">
                 <asp:ContentPlaceHolder id="center1" runat="server">
                         
                 </asp:ContentPlaceHolder>
             </td>
-            <td class="right" valign="top">
+<%--            <td class="right" valign="top">
                 <asp:ContentPlaceHolder id="right1" runat="server">
                 </asp:ContentPlaceHolder>
-            </td>
+            </td>--%>
         </tr>        
     </table>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="footer" Runat="Server">
     <div class="footer">Public Home Footer<br />
-        <%= Security.GetVersion() %>
+        <%--<%= Security.GetVersion() %>--%>
         <%--<%= "Website was last updated on: " + System.IO.Directory.GetLastWriteTime(Server.MapPath("~/"))%>--%>
     </div>
 </asp:Content>

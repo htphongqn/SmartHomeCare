@@ -40,7 +40,7 @@
             
             <div class="logo">
                 <a href="<%=ResolveUrl("~/home.aspx")%>">
-                    <img src="<%= ResolveUrl("~/resources/images/FW_logo.png") %>" alt=""  height="100" border="0" />
+                    <img src="<%= ResolveUrl("~/resources/images/logo.png") %>" alt=""  height="70" border="0" />
                 </a>
             </div> 
             <div class="info">

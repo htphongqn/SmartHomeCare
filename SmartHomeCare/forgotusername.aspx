@@ -1,14 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sitehome.master" AutoEventWireup="true" CodeFile="forgotusername.aspx.cs" Inherits="forgotusername" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="center1" Runat="Server">
-    If you have an e-mail address on file then your HomeCare ID will be sent to your e-mail account.
-<br />
-If you do not remember any of this information or you do not have a valid e-mail address on file, you will 
-have to contact the HomeCare Help Line at xxx-xxx-xxx, Monday through Friday, x am to xpm.
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
-    
-             <table cellpadding="0" cellspacing="0" align="center" class="tblright">
+
+<table cellpadding="0" cellspacing="0" class="tblright col4">
                     <tr>
                         <td class="titleforgot">
                             <p>Recover your HomeCare username</p> 
@@ -41,7 +35,7 @@ have to contact the HomeCare Help Line at xxx-xxx-xxx, Monday through Friday, x 
                     </tr>
                     <tr>
                         <td>
-                            <table width="100%" cellpadding="0" cellspacing="0">
+                            <table width="265px" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td><asp:TextBox ID="txtmm" runat="server" Width="40px" onkeypress="return ValidateKeypress(/\d/,event);"></asp:TextBox>/</td>
                                     <td><asp:TextBox ID="txtdd" runat="server" Width="40px" onkeypress="return ValidateKeypress(/\d/,event);"></asp:TextBox>/</td>
@@ -85,7 +79,6 @@ have to contact the HomeCare Help Line at xxx-xxx-xxx, Monday through Friday, x 
                         <td>
                             <asp:UpdatePanel runat="server" ID="updatepanelcaptcha">
                                 <ContentTemplate>
-                                <br>
                                     <asp:Image ID="captchaImage" runat="server" Height="35px" />
                                     &nbsp;
                                     <asp:ImageButton ID="imgreload" runat="server" ImageUrl="~/resources/images/captcha-reload.png" CausesValidation="False"
@@ -108,5 +101,15 @@ have to contact the HomeCare Help Line at xxx-xxx-xxx, Monday through Friday, x 
                         <td><asp:Label ID="lbmessage" runat="server" ForeColor="Red" Font-Size="9pt"></asp:Label>  </td>
                     </tr>
                 </table>
-     
+<div class="col8">
+<br />
+    If you have an e-mail address on file then your HomeCare ID will be sent to your e-mail account.
+<br />
+If you do not remember any of this information or you do not have a valid e-mail address on file, you will 
+have to contact the HomeCare Help Line at xxx-xxx-xxx, Monday through Friday, x am to xpm.
+<br />
+</div>
 </asp:Content>
+<%--<asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
+
+</asp:Content>--%>

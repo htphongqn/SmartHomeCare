@@ -49,7 +49,7 @@ public partial class home : System.Web.UI.Page
                 }
             }
 
-            lbcontent.Text = "Welcome...<br />Introduction...";
+            //lbcontent.Text = "Welcome...<br />Introduction...";
 
             if (Session["User"] != null)
             {
@@ -102,14 +102,14 @@ public partial class home : System.Web.UI.Page
     }
     protected void lnkfqas_Click(object sender, EventArgs e)
     {
-        lbcontent.Text = lnkfqas.Text;
+        //lbcontent.Text = lnkfqas.Text;
     }
     protected void lnkprivacypolicy_Click(object sender, EventArgs e)
     {
-        lbcontent.Text = lnkprivacypolicy.Text;
+        //lbcontent.Text = lnkprivacypolicy.Text;
     }
     protected void lnktermsandconditions_Click(object sender, EventArgs e)
     {
-        lbcontent.Text = lnktermsandconditions.Text;
+        //lbcontent.Text = lnktermsandconditions.Text;
     }
 }

@@ -80,6 +80,7 @@
 {
     float: left;
     overflow: hidden;
+    padding:15px;
 }
 .table_login
 {
@@ -204,7 +205,7 @@ select
 {
 	color: #000000;
 	border: solid 1px #cccccc;
-	padding: 1px;
+	padding: 5px;
 	margin-top: 0px;
 	-moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -213,7 +214,7 @@ select
 input[type="text"]
 {
 	border: solid 1px #cccccc;
-	padding: 1px;
+	padding: 5px;
 	-moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -222,7 +223,7 @@ input[type="password"]
 {
     color: #000000;
 	border: solid 1px #cccccc;
-	padding: 1px;
+	padding: 5px;
 	-moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;

@@ -1,14 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sitehome.master" AutoEventWireup="true" CodeFile="forgotpassword.aspx.cs" Inherits="forgotpassword" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="center1" Runat="Server">
-    If you have an e-mail address on file then a ternporary password will be sent to your e-mail account.
-<br />
-<br />
-If you do not remember your HomeCare username, please click on<br />
-<a href="forgotusername.aspx" class="forgot">Forgot Homecare username</a>.
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
-    <table cellpadding="0" cellspacing="0" align="center" class="tblright">
+<table cellpadding="0" cellspacing="0" align="center" class="tblright col4">
     <tr>
         <td class="titleforgot">
             <p>Recover your HomeCare password<br />
@@ -31,7 +24,7 @@ If you do not remember your HomeCare username, please click on<br />
     </tr>
     <tr>
         <td>
-            <table width="100%" cellpadding="0" cellspacing="0">
+            <table width="265px" cellpadding="0" cellspacing="0">
                 <tr>
                     <td><asp:TextBox ID="txtmm" runat="server" Width="40px" onkeypress="return ValidateKeypress(/\d/,event);"></asp:TextBox>/</td>
                     <td><asp:TextBox ID="txtdd" runat="server" Width="40px" onkeypress="return ValidateKeypress(/\d/,event);"></asp:TextBox>/</td>
@@ -64,7 +57,6 @@ If you do not remember your HomeCare username, please click on<br />
         <td>
             <asp:UpdatePanel runat="server" ID="updatepanelcaptcha">
                 <ContentTemplate>
-                <br>
                     <asp:Image ID="captchaImage" runat="server" Height="35px" />
                     &nbsp;
                     <asp:ImageButton ID="imgreload" runat="server" ImageUrl="~/resources/images/captcha-reload.png" CausesValidation="False"
@@ -88,5 +80,17 @@ If you do not remember your HomeCare username, please click on<br />
         <td><asp:Label ID="lbmessage" runat="server" ForeColor="Red" Font-Size="9pt"></asp:Label>  </td>
     </tr>
 </table>
+<div class="col8">
+<br />
+
+    If you have an e-mail address on file then a ternporary password will be sent to your e-mail account.
+<br />
+<br />
+If you do not remember your HomeCare username, please click on<br />
+<a href="forgotusername.aspx" class="forgot">Forgot Homecare username</a>.
+</div>
 </asp:Content>
+<%--<asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
+    
+</asp:Content>--%>
 
