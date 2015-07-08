@@ -12,7 +12,7 @@
         <td>Username</td>
     </tr>
     <tr>
-        <td><asp:TextBox ID="txtusername" runat="server" Width="220px"></asp:TextBox></td>
+        <td><asp:TextBox ID="txtusername" runat="server" Width="267px"></asp:TextBox></td>
     </tr>
      <tr>
         <td><asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
@@ -26,9 +26,9 @@
         <td>
             <table width="265px" cellpadding="0" cellspacing="0">
                 <tr>
-                    <td><asp:TextBox ID="txtmm" runat="server" Width="40px" onkeypress="return ValidateKeypress(/\d/,event);"></asp:TextBox>/</td>
-                    <td><asp:TextBox ID="txtdd" runat="server" Width="40px" onkeypress="return ValidateKeypress(/\d/,event);"></asp:TextBox>/</td>
-                    <td valign="top"><asp:TextBox ID="txtyyyy" runat="server" Width="80px" onkeypress="return ValidateKeypress(/\d/,event);"></asp:TextBox></td>
+                    <td><asp:TextBox ID="txtmm" runat="server" Width="50px" onkeypress="return ValidateKeypress(/\d/,event);"></asp:TextBox>/</td>
+                    <td><asp:TextBox ID="txtdd" runat="server" Width="50px" onkeypress="return ValidateKeypress(/\d/,event);"></asp:TextBox>/</td>
+                    <td valign="top"><asp:TextBox ID="txtyyyy" runat="server" Width="100px" onkeypress="return ValidateKeypress(/\d/,event);"></asp:TextBox></td>
                 </tr>
                 <tr class="silver">
                     <td>mm</td>
@@ -64,7 +64,7 @@
                 </ContentTemplate>
             </asp:UpdatePanel>
 		    <strong>Enter the code shown above:</strong><br>
-		    <asp:TextBox id="txtcaptcha" runat="server" Width="220px"></asp:TextBox><br>
+		    <asp:TextBox id="txtcaptcha" runat="server" Width="267px"></asp:TextBox><br>
 		    <asp:Label id="lbmessagecaptcha" runat="server"></asp:Label>
         </td>
     </tr>
