@@ -34,7 +34,7 @@
             <asp:Button ID="btnsignin" runat="server" Text="Sign in" class="btn btn-primary btn-block"
                 onclick="btnsignin_Click" Width="80px" TabIndex="3" />
                 <span class="field-validation-valid text-danger"> 
-                    <asp:Label ID="lbMessage" runat="server" Text=""></asp:Label></span>
+                    <asp:Label ID="lbMessage" runat="server" Font-Bold="True"></asp:Label></span>
           </form>
           <hr>
           <p> Forgot your <a href="forgotusername.aspx" data-toggle="modal" data-target="#modalUsername">username</a> or <a href="forgotpassword.aspx" data-toggle="modal" data-target="#modalPassword">password</a>? </p>
