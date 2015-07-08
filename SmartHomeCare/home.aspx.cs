@@ -72,14 +72,14 @@ public partial class home : System.Web.UI.Page
             {
                 if (BaseView.GetBooleanFieldValue(row, "IsDisableLogin"))
                 {
-                    //lbmessage.Text = BaseView.GetStringFieldValue(row, "NotesLogin");
-                    MessagesBox.jQueryShow(Page.ClientScript, this.GetType(), BaseView.GetStringFieldValue(row, "NotesLogin"), "Notification message");
+                    lbMessage.Text = BaseView.GetStringFieldValue(row, "NotesLogin");
+                    //MessagesBox.jQueryShow(Page.ClientScript, this.GetType(), BaseView.GetStringFieldValue(row, "NotesLogin"), "Notification message");
                 }
                 else
                 {
-                    //lbmessage.Text = "The username or password you entered is incorrect.<br />Please try again.";
                     string msg = DBClass.GetMessageByCode2("login_no_success");
-                    MessagesBox.jQueryShow(Page.ClientScript, this.GetType(),msg, "Notification message");
+                    lbMessage.Text = msg;
+                    //MessagesBox.jQueryShow(Page.ClientScript, this.GetType(),msg, "Notification message");
                 }
             }
 

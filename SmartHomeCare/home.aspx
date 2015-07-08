@@ -21,7 +21,7 @@
                 SetFocusOnError="True" Display="Dynamic"></asp:RequiredFieldValidator>
             </span> <br>
             <label for="Password">Password</label>
-            <asp:TextBox ID="txtpassword" runat="server" TextMode="Password" class="form-control" data-val="true" placeholder="Enter Password"
+            <asp:TextBox ID="txtpassword" runat="server" TextMode="Password" class="form-control" placeholder="Enter Password"
                 TabIndex="2"></asp:TextBox>
             <span class="field-validation-valid text-danger"> 
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
@@ -30,10 +30,11 @@
             </span>
             <label class="checkbox">
               <input data-val="true" type="checkbox">
-              <input name="RememberMe" value="false" type="hidden">
               Remember username </label>
             <asp:Button ID="btnsignin" runat="server" Text="Sign in" class="btn btn-primary btn-block"
                 onclick="btnsignin_Click" Width="80px" TabIndex="3" />
+                <span class="field-validation-valid text-danger"> 
+                    <asp:Label ID="lbMessage" runat="server" Text=""></asp:Label></span>
           </form>
           <hr>
           <p> Forgot your <a href="forgotusername.aspx" data-toggle="modal" data-target="#modalUsername">username</a> or <a href="forgotpassword.aspx" data-toggle="modal" data-target="#modalPassword">password</a>? </p>
