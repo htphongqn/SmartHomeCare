@@ -13,9 +13,9 @@ public partial class adminmyaccount : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {   if(!IsPostBack)
         {
-            siteadmin _siteadmin = (siteadmin)this.Master;
-            TreeView treeview = _siteadmin.treeview;
-            BaseView.SelectedTreeView(treeview, siteadmin.MYACCOUNT);
+            //siteadmin _siteadmin = (siteadmin)this.Master;
+            //TreeView treeview = _siteadmin.treeview;
+            //BaseView.SelectedTreeView(treeview, siteadmin.MYACCOUNT);
             IsEdit(false);
             ShowInfo();
         }

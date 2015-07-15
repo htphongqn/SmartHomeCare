@@ -12,7 +12,6 @@
       <div class="col4">
         <div class="frm frmSign">
           <h3>Already have an account? Sign in.</h3>
-          <form novalidate action="/Account/Login" id="frmLogin" method="post" name="frmLogin">
             <label for="UserName">Username</label>
             <asp:TextBox ID="txtusername" runat="server" class="form-control"  placeholder="Enter User Name" TabIndex="1"></asp:TextBox>
             <span class="field-validation-valid text-danger">
@@ -35,7 +34,6 @@
                 onclick="btnsignin_Click" Width="80px" TabIndex="3" />
                 <span class="field-validation-valid text-danger"> 
                     <asp:Label ID="lbMessage" runat="server" Font-Bold="True"></asp:Label></span>
-          </form>
           <hr>
           <p> Forgot your <a href="forgotusername.aspx" data-toggle="modal" data-target="#modalUsername">username</a> or <a href="forgotpassword.aspx" data-toggle="modal" data-target="#modalPassword">password</a>? </p>
           <p>For questions or help with your online<br />

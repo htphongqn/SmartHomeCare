@@ -25,9 +25,9 @@ public partial class usertrackmyhealth_bodymeasurement : System.Web.UI.Page
         //first, load datetime. after load page
         if (!IsPostBack)
         {
-            siteuser _siteuser = (siteuser)this.Master;
-            TreeView treeview = _siteuser.treeview;
-            BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKMYHEALTH);
+            //siteuser _siteuser = (siteuser)this.Master;
+            //TreeView treeview = _siteuser.treeview;
+            //BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKMYHEALTH);
             i = 1;
             dataTime = null;
             loadBodyMeasurementTable();

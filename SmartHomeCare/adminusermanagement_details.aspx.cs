@@ -15,9 +15,9 @@ public partial class adminusermanagement_details : System.Web.UI.Page
         {
             Response.Redirect("~/home.aspx");
         }
-        siteadmin _siteadmin = (siteadmin)this.Master;
-        TreeView treeview = _siteadmin.treeview;
-        BaseView.SelectedTreeView(treeview, siteadmin.USERMANAGEMENT);
+        //siteadmin _siteadmin = (siteadmin)this.Master;
+        //TreeView treeview = _siteadmin.treeview;
+        //BaseView.SelectedTreeView(treeview, siteadmin.USERMANAGEMENT);
             
         if (!IsPostBack)
         {

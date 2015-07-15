@@ -27,9 +27,9 @@ public partial class usertrackothers_spo2 : System.Web.UI.Page
 
         if (!IsPostBack)
         {
-            siteuser _siteuser = (siteuser)this.Master;
-            TreeView treeview = _siteuser.treeview;
-            BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKOTHERS);
+            //siteuser _siteuser = (siteuser)this.Master;
+            //TreeView treeview = _siteuser.treeview;
+            //BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKOTHERS);
             //treeview.Nodes[siteuser.REPORTS].ChildNodes[siteuser.TRACKMYHEALTH].ChildNodes.AddAt(0, new TreeNode("Oxygen", "0"));
             //treeview.Nodes[siteuser.REPORTS].ChildNodes[siteuser.TRACKMYHEALTH].Expand();
             //treeview.Nodes[siteuser.REPORTS].ChildNodes[siteuser.TRACKMYHEALTH].ChildNodes[0].Selected = true;

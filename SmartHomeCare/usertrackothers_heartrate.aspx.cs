@@ -40,12 +40,12 @@ public partial class usertrackothers_heartrate : System.Web.UI.Page
         }
         if (!IsPostBack)
         {
-            siteuser _siteuser = (siteuser)this.Master;
-            TreeView treeview = _siteuser.treeview;
-            BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKOTHERS);
-            treeview.Nodes[siteuser.REPORTS].ChildNodes[siteuser.TRACKOTHERS].ChildNodes.AddAt(0, new TreeNode("Heart Rate", "0"));
-            treeview.Nodes[siteuser.REPORTS].ChildNodes[siteuser.TRACKOTHERS].Expand();
-            treeview.Nodes[siteuser.REPORTS].ChildNodes[siteuser.TRACKOTHERS].ChildNodes[0].Selected = true;
+            //siteuser _siteuser = (siteuser)this.Master;
+            //TreeView treeview = _siteuser.treeview;
+            //BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKOTHERS);
+            //treeview.Nodes[siteuser.REPORTS].ChildNodes[siteuser.TRACKOTHERS].ChildNodes.AddAt(0, new TreeNode("Heart Rate", "0"));
+            //treeview.Nodes[siteuser.REPORTS].ChildNodes[siteuser.TRACKOTHERS].Expand();
+            //treeview.Nodes[siteuser.REPORTS].ChildNodes[siteuser.TRACKOTHERS].ChildNodes[0].Selected = true;
             LoadDateTime();
             fullName();
             LoadHeartRateData();

@@ -9,8 +9,8 @@ public partial class adminsynclogs : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        siteadmin _siteadmin = (siteadmin)this.Master;
-        TreeView treeview = _siteadmin.treeview;
-        BaseView.SelectedTreeView(treeview, siteadmin.LOGS, siteadmin.SYNCLOG);
+        //siteadmin _siteadmin = (siteadmin)this.Master;
+        //TreeView treeview = _siteadmin.treeview;
+        //BaseView.SelectedTreeView(treeview, siteadmin.LOGS, siteadmin.SYNCLOG);
     }
 }

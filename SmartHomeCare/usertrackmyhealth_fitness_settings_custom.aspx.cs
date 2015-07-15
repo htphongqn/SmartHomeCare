@@ -16,9 +16,9 @@ public partial class usertrackmyhealth_fitness_settings_custom : System.Web.UI.P
             Response.Redirect("~/home.aspx");
         }
 
-        siteuser _siteuser = (siteuser)this.Master;
-        TreeView treeview = _siteuser.treeview;
-        BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKMYHEALTH);
+        //siteuser _siteuser = (siteuser)this.Master;
+        //TreeView treeview = _siteuser.treeview;
+        //BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKMYHEALTH);
 
         if (string.IsNullOrEmpty(Request.QueryString["Id"]))
         {

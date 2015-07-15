@@ -25,12 +25,12 @@ public partial class usertrackmyhealth_bodymeasurement : System.Web.UI.Page
         }
         if (!IsPostBack)
         {
-            siteuser _siteuser = (siteuser)this.Master;
-            TreeView treeview = _siteuser.treeview;
-            BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKMYHEALTH);
-            treeview.Nodes[siteuser.REPORTS].ChildNodes[siteuser.TRACKMYHEALTH].ChildNodes.AddAt(0, new TreeNode("Body Measurement", "0"));
-            treeview.Nodes[siteuser.REPORTS].ChildNodes[siteuser.TRACKMYHEALTH].Expand();
-            treeview.Nodes[siteuser.REPORTS].ChildNodes[siteuser.TRACKMYHEALTH].ChildNodes[0].Selected = true;
+            //siteuser _siteuser = (siteuser)this.Master;
+            //TreeView treeview = _siteuser.treeview;
+            //BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKMYHEALTH);
+            //treeview.Nodes[siteuser.REPORTS].ChildNodes[siteuser.TRACKMYHEALTH].ChildNodes.AddAt(0, new TreeNode("Body Measurement", "0"));
+            //treeview.Nodes[siteuser.REPORTS].ChildNodes[siteuser.TRACKMYHEALTH].Expand();
+            //treeview.Nodes[siteuser.REPORTS].ChildNodes[siteuser.TRACKMYHEALTH].ChildNodes[0].Selected = true;
             i = 1;
             dataTime = null;
             LoadTableBody();

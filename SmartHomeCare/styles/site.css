@@ -3,7 +3,7 @@
     margin: 0;
     padding-top: 0px;
     padding-bottom: 15px;
-    background-color: #f5f6f7;
+    background-color: White;
     color: #333333;
     font-family: Arial,Helvetica,sans-serif;
     font-size: 14px;
@@ -62,7 +62,7 @@
     max-width: 960px;
     padding: 0px;    
     background-color:White;
-    box-shadow: 5px 5px 15px 5px #E4CC72;
+    /*box-shadow: 5px 5px 15px 5px #E4CC72;*/
 }
 .container-narrow 
 {
@@ -74,7 +74,7 @@
 .line
 {
     line-height:0px;
-    border-bottom: 3px solid #E4CC72;
+    border-bottom: 3px solid #e7e7e7;
 }
 .logo 
 {
@@ -320,7 +320,7 @@ a:hover
 .title_new
 {
     background:url(../resources/images/title_n.png) #005E8F;
-    height:25px;
+    height:32px;
     border-radius:5px;
     padding:5px;
     font-weight:bold;

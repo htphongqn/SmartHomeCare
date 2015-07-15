@@ -21,9 +21,9 @@ public partial class usertrackmyhealth_spo2 : System.Web.UI.Page
 
         if (!IsPostBack)
         {
-            siteuser _siteuser = (siteuser)this.Master;
-            TreeView treeview = _siteuser.treeview;
-            BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKMYHEALTH);
+            //siteuser _siteuser = (siteuser)this.Master;
+            //TreeView treeview = _siteuser.treeview;
+            //BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKMYHEALTH);
             LoadDateTime();  
             ddl_number.SelectedValue = "100";
             if (Session["FromDateSPO2"] == null && Session["ToDateSPO2"] == null)

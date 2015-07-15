@@ -12,9 +12,9 @@ public partial class adminwebadminlogs : System.Web.UI.Page
     int i=0;
     protected void Page_Load(object sender, EventArgs e)
     {
-        siteadmin _siteadmin = (siteadmin)this.Master;
-        TreeView treeview = _siteadmin.treeview;
-        BaseView.SelectedTreeView(treeview, siteadmin.LOGS, siteadmin.WEBADMINLOGS);
+        //siteadmin _siteadmin = (siteadmin)this.Master;
+        //TreeView treeview = _siteadmin.treeview;
+        //BaseView.SelectedTreeView(treeview, siteadmin.LOGS, siteadmin.WEBADMINLOGS);
        
         if (!IsPostBack)
         {

@@ -21,9 +21,9 @@ public partial class usertrackothers : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         
-        siteuser _siteuser = (siteuser)this.Master;
-        TreeView treeview = _siteuser.treeview;                
-        BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKOTHERS);
+        //siteuser _siteuser = (siteuser)this.Master;
+        //TreeView treeview = _siteuser.treeview;                
+        //BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKOTHERS);
 
         if (Session["User"] == null)
         {

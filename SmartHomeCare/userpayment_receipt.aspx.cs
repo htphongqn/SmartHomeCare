@@ -10,9 +10,9 @@ public partial class userpaymentreceipt : System.Web.UI.Page
     DBClass _db = new DBClass();
     protected void Page_Load(object sender, EventArgs e)
     {
-        siteuser _siteuser = (siteuser)this.Master;
-        TreeView treeview = _siteuser.treeview;
-        BaseView.SelectedTreeView(treeview, siteuser.MYACCOUNT, siteuser.BILLINGACCOUNTSUMMAR);
+        //siteuser _siteuser = (siteuser)this.Master;
+        //TreeView treeview = _siteuser.treeview;
+        //BaseView.SelectedTreeView(treeview, siteuser.MYACCOUNT, siteuser.BILLINGACCOUNTSUMMAR);
 
         if (Session["User"] == null)
         {

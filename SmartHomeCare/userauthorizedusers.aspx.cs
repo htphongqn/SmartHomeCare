@@ -17,9 +17,9 @@ public partial class userauthorizedusers : System.Web.UI.Page
             Response.Redirect("home.aspx");
         }
         DataRow row = (DataRow)Session["User"];
-        siteuser _siteuser = (siteuser)this.Master;
-        TreeView treeview = _siteuser.treeview;
-        BaseView.SelectedTreeView(treeview, siteuser.MYPROFILE, siteuser.AUTHORIZEDUSERS);
+        //siteuser _siteuser = (siteuser)this.Master;
+        //TreeView treeview = _siteuser.treeview;
+        //BaseView.SelectedTreeView(treeview, siteuser.MYPROFILE, siteuser.AUTHORIZEDUSERS);
         //set permission
         if (!BaseView.GetBooleanFieldValue(row, "IsAdminMEM"))
         {

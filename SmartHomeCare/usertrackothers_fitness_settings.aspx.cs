@@ -18,9 +18,9 @@ public partial class usertrackothers_fitness_settings : System.Web.UI.Page
         {
             Response.Redirect("~/usertrackothers.aspx");
         }
-        siteuser _siteuser = (siteuser)this.Master;
-        TreeView treeview = _siteuser.treeview;
-        BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKOTHERS);
+        //siteuser _siteuser = (siteuser)this.Master;
+        //TreeView treeview = _siteuser.treeview;
+        //BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKOTHERS);
 
         if (!IsPostBack)
         {

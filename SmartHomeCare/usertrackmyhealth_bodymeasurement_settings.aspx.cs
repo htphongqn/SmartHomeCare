@@ -15,9 +15,9 @@ public partial class usertrackmyhealth_bodymeasurement_settings : System.Web.UI.
         {
             Response.Redirect("~/home.aspx");
         }
-        siteuser _siteuser = (siteuser)this.Master;
-        TreeView treeview = _siteuser.treeview;
-        BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKMYHEALTH);
+        //siteuser _siteuser = (siteuser)this.Master;
+        //TreeView treeview = _siteuser.treeview;
+        //BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKMYHEALTH);
         
         if (!IsPostBack)
         {

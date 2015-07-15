@@ -15,9 +15,9 @@ public partial class adminsentmessages : System.Web.UI.Page
 
         if (!IsPostBack)
         {
-            siteadmin _siteadmin = (siteadmin)this.Master;
-            TreeView treeview = _siteadmin.treeview;
-            BaseView.SelectedTreeView(treeview, siteadmin.MESSAGECENTER, siteadmin.SENTMESSAGES);
+            //siteadmin _siteadmin = (siteadmin)this.Master;
+            //TreeView treeview = _siteadmin.treeview;
+            //BaseView.SelectedTreeView(treeview, siteadmin.MESSAGECENTER, siteadmin.SENTMESSAGES);
             if (Session["User"] != null)
             {
                 s = 0.0;

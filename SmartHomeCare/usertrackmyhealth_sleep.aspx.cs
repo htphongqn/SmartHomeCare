@@ -17,9 +17,9 @@ public partial class usertrackmyhealth_sleep : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            siteuser _siteuser = (siteuser)this.Master;
-            TreeView treeview = _siteuser.treeview;
-            BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKMYHEALTH);
+            //siteuser _siteuser = (siteuser)this.Master;
+            //TreeView treeview = _siteuser.treeview;
+            //BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKMYHEALTH);
             LoadDateTime();
             Load_Data_Raw_Table(0);
             Load_Data_Table(0);   

@@ -13,9 +13,9 @@ public partial class usertrash : System.Web.UI.Page
     static double s = 0.0;
     protected void Page_Load(object sender, EventArgs e)
     {
-        siteuser _siteuser = (siteuser)this.Master;
-        TreeView treeview = _siteuser.treeview;
-        BaseView.SelectedTreeView(treeview, siteuser.MESSAGECENTER, siteuser.TRASH);
+        //siteuser _siteuser = (siteuser)this.Master;
+        //TreeView treeview = _siteuser.treeview;
+        //BaseView.SelectedTreeView(treeview, siteuser.MESSAGECENTER, siteuser.TRASH);
        
         
         if (!IsPostBack)

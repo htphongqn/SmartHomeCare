@@ -1,64 +1,386 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="siteuser.master.cs" Inherits="siteuser" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="siteuser.master.cs" Inherits="master_Index" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title></title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="styles/site.css" rel="stylesheet" type="text/css" />
     <link href="styles/siteuser.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder id="head1" runat="server">
     </asp:ContentPlaceHolder>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="menu" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="main" Runat="Server">
-    <div class="left">
-        <%--User Home Menu:<br /><br />--%>
-        <%--<a href="userhome.aspx"><img src="resources/images/home.png" style="width:40px;height:40px;border:0px;"/></a> <br /><br />--%>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+    </asp:ScriptManager>
+    <div id="wrapper">
 
-        <asp:TreeView ID="treeview1" runat="server" ExpandDepth="0" Width="100%" 
-            ForeColor="#333333" CssClass="tree_view" 
-            EnableTheming="True">
-            <Nodes>
-                <asp:TreeNode Text="Home" NavigateUrl="~/userhome.aspx" Value="0" 
-                    ImageUrl="~/resources/images/icon_home.gif">
-                </asp:TreeNode>
-                <asp:TreeNode Text="My profile" Value="1" SelectAction="Expand" 
-                    ImageUrl="~/resources/images/icon_myprofile.png">
-                    <asp:TreeNode NavigateUrl="~/userinformation.aspx" Text="User information" Value="0">
-                    </asp:TreeNode>
-                    <asp:TreeNode NavigateUrl="~/userchangepassword.aspx" Text="Change password" Value="1">
-                    </asp:TreeNode>
-                    <asp:TreeNode NavigateUrl="~/userauthorizedusers.aspx" Text="Authorized users" Value="2">
-                    </asp:TreeNode>
-                </asp:TreeNode>
-                <asp:TreeNode Text="Reports" Value="2" SelectAction="Expand" 
-                    ImageUrl="~/resources/images/icon_report.png">
-                    <asp:TreeNode NavigateUrl="~/usertrackmyhealth.aspx" Text="Track my health" Value="0"></asp:TreeNode>
-                    <asp:TreeNode NavigateUrl="~/usertrackothers.aspx" Text="Track others" Value="1"></asp:TreeNode>
-                </asp:TreeNode>
-                <asp:TreeNode Text="Message center" Value="3" SelectAction="Expand" 
-                    ImageUrl="~/resources/images/icon_messages.ico">
-                    <asp:TreeNode Text="Compose" Value="0" NavigateUrl="~/usercompose.aspx"></asp:TreeNode>
-                    <asp:TreeNode NavigateUrl="~/userinbox.aspx" Text="Inbox" Value="1"></asp:TreeNode>
-                    <asp:TreeNode NavigateUrl="~/usersentmessages.aspx" Text="Sent messages"  Value="2"></asp:TreeNode>                    
-                    <asp:TreeNode NavigateUrl="~/useralarmmessages.aspx" Text="Alarm messages"  Value="3"></asp:TreeNode>
-                    <asp:TreeNode NavigateUrl="~/usertrash.aspx" Text="Trash messages" Value="4"></asp:TreeNode>
-                </asp:TreeNode>
-                <asp:TreeNode Text="My account" Value="4" SelectAction="Expand" 
-                    ImageUrl="~/resources/images/icon_account.jpg">
-                    <asp:TreeNode NavigateUrl="~/userbillingaccountsummar.aspx" Text="Billing account summary" Value="0" ></asp:TreeNode>
-                    <asp:TreeNode Text="Coverage details" Value="1"></asp:TreeNode>
-                </asp:TreeNode>
-            </Nodes>
-            <RootNodeStyle NodeSpacing="5px" />
-            <SelectedNodeStyle Font-Bold="True" />
-        </asp:TreeView>
-    </div>
-    <div class="right">
-        <div class="content">
-            <asp:ContentPlaceHolder id="right1" runat="server">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="<%=ResolveUrl("~/home.aspx")%>">
+                    <img src="<%= ResolveUrl("~/resources/images/logo.png") %>" alt=""  height="50" border="0" />
+                </a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">   
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 1</strong>
+                                        <span class="pull-right text-muted">40% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 2</strong>
+                                        <span class="pull-right text-muted">20% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 3</strong>
+                                        <span class="pull-right text-muted">60% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 4</strong>
+                                        <span class="pull-right text-muted">80% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Tasks</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>           
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="userinformation.aspx"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="userauthorizedusers.aspx"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="home.aspx?status=logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="userhome.aspx"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>My profile<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="userinformation.aspx">User information</a>
+                                </li>
+                                <li>
+                                    <a href="userchangepassword.aspx">Change password</a>
+                                </li>
+                                <li>
+                                    <a href="userauthorizedusers.aspx">Authorized users</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>                        
+                        <%--<li>
+                            <a href="customerSetups.aspx"><i class="fa fa-table fa-fw"></i>Reports</a>
+                        </li>--%>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>Reports<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="usertrackmyhealth.aspx">Track my health</a>
+                                </li>
+                                <li>
+                                    <a href="usertrackothers.aspx">Track others</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>Message center<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="usercompose.aspx">Compose</a>
+                                </li>
+                                <li>
+                                    <a href="userinbox.aspx">Inbox</a>
+                                </li>
+                                <li>
+                                    <a href="usersentmessages.aspx">Sent messages</a>
+                                </li>
+                                <li>
+                                    <a href="useralarmmessages.aspx">Alarm messages</a>
+                                </li>
+                                <li>
+                                    <a href="usertrash.aspx">Trash messages</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>My account<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="userbillingaccountsummar.aspx">Billing account summary</a>
+                                </li>
+                                <li>
+                                    <a href="#">Coverage details</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper" style="padding-top:20px">
+            <asp:ContentPlaceHolder id="right1" runat="server">       
             </asp:ContentPlaceHolder>
         </div>
-    </div>
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="footer" Runat="Server">
-    <div class="footer"><a href="userhome.aspx">Home</a> | <a href="usersitemap.aspx">Site Map</a> | <a href="#">Terms & Conditions</a> | <a href="home.aspx?status=logout">Log out</a></div>
-</asp:Content>
+        <!-- /#page-wrapper -->
 
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="dist/js/sb-admin-2.js"></script>
+
+    <asp:ContentPlaceHolder id="script" runat="server">
+    </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

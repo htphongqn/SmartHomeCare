@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/siteuser.master" AutoEventWireup="true" CodeFile="usertrackothers.aspx.cs" Inherits="usertrackothers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head1" Runat="Server">
-    <link href="styles/control.css" rel="stylesheet" type="text/css" />
+    <%--<link href="styles/control.css" rel="stylesheet" type="text/css" />--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
     <div class="borderbottom">

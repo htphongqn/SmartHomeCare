@@ -21,9 +21,9 @@ public partial class admincompose : System.Web.UI.Page
         }
         if (!IsPostBack)
         {
-            siteadmin _siteuser = (siteadmin)this.Master;
-            TreeView treeview = _siteuser.treeview;
-            BaseView.SelectedTreeView(treeview, siteadmin.MESSAGECENTER, siteadmin.COMPOSE);
+            //siteadmin _siteuser = (siteadmin)this.Master;
+            //TreeView treeview = _siteuser.treeview;
+            //BaseView.SelectedTreeView(treeview, siteadmin.MESSAGECENTER, siteadmin.COMPOSE);
         }
     }
 

@@ -16,9 +16,9 @@ public partial class usersentmessages : System.Web.UI.Page
         
         if (!IsPostBack)
         {
-            siteuser _siteuser = (siteuser)this.Master;
-            TreeView treeview = _siteuser.treeview;
-            BaseView.SelectedTreeView(treeview, siteuser.MESSAGECENTER, siteuser.SENTMESSAGES);
+            //siteuser _siteuser = (siteuser)this.Master;
+            //TreeView treeview = _siteuser.treeview;
+            //BaseView.SelectedTreeView(treeview, siteuser.MESSAGECENTER, siteuser.SENTMESSAGES);
             if (Session["User"] != null)
             {
                 s = 0.0;

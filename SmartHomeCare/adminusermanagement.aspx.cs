@@ -11,9 +11,9 @@ public partial class adminusermanagement : System.Web.UI.Page
     private DBClass _db = new DBClass();
     protected void Page_Load(object sender, EventArgs e)
     {
-        siteadmin _siteadmin = (siteadmin)this.Master;
-        TreeView treeview = _siteadmin.treeview;
-        BaseView.SelectedTreeView(treeview, siteadmin.USERMANAGEMENT);
+        //siteadmin _siteadmin = (siteadmin)this.Master;
+        //TreeView treeview = _siteadmin.treeview;
+        //BaseView.SelectedTreeView(treeview, siteadmin.USERMANAGEMENT);
 
         if (!IsPostBack)
         {

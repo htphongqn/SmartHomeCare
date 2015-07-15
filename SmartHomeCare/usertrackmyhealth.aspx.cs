@@ -14,9 +14,9 @@ public partial class usertrackmyhealth : System.Web.UI.Page
     string AuthorizedUser = "";
     protected void Page_Load(object sender, EventArgs e)
     {
-        siteuser _siteuser = (siteuser)this.Master;
-        TreeView treeview = _siteuser.treeview;
-        BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKMYHEALTH);
+        //siteuser _siteuser = (siteuser)this.Master;
+        //TreeView treeview = _siteuser.treeview;
+        //BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKMYHEALTH);
         DataRow row = (DataRow)Session["User"];
         if (row == null)
             Response.Redirect("~/home.aspx");

@@ -21,9 +21,9 @@ public partial class userinbox : System.Web.UI.Page
         
         if (!IsPostBack)
         {
-            siteuser _siteuser = (siteuser)this.Master;
-            TreeView treeview = _siteuser.treeview;
-            BaseView.SelectedTreeView(treeview, siteuser.MESSAGECENTER, siteuser.INBOX);
+            //siteuser _siteuser = (siteuser)this.Master;
+            //TreeView treeview = _siteuser.treeview;
+            //BaseView.SelectedTreeView(treeview, siteuser.MESSAGECENTER, siteuser.INBOX);
             if (Session["User"] != null)
             {
                 s = 0.0;

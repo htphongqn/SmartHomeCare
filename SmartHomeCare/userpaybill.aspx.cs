@@ -13,9 +13,9 @@ public partial class userpaybill : System.Web.UI.Page
     string Username = "";
     protected void Page_Load(object sender, EventArgs e)
     {
-        siteuser _siteuser = (siteuser)this.Master;
-        TreeView treeview = _siteuser.treeview;
-        BaseView.SelectedTreeView(treeview, siteuser.MYACCOUNT, siteuser.BILLINGACCOUNTSUMMAR);
+        //siteuser _siteuser = (siteuser)this.Master;
+        //TreeView treeview = _siteuser.treeview;
+        //BaseView.SelectedTreeView(treeview, siteuser.MYACCOUNT, siteuser.BILLINGACCOUNTSUMMAR);
         DataRow row = (DataRow)Session["User"];
         if (row == null)
             Response.Redirect("~/home.aspx");

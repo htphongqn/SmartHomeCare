@@ -21,9 +21,9 @@ public partial class usertrackmyhealth_fitness : System.Web.UI.Page
         
         if (!IsPostBack)
         {
-            siteuser _siteuser = (siteuser)this.Master;
-            TreeView treeview = _siteuser.treeview;
-            BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKMYHEALTH);
+            //siteuser _siteuser = (siteuser)this.Master;
+            //TreeView treeview = _siteuser.treeview;
+            //BaseView.SelectedTreeView(treeview, siteuser.REPORTS, siteuser.TRACKMYHEALTH);
             LoadDateTime();
             ddl_number.SelectedValue = "100";
             ddlNo2.SelectedValue = "100";

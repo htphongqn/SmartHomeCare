@@ -14,9 +14,9 @@ public partial class admintrash : System.Web.UI.Page
     public string Ids = "";
     protected void Page_Load(object sender, EventArgs e)
     {
-        siteadmin _siteuser = (siteadmin)this.Master;
-        TreeView treeview = _siteuser.treeview;
-        BaseView.SelectedTreeView(treeview, siteadmin.MESSAGECENTER, siteadmin.TRASH);
+        //siteadmin _siteuser = (siteadmin)this.Master;
+        //TreeView treeview = _siteuser.treeview;
+        //BaseView.SelectedTreeView(treeview, siteadmin.MESSAGECENTER, siteadmin.TRASH);
 
         if (!IsPostBack)
         {

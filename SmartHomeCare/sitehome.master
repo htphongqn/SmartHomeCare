@@ -36,9 +36,9 @@
     </table>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="footer" Runat="Server">
-    <div class="footer">Public Home Footer<br />
+    <%--<div class="footer">Public Home Footer<br />--%>
         <%--<%= Security.GetVersion() %>--%>
         <%--<%= "Website was last updated on: " + System.IO.Directory.GetLastWriteTime(Server.MapPath("~/"))%>--%>
-    </div>
+    <%--</div>--%>
 </asp:Content>
 

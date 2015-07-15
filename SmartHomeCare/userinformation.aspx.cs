@@ -17,9 +17,9 @@ public partial class userinformation : System.Web.UI.Page
             Response.Redirect("home.aspx");
         }
 
-        siteuser _siteuser = (siteuser)this.Master;
-        TreeView treeview = _siteuser.treeview;
-        BaseView.SelectedTreeView(treeview, siteuser.MYPROFILE, siteuser.USERINFORMATION);
+        //siteuser _siteuser = (siteuser)this.Master;
+        //TreeView treeview = _siteuser.treeview;
+        //BaseView.SelectedTreeView(treeview, siteuser.MYPROFILE, siteuser.USERINFORMATION);
 
         if (!IsPostBack)
         {
