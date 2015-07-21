@@ -10,6 +10,9 @@
         {
             height: 136px;
         }
+        td, th {
+          padding: 5px;
+        }
     </style>
 
     <script type="text/javascript">

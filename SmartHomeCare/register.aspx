@@ -43,6 +43,7 @@
             width:500px;
             border:1px solid #ccc;
             margin-top:10px;
+            padding: 10px;
         }
     </style>
     <link href="styles/tooltip.css" rel="stylesheet" type="text/css" />
@@ -386,6 +387,6 @@
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="footer" Runat="Server">
-    <div class="footer">Public Home Footer</div>
+    <%--<div class="footer">Public Home Footer</div>--%>
 </asp:Content>
 

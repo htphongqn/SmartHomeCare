@@ -11,6 +11,9 @@
     <meta name="author" content="">
 
     <title></title>
+    <link href="styles/site.css" rel="stylesheet" type="text/css" />
+   <link href="styles/siteadmin.css" rel="stylesheet" type="text/css" />
+   <link href="styles/gridview.css" rel="stylesheet" type="text/css" />
 
     <!-- Bootstrap Core CSS -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -35,9 +38,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link href="styles/site.css" rel="stylesheet" type="text/css" />
-   <link href="styles/siteadmin.css" rel="stylesheet" type="text/css" />
-   <link href="styles/gridview.css" rel="stylesheet" type="text/css" />
+
     <asp:ContentPlaceHolder id="head1" runat="server">
     </asp:ContentPlaceHolder>
 </head>

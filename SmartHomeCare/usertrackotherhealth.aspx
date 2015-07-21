@@ -1,6 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/siteuser.master" AutoEventWireup="true" CodeFile="usertrackotherhealth.aspx.cs" Inherits="usertrackmyhealth" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head1" Runat="Server">
+    <style type="text/css">
+        .style1
+        {
+            height: 114px;
+        }
+        .style2
+        {
+            height: 136px;
+        }
+        td, th {
+          padding: 5px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
     <div class="borderbottom">
