@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link href="styles/sitehome.css" rel="stylesheet" type="text/css" />
+    <link href="styles/css.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
         function not_record() {
 
@@ -9,7 +10,7 @@
         }
 
     </script>
-    <link href="styles/css.css" rel="stylesheet" type="text/css" />
+    
     <asp:ContentPlaceHolder id="head1" runat="server">
     </asp:ContentPlaceHolder>
 </asp:Content>

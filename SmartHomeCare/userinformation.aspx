@@ -160,13 +160,19 @@
                                                 InitialValue="0"></asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <asp:Button ID="btnedit" runat="server" Text="Edit" CssClass="btn btn-default" onclick="btnedit_Click" />
+                                            <asp:Button ID="btnback" runat="server" Text="Back to Home" CssClass="btn btn-default" PostBackUrl="~/userhome.aspx"/>
+                                            <asp:Button ID="btnsave" runat="server" Text="Save" CssClass="btn btn-default" onclick="btnsave_Click" ValidationGroup="g1" />
+                                            <asp:Button ID="btncancel" runat="server" Text="Cancel" CssClass="btn btn-default" onclick="btncancel_Click" CausesValidation="False" />
+                                            <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="true" ShowSummary="false" ValidationGroup="g1" />
+                                        </td>
+                                    </tr>
                                 </table>
                             </div>
-                            <asp:Button ID="btnedit" runat="server" Text="Edit" CssClass="btn btn-default" onclick="btnedit_Click" />
-                            <asp:Button ID="btnback" runat="server" Text="Back to Home" CssClass="btn btn-default" PostBackUrl="~/userhome.aspx"/>
-                            <asp:Button ID="btnsave" runat="server" Text="Save" CssClass="btn btn-default" onclick="btnsave_Click" ValidationGroup="g1" />
-                            <asp:Button ID="btncancel" runat="server" Text="Cancel" CssClass="btn btn-default" onclick="btncancel_Click" CausesValidation="False" />
-                            <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="true" ShowSummary="false" ValidationGroup="g1" />
+                            
                         </div>
                     </div>
                 </div>

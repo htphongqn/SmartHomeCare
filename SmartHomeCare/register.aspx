@@ -46,6 +46,7 @@
             padding: 10px;
         }
     </style>
+    <link href="styles/sitehome.css" rel="stylesheet" type="text/css" />
     <link href="styles/tooltip.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="menu" Runat="Server">

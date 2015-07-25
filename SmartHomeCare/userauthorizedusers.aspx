@@ -58,71 +58,91 @@
         }
     }
     </script>
+    <style type="text/css">
+    td, th {
+      padding: 5px;
+    }
+</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
-
-<div class="title_new">
-            <div class="floatleft">
-                <div class="td">
-                   Authorized users
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">My profile</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Authorized users
                 </div>
-             </div>
-            
-            <div class="clear"></div>
-     </div><!-- border bottom -->
-<table width="100%" align="left" cellspacing="5">
-    <tr id="trcurrent" runat="server">
-        <td width="220">Current authorized users</td>
-        <td><asp:ListBox ID="lstcurrentauthorizedusers" runat="server" Width="220px" 
-                DataTextField="AuthorizedUser" DataValueField="AutoId" Height="100px" ></asp:ListBox></td>
-    </tr>
-    <tr id="trcurrentcontrol" runat="server">
-        <td></td>
-        <td><asp:Button ID="btndelete" runat="server" Text="Delete"
-                onclick="btndelete_Click" />
-        </td>
-    </tr>
-    <tr id="traddcurrent" runat="server">
-        <td>Add authorized users:</td>
-        <td>
-            <asp:TextBox ID="txtusername" runat="server" Width="220px" onkeyup="UserChecker(this.value)" ></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
-                ErrorMessage="*" ControlToValidate="txtusername" ForeColor="Red" 
-                SetFocusOnError="True" ValidationGroup="add"></asp:RequiredFieldValidator>
-            <asp:Label ID="lbcheckusername" runat="server"></asp:Label>
-        </td>
-    </tr>
-    <tr id="traddcurrentcontrol" runat="server">
-        <td></td>
-        <td><asp:Button ID="btnadd" runat="server" Text="Add" onclick="btnadd_Click" 
-                ValidationGroup="add" /></td>
-    </tr>
-    <tr>
-        <td>Invite new member:</td>
-        <td><asp:TextBox ID="txtemail" runat="server" Width="220px"  onkeyup="Email_Checker(this.value)"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator92" runat="server" Display="Dynamic"
-                ErrorMessage="*" ControlToValidate="txtemail" ForeColor="Red" 
-                SetFocusOnError="True" ValidationGroup="invite"></asp:RequiredFieldValidator>
-            <asp:Label ID="lbinvitenewmember" runat="server" ForeColor="Green"></asp:Label>            
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                ControlToValidate="txtemail" ErrorMessage="The email is invalid" 
-                ForeColor="#CC0000" 
-                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
-                ValidationGroup="invite"></asp:RegularExpressionValidator>
-        </td>
-    </tr>
-    <tr>
-        <td>Member type:</td>
-        <td>
-            <asp:DropDownList ID="ddlmembertype" runat="server" DataValueField="RuleCode" 
-                DataTextField="RuleName" Width="230px"></asp:DropDownList>
-        </td>
-    </tr>
-    <tr>
-        <td></td>
-        <td><asp:Button ID="btninvite" runat="server" Text="Invite" 
-                onclick="btninvite_Click" ValidationGroup="invite"/></td>
-    </tr>
-</table>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                        <table width="100%" align="left" cellspacing="5">
+                            <tr id="trcurrent" runat="server">
+                                <td width="220">Current authorized users</td>
+                                <td><asp:ListBox ID="lstcurrentauthorizedusers" runat="server" CssClass="form-control"
+                                        DataTextField="AuthorizedUser" DataValueField="AutoId" Height="100px" ></asp:ListBox></td>
+                            </tr>
+                            <tr id="trcurrentcontrol" runat="server">
+                                <td></td>
+                                <td><asp:Button ID="btndelete" runat="server" Text="Delete"  CssClass="btn btn-default"
+                                        onclick="btndelete_Click" />
+                                </td>
+                            </tr>
+                            <tr id="traddcurrent" runat="server">
+                                <td>Add authorized users:</td>
+                                <td>
+                                    <asp:TextBox ID="txtusername" runat="server" CssClass="form-control" onkeyup="UserChecker(this.value)" ></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" Display="None" 
+                                        ErrorMessage="Please, Enter authorized users!" ControlToValidate="txtusername" ForeColor="Red" 
+                                        SetFocusOnError="True" ValidationGroup="add"></asp:RequiredFieldValidator>
+                                    <asp:Label ID="lbcheckusername" runat="server"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr id="traddcurrentcontrol" runat="server">
+                                <td></td>
+                                <td><asp:Button ID="btnadd" runat="server" Text="Add" onclick="btnadd_Click" CssClass="btn btn-default"
+                                        ValidationGroup="add" />
+                                <asp:ValidationSummary ID="ValidationSummary2" runat="server" ShowMessageBox="true" ShowSummary="false" ValidationGroup="add" /></td>
+                            </tr>
+                            <tr>
+                                <td>Invite new member:</td>
+                                <td><asp:TextBox ID="txtemail" runat="server" CssClass="form-control" onkeyup="Email_Checker(this.value)"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator92" runat="server" Display="None"
+                                        ErrorMessage="Please, Enter new member!" ControlToValidate="txtemail" ForeColor="Red" 
+                                        SetFocusOnError="True" ValidationGroup="invite"></asp:RequiredFieldValidator>
+                                    <asp:Label ID="lbinvitenewmember" runat="server" ForeColor="Green"></asp:Label>            
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                                        ControlToValidate="txtemail" ErrorMessage="The email is invalid"  Display="None"
+                                        ForeColor="#CC0000" 
+                                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
+                                        ValidationGroup="invite"></asp:RegularExpressionValidator>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Member type:</td>
+                                <td>
+                                    <asp:DropDownList ID="ddlmembertype" runat="server" DataValueField="RuleCode" CssClass="form-control"
+                                        DataTextField="RuleName"></asp:DropDownList>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                <asp:Button ID="btninvite" runat="server" Text="Invite"  CssClass="btn btn-default"
+                                        onclick="btninvite_Click" ValidationGroup="invite"/>
+                                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="true" ShowSummary="false" ValidationGroup="invite" />
+                                </td>
+                            </tr>
+                        </table>                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
 
