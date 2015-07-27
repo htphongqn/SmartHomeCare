@@ -112,90 +112,98 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
-    <div class="title_new">
-            <div class="floatleft">
-                <div class="td">
-                   Alarm messages
-                </div>
-             </div>
-            <div class="floatright">
-                <%--<asp:ImageButton ID="ImageButton2" runat="server" Height="25px" ImageUrl="~/resources/images/printer.png" Width="25px" OnClientClick="return processPrint('print');" CssClass="floatleft"/>&nbsp;&nbsp;--%>
-                <a id="userhelp" href="#"><img src="resources/images/h.png" /></a>
-            </div>
-            <div class="clear"></div>
-     </div><!-- border bottom -->
-    <div class="clear">
-        Click on a messages to view the text of the message.<br />
-        Messages in bold have not yet been read by the users.<br /><br />
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Message center</h1>
+        </div>
+        <!-- /.col-lg-12 -->
     </div>
-    <div class="clear gridview">
-        <asp:GridView ID="grvAlarmBox" runat="server" AllowPaging="True" 
-            AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" 
-            BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="98%" 
-            EmptyDataText="No message">
-            <Columns>
-                <asp:TemplateField>
-                    <ItemTemplate>
-                        <%--<asp:LinkButton ID="lblView" runat="server" Text="View" CommandArgument='<%# Eval("AutoId") %>' 
-                            Font-Bold='<%# ((bool)Eval("IsView"))==true? false : true %>' CssClass= '<%# Eval("AutoId") %>' "></asp:LinkButton>--%>
-                        <a href="#" id="view" onclick="GetDataAndDisplay(this)" name='<%# Eval("AutoId") %>' style="font-weight:<%# Eval("IsView").ToString().ToLower()=="true"? "normal" : "bold" %>" >View</a>
-<%--                        <asp:ModalPopupExtender ID="lblView_ModalPopupExtender" runat="server" 
-                            DynamicServicePath="" Enabled="True" TargetControlID="lblView" PopupControlID="panel1">
-                        </asp:ModalPopupExtender>--%>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Alarm messages
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="clear">
+                                Click on a messages to view the text of the message.<br />
+                                Messages in bold have not yet been read by the users.<br /><br />
+                            </div>
+                            <div class="clear gridview">
+                                <asp:GridView ID="grvAlarmBox" runat="server" AllowPaging="True" 
+                                    AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" 
+                                    BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="98%" 
+                                    EmptyDataText="No message">
+                                    <Columns>
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <%--<asp:LinkButton ID="lblView" runat="server" Text="View" CommandArgument='<%# Eval("AutoId") %>' 
+                                                    Font-Bold='<%# ((bool)Eval("IsView"))==true? false : true %>' CssClass= '<%# Eval("AutoId") %>' "></asp:LinkButton>--%>
+                                                <a href="#" id="view" onclick="GetDataAndDisplay(this)" name='<%# Eval("AutoId") %>' style="font-weight:<%# Eval("IsView").ToString().ToLower()=="true"? "normal" : "bold" %>" >View</a>
+                        <%--                        <asp:ModalPopupExtender ID="lblView_ModalPopupExtender" runat="server" 
+                                                    DynamicServicePath="" Enabled="True" TargetControlID="lblView" PopupControlID="panel1">
+                                                </asp:ModalPopupExtender>--%>
                         
-                    </ItemTemplate>
-                    <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Subject">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("MsgSubject") %>' Font-Bold='<%# ((bool)Eval("IsView"))==true? false : true %>'></asp:Label>
-                    </ItemTemplate>
-                    <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                </asp:TemplateField>
+                                            </ItemTemplate>
+                                            <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Subject">
+                                            <ItemTemplate>
+                                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("MsgSubject") %>' Font-Bold='<%# ((bool)Eval("IsView"))==true? false : true %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                        </asp:TemplateField>
                 
-                <asp:TemplateField HeaderText="Recieved">
-                    <ItemTemplate>
-                        <asp:Label ID="Label3" runat="server" 
-                            Text='<%# Bind("Received", "{0:MM/dd/yyyy hh:mmtt}") %>' Font-Bold='<%# ((bool)Eval("IsView"))==true? false : true %>'></asp:Label>
-                    </ItemTemplate>
-                    <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                </asp:TemplateField>
-            </Columns>
-            <FooterStyle BackColor="White" ForeColor="#000066" />
-            <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-            <RowStyle CssClass="record" ForeColor="#000066" />
-            <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
-            <SortedAscendingCellStyle BackColor="#F1F1F1" />
-            <SortedAscendingHeaderStyle BackColor="#007DBB" />
-            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-            <SortedDescendingHeaderStyle BackColor="#00547E" />
-        </asp:GridView>
-    </div>
-    <br />
-     <div class="clear">
-        <asp:Button ID="btndelete" runat="server" Text="Delete" Visible="False" />
-    </div>
-    <div class="popupConfirmation" style="display:none;">
-        <div class="popup_Container">
-            <div class="popup_Titlebar">
-                <div class="TitlebarLeft">
-                    <label id="title"></label>
+                                        <asp:TemplateField HeaderText="Recieved">
+                                            <ItemTemplate>
+                                                <asp:Label ID="Label3" runat="server" 
+                                                    Text='<%# Bind("Received", "{0:MM/dd/yyyy hh:mmtt}") %>' Font-Bold='<%# ((bool)Eval("IsView"))==true? false : true %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                        </asp:TemplateField>
+                                    </Columns>
+                                    <FooterStyle BackColor="White" ForeColor="#000066" />
+                                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                                    <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                                    <RowStyle CssClass="record" ForeColor="#000066" />
+                                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                                    <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                                    <SortedDescendingHeaderStyle BackColor="#00547E" />
+                                </asp:GridView>
+                            </div>
+                            <br />
+                             <div class="clear">
+                                <asp:Button ID="btndelete" runat="server" Text="Delete" Visible="False" CssClass="btn btn-default"/>
+                            </div>
+                            <div class="popupConfirmation" style="display:none;">
+                                <div class="popup_Container">
+                                    <div class="popup_Titlebar">
+                                        <div class="TitlebarLeft">
+                                            <label id="title"></label>
+                                        </div>
+                                        <div class="TitlebarRight" onclick="Close();"></div>
+                                    </div>
+                                    <div class="popup_Body">
+                                        <fieldset id="Message">
+                                            <legend style="font-weight:bold;"> Message
+                                            </legend>
+                                                <label id="message"></label>
+                                        </fieldset>
+                                    </div>
+                                    <div class="popup_Buttons">
+                                        <input id="btnCancel" value="Ok" type="button" CssClass="btn btn-default"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="TitlebarRight" onclick="Close();"></div>
-            </div>
-            <div class="popup_Body">
-                <fieldset id="Message">
-                    <legend style="font-weight:bold;"> Message
-                    </legend>
-                        <label id="message"></label>
-                </fieldset>
-            </div>
-            <div class="popup_Buttons">
-                <input id="btnCancel" value="Ok" type="button" />
             </div>
         </div>
     </div>
-
 </asp:Content>
 

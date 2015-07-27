@@ -4,82 +4,74 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head1" Runat="Server">
     <style type="text/css">
-        .style1
-        {
-            width: 100%;
-        }
-        
-        .txtMaxWidth
-        {
-            max-width:690px;
-        }
+        td, th {padding: 5px;}
     </style>
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
-    <div class="title_new">
-            <div class="floatleft">
-                <div class="td">
-                   Compose message
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Message center</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Compose message
                 </div>
-             </div>
-            <div class="floatright">
-                <%--<asp:ImageButton ID="ImageButton2" runat="server" Height="25px" ImageUrl="~/resources/images/printer.png" Width="25px" OnClientClick="return processPrint('print');" CssClass="floatleft"/>&nbsp;&nbsp;--%>
-                <a id="userhelp" href="#"><img src="resources/images/h.png" /></a>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                        <table width="100%" align="left" cellspacing="10">
+                            <tr>
+                                <td colspan="2"><asp:Label ID="lbmessage" runat="server" ForeColor="Red"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td width="120">From</td>
+                                <td><asp:TextBox ID="txtMailFrom" runat="server" CssClass="form-control" 
+                                        Enabled="False"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>To</td>
+                                <td>
+                                    <asp:TextBox ID="txtMailTo" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"  ValidationGroup="g11" Display="None"
+                                        ErrorMessage="Please, Enter Mail to!" ControlToValidate="txtMailTo" ForeColor="Red" 
+                                        SetFocusOnError="True"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                                        ControlToValidate="txtMailTo" ErrorMessage="The email is invalid" 
+                                        ForeColor="#CC0000" ValidationGroup="g11" Display="None"
+                                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ></asp:RegularExpressionValidator>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Subject</td>
+                                <td>
+                                    <asp:TextBox ID="txtSubject" runat="server" CssClass="form-control"></asp:TextBox>      
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Message</td>
+                                <td>
+                                    <asp:TextBox ID="txtMessage" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                        <asp:Button ID="btnSend" runat="server" onclick="btnSend_Click" Text="Send" ValidationGroup="g11" CssClass="btn btn-default"/>
+                        <asp:Button ID="btndelete0" runat="server" Text="Cancel" CssClass="btn btn-default"
+                            PostBackUrl="~/userhome.aspx" CausesValidation="False" />
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="true" ShowSummary="false" ValidationGroup="g11" />
+                        <div>
+                            <asp:Label ID="lblMessage" runat="server" ForeColor="Red" Visible="False"></asp:Label>
+                        </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="clear"></div>
-     </div><!-- border bottom -->
-    <div class="clear">
-        <table class="style1">
-            <tr>
-                <td style="width:100px;">
-                    From:</td>
-                <td>
-                    <asp:TextBox ID="txtMailFrom" runat="server" BorderStyle="Solid" 
-                        BorderWidth="1px" Width="300px" Enabled="False"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td style="width:100px;">
-                    To:</td>
-                <td>
-                    <asp:TextBox ID="txtMailTo" runat="server" BorderStyle="Solid" 
-                        BorderWidth="1px" Width="300px" ></asp:TextBox>
-                   
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                        ControlToValidate="txtMailTo" ErrorMessage=" (*)" ForeColor="Red"></asp:RequiredFieldValidator>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Subject:</td>
-                <td>
-                    <asp:TextBox ID="txtSubject" runat="server" BorderStyle="Solid" 
-                        BorderWidth="1px" Width="300px"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <fieldset style="margin:0 auto;">
-                        <legend>Message:</legend>
-                        <asp:TextBox ID="txtMessage" CssClass="txtMaxWidth" runat="server" Width="690px" 
-                            TextMode="MultiLine" Height="150px"></asp:TextBox>
-                    </fieldset>
-                </td>
-            </tr>
-        </table>
-        <br />
-    </div>
-    <div>
-        <asp:Label ID="lblMessage" runat="server" ForeColor="Red" Visible="False"></asp:Label>
-    </div>
-    <div class="clear borderbottom">
-    </div>
-    <br />
-     <div class="clear">
-         <asp:Button ID="btnSend" runat="server" onclick="btnSend_Click" Text="Send" />
-         <asp:Button ID="btndelete0" runat="server" Text="Cancel" 
-             PostBackUrl="~/userhome.aspx" CausesValidation="False" />
+        </div>
     </div>
 </asp:Content>
 
