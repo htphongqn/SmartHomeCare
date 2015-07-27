@@ -208,114 +208,119 @@
      
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
-<div class="title_new">
-            <div class="floatleft">
-                <div class="td">
-                   Trash
-                </div>
-             </div>
-            <div class="floatright">
-                <a id="userhelp" href="#"><img src="resources/images/h.png" /></a>
-            </div>
-            <div class="clear"></div>
-     </div><!-- border bottom -->
-<div class="gridview">
-    <asp:GridView ID="grdTrash" runat="server" AllowPaging="True" 
-            AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" 
-            BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="98%" 
-            EmptyDataText="No message" DataKeyNames="AutoId" PageSize="4">
-            <Columns>
-                <asp:TemplateField>
-                    <HeaderTemplate>
-                        <asp:CheckBox ID="chkAll" onclick = "checkAll(this);" runat="server" />
-                    </HeaderTemplate>
-                    <ItemTemplate>
-                       <asp:CheckBox ID="chkSelected" Checked="false" name='<%# Eval("AutoId") %>'  CssClass='<%# Eval("AutoId") %>' runat="server"  Visible="false"/>
-                       <input id='<%# Eval("AutoId") %>' type="checkbox" name='<%# Eval("AutoId") %>' />
-                    </ItemTemplate>
-                    <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="10px" />
-                </asp:TemplateField>
-  
-                <asp:TemplateField HeaderText="Subject">
-                    <ItemTemplate>
-                        <asp:HyperLink ID="view" runat="server" onclick="GetDataAndDisplay(this)" NavigateUrl="#" name='<%# Eval("AutoId") %>'  Text='<%# Bind("MsgSubject") %>' ></asp:HyperLink>
-                        <asp:HyperLink ID="HyperLink1" runat="server" onclick="GetDataAndDisplay(this)" Visible='<%# Eval("MsgSubject")==""?true:false %>' NavigateUrl="#" name='<%# Eval("AutoId") %>'  Text="No Subject" ></asp:HyperLink>
-                    </ItemTemplate>
-                    <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="40%" />
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Create Date">
-                    <ItemTemplate>
-                        <asp:Label ID="Label2" runat="server" Text='<%# Bind("CreatedDate", "{0:MM/dd/yyyy hh:mm tt}") %>'></asp:Label>
-                    </ItemTemplate>
-                    <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Delete Date" >
-                    <ItemTemplate>
-                        <asp:Label ID="Label3" runat="server" 
-                            Text='<%# Bind("DeletedDate", "{0:MM/dd/yyyy hh:mm tt}") %>' ></asp:Label>
-                    </ItemTemplate>
-                    <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="25%" />
-                </asp:TemplateField>
-            </Columns>
-            <FooterStyle BackColor="White" ForeColor="#000066" />
-            <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
-            <PagerSettings Visible="False" />
-            <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-            <RowStyle CssClass="record" ForeColor="#000066" />
-            <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
-            <SortedAscendingCellStyle BackColor="#F1F1F1" />
-            <SortedAscendingHeaderStyle BackColor="#007DBB" />
-            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-            <SortedDescendingHeaderStyle BackColor="#00547E" />
-        </asp:GridView>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Message center</h1>
         </div>
-   <%-- <asp:Button Text="Delete" runat="server" ID="btnDelete" 
-         OnClientClick="return  ConfirmDelete();" onclick="btnDelete_Click" />--%>
-         <input id="btnDelete" type="button" value="Delete" onclick="ConfirmDelete()" />
-    <div class="popupConfirmation" style="display:none;">
-        <div class="popup_Container">
-            <div class="popup_Titlebar">
-                <div class="TitlebarLeft">
-                    <label id="title"></label>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Trash
                 </div>
-                <div class="TitlebarRight" onclick="Close();"></div>
-            </div>
-            <div class="popup_Body">
-                <fieldset id="Message">
-                    <legend style="font-weight:bold;"> Message
-                    </legend>
-                        <label id="message"></label>
-                </fieldset>
-            </div>
-            <div class="popup_Buttons">
-                <input id="btnCancel" value="OK" onclick="Close();" type="button" />
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6" style="width:99%;">
+                            <div class="gridview">
+                                <asp:GridView ID="grdTrash" runat="server" AllowPaging="True" 
+                                        AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" 
+                                        BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="98%" 
+                                        EmptyDataText="No message" DataKeyNames="AutoId" PageSize="4">
+                                        <Columns>
+                                            <asp:TemplateField>
+                                                <HeaderTemplate>
+                                                    <asp:CheckBox ID="chkAll" onclick = "checkAll(this);" runat="server" />
+                                                </HeaderTemplate>
+                                                <ItemTemplate>
+                                                   <asp:CheckBox ID="chkSelected" Checked="false" name='<%# Eval("AutoId") %>'  CssClass='<%# Eval("AutoId") %>' runat="server"  Visible="false"/>
+                                                   <input id='<%# Eval("AutoId") %>' type="checkbox" name='<%# Eval("AutoId") %>' />
+                                                </ItemTemplate>
+                                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="10px" />
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Subject">
+                                                <ItemTemplate>
+                                                    <asp:HyperLink ID="view" runat="server" onclick="GetDataAndDisplay(this)" NavigateUrl="#" name='<%# Eval("AutoId") %>'  Text='<%# Bind("MsgSubject") %>' ></asp:HyperLink>
+                                                    <asp:HyperLink ID="HyperLink1" runat="server" onclick="GetDataAndDisplay(this)" Visible='<%# Eval("MsgSubject")==""?true:false %>' NavigateUrl="#" name='<%# Eval("AutoId") %>'  Text="No Subject" ></asp:HyperLink>
+                                                </ItemTemplate>
+                                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="40%" />
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Create Date">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("CreatedDate", "{0:MM/dd/yyyy hh:mm tt}") %>'></asp:Label>
+                                                </ItemTemplate>
+                                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Delete Date" >
+                                                <ItemTemplate>
+                                                    <asp:Label ID="Label3" runat="server" 
+                                                        Text='<%# Bind("DeletedDate", "{0:MM/dd/yyyy hh:mm tt}") %>' ></asp:Label>
+                                                </ItemTemplate>
+                                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="25%" />
+                                            </asp:TemplateField>
+                                        </Columns>
+                                        <FooterStyle BackColor="White" ForeColor="#000066" />
+                                        <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                                        <PagerSettings Visible="False" />
+                                        <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                                        <RowStyle CssClass="record" ForeColor="#000066" />
+                                        <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                                        <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                                        <SortedDescendingHeaderStyle BackColor="#00547E" />
+                                    </asp:GridView>
+                            </div>
+                            <br />
+                            <%--<asp:Button Text="Delete" runat="server" ID="btnDelete" 
+                                OnClientClick="return  ConfirmDelete();" onclick="btnDelete_Click" />--%>
+                             <input id="btnDelete" type="button" value="Delete" onclick="ConfirmDelete()" CssClass="btn btn-default"/>
+                             <div class="popupConfirmation" style="display:none;">
+                                <div class="popup_Container">
+                                    <div class="popup_Titlebar">
+                                        <div class="TitlebarLeft">
+                                            <label id="title"></label>
+                                        </div>
+                                        <div class="TitlebarRight" onclick="Close();"></div>
+                                    </div>
+                                    <div class="popup_Body">
+                                        <fieldset id="Message">
+                                            <legend style="font-weight:bold;"> Message
+                                            </legend>
+                                                <label id="message"></label>
+                                        </fieldset>
+                                    </div>
+                                    <div class="popup_Buttons">
+                                        <input id="btnCancel" value="OK" onclick="Close();" type="button" CssClass="btn btn-default"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <%--<asp:Button ID="btnEmpty" runat="server" onclick="btnEmpty_Click" onclientclick="return Confirm();" 
+                                Text="Empty" Visible="true" />--%>
+                            <input id="btnEmpty" type="button" value="Empty" onclick="ConfirmEmpty()" CssClass="btn btn-default"/>
+                            <%--<asp:LinkButton  ID="btnEmpty" runat="server" onclick="btnEmpty_Click" onclientclick="return Confirm();" 
+                                Text="Empty">LinkButton</asp:LinkButton>--%>
+                            <div class ="collectionpager">
+                                <asp:ImageButton ID="ImageButton1" runat="server"  CssClass="floatleft" Width="20px" 
+                                    onclick="lbPre_Click" Height="21px" 
+                                    ImageUrl="~/resources/images/Previous-icon.png"/>
+                                <asp:LinkButton ID="lbPre" runat="server" CssClass="floatleft" Width="73px" 
+                                    onclick="lbPre_Click" Height="23px">Previous</asp:LinkButton>
+                                <div class="floatleft" style="text-align:center;width:55%">
+                                    <asp:Label ID="lbCount" runat="server" Text="Messages" Font-Bold="True" CssClass="collectionpager"></asp:Label>
+                                </div>
+                                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="floatleft" 
+                                    onclick="LinkButton2_Click">Next </asp:LinkButton>
+                                 <asp:ImageButton ID="ImageButton2" runat="server"  CssClass="floatleft" Width="20px" 
+                                    onclick="LinkButton2_Click" Height="21px" 
+                                    ImageUrl="~/resources/images/next.jpg"/>
+                            </div><!-- collection page -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-        <%--<asp:Button ID="btnEmpty" runat="server" onclick="btnEmpty_Click" onclientclick="return Confirm();" 
-        Text="Empty" Visible="true" />--%>
-    <input id="btnEmpty" type="button" value="Empty" onclick="ConfirmEmpty()" />
-      <%--
-        <asp:LinkButton  ID="btnEmpty" runat="server" onclick="btnEmpty_Click" onclientclick="return Confirm();" 
-        Text="Empty">LinkButton</asp:LinkButton>--%>
-      
-        <div class ="collectionpager">
-         
-            <asp:ImageButton ID="ImageButton1" runat="server"  CssClass="floatleft" Width="20px" 
-            onclick="lbPre_Click" Height="21px" 
-            ImageUrl="~/resources/images/Previous-icon.png"/>
-         
-        <asp:LinkButton ID="lbPre" runat="server" CssClass="floatleft" Width="73px" 
-            onclick="lbPre_Click" Height="23px">Previous</asp:LinkButton>
-        <div class="floatleft" style="text-align:center;width:76%">
-        <asp:Label ID="lbCount" runat="server" Text="Messages" Font-Bold="True" CssClass="collectionpager"></asp:Label>
-           
-        </div>
-        <asp:LinkButton ID="LinkButton2" runat="server" CssClass="floatleft" 
-            onclick="LinkButton2_Click">Next </asp:LinkButton>
-         <asp:ImageButton ID="ImageButton2" runat="server"  CssClass="floatleft" Width="20px" 
-            onclick="LinkButton2_Click" Height="21px" 
-            ImageUrl="~/resources/images/next.jpg"/>
-    </div><!-- collection page -->
 </asp:Content>
 
