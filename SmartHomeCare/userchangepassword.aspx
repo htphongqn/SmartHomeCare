@@ -101,13 +101,19 @@
                                         </asp:Panel>--%>
                                 </td>
                             </tr>
-                        </table>
-                        <asp:Button ID="btnsave" runat="server" Text="Save" CssClass="btn btn-default" ValidationGroup="g1"
+                            <tr>
+                            <td></td>
+                            <td>
+                            <asp:Button ID="btnsave" runat="server" Text="Save" CssClass="btn btn-default" ValidationGroup="g1"
                                         onclick="btnsave_Click" />
-                        <asp:Button ID="btncancel" runat="server" Text="Cancel" CssClass="btn btn-default" 
+                            <asp:Button ID="btncancel" runat="server" Text="Cancel" CssClass="btn btn-default" 
                                         CausesValidation="False" PostBackUrl="~/userhome.aspx" />
 
-                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="true" ShowSummary="false" ValidationGroup="g1" />
+                            <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="true" ShowSummary="false" ValidationGroup="g1" />
+                            </td>
+                            </tr>
+                        </table>
+                        
                         </div>
                     </div>
                 </div>
