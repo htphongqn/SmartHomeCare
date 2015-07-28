@@ -26,6 +26,10 @@
         td, th {
           padding: 5px;
         }
+        .form-control
+        {
+            padding:6px 1px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
@@ -61,7 +65,7 @@
                                            <asp:TextBox ID="txtSimpleRate" runat="server" Width="220px" onclick="javascript:enablebtn();" CssClass="form-control"
                                                 onkeypress="return digits(this, event, true, true);" ></asp:TextBox>                                            
                                         </td>
-                                        <td><asp:DropDownList ID="ddlSimpleRate" runat="server" Width="50px" DataValueField = "AutoId" DataTextField = "Name" CssClass="form-control" OnChange="javascript:enablebtn();"></asp:DropDownList></td>
+                                        <td><asp:DropDownList ID="ddlSimpleRate" runat="server" Width="60px" DataValueField = "AutoId" DataTextField = "Name" CssClass="form-control" OnChange="javascript:enablebtn();"></asp:DropDownList></td>
                                     </tr>
                                     <tr>
                                         <td>Low Threshold:</td>

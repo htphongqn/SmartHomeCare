@@ -50,41 +50,41 @@
                                  <div class="clear" >
                                     <table>
                                         <tr>
-                                            <td colspan="2">
+                                            <td colspan="3">
                                                  This page display current settings of this feature.
                                             </td>
                                         </tr>
                                         <tr style="height:10px">
-                                            <td colspan="2">
+                                            <td colspan="3">
                      
                                             </td>
                                         </tr>
                                         <tr class="bold">
-                                            <td colspan="2">
+                                            <td colspan="3">
                                                  Measurement methods:
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>IW method</td>
-                                            <td>
+                                            <td colspan="2">
                                                 <%--<asp:Label ID="lbiwmethod" runat="server" Text=""></asp:Label>--%>
-                                                <asp:DropDownList ID="ddliwmethod" runat="server" DataTextField="Name" OnChange="javascript:enablebtn();"
+                                                <asp:DropDownList ID="ddliwmethod" runat="server" DataTextField="Name" OnChange="javascript:enablebtn();" CssClass="form-control"
                                                     DataValueField="AutoId" Width="230px"></asp:DropDownList>                   
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>BF% method</td>
-                                            <td>
+                                            <td colspan="2">
                                                 <%--<asp:Label ID="lbbfmethod" runat="server" Text=""></asp:Label>--%>
-                                                <asp:DropDownList ID="ddlbfmethod" runat="server" DataTextField="Name" OnChange="javascript:enablebtn();"
+                                                <asp:DropDownList ID="ddlbfmethod" runat="server" DataTextField="Name" OnChange="javascript:enablebtn();" CssClass="form-control"
                                                     DataValueField="AutoId" Width="230px"></asp:DropDownList>                   
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Fat Evalute</td>
-                                            <td>
+                                            <td colspan="2">
                                                 <%--<asp:Label ID="lbfateval" runat="server" Text=""></asp:Label>--%>
-                                                <asp:DropDownList ID="ddlfateval" runat="server" DataTextField="Name" OnChange="javascript:enablebtn();"
+                                                <asp:DropDownList ID="ddlfateval" runat="server" DataTextField="Name" OnChange="javascript:enablebtn();" CssClass="form-control"
                                                     DataValueField="AutoId" Width="230px"></asp:DropDownList>                   
                                             </td>
                                         </tr>
@@ -92,9 +92,9 @@
                                             <td>
                                                 BMR method
                                             </td>
-                                            <td>
+                                            <td colspan="2">
                                                 <%--<asp:Label ID="lbbmrmethod" runat="server" Text=""></asp:Label>--%>
-                                                <asp:DropDownList ID="ddlbmrmethod" runat="server" DataTextField="Name" OnChange="javascript:enablebtn();"
+                                                <asp:DropDownList ID="ddlbmrmethod" runat="server" DataTextField="Name" OnChange="javascript:enablebtn();" CssClass="form-control"
                                                     DataValueField="AutoId" Width="230px"></asp:DropDownList>                   
                                             </td>
                                         </tr>
@@ -102,9 +102,9 @@
                                             <td>
                                                 Activity Factor
                                             </td>
-                                            <td>
+                                            <td colspan="2">
                                                 <%--<asp:Label ID="lbactivityfactor" runat="server" Text=""></asp:Label>--%>
-                                                <asp:DropDownList ID="ddlactivityfactor" runat="server" DataTextField="Name" OnChange="javascript:enablebtn();"
+                                                <asp:DropDownList ID="ddlactivityfactor" runat="server" DataTextField="Name" OnChange="javascript:enablebtn();" CssClass="form-control"
                                                     DataValueField="AutoId" Width="230px"></asp:DropDownList>                   
                                             </td>
                                         </tr>
@@ -113,9 +113,10 @@
                     
                                             </td>
                                             <td></td>
+                                            <td></td>
                                         </tr>
                                         <tr class="bold">
-                                            <td colspan="2">
+                                            <td colspan="3">
                                                  Current body measurements:
                                             </td>
                                         </tr>
@@ -125,10 +126,11 @@
                                             </td>
                                             <td>
                                                 <%--<asp:Label ID="lbweight" runat="server" Text=""></asp:Label>--%>
-                                                <asp:TextBox ID="txtweight" runat="server" onclick="javascript:enablebtn();"
+                                                <asp:TextBox ID="txtweight" runat="server" onclick="javascript:enablebtn();" CssClass="form-control"
                                                     onkeypress="return digits(this, event, true, true);" Width="220px"></asp:TextBox>
-                                                <asp:Label ID="lbweightunits" runat="server" Text=""></asp:Label>
                                             </td>
+                                            <td>
+                                                <asp:Label ID="lbweightunits" runat="server" Text=""></asp:Label></td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -136,15 +138,16 @@
                                             </td>
                                             <td>
                                                 <%--<asp:Label ID="lbheightfeet" runat="server" Text=""></asp:Label>--%>
-                                                <asp:TextBox ID="txtheightfeet" runat="server" onclick="javascript:enablebtn();"
+                                                <asp:TextBox ID="txtheightfeet" runat="server" onclick="javascript:enablebtn();" CssClass="form-control"
                                                     onkeypress="return digits(this, event, true, true);" Width="93px"></asp:TextBox>
                                                 <asp:Label ID="lbheightfeetunits" runat="server" Text=""></asp:Label> 
 
                                                 <%--<asp:Label ID="lbheight" runat="server" Text=""></asp:Label>--%>
-                                                <asp:TextBox ID="txtheight" runat="server" onclick="javascript:enablebtn();"
-                                                    onkeypress="return digits(this, event, true, true);" Width="93px"></asp:TextBox>
-                                                <asp:Label ID="lbheightunits" runat="server" Text=""></asp:Label>        
+                                                <asp:TextBox ID="txtheight" runat="server" onclick="javascript:enablebtn();" CssClass="form-control"
+                                                    onkeypress="return digits(this, event, true, true);" Width="93px"></asp:TextBox>     
                                             </td>
+                                            <td>
+                                                <asp:Label ID="lbheightunits" runat="server" Text=""></asp:Label>   </td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -152,10 +155,11 @@
                                             </td>
                                             <td>
                                                 <%--<asp:Label ID="lbwaist" runat="server" Text=""></asp:Label>--%>
-                                                <asp:TextBox ID="txtwaist" runat="server" onclick="javascript:enablebtn();"
-                                                    onkeypress="return digits(this, event, true, true);" Width="220px"></asp:TextBox>
-                                                <asp:Label ID="lbwaistunits" runat="server" Text=""></asp:Label>        
+                                                <asp:TextBox ID="txtwaist" runat="server" onclick="javascript:enablebtn();" CssClass="form-control"
+                                                    onkeypress="return digits(this, event, true, true);" Width="220px"></asp:TextBox>   
                                             </td>
+                                            <td>
+                                                <asp:Label ID="lbwaistunits" runat="server" Text=""></asp:Label>     </td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -163,10 +167,11 @@
                                             </td>
                                             <td>
                                                 <%--<asp:Label ID="lbhip" runat="server" Text=""></asp:Label>--%>
-                                                <asp:TextBox ID="txthip" runat="server" onclick="javascript:enablebtn();"
+                                                <asp:TextBox ID="txthip" runat="server" onclick="javascript:enablebtn();" CssClass="form-control"
                                                     onkeypress="return digits(this, event, true, true);" Width="220px"></asp:TextBox>
-                                                <asp:Label ID="lbhipunits" runat="server" Text=""></asp:Label>
                                             </td>
+                                            <td>
+                                                <asp:Label ID="lbhipunits" runat="server" Text=""></asp:Label></td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -174,10 +179,11 @@
                                             </td>
                                             <td>
                                                 <%--<asp:Label ID="lbneck" runat="server" Text=""></asp:Label>--%>
-                                                <asp:TextBox ID="txtneck" runat="server" onclick="javascript:enablebtn();"
-                                                    onkeypress="return digits(this, event, true, true);" Width="220px"></asp:TextBox>
-                                                <asp:Label ID="lbneckunits" runat="server" Text=""></asp:Label>        
+                                                <asp:TextBox ID="txtneck" runat="server" onclick="javascript:enablebtn();" CssClass="form-control"
+                                                    onkeypress="return digits(this, event, true, true);" Width="220px"></asp:TextBox>     
                                             </td>
+                                            <td>
+                                                <asp:Label ID="lbneckunits" runat="server" Text=""></asp:Label>   </td>
                                         </tr>
                                     </table>
                                 </div>

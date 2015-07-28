@@ -39,12 +39,12 @@
                             <div class="clear">
                                 <table>
                                     <tr>
-                                        <td colspan="2">
+                                        <td colspan="3">
                                              This page display current settings of this feature.
                                         </td>
                                     </tr>
                                     <tr style="height:10px">
-                                        <td colspan="2">
+                                        <td colspan="3">
                      
                                         </td>
                                     </tr>
@@ -52,24 +52,24 @@
                                         <td>Sample rate: </td>
                                         <td>
                                             <%--<asp:Label ID="lbsamplerate" runat="server" Text=""></asp:Label>--%>
-                                            <asp:TextBox ID="txtsamplerate" runat="server" Width="173px" onclick="javascript:enablebtn();"
-                                                onkeypress="return digits(this, event, true, true);" ></asp:TextBox>
-                                            <asp:DropDownList ID="ddlsamplerate" runat="server" Width="50px"  OnChange="javascript:enablebtn();"
+                                            <asp:TextBox ID="txtsamplerate" runat="server" Width="173px" onclick="javascript:enablebtn();" CssClass="form-control"
+                                                onkeypress="return digits(this, event, true, true);" ></asp:TextBox></td>
+                                            <td>
+                                            <asp:DropDownList ID="ddlsamplerate" runat="server" Width="50px"  OnChange="javascript:enablebtn();" CssClass="form-control"
                                                 DataTextField="Name" DataValueField="AutoId"></asp:DropDownList></td>
                                     </tr>
                                     <tr>
                                         <td>Tracking mode:</td>
-                                        <td>
+                                        <td colspan="2">
                                             <%--<asp:Label ID="lbtrackingmode" runat="server"></asp:Label>--%>
-                                            <asp:DropDownList ID="ddltrackingmode" runat="server" Width="230px" OnChange="javascript:enablebtn();"
-                                                DataTextField="Name" DataValueField="AutoId" AutoPostBack="True" 
-                                                onselectedindexchanged="ddltrackingmode_SelectedIndexChanged"></asp:DropDownList>
-                   
+                                            <asp:DropDownList ID="ddltrackingmode" runat="server" Width="230px" OnChange="javascript:enablebtn();" CssClass="form-control"
+                                                DataTextField="Name" DataValueField="AutoId" AutoPostBack="True"
+                                                onselectedindexchanged="ddltrackingmode_SelectedIndexChanged"></asp:DropDownList>                   
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Warning threshold:</td>
-                                        <td>
+                                        <td colspan="2">
                                             <asp:Label ID="lbwarningthreshold" runat="server"></asp:Label>
                                         </td>
                                     </tr>
@@ -77,11 +77,12 @@
                                         <td>Measurement duration:</td>
                                         <td>
                                             <%--<asp:Label ID="lbmeasurementduration" runat="server"></asp:Label>--%>
-                                            <asp:TextBox ID="txtmeasurementduration" runat="server" Width="173px" onclick="javascript:enablebtn();"
+                                            <asp:TextBox ID="txtmeasurementduration" runat="server" Width="173px" onclick="javascript:enablebtn();" CssClass="form-control"
                                                 onkeypress="return digits(this, event, true, true);" ></asp:TextBox>
-                                            <asp:DropDownList ID="ddlmeasurementduration" runat="server" Width="50px" OnChange="javascript:enablebtn();"
-                                                DataTextField="Name" DataValueField="AutoId"></asp:DropDownList>
                                         </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlmeasurementduration" runat="server" Width="50px" OnChange="javascript:enablebtn();" CssClass="form-control"
+                                                DataTextField="Name" DataValueField="AutoId"></asp:DropDownList></td>
                                     </tr>
                                 </table>
                             </div>

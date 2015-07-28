@@ -502,7 +502,7 @@
     
 </div><!-- print--> 
 
-    <div class="border-top-bottom">
+    <div  style="padding-bottom:10px;margin-top: 10px;">
         <div class="title">Diagnosis & Recommendations</div>
         <div class="">This page displays your current mediacal issues and the date that they were noded in your 
             medical record. Click on the issue name for more in-depth information on that particular issue.
@@ -510,7 +510,7 @@
 
     </div>
 
-    <div class="no-border"  style="padding-bottom:10px;style="margin-top: 10px;"">
+    <div class="no-border"  style="padding-bottom:10px;margin-top: 10px;">
         <asp:Button ID="Button1" runat="server" Text="Settings" CssClass="btn btn-default"
             PostBackUrl="~/usertrackmyhealth_heartrate_settings.aspx" />
         <asp:Button ID="Button2" runat="server" Text="Back to Track my health" CssClass="btn btn-default"
