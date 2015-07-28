@@ -14,86 +14,117 @@
             });
         });
     </script>
+    <style>
+        .form-control
+        {
+            width: 100%;
+            float: left;
+            margin: 0px 5px 5px 0px;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
-
-
-    <div id="print">
-    <div class="title_new">
-            <div class="floatleft">
-                <div class="td">
-                  <a href="usertrackmyhealth.aspx"> Track <asp:Label ID="lbNameHealth" runat="server" Text="my"></asp:Label> health </a>  »
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Reports</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <a href="usertrackmyhealth.aspx"> Track <asp:Label ID="lbNameHealth" runat="server" Text="my"></asp:Label> health </a>  »
                    <asp:LinkButton ID="btnlinks" runat="server" onclick="btnlinks_Click">Stress monitoring</asp:LinkButton> » Settings
+                    <div class="floatright">
+                        <asp:ImageButton ID="ImageButton2" runat="server" Height="25px" ImageUrl="~/resources/images/printer.png" Width="25px" OnClientClick="return processPrint('print');" CssClass="floatleft"/>&nbsp;&nbsp;
+                    </div>
                 </div>
-             </div>
-            <div class="floatright">
-                <asp:ImageButton ID="ImageButton2" runat="server" Height="25px" ImageUrl="~/resources/images/printer.png" Width="25px" OnClientClick="return processPrint('print');" CssClass="floatleft"/>&nbsp;&nbsp;
-                <a id="userhelp" href="#"><img src="resources/images/h.png" /></a>
-            </div>
-            <div class="clear"></div>
-     </div><!-- border bottom -->
-     <div class="clear borderbottom">
-        <table>
-            <tr>
-                <td colspan="2">
-                     This page display current settings of this feature.
-                </td>
-            </tr>
-            <tr style="height:10px">
-                <td colspan="2">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6" style="width:100%;">
+                            <div id="print">
+                             <div class="clear borderbottom">
+                                <table>
+                                    <tr>
+                                        <td colspan="2">
+                                             This page display current settings of this feature.
+                                        </td>
+                                    </tr>
+                                    <tr style="height:10px">
+                                        <td colspan="2">
                      
-                </td>
-            </tr>
-            <tr>
-                <td>Measurement duration:</td>
-                <td>
-                    <%--<asp:Label ID="lbmeasurementduration" runat="server" Text=""></asp:Label>--%>
-                    <asp:TextBox ID="txtmeasurementduration" runat="server" Width="173px" onclick="javascript:enablebtn();"></asp:TextBox>
-                    <asp:DropDownList ID="ddlmeasurementduration" runat="server" Width="50px" OnChange="javascript:enablebtn();" 
-                        DataTextField="Name" DataValueField="AutoId"></asp:DropDownList>                   
-                </td>
-            </tr>
-            <tr>
-                <td>Heart rate sample:</td>
-                <td>
-                    <%--<asp:Label ID="lbheartratesample" runat="server" Text=""></asp:Label>--%>
-                    <asp:TextBox ID="txtheartratesample" runat="server" Width="173px" onclick="javascript:enablebtn();"></asp:TextBox>
-                    <asp:DropDownList ID="ddlheartratesample" runat="server" Width="50px" OnChange="javascript:enablebtn();" 
-                        DataTextField="Name" DataValueField="AutoId"></asp:DropDownList>
-                </td>
-            </tr>
-            <tr style="height:10px">
-                <td colspan="2"></td>
-            </tr>
-            <tr>
-                <td>GSR sample rate:</td>
-                <td>
-                    <%--<asp:Label ID="lbgsrsamplerate" runat="server" Text=""></asp:Label>--%>
-                    <asp:TextBox ID="txtgsrsamplerate" runat="server" Width="173px" onclick="javascript:enablebtn();"></asp:TextBox>
-                    <asp:DropDownList ID="ddlgsrsamplerate" runat="server" Width="50px" OnChange="javascript:enablebtn();"  
-                        DataTextField="Name" DataValueField="AutoId"></asp:DropDownList>
-                </td>
-            </tr>
-            <tr>
-                <td>Accelerometer sample rate:</td>
-                <td>
-                    <%--<asp:Label ID="lbaccelerometersamplerate" runat="server" Text=""></asp:Label>--%>
-                    <asp:TextBox ID="txtaccelerometersamplerate" runat="server" Width="173px" onclick="javascript:enablebtn();"></asp:TextBox>
-                    <asp:DropDownList ID="ddlaccelerometersamplerate" runat="server" Width="50px" OnChange="javascript:enablebtn();"
-                        DataTextField="Name" DataValueField="AutoId"></asp:DropDownList>
-                </td>
-            </tr>
-        </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Measurement duration:</td>
+                                        <td>
+                                            <%--<asp:Label ID="lbmeasurementduration" runat="server" Text=""></asp:Label>--%>
+                                            <asp:TextBox ID="txtmeasurementduration" runat="server" CssClass="form-control" Width="173px" onclick="javascript:enablebtn();"></asp:TextBox>
+                                            <asp:DropDownList ID="ddlmeasurementduration" runat="server" CssClass="form-control" Width="50px" OnChange="javascript:enablebtn();"
+                                                DataTextField="Name" DataValueField="AutoId"></asp:DropDownList>                   
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Heart rate sample:</td>
+                                        <td>
+                                            <%--<asp:Label ID="lbheartratesample" runat="server" Text=""></asp:Label>--%>
+                                            <asp:TextBox ID="txtheartratesample" runat="server" CssClass="form-control" Width="173px" onclick="javascript:enablebtn();"></asp:TextBox>
+                                            <asp:DropDownList ID="ddlheartratesample" runat="server" CssClass="form-control" Width="50px" OnChange="javascript:enablebtn();"
+                                                DataTextField="Name" DataValueField="AutoId"></asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr style="height:10px">
+                                        <td colspan="2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>GSR sample rate:</td>
+                                        <td>
+                                            <%--<asp:Label ID="lbgsrsamplerate" runat="server" Text=""></asp:Label>--%>
+                                            <asp:TextBox ID="txtgsrsamplerate" runat="server" CssClass="form-control" Width="173px" onclick="javascript:enablebtn();"></asp:TextBox>
+                                            <asp:DropDownList ID="ddlgsrsamplerate" runat="server" CssClass="form-control" Width="50px" OnChange="javascript:enablebtn();" 
+                                                DataTextField="Name" DataValueField="AutoId"></asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Accelerometer sample rate:</td>
+                                        <td>
+                                            <%--<asp:Label ID="lbaccelerometersamplerate" runat="server" Text=""></asp:Label>--%>
+                                            <asp:TextBox ID="txtaccelerometersamplerate" runat="server" CssClass="form-control" Width="173px" onclick="javascript:enablebtn();"></asp:TextBox>
+                                            <asp:DropDownList ID="ddlaccelerometersamplerate" runat="server" CssClass="form-control" Width="50px" OnChange="javascript:enablebtn();"
+                                                DataTextField="Name" DataValueField="AutoId"></asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            </div>
+                            <div class="clear" style="margin-bottom:20px;margin-top:20px">
+                                 <%--<asp:Button ID="btnEdit" runat="server" Text="Edit" onclick="btnEdit_Click" />--%>
+                                 <asp:Button ID="btnSave" runat="server" Text="Save Settings" CssClass="btn btn-default"
+                                     onclick="btnSave_Click" Enabled="false" ForeColor="#999999" />
+                                 <%--<asp:Button ID="btnCancel" runat="server" Text="Cancel" 
+                                     onclick="btnCancel_Click" CausesValidation="False" />--%>
+                                 <asp:Button ID="btnback" runat="server" CausesValidation="false" CssClass="btn btn-default" PostBackUrl="usertrackmyhealth_stress.aspx" Text="Cancel"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
-    <div class="clear" style="margin-bottom:20px;margin-top:20px">
-         <%--<asp:Button ID="btnEdit" runat="server" Text="Edit" onclick="btnEdit_Click" />--%>
-         <asp:Button ID="btnSave" runat="server" Text="Save Settings" 
-             onclick="btnSave_Click" Enabled="false" ForeColor="#999999" />
-         <%--<asp:Button ID="btnCancel" runat="server" Text="Cancel" 
-             onclick="btnCancel_Click" CausesValidation="False" />--%>
-         <asp:Button ID="btnback" runat="server" CausesValidation="false" PostBackUrl="usertrackmyhealth_stress.aspx" Text="Cancel"/>
-    </div>
-
 </asp:Content>
 
