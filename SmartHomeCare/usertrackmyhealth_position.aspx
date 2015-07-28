@@ -426,14 +426,14 @@
                                           </asp:GridView>
                                     </div><!-- table -->
                                             <div class="footer_grv" style="visibility:hidden">
-                                                <table>
+                                                <table style="margin:auto;">
                                                     <tr>
-                                                        <td style="width:26px;text-align:left">
+                                                        <td style="width:5%;text-align:left">
                                                             <asp:ImageButton ID="btn_back1" runat="server" Height="26px" 
                                                                 ImageUrl="~/resources/images/Previous-icon.png" Width="26px" 
                                                                 onclick="btn_back1_Click"/>
                                                         </td>
-                                                        <td style="text-align:center">
+                                                        <td style="width:50%; text-align:center">
                                                         <!-- add new -->
                                                                     <asp:Label ID="Label2" runat="server" Text="Records to display on 1 page: "></asp:Label>
                                                                     <asp:DropDownList ID="ddlNo2" runat="server" AutoPostBack="True" 
@@ -452,7 +452,7 @@
                                                                  Width="15px" ontextchanged="txt_page2_TextChanged" onkeypress="return ValidateKeypress(/\d/,event);"></asp:TextBox>
                                                             <asp:Label ID="lbpage2" runat="server"></asp:Label>
                                                         </td>
-                                                        <td style="width:26px;text-align:right">
+                                                        <td style="width:5%;text-align:right">
                                                             <asp:ImageButton ID="btn_next2" runat="server" Height="26px" 
                                                                 ImageUrl="~/resources/images/next.jpg" Width="26px" 
                                                                 onclick="btn_next2_Click"  />
@@ -519,34 +519,30 @@
                             </asp:MultiView>
                         </div><!-- print-->
                             <br />
-                             <div class="border-top-bottom">
+                            <div class="border-top-bottom">
                                 <div class="title">Diagnosis &amp; Recommendations</div>
                                 <div class="">This page displays your current mediacal issues and the date that they were noded in your 
                                     medical record. Click on the issue name for more in-depth information on that particular issue.
                                 </div>
                             </div>
-        
                             <div class="no-border" style="margin-top: 10px;">
                                 <asp:Button ID="Button1" runat="server" Text="Settings" CssClass="btn btn-default"
                                     PostBackUrl="~/usertrackmyhealth_position_settings.aspx"/>
                                 <asp:Button ID="Button2" runat="server" Text="Back to Track my health" CssClass="btn btn-default"
                                     PostBackUrl="~/usertrackmyhealth.aspx" />
                             </div>
-   <asp:UpdateProgress ID="UpadateProc" AssociatedUpdatePanelID="UpdateTable" runat="server">
-            <ProgressTemplate>
-                    <div class="loading">
-                <img src="resources/images/process.gif" />
-            </div>
-    </ProgressTemplate>
-</asp:UpdateProgress>
+                            <asp:UpdateProgress ID="UpadateProc" AssociatedUpdatePanelID="UpdateTable" runat="server">
+                                <ProgressTemplate>
+                                    <div class="loading">
+                                        <img src="resources/images/process.gif" />
+                                    </div>
+                                </ProgressTemplate>
+                            </asp:UpdateProgress>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    
-    
 </asp:Content>
 

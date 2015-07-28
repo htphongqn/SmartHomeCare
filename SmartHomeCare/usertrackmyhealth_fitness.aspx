@@ -19,34 +19,37 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
-    
-    <div id="print">
-    <div class="title_new">
-            <div class="floatleft">
-                <div class="td">
-                    <a href="usertrackmyhealth.aspx"> Track <asp:Label ID="lbNameHealth" runat="server" Text="my"></asp:Label> health </a>» 
-                    
-                    <asp:LinkButton ID="lnlinks" runat="server" onclick="lnlinks_Click">Fitness monitoring</asp:LinkButton>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Reports</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Fitness monitoring
+                    <div class="floatright">
+                        <asp:ImageButton ID="ImageButton2" runat="server" Height="25px" ImageUrl="~/resources/images/printer.png" Width="25px" OnClientClick="return processPrint('print');" CssClass="floatleft"/>&nbsp;&nbsp;
+                    </div>
                 </div>
-             </div>
-            <div class="floatright">
-                <asp:ImageButton ID="ImageButton2" runat="server" Height="25px" ImageUrl="~/resources/images/printer.png" Width="25px" OnClientClick="return processPrint('print');" CssClass="floatleft"/>&nbsp;&nbsp;
-                <a id="userhelp" href="#"><img src="resources/images/h.png" /></a>
-            </div>
-            <div class="clear"></div>
-     </div><!-- border bottom -->
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6" style="width:100%;">
+                            <div id="print">
      Select GRAPH or TABLE buttons to see Fitness monitoring Report.
     <div style="padding-top:10px;">
-            <asp:Button ID="btnGraph2" runat="server" OnClick="btnGraph2_Click" Text="Graph" />
-            <asp:Button ID="btnTable2" runat="server" OnClick="btnTable2_Click" Text="Table" />
+            <asp:Button ID="btnGraph2" runat="server" OnClick="btnGraph2_Click" Text="Graph" CssClass="btn btn-default" style="color:#000;"/>
+            <asp:Button ID="btnTable2" runat="server" OnClick="btnTable2_Click" Text="Table" CssClass="btn btn-default" style="color:#000;"/>
         </div>
         <asp:MultiView ID="MultiViewHeartRate" runat="server" ActiveViewIndex="0">        
             <asp:View ID="ViewGraph" runat="server">
             <div class="item_report">
                 <div id="chart" align="center">
-                        <div style="padding-top:5px;">
-                            Select parameter to draw:<asp:DropDownList ID="ddlParameter" runat="server" 
-                                DataTextField="Distance" DataValueField="Distance" AutoPostBack="True" 
+                        <div style="padding-top:5px;padding-bottom: 5px;">
+                            Select parameter to draw:<asp:DropDownList ID="ddlParameter" runat="server" CssClass="form-control"
+                                DataTextField="Distance" DataValueField="Distance" AutoPostBack="True" style="width:30%;display:inline;"
                                 onselectedindexchanged="ddlParameter_SelectedIndexChanged">
                                 <asp:ListItem Value="step_counts" Selected="True">Step Counts</asp:ListItem>
                                 <asp:ListItem Value="distance">Distance</asp:ListItem>
@@ -84,14 +87,15 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <asp:TextBox ID="txtFromDate" runat="server"></asp:TextBox><asp:CalendarExtender
+                                <td style="padding:0px 5px 5px 0px;">
+                                    <asp:TextBox ID="txtFromDate" runat="server" Width="150"></asp:TextBox><asp:CalendarExtender
                                         ID="txtFromDate_CalendarExtender" runat="server" Enabled="True" CssClass="orange"
                                         TargetControlID="txtFromDate">
                                     </asp:CalendarExtender>
                                 </td>
-                                <td>
-                                    <asp:TextBox ID="txtToDate" runat="server"></asp:TextBox><asp:CalendarExtender ID="txtToDate_CalendarExtender"
+                                <td style="padding-bottom:5px;">
+                                    <asp:TextBox ID="txtToDate" runat="server" Width="150"></asp:TextBox>
+                                    <asp:CalendarExtender ID="txtToDate_CalendarExtender"
                                         runat="server" Enabled="True" CssClass="orange" TargetControlID="txtToDate">
                                     </asp:CalendarExtender>
                                 </td>
@@ -356,8 +360,6 @@
         </asp:MultiView>
      
 </div><!-- print-->
-     
-
     <br />
      <div class="border-top-bottom">
         <div class="title">Diagnosis & Recommendations</div>
@@ -366,19 +368,18 @@
             medical record. Click on the issue name for more in-depth information on that particular issue.
         </div>
     </div>
-
-    <div class="no-border">
-
-        <br />
-        <table class="clear" width="200">
-            <tr>
-                <td><asp:Button ID="Button1" runat="server" Text="Settings" 
-                        onclick="Setting_Click" /></td>
-                <td><asp:Button ID="Button2" runat="server" Text="Back to Track my health" 
-                        PostBackUrl="~/usertrackmyhealth.aspx" /></td>
-            </tr>
-        </table>
+    <div class="no-border" style="margin-top: 10px;">
+        <asp:Button ID="Button1" runat="server" Text="Settings" CssClass="btn btn-default"
+            onclick="Setting_Click" />
+        <asp:Button ID="Button2" runat="server" Text="Back to Track my health" CssClass="btn btn-default"
+            PostBackUrl="~/usertrackmyhealth.aspx" />
     </div>
-   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </asp:Content>
 

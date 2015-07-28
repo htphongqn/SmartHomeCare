@@ -32,13 +32,11 @@
         }
     </script>
     <style type="text/css">
-
         .style1
         {
             width: 100%;
         }
     </style>
-
     <script type="text/javascript">
         $(document).ready(function () {
             $('#userhelp').click(function (e) {
@@ -48,36 +46,37 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
-    
-   
-    <div class="title_new">
-            <div class="floatleft">
-                <div class="td">
-                   <a href="usertrackmyhealth.aspx"> Track <asp:Label ID="lbNameHealth" runat="server" Text="my"></asp:Label> health </a>  »
-             
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Reports</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
                     <asp:LinkButton ID="lblinks" runat="server" onclick="lblinks_Click">Heart Rate Monitoring</asp:LinkButton>
+                    <div class="floatright">
+                        <asp:ImageButton ID="ImageButton2" runat="server" Height="25px" ImageUrl="~/resources/images/printer.png" Width="25px" OnClientClick="return processPrint('print');" CssClass="floatleft"/>&nbsp;&nbsp;
+                    </div>
                 </div>
-             </div>
-            <div class="floatright">
-                <asp:ImageButton ID="ImageButton2" runat="server" Height="25px" ImageUrl="~/resources/images/printer.png" Width="25px" OnClientClick="return processPrint('print');" CssClass="floatleft"/>&nbsp;&nbsp;
-                <a id="userhelp" href="#"><img src="resources/images/h.png" /></a>
-            </div>
-            <div class="clear"></div>
-     </div><!-- border bottom -->
-     Select GRAPH or TABLE buttons to see Heart Rate monitoring Report.
-        
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6" style="width:100%;">
+                            Select GRAPH or TABLE buttons to see Heart Rate monitoring Report.
         <div style="padding-top:10px;">
-            <asp:Button ID="btnGraph2" runat="server" OnClick="btnGraph2_Click" Text="Graph" />
-            <asp:Button ID="btnTable2" runat="server" OnClick="btnTable2_Click" Text="Table" />
+            <asp:Button ID="btnGraph2" runat="server" OnClick="btnGraph2_Click" Text="Graph" CssClass="btn btn-default" style="color:#000;"/>
+            <asp:Button ID="btnTable2" runat="server" OnClick="btnTable2_Click" Text="Table" CssClass="btn btn-default" style="color:#000;"/>
         </div>
          <div id="print">
         <asp:MultiView ID="MultiViewHeartRate" runat="server" ActiveViewIndex="0">        
             <asp:View ID="ViewGraph" runat="server">
-            <div class="item_report">
+            <div class="item_report" style="height:100%;">
                 <div id="chart">
                         <div class="select_data">Report is viewed with:
-                            <asp:DropDownList ID="ddlHeartRateData" runat="server" AutoPostBack="True" 
-                                OnSelectedIndexChanged="HeartRateData_SelectedIndexChanged">
+                            <asp:DropDownList ID="ddlHeartRateData" runat="server" AutoPostBack="True" CssClass="form-control"
+                                OnSelectedIndexChanged="HeartRateData_SelectedIndexChanged" style="width:30%;display:inline;">
                                 <asp:ListItem Value="0">Heart rate data</asp:ListItem>
                                 <asp:ListItem Value="1">HRV Data</asp:ListItem>
                             </asp:DropDownList>
@@ -203,15 +202,15 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <asp:TextBox ID="txtFromDate" runat="server"></asp:TextBox>
+                                    <td style="padding:0px 5px 5px 0px;">
+                                        <asp:TextBox ID="txtFromDate" runat="server" Width="150"></asp:TextBox>
                                         <asp:CalendarExtender
                                             ID="txtFromDate_CalendarExtender" runat="server" Enabled="True"
                                             TargetControlID="txtFromDate" CssClass="orange">
                                         </asp:CalendarExtender>
                                     </td>
-                                    <td>
-                                        <asp:TextBox ID="txtToDate" runat="server"></asp:TextBox>
+                                    <td style="padding-bottom:5px;">
+                                        <asp:TextBox ID="txtToDate" runat="server" Width="150"></asp:TextBox>
                                         <asp:CalendarExtender ID="txtToDate_CalendarExtender"
                                             runat="server" Enabled="True" TargetControlID="txtToDate" 
                                             CssClass="orange">
@@ -233,10 +232,10 @@
             <asp:View ID="ViewTable" runat="server">
              <asp:UpdatePanel ID="UpdateTable" runat="server">
                 <ContentTemplate>
-              <div class="item_report">
+              <div class="item_report" style="height:100%;">
                 <div class="select_data">
                     Report is viewed with:
-                    <asp:DropDownList ID="ddl" runat="server" CssClass="dropdown" AutoPostBack="True"
+                    <asp:DropDownList ID="ddl" runat="server" AutoPostBack="True" CssClass="form-control"
                         OnSelectedIndexChanged="ddl_SelectedIndexChanged">
                         <asp:ListItem Value="0">Heart rate data</asp:ListItem>
                         <asp:ListItem Value="1">HRV data</asp:ListItem>
@@ -511,17 +510,11 @@
 
     </div>
 
-    <div class="no-border"  style="padding-bottom:10px">
-
-        <br />
-        <table class="clear" width="200">
-            <tr>
-                <td><asp:Button ID="Button1" runat="server" Text="Settings" 
-                        PostBackUrl="~/usertrackmyhealth_heartrate_settings.aspx" /></td>
-                <td><asp:Button ID="Button2" runat="server" Text="Back to Track my health" 
-                        PostBackUrl="~/usertrackmyhealth.aspx" /></td>
-            </tr>
-        </table>
+    <div class="no-border"  style="padding-bottom:10px;style="margin-top: 10px;"">
+        <asp:Button ID="Button1" runat="server" Text="Settings" CssClass="btn btn-default"
+            PostBackUrl="~/usertrackmyhealth_heartrate_settings.aspx" />
+        <asp:Button ID="Button2" runat="server" Text="Back to Track my health" CssClass="btn btn-default"
+            PostBackUrl="~/usertrackmyhealth.aspx" />
     </div>
  <asp:UpdateProgress ID="UpadateProc" AssociatedUpdatePanelID="UpdateTable" runat="server">
      <ProgressTemplate>
@@ -530,5 +523,14 @@
             </div>
     </ProgressTemplate>
 </asp:UpdateProgress>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        
 </asp:Content>
 
