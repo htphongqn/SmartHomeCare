@@ -17,34 +17,37 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
-   
-     <div class="title_new">
-            <div class="floatleft">
-                <div class="td">
-                   <a href="usertrackmyhealth.aspx"> Track <asp:Label ID="lbNameHealth" runat="server" Text="my"></asp:Label> health </a>  » Global settings
+   <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Reports</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <a href="usertrackmyhealth.aspx"> Track <asp:Label ID="lbNameHealth" runat="server" Text="my"></asp:Label> health </a>  » Global settings
                 </div>
-             </div>
-            <div class="floatright">
-                <asp:ImageButton ID="ImageButton2" runat="server" Height="25px" ImageUrl="~/resources/images/printer.png" Width="25px" OnClientClick="return processPrint('print');" CssClass="floatleft"/>&nbsp;&nbsp;
-                <a id="userhelp" href="#"><img src="resources/images/h.png" /></a>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="clear">
+                                This page display current global settings.<br /><br />
+                                Measurement system: <asp:RadioButton ID="rdmetric" runat="server" Text="Metric" GroupName="g" />
+                                                    <asp:RadioButton ID="rdus" runat="server" Text="US" GroupName="g" Checked="True"/>
+                            </div>                              
+                            <div class="no-border" style="margin-bottom:10px;margin-top:10px">
+                                <asp:Button ID="btnsave" runat="server" Text="Save" onclick="btnsave_Click"  CssClass="btn btn-default"/>
+                                <asp:Button ID="btncancel" runat="server" Text="Cancel" 
+                        onclick="btncancel_Click" CausesValidation="False"  CssClass="btn btn-default"
+                        PostBackUrl="~/usertrackmyhealth.aspx" />
+                            </div>                
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="clear"></div>
-     </div><!-- border bottom -->
-    <div class="clear" style="margin-bottom:100px">
-        This page display current global settings.<br /><br />
-        Measurement system: <asp:RadioButton ID="rdmetric" runat="server" Text="Metric" GroupName="g" />
-                            <asp:RadioButton ID="rdus" runat="server" Text="US" GroupName="g" Checked="True"/>
+        </div>
     </div>
-     <div class="no-border">
-        <table class="">
-            <tr>
-                <td class="style1"><asp:Button ID="btnsave" runat="server" Text="Save" onclick="btnsave_Click" /></td>
-                <td><asp:Button ID="btncancel" runat="server" Text="Cancel" 
-                        onclick="btncancel_Click" CausesValidation="False" 
-                        PostBackUrl="~/usertrackmyhealth.aspx" /></td>
-            </tr>
-        </table>
-    </div>
-
 </asp:Content>
 
