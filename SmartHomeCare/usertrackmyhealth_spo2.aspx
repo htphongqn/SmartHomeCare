@@ -262,9 +262,9 @@
                         </div>
         
                     <div class="no-border" style="margin-top: 10px;">
-                        <asp:Button ID="Button1" runat="server" Text="Settings" 
+                        <asp:Button ID="Button1" runat="server" Text="Settings"  CssClass="btn btn-default"
                             PostBackUrl="~/usertrackmyhealth_spo2_settings.aspx" />
-                        <asp:Button ID="Button2" runat="server" Text="Back to Track my health" 
+                        <asp:Button ID="Button2" runat="server" Text="Back to Track my health"  CssClass="btn btn-default"
                             PostBackUrl="~/usertrackmyhealth.aspx" />
                     </div>
                  <asp:UpdateProgress ID="UpadateProc" AssociatedUpdatePanelID="UpdateTable" runat="server">
