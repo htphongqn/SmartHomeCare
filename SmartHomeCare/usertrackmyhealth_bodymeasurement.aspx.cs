@@ -77,13 +77,13 @@ public partial class usertrackmyhealth_bodymeasurement : System.Web.UI.Page
         btnTable2.Enabled = !btnGraph2.Enabled;
         if (btnGraph2.Enabled == false)
         {
-            btnGraph2.ForeColor = ColorTranslator.FromHtml("#E0C55C");
-            btnTable2.ForeColor = ColorTranslator.FromHtml("#fff");
+            btnGraph2.BackColor = ColorTranslator.FromHtml("#e6e6e6");
+            btnTable2.BackColor = ColorTranslator.FromHtml("#fff");
         }
         else
         {
-            btnGraph2.ForeColor = ColorTranslator.FromHtml("#fff");
-            btnTable2.ForeColor = ColorTranslator.FromHtml("#E0C55C");
+            btnGraph2.BackColor = ColorTranslator.FromHtml("#fff");
+            btnTable2.BackColor = ColorTranslator.FromHtml("#e6e6e6");
         }
     }
     protected void btnGraph2_Click(object sender, EventArgs e)

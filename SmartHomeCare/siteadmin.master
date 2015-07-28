@@ -14,6 +14,7 @@
     <link href="styles/site.css" rel="stylesheet" type="text/css" />
    <link href="styles/siteadmin.css" rel="stylesheet" type="text/css" />
    <link href="styles/gridview.css" rel="stylesheet" type="text/css" />
+   <link href="styles/calendar.css" rel="stylesheet" type="text/css" />   
 
     <!-- Bootstrap Core CSS -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
