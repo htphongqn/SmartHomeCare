@@ -26,6 +26,16 @@
             location.reload();
         }
     </script>
+    
+        <style type="text/css">
+        td, th {
+          padding: 5px;
+        }
+        .form-control
+        {
+            padding:6px 1px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
     <div class="row">
@@ -94,13 +104,13 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            <asp:TextBox ID="txtFromDateChart" runat="server"></asp:TextBox>
+                                                            <asp:TextBox ID="txtFromDateChart" runat="server" Width="140"></asp:TextBox>
                                                             <asp:CalendarExtender ID="CalendarExtender1" runat="server" Enabled="True" TargetControlID="txtFromDateChart"
                                                                 CssClass="orange">
                                                             </asp:CalendarExtender>
                                                         </td>
                                                         <td>
-                                                            <asp:TextBox ID="txtToDateChart" runat="server"></asp:TextBox>
+                                                            <asp:TextBox ID="txtToDateChart" runat="server" Width="140"></asp:TextBox>
                                                             <asp:CalendarExtender ID="CalendarExtender2" runat="server" Enabled="True" TargetControlID="txtToDateChart"
                                                                 CssClass="orange">
                                                             </asp:CalendarExtender>

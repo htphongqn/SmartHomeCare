@@ -14,7 +14,7 @@
 //            document.getElementById("<%= btnSave.ClientID %>").style.color = "#fff";
         }
     </script>
-        <style type="text/css">
+    <style type="text/css">
         td, th {
           padding: 5px;
         }
