@@ -13,6 +13,7 @@
             text-align: center;
             width: 95%;
             margin: auto;
+            max-width: 275px;
             }
         .btn_img a
         {

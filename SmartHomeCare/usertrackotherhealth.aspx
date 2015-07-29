@@ -5,7 +5,28 @@
         .style1
         {
             height: 114px;
+            width:33%;
         }
+        .btn_img
+        {
+            border: 1px solid #005E8F;
+            text-align: center;
+            width: 95%;
+            margin: auto;
+            max-width: 275px;
+            }
+        .btn_img a
+        {
+            text-decoration: none;
+            font-size: 14px;
+            }
+        .btn_img img
+        {
+            height: 250px;
+            width: 100%;
+            border: 0px;
+            border-bottom: 1px solid #005E8F;
+            }
         .style2
         {
             height: 136px;
@@ -30,7 +51,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6" style="width:100%;">
                             <div class="clear">
                                 The reports listed below are available for your use.<br />
                                 Click the name of the report you wish to view.
@@ -38,7 +59,7 @@
                             <div class="clear borderbottom">
                                 <table cellspacing="10" >
                                     <tr>
-                                        <td>
+                                        <td class="style1">
                                                 <div class="btn_img">
                                                         <a href="usertrackothers_temperature.aspx"  >
                                                             <img src="resources/images/icon_tracktem.png" alt=""/>
@@ -46,7 +67,7 @@
                                                         </a>
                                                 </div>
                                         </td>
-                                        <td>
+                                        <td class="style1">
                                                 <div class="btn_img">
                                                     <a href="usertrackothers_bodymeasurement.aspx">
                                                        <img src="resources/images/body.jpg" alt=""/>
@@ -54,7 +75,7 @@
                                                     </a>
                                                 </div>
                                             </td>
-                                        <td>
+                                        <td class="style1">
                                                 <div class="btn_img">
                                                     <a href="usertrackothers_heartrate.aspx" >
                                                         <img src="resources/images/heart-rate-training.jpg" alt=""/>
@@ -64,7 +85,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
+                                        <td class="style2">
                                             
                                                 <div class="btn_img">
                                                     <a href="usertrackothers_spo2.aspx"  >
@@ -73,7 +94,7 @@
                                                    </a>
                                                 </div>
                                         </td>
-                                        <td>
+                                        <td class="style2">
                                                 <div class="btn_img">
                                                     <a href="usertrackothers_fitness.aspx" >
                                                         <img src="resources/images/fitness.jpg" alt=""/>
@@ -81,7 +102,7 @@
                                                    </a>
                                                 </div>
                                         </td>
-                                        <td>
+                                        <td class="style2">
                                                 <div class="btn_img">
                                                     <a href="usertrackothers_stress.aspx">
                                                         <img src="resources/images/stress.png" alt=""/>
