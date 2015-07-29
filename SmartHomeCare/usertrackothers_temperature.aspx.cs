@@ -209,13 +209,13 @@ public partial class usertrackothers_temperature : System.Web.UI.Page
         btnTable2.Enabled = !btnGraph2.Enabled;
         if (btnGraph2.Enabled == false)
         {
-            btnGraph2.ForeColor = ColorTranslator.FromHtml("#E0C55C");
-            btnTable2.ForeColor = ColorTranslator.FromHtml("#fff");
+            btnGraph2.BackColor = ColorTranslator.FromHtml("#e6e6e6");
+            btnTable2.BackColor = ColorTranslator.FromHtml("#fff");
         }
         else
         {
-            btnGraph2.ForeColor = ColorTranslator.FromHtml("#fff");
-            btnTable2.ForeColor = ColorTranslator.FromHtml("#E0C55C");
+            btnGraph2.BackColor = ColorTranslator.FromHtml("#fff");
+            btnTable2.BackColor = ColorTranslator.FromHtml("#e6e6e6");
         }
     }
     protected void btnGraph2_Click(object sender, EventArgs e)
@@ -238,7 +238,7 @@ public partial class usertrackothers_temperature : System.Web.UI.Page
     protected void Button1_Click(object sender, EventArgs e)
     {
 
-        Response.Redirect("~/usertrackmyhealth_temperature_settings.aspx");
+        Response.Redirect("~/usertrackothers_temperature_settings.aspx");
 
     }
     protected void btntable_Click(object sender, EventArgs e)
