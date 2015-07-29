@@ -18,6 +18,10 @@
         td, th {
           padding: 5px;
         }
+        .form-control
+        {
+            padding:6px 1px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
@@ -55,7 +59,7 @@
                                             <asp:TextBox ID="txtsamplerate" runat="server" Width="173px" onclick="javascript:enablebtn();" CssClass="form-control"
                                                 onkeypress="return digits(this, event, true, true);" ></asp:TextBox></td>
                                             <td>
-                                            <asp:DropDownList ID="ddlsamplerate" runat="server" Width="50px"  OnChange="javascript:enablebtn();" CssClass="form-control"
+                                            <asp:DropDownList ID="ddlsamplerate" runat="server" Width="60px"  OnChange="javascript:enablebtn();" CssClass="form-control"
                                                 DataTextField="Name" DataValueField="AutoId"></asp:DropDownList></td>
                                     </tr>
                                     <tr>
@@ -81,7 +85,7 @@
                                                 onkeypress="return digits(this, event, true, true);" ></asp:TextBox>
                                         </td>
                                         <td>
-                                            <asp:DropDownList ID="ddlmeasurementduration" runat="server" Width="50px" OnChange="javascript:enablebtn();" CssClass="form-control"
+                                            <asp:DropDownList ID="ddlmeasurementduration" runat="server" Width="60px" OnChange="javascript:enablebtn();" CssClass="form-control"
                                                 DataTextField="Name" DataValueField="AutoId"></asp:DropDownList></td>
                                     </tr>
                                 </table>
