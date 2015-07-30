@@ -4,7 +4,7 @@
     <script type="text/javascript" language="javascript">
     function enablebtn() {
         document.getElementById("<%= btnSave.ClientID %>").disabled = false;
-        document.getElementById("<%= btnSave.ClientID %>").style.color = "#fff";
+//        document.getElementById("<%= btnSave.ClientID %>").style.color = "#fff";
     }
     </script>
     <style>
