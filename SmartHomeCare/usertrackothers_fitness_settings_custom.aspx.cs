@@ -82,21 +82,25 @@ public partial class usertrackothers_fitness_settings_custom : System.Web.UI.Pag
         TextBox txtStage = new TextBox();
         txtStage.Text = stage;
         txtStage.Width = 100;
+        txtStage.CssClass = "form-control";
 
         DropDownList ddlZone = new DropDownList();
         ddlZone.DataTextField = "Name";
         ddlZone.DataValueField = "AutoId";
+        ddlZone.CssClass = "form-control";
         BaseView.BindDataToDropdownList(ddlZone, _db.GetList_Fitness_ZoneType());
         BaseView.SelectDropdownItem(ddlZone, zoneId);
 
         TextBox txtTime = new TextBox();
         txtTime.Text = timeValue;
         txtTime.Width = 50;
+        txtTime.CssClass = "form-control";
         txtTime.Attributes.Add("onKeyPress", "return digits(this, event, true, true);"); 
 
         DropDownList ddlTime = new DropDownList();
         ddlTime.DataTextField = "Name";
         ddlTime.DataValueField = "AutoId";
+        ddlTime.CssClass = "form-control";
         BaseView.BindDataToDropdownList(ddlTime, _db.GetList_UnitTime());
         BaseView.SelectDropdownItem(ddlTime, timeId);
 

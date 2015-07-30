@@ -33,7 +33,7 @@ public partial class usertrackothers_fitness_settings : System.Web.UI.Page
             //ChangeTextUnits();
 
             btnSave.Enabled = false;
-            btnSave.ForeColor = System.Drawing.ColorTranslator.FromHtml("#999999");
+            //btnSave.ForeColor = System.Drawing.ColorTranslator.FromHtml("#999999");
         }
     }
     //private void IsEdit(bool s)

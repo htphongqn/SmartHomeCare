@@ -1,65 +1,137 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/siteuser.master" AutoEventWireup="true" CodeFile="usertrackothers_fitness_settings_custom.aspx.cs" Inherits="usertrackothers_fitness_settings_custom" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head1" Runat="Server">
+
+    <style type="text/css">
+    .form-control
+        {
+            width: 100%;
+            margin: 0px 5px 5px 0px;
+            height: 34px;
+            padding: 6px 10px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            }
+            #tblfitnessprogram input
+           {
+                width: 100%;
+                float: left;
+                margin: 0px 5px 5px 0px;
+                height: 34px;
+                padding: 6px 12px;
+                font-size: 14px;
+                line-height: 1.42857143;
+                color: #555;
+                background-color: #fff;
+                background-image: none;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+                -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+               }
+            #tblfitnessprogram select
+           {
+               width: 54%;
+                float: left;
+                margin: 0px 5px 5px 0px;
+                height: 34px;
+                padding: 6px 12px;
+                font-size: 14px;
+                line-height: 1.42857143;
+                color: #555;
+                background-color: #fff;
+                background-image: none;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+                -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+               }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="right1" Runat="Server">
-<div class="title_new">
-            <div class="floatleft">
-                <div class="td">
-                   <a href="usertrackotherhealth.aspx"> Track <asp:Label ID="lbNameHealth" runat="server" Text="my"></asp:Label> health </a>  » <a href="usertrackothers_fertility.aspx">Fitness monitoring</a> » <a href="usertrackothers_fitness_settings.aspx"> Settings</a> » Custom
+<div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Reports</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <a href="usertrackotherhealth.aspx"> Track <asp:Label ID="lbNameHealth" runat="server" Text="my"></asp:Label> health </a>  » <a href="usertrackothers_fertility.aspx">Fitness monitoring</a> » <a href="usertrackothers_fitness_settings.aspx"> Settings</a> » Custom
                 </div>
-             </div>
-            <div class="floatright">
-                <asp:ImageButton ID="ImageButton2" runat="server" Height="25px" ImageUrl="~/resources/images/printer.png" Width="25px" OnClientClick="return processPrint('print');" CssClass="floatleft"/>&nbsp;&nbsp;
-                <a id="userhelp" href="#"><img src="resources/images/h.png" /></a>
-            </div>
-            <div class="clear"></div>
-     </div><!-- border bottom -->
-    <div id="print">
-     <div class="clear borderbottom" style="margin-bottom:20px">
-        <table>
-            <tr>
-                <td colspan="2">
-                     This page display current settings of this feature.
-                </td>
-            </tr>
-            <tr style="height:10px">
-                <td colspan="2">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6" style="width:100%;">
+                            <div id="print">
+                             <div class="clear" style="margin-bottom:20px">
+                                <table>
+                                    <tr>
+                                        <td colspan="2">
+                                             This page display current settings of this feature.
+                                        </td>
+                                    </tr>
+                                    <tr style="height:10px">
+                                        <td colspan="2">
                      
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <table width="100%">
-                        <tr>
-                            <td>Number of stages: <asp:TextBox ID="txtnumberofstages" runat="server" Width="60" 
-                                    AutoPostBack="True" onkeypress="return ValidateKeypress(/\d/,event);" 
-                                    ontextchanged="txtnumberofstages_TextChanged"></asp:TextBox></td>
-                            <td align="right">
-                                <asp:Button ID="btnSave" runat="server" Text="Save" onclick="btnSave_Click" />
-                                <asp:Button ID="btnback" runat="server" CausesValidation="false" PostBackUrl="usertrackothers_fitness_settings.aspx" Text="Cancel"/>
-                            </td>
-                        </tr>
-                    </table>
-                </td>                
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <asp:Table ID="tblfitnessprogram" runat="server" Width="100%" 
-                        ViewStateMode="Enabled">
-                    </asp:Table>
-                </td>
-            </tr>            
-            <tr>
-                <td>Transition Audio:</td>
-                <td><asp:TextBox ID="txttransitionaudio" runat="server" Width="200"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td>Program name:</td>
-                <td><asp:TextBox ID="txtprogramname" runat="server" Width="200"></asp:TextBox></td>
-            </tr>
-        </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td>Number of stages: <asp:TextBox ID="txtnumberofstages" runat="server" Width="60"  CssClass="form-control"
+                                                            AutoPostBack="True" onkeypress="return ValidateKeypress(/\d/,event);" 
+                                                            ontextchanged="txtnumberofstages_TextChanged"></asp:TextBox></td>
+                                                    <td align="right">
+                                                        <asp:Button ID="btnSave" runat="server" Text="Save" onclick="btnSave_Click" CssClass="btn btn-default" />
+                                                        <asp:Button ID="btnback" runat="server" CausesValidation="false" PostBackUrl="usertrackothers_fitness_settings.aspx" Text="Cancel" CssClass="btn btn-default"/>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>                
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <asp:Table ID="tblfitnessprogram" runat="server" Width="100%" 
+                                                ViewStateMode="Enabled">
+                                            </asp:Table>
+                                        </td>
+                                    </tr>            
+                                    <tr>
+                                        <td>Transition Audio:</td>
+                                        <td><asp:TextBox ID="txttransitionaudio" runat="server" Width="200" CssClass="form-control"></asp:TextBox></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Program name:</td>
+                                        <td><asp:TextBox ID="txtprogramname" runat="server" Width="200" CssClass="form-control"></asp:TextBox></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
+    
 </asp:Content>
 

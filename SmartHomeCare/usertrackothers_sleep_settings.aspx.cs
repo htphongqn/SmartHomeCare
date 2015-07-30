@@ -184,7 +184,7 @@ public partial class usertrackothers_sleep_settings : System.Web.UI.Page
         trmanual.Visible = !rdauto.Checked;
 
         btnSave.Enabled = true;
-        btnSave.ForeColor = System.Drawing.Color.White;
+        //btnSave.ForeColor = System.Drawing.Color.White;
     }
     protected void rdmanual_CheckedChanged(object sender, EventArgs e)
     {
@@ -192,7 +192,7 @@ public partial class usertrackothers_sleep_settings : System.Web.UI.Page
         trmanual.Visible = !rdauto.Checked;
 
         btnSave.Enabled = true;
-        btnSave.ForeColor = System.Drawing.Color.White;
+        //btnSave.ForeColor = System.Drawing.Color.White;
     }
     private TableRow alarmRow(string name, int weekId, string timeValue, int timeId)
     {
@@ -203,6 +203,7 @@ public partial class usertrackothers_sleep_settings : System.Web.UI.Page
         DropDownList ddlWeek = new DropDownList();
         ddlWeek.DataTextField = "Name";
         ddlWeek.DataValueField = "AutoId";
+        ddlWeek.Width = 80;
         BaseView.BindDataToDropdownList(ddlWeek, _db.GetList_UnitDate());
         BaseView.SelectDropdownItem(ddlWeek, weekId);
 
@@ -214,6 +215,7 @@ public partial class usertrackothers_sleep_settings : System.Web.UI.Page
         DropDownList ddlTime = new DropDownList();
         ddlTime.DataTextField = "Name";
         ddlTime.DataValueField = "AutoId";
+        ddlTime.Width = 80;
         BaseView.BindDataToDropdownList(ddlTime, _db.GetList_UnitTime());
         BaseView.SelectDropdownItem(ddlTime, timeId);
 
@@ -283,13 +285,13 @@ public partial class usertrackothers_sleep_settings : System.Web.UI.Page
         string ctrlName = thePage.Request.Params.Get("__EVENTTARGET");
         if (((ctrlName != null) & (ctrlName != string.Empty)))
         {
-            myControl = ((ContentPlaceHolder)thePage.Master.Master.FindControl("main")).Page.FindControl(ctrlName);
+            myControl = ((ContentPlaceHolder)thePage.Master.FindControl("right1")).Page.FindControl(ctrlName);
         }
         else
         {
             foreach (string Item in thePage.Request.Form)
             {
-                Control c = ((ContentPlaceHolder)thePage.Master.Master.FindControl("main")).Page.FindControl(Item);
+                Control c = ((ContentPlaceHolder)thePage.Master.FindControl("right1")).Page.FindControl(Item);
                 if (((c) is System.Web.UI.WebControls.Button))
                 {
                     myControl = c;
@@ -301,6 +303,6 @@ public partial class usertrackothers_sleep_settings : System.Web.UI.Page
     protected void btnaddalarm_Click(object sender, EventArgs e)
     {
         btnSave.Enabled = true;
-        btnSave.ForeColor = System.Drawing.Color.White;
+        //btnSave.ForeColor = System.Drawing.Color.White;
     }
 }

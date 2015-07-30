@@ -27,7 +27,7 @@ public partial class usertrackmyhealth_fitness_settings : System.Web.UI.Page
             //ChangeTextUnits();
 
             btnSave.Enabled = false;
-            btnSave.ForeColor = System.Drawing.ColorTranslator.FromHtml("#999999");
+            //btnSave.ForeColor = System.Drawing.ColorTranslator.FromHtml("#999999");
         }
     }
     //private void IsEdit(bool s)
@@ -150,6 +150,6 @@ public partial class usertrackmyhealth_fitness_settings : System.Web.UI.Page
             BaseView.BindDataToDropdownList(ddltargethr, null);
         }
         btnSave.Enabled = true;
-        btnSave.ForeColor = System.Drawing.Color.White;
+        //btnSave.ForeColor = System.Drawing.Color.White;
     }
 }

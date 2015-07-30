@@ -166,7 +166,7 @@
                                                     <td>
                                                         <asp:TextBox ID="txtsleepduration" runat="server" CssClass="form-control" Width="123px" OnChange="javascript:enablebtn();"
                                                             onkeypress="return digits(this, event, true, true);" ></asp:TextBox>
-                                                        <asp:DropDownList ID="ddlsleepduration" runat="server" CssClass="form-control" Width="50px" OnChange="javascript:enablebtn();" 
+                                                        <asp:DropDownList ID="ddlsleepduration" runat="server" CssClass="form-control" Width="80px" OnChange="javascript:enablebtn();" 
                                                             DataTextField="Name" DataValueField="AutoId"></asp:DropDownList> 
                                                     </td>
                                                 </tr>
@@ -189,10 +189,10 @@
                             <div class="clear" style="margin-bottom:20px;margin-top:20px">
                                  <%--<asp:Button ID="btnEdit" runat="server" Text="Edit" onclick="btnEdit_Click" />--%>
                                  <asp:Button ID="btnSave" runat="server" Text="Save Settings" CssClass="btn btn-default"
-                                     onclick="btnSave_Click" Enabled="false" ForeColor="#999999" />
+                                     onclick="btnSave_Click" Enabled="false" />
                                  <%--<asp:Button ID="btnCancel" runat="server" Text="Cancel" 
                                      onclick="btnCancel_Click" CausesValidation="False" />--%>
-                                 <asp:Button ID="btnback" runat="server" Text="Cancel" CausesValidation="false" PostBackUrl="usertrackmyhealth_sleep.aspx" CssClass="btn btn-default"/>
+                                 <asp:Button ID="btnback" runat="server" Text="Cancel" CausesValidation="false" PostBackUrl="usertrackothers_sleep.aspx" CssClass="btn btn-default"/>
                             </div>
                         </div>
                     </div>
