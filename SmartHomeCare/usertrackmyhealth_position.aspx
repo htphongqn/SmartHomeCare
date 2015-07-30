@@ -42,7 +42,7 @@
                             Select GRAPH or TABLE buttons to see Position monitoring Report.
                             <div style="padding-top:10px;">
                                 <asp:Button ID="btnGraph2" runat="server" OnClick="btnGraph2_Click" Text="Graph" CssClass="btn btn-default"/>
-                                <asp:Button ID="btnTable2" runat="server" OnClick="btnTable2_Click" Text="Table" CssClass="btn btn-default" style="color:#000;"/>
+                                <asp:Button ID="btnTable2" runat="server" OnClick="btnTable2_Click" Text="Table" CssClass="btn btn-default"/>
                             </div>
                             <asp:MultiView ID="MultiViewPosition" runat="server" ActiveViewIndex="0">
             
