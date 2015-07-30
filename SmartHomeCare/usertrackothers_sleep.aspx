@@ -526,7 +526,7 @@
                             </div>
                             <div class="clear" style="margin-top: 10px;">
                                 <asp:Button ID="Button1" runat="server" Text="Settings" PostBackUrl="~/usertrackothers_sleep_settings.aspx" CssClass="btn btn-default"/>
-                                <asp:Button ID="Button2" runat="server" Text="Back to Track my health" PostBackUrl="~/usertrackmyhealth.aspx" CssClass="btn btn-default" />
+                                <asp:Button ID="Button2" runat="server" Text="Back to Track my health" PostBackUrl="~/usertrackotherhealth.aspx" CssClass="btn btn-default" />
                             </div>
                         </div>
                     </div>
