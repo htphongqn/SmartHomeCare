@@ -92,6 +92,7 @@ public partial class usertrackmyhealth_fitness_settings_custom : System.Web.UI.P
         ddlZone.DataTextField = "Name";
         ddlZone.DataValueField = "AutoId";
         ddlZone.CssClass = "form-control";
+        ddlZone.Width = 90;
         BaseView.BindDataToDropdownList(ddlZone, _db.GetList_Fitness_ZoneType());
         BaseView.SelectDropdownItem(ddlZone, zoneId);
 
@@ -105,6 +106,7 @@ public partial class usertrackmyhealth_fitness_settings_custom : System.Web.UI.P
         ddlTime.DataTextField = "Name";
         ddlTime.DataValueField = "AutoId";
         ddlTime.CssClass = "form-control";
+        ddlTime.Width = 60;
         BaseView.BindDataToDropdownList(ddlTime, _db.GetList_UnitTime());
         BaseView.SelectDropdownItem(ddlTime, timeId);
         
