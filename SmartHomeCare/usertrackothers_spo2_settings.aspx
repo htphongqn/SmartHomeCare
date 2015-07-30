@@ -91,7 +91,7 @@
                             <div class="clear" style="margin-bottom:20px;margin-top:20px">
                                  <%--<asp:Button ID="btnEdit" runat="server" Text="Edit" onclick="btnEdit_Click" />--%>
                                  <asp:Button ID="btnSave" runat="server" onclick="btnSave_Click" Text="Save Settings" CssClass="btn btn-default"
-                                      Enabled="false" ForeColor="#999999" />
+                                      Enabled="false" />
                                  <%--<asp:Button ID="btnCancel" runat="server" Text="Cancel" 
                                      onclick="btnCancel_Click" CausesValidation="False" />--%>
                                  <asp:Button ID="btnback" runat="server" Text="Cancel" CausesValidation="false" PostBackUrl="usertrackothers_spo2.aspx" CssClass="btn btn-default"/>

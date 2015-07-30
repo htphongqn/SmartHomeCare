@@ -4,7 +4,7 @@
     <script type="text/javascript" language="javascript">
         function enablebtn() {
             document.getElementById("<%= btnSave.ClientID %>").disabled = false;
-            document.getElementById("<%= btnSave.ClientID %>").style.color = "#fff";
+           // document.getElementById("<%= btnSave.ClientID %>").style.color = "#fff";
         }
     </script>
     <script type="text/javascript">
@@ -21,7 +21,7 @@
             float: left;
             margin: 0px 5px 5px 0px;
             height: 34px;
-            padding: 6px 12px;
+            padding: 6px 1px;
             font-size: 14px;
             line-height: 1.42857143;
             color: #555;
@@ -197,7 +197,7 @@
                             <div class="clear"  style="margin-bottom:20px;margin-top:20px">
                                  <%--<asp:Button ID="btnEdit" runat="server" Text="Edit" onclick="btnEdit_Click" />--%>
                                  <asp:Button ID="btnSave" runat="server" Text="Save Settings" CssClass="btn btn-default"
-                                     onclick="btnSave_Click" Enabled="false" ForeColor="#999999" />
+                                     onclick="btnSave_Click" Enabled="false"/>
                                  <%--<asp:Button ID="btnCancel" runat="server" Text="Cancel" 
                                      onclick="btnCancel_Click" CausesValidation="False" />--%>
                                  <asp:Button ID="btnback" runat="server" Text="Cancel" CausesValidation="false" PostBackUrl="usertrackmyhealth_sleep.aspx" CssClass="btn btn-default"/>
