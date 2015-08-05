@@ -1,9 +1,14 @@
 ﻿<%@ Page Title="Fertility Monitoring" Language="C#" MasterPageFile="~/siteuser.master" AutoEventWireup="true" CodeFile="usertrackmyhealth_fertility.aspx.cs" Inherits="usertrackmyhealth_fertility" %>
 
+<%@ Register Assembly="DevExpress.XtraCharts.v12.1.Web, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.XtraCharts.Web" TagPrefix="dxchartsui" %>
+
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
     Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+
+<%@ Register assembly="DevExpress.XtraCharts.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.XtraCharts" tagprefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head1" Runat="Server">
     <link href="styles/tab.css" rel="stylesheet" type="text/css" />
@@ -49,7 +54,7 @@
                                             &nbsp;<br />
                                             <asp:Panel ID="pnChart" runat="server">
                                                 <div>
-                                                    <asp:Chart ID="ChartFertility" runat="server" Height="250px" Width="400px" 
+                                                    <%--<asp:Chart ID="ChartFertility" runat="server" Height="250px" Width="400px" 
                                                         ImageStorageMode="UseImageLocation" 
                                                         ImageLocation="/resources/images/chart/ChartPic_#SEQ(300,3)">
                                                         <Series>
@@ -69,9 +74,88 @@
                                                             </asp:ChartArea>
                                                         </ChartAreas>
                                                         <BorderSkin SkinStyle="Raised" />
-                                                    </asp:Chart>
+                                                    </asp:Chart>--%>
+                                                    <dxchartsui:WebChartControl ID="ChartFertility" runat="server" Height="450px" 
+                                                        Width="600px">
+                                                        <diagramserializable>
+                                                            <cc1:XYDiagram>
+                                                                <axisx visibleinpanesserializable="-1">
+                                                                    <range sidemarginsenabled="True" />
+                                                                    <range sidemarginsenabled="True" />
+                                                                </axisx>
+                                                                <axisy visibleinpanesserializable="-1">
+                                                                    <range sidemarginsenabled="True" />
+                                                                    <range sidemarginsenabled="True" />
+                                                                </axisy>
+                                                            </cc1:XYDiagram>
+                                                        </diagramserializable>
+                                                        <fillstyle>
+                                                            <optionsserializable>
+                                                                <cc1:SolidFillOptions />
+                                                            </optionsserializable>
+                                                        </fillstyle>
+                                                        <seriesserializable>
+                                                            <cc1:Series ArgumentDataMember="ReceivedDate" 
+                                                                ArgumentScaleType="DateTime" ValueDataMembersSerializable="Skin">
+                                                                <viewserializable>
+                                                                    <cc1:LineSeriesView>
+                                                                    </cc1:LineSeriesView>
+                                                                </viewserializable>
+                                                                <labelserializable>
+                                                                    <cc1:PointSeriesLabel LineVisible="True">
+                                                                        <fillstyle>
+                                                                            <optionsserializable>
+                                                                                <cc1:SolidFillOptions />
+                                                                            </optionsserializable>
+                                                                        </fillstyle>
+                                                                        <pointoptionsserializable>
+                                                                            <cc1:PointOptions>
+                                                                            </cc1:PointOptions>
+                                                                        </pointoptionsserializable>
+                                                                    </cc1:PointSeriesLabel>
+                                                                </labelserializable>
+                                                                <legendpointoptionsserializable>
+                                                                    <cc1:PointOptions>
+                                                                    </cc1:PointOptions>
+                                                                </legendpointoptionsserializable>
+                                                            </cc1:Series>
+                                                        </seriesserializable>
+                                                        <seriestemplate>
+                                                            <viewserializable>
+                                                                <cc1:LineSeriesView>
+                                                                </cc1:LineSeriesView>
+                                                            </viewserializable>
+                                                            <labelserializable>
+                                                                <cc1:PointSeriesLabel LineVisible="True">
+                                                                    <fillstyle>
+                                                                        <optionsserializable>
+                                                                            <cc1:SolidFillOptions />
+                                                                        </optionsserializable>
+                                                                    </fillstyle>
+                                                                    <pointoptionsserializable>
+                                                                        <cc1:PointOptions>
+                                                                        </cc1:PointOptions>
+                                                                    </pointoptionsserializable>
+                                                                </cc1:PointSeriesLabel>
+                                                            </labelserializable>
+                                                            <legendpointoptionsserializable>
+                                                                <cc1:PointOptions>
+                                                                </cc1:PointOptions>
+                                                            </legendpointoptionsserializable>
+                                                        </seriestemplate>
+                                                        <crosshairoptions>
+                                                            <commonlabelpositionserializable>
+                                                                <cc1:CrosshairMousePosition />
+                                                            </commonlabelpositionserializable>
+                                                        </crosshairoptions>
+                                                        <tooltipoptions>
+                                                            <tooltippositionserializable>
+                                                                <cc1:ToolTipMousePosition />
+                                                            </tooltippositionserializable>
+                                                        </tooltipoptions>
+                                                    </dxchartsui:WebChartControl>
                                                 </div>
-                                                <div align="center" style="margin-left:55px;">
+                                                <%--<div align="center" style="margin-left:55px;">
                                                     <table style="width:320px;">
                                                         <tr>
                                                             <td>
@@ -95,12 +179,12 @@
                                                             </td>
                                                         </tr>
                                                     </table>
-                                                </div>
-                                                <div style="margin-left:55px;">
+                                                </div>--%>
+                                                <%--<div style="margin-left:55px;">
                                                     <asp:LinkButton ID="lbtnPrevMonth" runat="server" Font-Overline="False" OnClick="lbtnPrevMonth_Click">&lt;&lt;</asp:LinkButton>
                                                     <asp:Label ID="lblMonthYear" runat="server" Height="20px" Text="MonthYear" Width="120px"></asp:Label>
                                                     <asp:LinkButton ID="lbtnNextMonth" runat="server" Font-Overline="False" OnClick="lbtnNextMonth_Click">&gt;&gt;</asp:LinkButton>
-                                                </div>
+                                                </div>--%>
                                                 <br />
                                             </asp:Panel>
                                         </div>

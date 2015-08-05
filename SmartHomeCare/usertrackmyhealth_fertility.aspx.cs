@@ -6,7 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Drawing;
 using System.Data;
-using System.Web.UI.DataVisualization.Charting;
+using DevExpress.XtraCharts;
+//using System.Web.UI.DataVisualization.Charting;
 public partial class usertrackmyhealth_fertility : System.Web.UI.Page
 {
     private DBClass _db = new DBClass();
@@ -57,13 +58,13 @@ public partial class usertrackmyhealth_fertility : System.Web.UI.Page
         btnTable2.Enabled = !btnGraph2.Enabled;
         if (btnGraph2.Enabled == false)
         {
-            btnGraph2.ForeColor = ColorTranslator.FromHtml("#E0C55C");
-            btnTable2.ForeColor = ColorTranslator.FromHtml("#fff");
+            btnGraph2.BackColor = ColorTranslator.FromHtml("#e6e6e6");
+            btnTable2.BackColor = ColorTranslator.FromHtml("#fff");
         }
         else
         {
-            btnGraph2.ForeColor = ColorTranslator.FromHtml("#fff");
-            btnTable2.ForeColor = ColorTranslator.FromHtml("#E0C55C");
+            btnGraph2.BackColor = ColorTranslator.FromHtml("#fff");
+            btnTable2.BackColor = ColorTranslator.FromHtml("#e6e6e6");
         }
     }
     protected void btnGraph2_Click(object sender, EventArgs e)
@@ -115,7 +116,7 @@ public partial class usertrackmyhealth_fertility : System.Web.UI.Page
         {
             CurrentYear = DateTime.Now.Year;
         }
-        lblMonthYear.Text = (new System.Globalization.DateTimeFormatInfo()).GetMonthName(CurrentMonth) + "," + CurrentYear;
+        //lblMonthYear.Text = (new System.Globalization.DateTimeFormatInfo()).GetMonthName(CurrentMonth) + "," + CurrentYear;
         LoadDaysInMonth(DateTime.DaysInMonth(CurrentYear, CurrentMonth));
         Session["CurrentMonth"] = CurrentMonth;
         Session["CurrentYear"] = CurrentYear;
@@ -129,7 +130,7 @@ public partial class usertrackmyhealth_fertility : System.Web.UI.Page
             CurrentMonth = 1;
             CurrentYear++;
         }
-        lblMonthYear.Text = (new System.Globalization.DateTimeFormatInfo()).GetMonthName(CurrentMonth) + " , " + CurrentYear;
+        //lblMonthYear.Text = (new System.Globalization.DateTimeFormatInfo()).GetMonthName(CurrentMonth) + " , " + CurrentYear;
         LoadDaysInMonth(DateTime.DaysInMonth(CurrentYear, CurrentMonth));
         Session["CurrentMonth"] = CurrentMonth;
         Session["CurrentYear"] = CurrentYear;
@@ -143,7 +144,7 @@ public partial class usertrackmyhealth_fertility : System.Web.UI.Page
             CurrentMonth = 12;
             CurrentYear--;
         }
-        lblMonthYear.Text = (new System.Globalization.DateTimeFormatInfo()).GetMonthName(CurrentMonth) + " , " + CurrentYear;
+        //lblMonthYear.Text = (new System.Globalization.DateTimeFormatInfo()).GetMonthName(CurrentMonth) + " , " + CurrentYear;
         LoadDaysInMonth(DateTime.DaysInMonth(CurrentYear, CurrentMonth));
         Session["CurrentMonth"] = CurrentMonth;
         Session["CurrentYear"] = CurrentYear;
@@ -161,8 +162,8 @@ public partial class usertrackmyhealth_fertility : System.Web.UI.Page
             dt.Rows.Add(i, i);
         }
         LoadFertilityTemperature();
-        dtlDaysInMonth.DataSource = dt;
-        dtlDaysInMonth.DataBind();
+        //dtlDaysInMonth.DataSource = dt;
+        //dtlDaysInMonth.DataBind();
         Session["CurrentFromDate"] = CurrentFromDate;
         Session["CurrentToDate"] = CurrentToDate;
     }
@@ -171,7 +172,7 @@ public partial class usertrackmyhealth_fertility : System.Web.UI.Page
     {
         DataTable dt = new DataTable();
         dt.Columns.Add("Index");
-        dt.Columns.Add("Value");        
+        dt.Columns.Add("Value");
         if (CurrentFromDate - 6 > 0)
         {
             CurrentFromDate -= 6;
@@ -190,14 +191,14 @@ public partial class usertrackmyhealth_fertility : System.Web.UI.Page
             CurrentFromDate = 1;
             CurrentToDate = CurrentFromDate + 5;
         }
-        
+
         for (int i = CurrentFromDate; i <= CurrentToDate; i++)
         {
             dt.Rows.Add(i, i);
         }
         LoadFertilityTemperature();
-        dtlDaysInMonth.DataSource = dt;
-        dtlDaysInMonth.DataBind();
+        //dtlDaysInMonth.DataSource = dt;
+        //dtlDaysInMonth.DataBind();
         Session["CurrentFromDate"] = CurrentFromDate;
         Session["CurrentToDate"] = CurrentToDate;
     }
@@ -210,7 +211,7 @@ public partial class usertrackmyhealth_fertility : System.Web.UI.Page
 
         if (CurrentFromDate + 6 <= DaysInMonth)
         {
-            CurrentFromDate = CurrentFromDate+6;
+            CurrentFromDate = CurrentFromDate + 6;
             if (CurrentFromDate + 5 <= DaysInMonth)
             {
                 CurrentToDate = CurrentFromDate + 5;
@@ -220,14 +221,14 @@ public partial class usertrackmyhealth_fertility : System.Web.UI.Page
                 CurrentToDate = DaysInMonth;
             }
         }
-        
+
         for (int i = CurrentFromDate; i <= CurrentToDate; i++)
         {
             dt.Rows.Add(i, i);
         }
         LoadFertilityTemperature();
-        dtlDaysInMonth.DataSource = dt;
-        dtlDaysInMonth.DataBind();
+        //dtlDaysInMonth.DataSource = dt;
+        //dtlDaysInMonth.DataBind();
         Session["CurrentFromDate"] = CurrentFromDate;
         Session["CurrentToDate"] = CurrentToDate;
     }
@@ -283,24 +284,24 @@ public partial class usertrackmyhealth_fertility : System.Web.UI.Page
     {
         if (OldDate >= FromDate() && OldDate <= ToDate())
         {
-            Series sOldDate = new Series("OldOvulationDate");
-            sOldDate.ChartType = SeriesChartType.Point;
-            sOldDate.Points.AddXY(OldDate, 50);
-            sOldDate.MarkerStyle = MarkerStyle.Circle;
-            sOldDate.Color = (OldDate <= DateTime.Now ? Color.Black : Color.Green);
-            sOldDate.MarkerSize = 20;
-            ChartFertility.Series.Add(sOldDate);
+            //Series sOldDate = new Series("OldOvulationDate");
+            //sOldDate.ChartType = SeriesChartType.Point;
+            //sOldDate.Points.AddXY(OldDate, 50);
+            //sOldDate.MarkerStyle = MarkerStyle.Circle;
+            //sOldDate.Color = (OldDate <= DateTime.Now ? Color.Black : Color.Green);
+            //sOldDate.MarkerSize = 20;
+            //ChartFertility.Series.Add(sOldDate);
         }
 
         if (NextDate >= FromDate() && NextDate <= ToDate())
         {
-            Series sNextDate = new Series("NextOvulationDate");
-            sNextDate.ChartType = SeriesChartType.Point;
-            sNextDate.Points.AddXY(NextDate, 50);
-            sNextDate.MarkerStyle = MarkerStyle.Circle;
-            sNextDate.Color = Color.Green;
-            sNextDate.MarkerSize = 20;
-            ChartFertility.Series.Add(sNextDate);
+            //Series sNextDate = new Series("NextOvulationDate");
+            //sNextDate.ChartType = SeriesChartType.Point;
+            //sNextDate.Points.AddXY(NextDate, 50);
+            //sNextDate.MarkerStyle = MarkerStyle.Circle;
+            //sNextDate.Color = Color.Green;
+            //sNextDate.MarkerSize = 20;
+            //ChartFertility.Series.Add(sNextDate);
         }
     }
 
@@ -312,18 +313,18 @@ public partial class usertrackmyhealth_fertility : System.Web.UI.Page
         }
         else
         {
-            Series sMostFertileTime = new Series("MostFertileTime");
-            sMostFertileTime.ChartType = SeriesChartType.Line;
-            sMostFertileTime.Color = Color.LightGreen;
-            sMostFertileTime.BorderWidth = 5;
-            for (DateTime date = StartDate; EndDate.CompareTo(date) >= 0; date = date.AddDays(1))
-            {
-                if (date.CompareTo(FromDate()) >= 0 && date.CompareTo(ToDate()) <= 0 && date.CompareTo(EndDate) <= 0)
-                {
-                    sMostFertileTime.Points.AddXY(date, 50);
-                }
-            }
-            ChartFertility.Series.Add(sMostFertileTime);
+            //Series sMostFertileTime = new Series("MostFertileTime");
+            //sMostFertileTime.ChartType = SeriesChartType.Line;
+            //sMostFertileTime.Color = Color.LightGreen;
+            //sMostFertileTime.BorderWidth = 5;
+            //for (DateTime date = StartDate; EndDate.CompareTo(date) >= 0; date = date.AddDays(1))
+            //{
+            //    if (date.CompareTo(FromDate()) >= 0 && date.CompareTo(ToDate()) <= 0 && date.CompareTo(EndDate) <= 0)
+            //    {
+            //        sMostFertileTime.Points.AddXY(date, 50);
+            //    }
+            //}
+            //ChartFertility.Series.Add(sMostFertileTime);
         }        
     }
 
@@ -335,44 +336,44 @@ public partial class usertrackmyhealth_fertility : System.Web.UI.Page
         }
         else
         {
-            Series sMostPregnantTime = new Series("MostPregnantTime");
-            sMostPregnantTime.ChartType = SeriesChartType.Line;
-            sMostPregnantTime.Color = Color.Green;
-            sMostPregnantTime.BorderWidth = 5;
-            for (DateTime date = StartDate; EndDate.CompareTo(date) >= 0; date = date.AddDays(1.0))
-            {
-                if (date.CompareTo(FromDate()) >= 0 && date.CompareTo(ToDate()) <= 0 && date.CompareTo(EndDate) <= 0)
-                {
-                    sMostPregnantTime.Points.AddXY(date, 50);
-                }
-            }
-            ChartFertility.Series.Add(sMostPregnantTime);
+            //Series sMostPregnantTime = new Series("MostPregnantTime");
+            //sMostPregnantTime.ChartType = SeriesChartType.Line;
+            //sMostPregnantTime.Color = Color.Green;
+            //sMostPregnantTime.BorderWidth = 5;
+            //for (DateTime date = StartDate; EndDate.CompareTo(date) >= 0; date = date.AddDays(1.0))
+            //{
+            //    if (date.CompareTo(FromDate()) >= 0 && date.CompareTo(ToDate()) <= 0 && date.CompareTo(EndDate) <= 0)
+            //    {
+            //        sMostPregnantTime.Points.AddXY(date, 50);
+            //    }
+            //}
+            //ChartFertility.Series.Add(sMostPregnantTime);
         }
     }
 
     private void AddSeriesPeriod(DateTime OldDate, DateTime NextDate)
     {
-        if (OldDate >= FromDate() && OldDate <= ToDate())
-        {
-            Series sOldPeriod = new Series("OldPeriod");
-            sOldPeriod.ChartType = SeriesChartType.Point;
-            sOldPeriod.Points.AddXY(OldDate, 20);
-            sOldPeriod.MarkerStyle = MarkerStyle.Triangle;
-            sOldPeriod.Color = Color.Black;
-            sOldPeriod.MarkerSize = 20;
-            ChartFertility.Series.Add(sOldPeriod);
-        }
+        //if (OldDate >= FromDate() && OldDate <= ToDate())
+        //{
+        //    Series sOldPeriod = new Series("OldPeriod");
+        //    sOldPeriod.ChartType = SeriesChartType.Point;
+        //    sOldPeriod.Points.AddXY(OldDate, 20);
+        //    sOldPeriod.MarkerStyle = MarkerStyle.Triangle;
+        //    sOldPeriod.Color = Color.Black;
+        //    sOldPeriod.MarkerSize = 20;
+        //    ChartFertility.Series.Add(sOldPeriod);
+        //}
 
-        if (NextDate >= FromDate() && NextDate <= ToDate())
-        {
-            Series sNextPeriod = new Series("NextPeriod");
-            sNextPeriod.ChartType = SeriesChartType.Point;
-            sNextPeriod.Points.AddXY(NextDate, 20);
-            sNextPeriod.MarkerStyle = MarkerStyle.Triangle;
-            sNextPeriod.Color = Color.Red;
-            sNextPeriod.MarkerSize = 20;
-            ChartFertility.Series.Add(sNextPeriod);
-        }
+        //if (NextDate >= FromDate() && NextDate <= ToDate())
+        //{
+        //    Series sNextPeriod = new Series("NextPeriod");
+        //    sNextPeriod.ChartType = SeriesChartType.Point;
+        //    sNextPeriod.Points.AddXY(NextDate, 20);
+        //    sNextPeriod.MarkerStyle = MarkerStyle.Triangle;
+        //    sNextPeriod.Color = Color.Red;
+        //    sNextPeriod.MarkerSize = 20;
+        //    ChartFertility.Series.Add(sNextPeriod);
+        //}
     }
 
     private DateTime FromDate()
