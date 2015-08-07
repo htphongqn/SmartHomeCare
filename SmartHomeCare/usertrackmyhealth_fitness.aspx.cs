@@ -239,7 +239,6 @@ public partial class usertrackmyhealth_fitness : System.Web.UI.Page
                     break;
             }
         }
-
         private void LoadFitness_Graph_Default()
         {
             switch (ddlParameter.SelectedValue)

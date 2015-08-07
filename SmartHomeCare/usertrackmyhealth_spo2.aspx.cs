@@ -200,7 +200,9 @@ public partial class usertrackmyhealth_spo2 : System.Web.UI.Page
         }
         else
         {
-            AddSeriesLowHighToWebChart(dt);
+            //AddSeriesLowHighToWebChart(dt);
+            ChartSpo2Main.DataSource = dt;
+            ChartSpo2Main.DataBind();
             pnGraphSpO2.Visible = true;
             pnEmptyData.Visible = false;
         }
@@ -217,62 +219,64 @@ public partial class usertrackmyhealth_spo2 : System.Web.UI.Page
         }
         else
         {
-            AddSeriesLowHighToWebChart(dt);
+            //AddSeriesLowHighToWebChart(dt);
+            ChartSpo2Main.DataSource = dt;
+            ChartSpo2Main.DataBind();
             pnGraphSpO2.Visible = true;
             pnEmptyData.Visible = false;
         }
     }
 
-    private void AddSeriesLowHighToWebChart(DataTable dt)
-    {
-        Steema.TeeChart.Chart ch1 = WebChartGraphSpO2.Chart;
-        ch1.Series.RemoveAllSeries();
-        tmpChart = new MemoryStream();
-        if (dt != null && dt.Rows.Count > 0)
-        {
-            Steema.TeeChart.Styles.Line Low = new Steema.TeeChart.Styles.Line();
-            Steema.TeeChart.Styles.FastLine SPO2 = new Steema.TeeChart.Styles.FastLine();
-            Low.XValues.DateTime = true;
+    //private void AddSeriesLowHighToWebChart(DataTable dt)
+    //{
+    //    Steema.TeeChart.Chart ch1 = WebChartGraphSpO2.Chart;
+    //    ch1.Series.RemoveAllSeries();
+    //    tmpChart = new MemoryStream();
+    //    if (dt != null && dt.Rows.Count > 0)
+    //    {
+    //        Steema.TeeChart.Styles.Line Low = new Steema.TeeChart.Styles.Line();
+    //        Steema.TeeChart.Styles.FastLine SPO2 = new Steema.TeeChart.Styles.FastLine();
+    //        Low.XValues.DateTime = true;
 
-            Low.Color = System.Drawing.Color.Blue;
-            SPO2.Color = Color.Red;
-            int MinL1 = 0, MaxL1 = 0;
+    //        Low.Color = System.Drawing.Color.Blue;
+    //        SPO2.Color = Color.Red;
+    //        int MinL1 = 0, MaxL1 = 0;
 
-            foreach (DataRow row in dt.Rows)
-            {
-                Low.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "ThresholdValue"));
-                SPO2.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "SpO2Value"));
-                float a = BaseView.GetFloatFieldValue(row, "SpO2Value");
-                if (MinL1 == 0 || (BaseView.GetIntFieldValue(row, "SpO2Value") < MinL1 && BaseView.GetIntFieldValue(row, "SpO2Value") > 0))
-                {
-                    MinL1 = BaseView.GetIntFieldValue(row, "SpO2Value");
-                }
-                if (MaxL1 == 0 || (BaseView.GetIntFieldValue(row, "SpO2Value") > MaxL1 && BaseView.GetIntFieldValue(row, "SpO2Value") > 0))
-                {
-                    MaxL1 = BaseView.GetIntFieldValue(row, "SpO2Value");
-                }
-            }
+    //        foreach (DataRow row in dt.Rows)
+    //        {
+    //            Low.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "ThresholdValue"));
+    //            SPO2.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "SpO2Value"));
+    //            float a = BaseView.GetFloatFieldValue(row, "SpO2Value");
+    //            if (MinL1 == 0 || (BaseView.GetIntFieldValue(row, "SpO2Value") < MinL1 && BaseView.GetIntFieldValue(row, "SpO2Value") > 0))
+    //            {
+    //                MinL1 = BaseView.GetIntFieldValue(row, "SpO2Value");
+    //            }
+    //            if (MaxL1 == 0 || (BaseView.GetIntFieldValue(row, "SpO2Value") > MaxL1 && BaseView.GetIntFieldValue(row, "SpO2Value") > 0))
+    //            {
+    //                MaxL1 = BaseView.GetIntFieldValue(row, "SpO2Value");
+    //            }
+    //        }
 
-            ch1.Series.Add(Low);
-            ch1.Series.Add(SPO2);
-            Steema.TeeChart.Legend le = new Steema.TeeChart.Legend(ch1);
+    //        ch1.Series.Add(Low);
+    //        ch1.Series.Add(SPO2);
+    //        Steema.TeeChart.Legend le = new Steema.TeeChart.Legend(ch1);
 
-            ch1.Axes.Bottom.SetMinMax(ch1.Series[1].MinXValue(), ch1.Series[1].MaxXValue());
-            //ch1.Axes.Left.SetMinMax(MinL1, MaxL1);
-            //ch1.Axes.Left.SetMinMax(90, 100);
+    //        ch1.Axes.Bottom.SetMinMax(ch1.Series[1].MinXValue(), ch1.Series[1].MaxXValue());
+    //        //ch1.Axes.Left.SetMinMax(MinL1, MaxL1);
+    //        //ch1.Axes.Left.SetMinMax(90, 100);
 
-            //ch1.Axes.Left.Visible = false;
-            //ch1.Axes.Right.Visible = false;
-            ch1.Axes.Bottom.Labels.DateTimeFormat = "MM/dd/yyyy HH:mm:ss";
-            ch1.Export.Template.Save(tmpChart);
-            //save template to a Session variable
-            Page.Cache.Add("ch1Scroll", tmpChart, null,
-            DateTime.Now.AddSeconds(40), System.Web.Caching.Cache.NoSlidingExpiration,
-            System.Web.Caching.CacheItemPriority.NotRemovable, null);
-            Session.Add("WebChartGraphSpO2", tmpChart);
-            ((Steema.TeeChart.Tools.ScrollTool)WebChartGraphSpO2.Chart.Tools[0]).StartPosition = 0;
-        }
-    }
+    //        //ch1.Axes.Left.Visible = false;
+    //        //ch1.Axes.Right.Visible = false;
+    //        ch1.Axes.Bottom.Labels.DateTimeFormat = "MM/dd/yyyy HH:mm:ss";
+    //        ch1.Export.Template.Save(tmpChart);
+    //        //save template to a Session variable
+    //        Page.Cache.Add("ch1Scroll", tmpChart, null,
+    //        DateTime.Now.AddSeconds(40), System.Web.Caching.Cache.NoSlidingExpiration,
+    //        System.Web.Caching.CacheItemPriority.NotRemovable, null);
+    //        Session.Add("WebChartGraphSpO2", tmpChart);
+    //        ((Steema.TeeChart.Tools.ScrollTool)WebChartGraphSpO2.Chart.Tools[0]).StartPosition = 0;
+    //    }
+    //}
 
     #endregion
 

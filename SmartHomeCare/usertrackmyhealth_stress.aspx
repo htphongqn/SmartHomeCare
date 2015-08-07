@@ -2,10 +2,11 @@
 
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
     Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
-
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
-
 <%@ Register assembly="TeeChart" namespace="Steema.TeeChart.Web" tagprefix="tchart" %>
+<%@ Register assembly="DevExpress.XtraCharts.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.XtraCharts" tagprefix="cc1" %>
+<%@ Register Assembly="DevExpress.XtraCharts.v12.1.Web, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.XtraCharts.Web" TagPrefix="dxchartsui" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head1" Runat="Server">
 
@@ -61,13 +62,94 @@
                                                 . Click drop-down list to select a different view.
                                             </div>
                                             <asp:Panel ID="pnStress" runat="server">                            
-                                                <tchart:WebChart ID="WebChartStress" runat="server" AutoPostback="False" 
+                                                <%--<tchart:WebChart ID="WebChartStress" runat="server" AutoPostback="False" 
                                                     GetChartFile="GetChart.aspx" Height="400px" TempChart="Session" Width="700px" 
-                                                    Config="AAEAAAD/////AQAAAAAAAAAMAgAAAFJUZWVDaGFydCwgVmVyc2lvbj00LjEuMjAxMy4xMTA4NiwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YzgxMjYyNzZjNzdiZGI3DAMAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhBQEAAAAVU3RlZW1hLlRlZUNoYXJ0LkNoYXJ0OAAAABAuQ3VzdG9tQ2hhcnRSZWN0EC5QYW5lbC5NYXJnaW5Ub3ATLlBhbmVsLk1hcmdpbkJvdHRvbQ8uTGVnZW5kLlZpc2libGUNLkhlYWRlci5MaW5lcxkuQXNwZWN0LkNvbG9yUGFsZXR0ZUluZGV4EC5Bc3BlY3QuSGVpZ2h0M0QPLkFzcGVjdC5XaWR0aDNEDi5Bc3BlY3QuVmlldzNEB1Rvb2xzLjAYLlRvb2xzLjAuVmlld1NlZ21lbnRTaXplFC5Ub29scy4wLk1vdXNlQWN0aW9uFi5Ub29scy4wLlN0YXJ0UG9zaXRpb24ZLlRvb2xzLjAuU2VnbWVudFZpZXdVbml0cxwuVG9vbHMuMC5BdHRyaWJ1dGVzLkRyYWdab29tHy5Ub29scy4wLkF0dHJpYnV0ZXMuQ2FudmFzSW5kZXgeLlRvb2xzLjAuQXR0cmlidXRlcy5GaWxsVHJhbnNwHC5Ub29scy4wLkF0dHJpYnV0ZXMuSW1hZ2VTdHIjLlRvb2xzLjAuQXR0cmlidXRlcy5Ob0NsaWNrUG9zdGJhY2sYLlRvb2xzLjAuWm9vbUNhbnZhc0luZGV4HS5Ub29scy4wLlpvb21GaWxsVHJhbnNwYXJlbmN5FS5Ub29scy4wLlpvb21QZW5Db2xvchguVG9vbHMuMC5DdXN0b21WYXJpYWJsZXMSLkF4ZXMuTnVtRml4ZWRBeGVzEy5BeGVzLkxlZnQuSUdhcFNpemUULkF4ZXMuTGVmdC5JU3RhcnRQb3MSLkF4ZXMuTGVmdC5JRW5kUG9zFC5BeGVzLkxlZnQuSUF4aXNTaXplFi5BeGVzLkxlZnQuSXNEZXB0aEF4aXMSLkF4ZXMuVG9wLklHYXBTaXplEy5BeGVzLlRvcC5JU3RhcnRQb3MRLkF4ZXMuVG9wLklFbmRQb3MTLkF4ZXMuVG9wLklBeGlzU2l6ZRUuQXhlcy5Ub3AuSXNEZXB0aEF4aXMULkF4ZXMuUmlnaHQuSUdhcFNpemUVLkF4ZXMuUmlnaHQuSVN0YXJ0UG9zEy5BeGVzLlJpZ2h0LklFbmRQb3MVLkF4ZXMuUmlnaHQuSUF4aXNTaXplFy5BeGVzLlJpZ2h0LklzRGVwdGhBeGlzFS5BeGVzLkJvdHRvbS5JR2FwU2l6ZRYuQXhlcy5Cb3R0b20uSVN0YXJ0UG9zFC5BeGVzLkJvdHRvbS5JRW5kUG9zFi5BeGVzLkJvdHRvbS5JQXhpc1NpemUYLkF4ZXMuQm90dG9tLklzRGVwdGhBeGlzHS5BeGVzLkJvdHRvbS5SZWxhdGl2ZVBvc2l0aW9uGi5BeGVzLkJvdHRvbS5Qb3NpdGlvblVuaXRzFy5BeGVzLkRlcHRoVG9wLklHYXBTaXplGC5BeGVzLkRlcHRoVG9wLklTdGFydFBvcxYuQXhlcy5EZXB0aFRvcC5JRW5kUG9zGC5BeGVzLkRlcHRoVG9wLklBeGlzU2l6ZRouQXhlcy5EZXB0aFRvcC5Jc0RlcHRoQXhpcxQuQXhlcy5EZXB0aC5JR2FwU2l6ZRUuQXhlcy5EZXB0aC5JU3RhcnRQb3MTLkF4ZXMuRGVwdGguSUVuZFBvcxUuQXhlcy5EZXB0aC5JQXhpc1NpemUXLkF4ZXMuRGVwdGguSXNEZXB0aEF4aXMAAAAABgAAAAABAAQABAAAAAEAAAAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAEGBgEICAgBCCdTdGVlbWEuVGVlQ2hhcnQuVG9vbHMuU2Nyb2xsTW91c2VBY3Rpb24CAAAACChTdGVlbWEuVGVlQ2hhcnQuVG9vbHMuU2Nyb2xsVG9vbFZpZXdVbml0AgAAAAEICAEICBRTeXN0ZW0uRHJhd2luZy5Db2xvcgMAAAAICAgICAEICAgIAQgICAgBCAgICAEGHVN0ZWVtYS5UZWVDaGFydC5Qb3NpdGlvblVuaXRzAgAAAAgICAgBCAgICAECAAAAAAAAAAAAAABAAAAAAAAAIEAACQQAAAAAAAAAAAAAAAAAAAAABgUAAAAgU3RlZW1hLlRlZUNoYXJ0LlRvb2xzLlNjcm9sbFRvb2wUAAAABfr///8nU3RlZW1hLlRlZUNoYXJ0LlRvb2xzLlNjcm9sbE1vdXNlQWN0aW9uAQAAAAd2YWx1ZV9fAAgCAAAAAQAAAAEAAAAF+f///yhTdGVlbWEuVGVlQ2hhcnQuVG9vbHMuU2Nyb2xsVG9vbFZpZXdVbml0AQAAAAd2YWx1ZV9fAAgCAAAAAQAAAAAAAAAAAAAAAAYIAAAAAADzAQAAHgAAAAX3////FFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVlCmtub3duQ29sb3IFc3RhdGUBAAAACQcHAwAAAAoAAAAAAAAAAI0AAQAJCAAAAAYAAAAAAAAAMwAAAFsBAAAoAQAAAAAAAAAcAAAAoAIAAIQCAAAAAAAAADMAAABbAQAAKAEAAAAAAAAAHAAAAKACAACEAgAAAAAAAAAAADDABfb///8dU3RlZW1hLlRlZUNoYXJ0LlBvc2l0aW9uVW5pdHMBAAAAB3ZhbHVlX18ACAIAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAREEAAAAAQAAAAkIAAAACw==" />
-                                              </asp:Panel>
+                                                    Config="AAEAAAD/////AQAAAAAAAAAMAgAAAFJUZWVDaGFydCwgVmVyc2lvbj00LjEuMjAxMy4xMTA4NiwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YzgxMjYyNzZjNzdiZGI3DAMAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhBQEAAAAVU3RlZW1hLlRlZUNoYXJ0LkNoYXJ0OAAAABAuQ3VzdG9tQ2hhcnRSZWN0EC5QYW5lbC5NYXJnaW5Ub3ATLlBhbmVsLk1hcmdpbkJvdHRvbQ8uTGVnZW5kLlZpc2libGUNLkhlYWRlci5MaW5lcxkuQXNwZWN0LkNvbG9yUGFsZXR0ZUluZGV4EC5Bc3BlY3QuSGVpZ2h0M0QPLkFzcGVjdC5XaWR0aDNEDi5Bc3BlY3QuVmlldzNEB1Rvb2xzLjAYLlRvb2xzLjAuVmlld1NlZ21lbnRTaXplFC5Ub29scy4wLk1vdXNlQWN0aW9uFi5Ub29scy4wLlN0YXJ0UG9zaXRpb24ZLlRvb2xzLjAuU2VnbWVudFZpZXdVbml0cxwuVG9vbHMuMC5BdHRyaWJ1dGVzLkRyYWdab29tHy5Ub29scy4wLkF0dHJpYnV0ZXMuQ2FudmFzSW5kZXgeLlRvb2xzLjAuQXR0cmlidXRlcy5GaWxsVHJhbnNwHC5Ub29scy4wLkF0dHJpYnV0ZXMuSW1hZ2VTdHIjLlRvb2xzLjAuQXR0cmlidXRlcy5Ob0NsaWNrUG9zdGJhY2sYLlRvb2xzLjAuWm9vbUNhbnZhc0luZGV4HS5Ub29scy4wLlpvb21GaWxsVHJhbnNwYXJlbmN5FS5Ub29scy4wLlpvb21QZW5Db2xvchguVG9vbHMuMC5DdXN0b21WYXJpYWJsZXMSLkF4ZXMuTnVtRml4ZWRBeGVzEy5BeGVzLkxlZnQuSUdhcFNpemUULkF4ZXMuTGVmdC5JU3RhcnRQb3MSLkF4ZXMuTGVmdC5JRW5kUG9zFC5BeGVzLkxlZnQuSUF4aXNTaXplFi5BeGVzLkxlZnQuSXNEZXB0aEF4aXMSLkF4ZXMuVG9wLklHYXBTaXplEy5BeGVzLlRvcC5JU3RhcnRQb3MRLkF4ZXMuVG9wLklFbmRQb3MTLkF4ZXMuVG9wLklBeGlzU2l6ZRUuQXhlcy5Ub3AuSXNEZXB0aEF4aXMULkF4ZXMuUmlnaHQuSUdhcFNpemUVLkF4ZXMuUmlnaHQuSVN0YXJ0UG9zEy5BeGVzLlJpZ2h0LklFbmRQb3MVLkF4ZXMuUmlnaHQuSUF4aXNTaXplFy5BeGVzLlJpZ2h0LklzRGVwdGhBeGlzFS5BeGVzLkJvdHRvbS5JR2FwU2l6ZRYuQXhlcy5Cb3R0b20uSVN0YXJ0UG9zFC5BeGVzLkJvdHRvbS5JRW5kUG9zFi5BeGVzLkJvdHRvbS5JQXhpc1NpemUYLkF4ZXMuQm90dG9tLklzRGVwdGhBeGlzHS5BeGVzLkJvdHRvbS5SZWxhdGl2ZVBvc2l0aW9uGi5BeGVzLkJvdHRvbS5Qb3NpdGlvblVuaXRzFy5BeGVzLkRlcHRoVG9wLklHYXBTaXplGC5BeGVzLkRlcHRoVG9wLklTdGFydFBvcxYuQXhlcy5EZXB0aFRvcC5JRW5kUG9zGC5BeGVzLkRlcHRoVG9wLklBeGlzU2l6ZRouQXhlcy5EZXB0aFRvcC5Jc0RlcHRoQXhpcxQuQXhlcy5EZXB0aC5JR2FwU2l6ZRUuQXhlcy5EZXB0aC5JU3RhcnRQb3MTLkF4ZXMuRGVwdGguSUVuZFBvcxUuQXhlcy5EZXB0aC5JQXhpc1NpemUXLkF4ZXMuRGVwdGguSXNEZXB0aEF4aXMAAAAABgAAAAABAAQABAAAAAEAAAAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAEGBgEICAgBCCdTdGVlbWEuVGVlQ2hhcnQuVG9vbHMuU2Nyb2xsTW91c2VBY3Rpb24CAAAACChTdGVlbWEuVGVlQ2hhcnQuVG9vbHMuU2Nyb2xsVG9vbFZpZXdVbml0AgAAAAEICAEICBRTeXN0ZW0uRHJhd2luZy5Db2xvcgMAAAAICAgICAEICAgIAQgICAgBCAgICAEGHVN0ZWVtYS5UZWVDaGFydC5Qb3NpdGlvblVuaXRzAgAAAAgICAgBCAgICAECAAAAAAAAAAAAAABAAAAAAAAAIEAACQQAAAAAAAAAAAAAAAAAAAAABgUAAAAgU3RlZW1hLlRlZUNoYXJ0LlRvb2xzLlNjcm9sbFRvb2wUAAAABfr///8nU3RlZW1hLlRlZUNoYXJ0LlRvb2xzLlNjcm9sbE1vdXNlQWN0aW9uAQAAAAd2YWx1ZV9fAAgCAAAAAQAAAAEAAAAF+f///yhTdGVlbWEuVGVlQ2hhcnQuVG9vbHMuU2Nyb2xsVG9vbFZpZXdVbml0AQAAAAd2YWx1ZV9fAAgCAAAAAQAAAAAAAAAAAAAAAAYIAAAAAADzAQAAHgAAAAX3////FFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVlCmtub3duQ29sb3IFc3RhdGUBAAAACQcHAwAAAAoAAAAAAAAAAI0AAQAJCAAAAAYAAAAAAAAAMwAAAFsBAAAoAQAAAAAAAAAcAAAAoAIAAIQCAAAAAAAAADMAAABbAQAAKAEAAAAAAAAAHAAAAKACAACEAgAAAAAAAAAAADDABfb///8dU3RlZW1hLlRlZUNoYXJ0LlBvc2l0aW9uVW5pdHMBAAAAB3ZhbHVlX18ACAIAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAREEAAAAAQAAAAkIAAAACw==" />--%>
+                                                <dxchartsui:WebChartControl ID="ChartStressMain" runat="server" Height="450px" style="margin:auto;"
+                                                        Width="600px">
+                                                        <diagramserializable>
+                                                            <cc1:XYDiagram>
+                                                                <axisx visibleinpanesserializable="-1">
+                                                                    <range sidemarginsenabled="True" />
+                                                                    <range sidemarginsenabled="True" />
+                                                                    <range sidemarginsenabled="True" />
+                                                                </axisx>
+                                                                <axisy visibleinpanesserializable="-1">
+                                                                    <range sidemarginsenabled="True" />
+                                                                    <range sidemarginsenabled="True" />
+                                                                    <range sidemarginsenabled="True" />
+                                                                </axisy>
+                                                            </cc1:XYDiagram>
+                                                        </diagramserializable>
+                                                        <fillstyle>
+                                                            <optionsserializable>
+                                                                <cc1:SolidFillOptions />
+                                                            </optionsserializable>
+                                                        </fillstyle>
+                                                        <seriesserializable>
+                                                            <cc1:Series ArgumentDataMember="ReceivedDate" 
+                                                                ArgumentScaleType="DateTime" ValueDataMembersSerializable="StressLevel">
+                                                                <viewserializable>
+                                                                    <cc1:SideBySideBarSeriesView>
+                                                                    </cc1:SideBySideBarSeriesView>
+                                                                </viewserializable>
+                                                                <labelserializable>
+                                                                    <cc1:SideBySideBarSeriesLabel LineVisible="True">
+                                                                        <fillstyle>
+                                                                            <optionsserializable>
+                                                                                <cc1:SolidFillOptions />
+                                                                            </optionsserializable>
+                                                                        </fillstyle>
+                                                                        <pointoptionsserializable>
+                                                                            <cc1:PointOptions>
+                                                                            </cc1:PointOptions>
+                                                                        </pointoptionsserializable>
+                                                                    </cc1:SideBySideBarSeriesLabel>
+                                                                </labelserializable>
+                                                                <legendpointoptionsserializable>
+                                                                    <cc1:PointOptions>
+                                                                    </cc1:PointOptions>
+                                                                </legendpointoptionsserializable>
+                                                            </cc1:Series>
+                                                        </seriesserializable>
+                                                        <seriestemplate>
+                                                            <viewserializable>
+                                                                <cc1:SideBySideBarSeriesView>
+                                                                </cc1:SideBySideBarSeriesView>
+                                                            </viewserializable>
+                                                            <labelserializable>
+                                                                <cc1:SideBySideBarSeriesLabel LineVisible="True">
+                                                                    <fillstyle>
+                                                                        <optionsserializable>
+                                                                            <cc1:SolidFillOptions />
+                                                                        </optionsserializable>
+                                                                    </fillstyle>
+                                                                    <pointoptionsserializable>
+                                                                        <cc1:PointOptions>
+                                                                        </cc1:PointOptions>
+                                                                    </pointoptionsserializable>
+                                                                </cc1:SideBySideBarSeriesLabel>
+                                                            </labelserializable>
+                                                            <legendpointoptionsserializable>
+                                                                <cc1:PointOptions>
+                                                                </cc1:PointOptions>
+                                                            </legendpointoptionsserializable>
+                                                        </seriestemplate>
+                                                        <crosshairoptions>
+                                                            <commonlabelpositionserializable>
+                                                                <cc1:CrosshairMousePosition />
+                                                            </commonlabelpositionserializable>
+                                                        </crosshairoptions>
+                                                        <tooltipoptions>
+                                                            <tooltippositionserializable>
+                                                                <cc1:ToolTipMousePosition />
+                                                            </tooltippositionserializable>
+                                                        </tooltipoptions>
+                                                    </dxchartsui:WebChartControl>
+                                            </asp:Panel>
                                             <asp:Panel ID="pnRawData" runat="server">
                                                 <div align="center">
-                                                    <asp:Chart ID="ChartDrawData" runat="server" BorderlineWidth="0" Width="700px" 
+                                                    <%--<asp:Chart ID="ChartDrawData" runat="server" BorderlineWidth="0" Width="700px" 
                                                     Height="400px">
                                                     <Series>
                                                         <asp:Series ChartArea="HR" ChartType="StepLine" Color="Red" Name="SR_HR" 
@@ -186,7 +268,112 @@
                                                         </asp:Title>
                                                     </Titles>
                                                     <BorderSkin BackColor="ControlDark" SkinStyle="Emboss" />
-                                                </asp:Chart>
+                                                </asp:Chart>--%>
+                                                    <dxchartsui:WebChartControl ID="ChartStress" runat="server" Height="450px" 
+                                                        Width="600px">
+                                                        <diagramserializable>
+                                                            <cc1:XYDiagram>
+                                                                <axisx visibleinpanesserializable="-1">
+                                                                    <range sidemarginsenabled="True" />
+                                                                    <range sidemarginsenabled="True" />
+                                                                    <range sidemarginsenabled="True" />
+                                                                </axisx>
+                                                                <axisy visibleinpanesserializable="-1">
+                                                                    <range sidemarginsenabled="True" />
+                                                                    <range sidemarginsenabled="True" />
+                                                                    <range sidemarginsenabled="True" />
+                                                                </axisy>
+                                                            </cc1:XYDiagram>
+                                                        </diagramserializable>
+                                                        <fillstyle>
+                                                            <optionsserializable>
+                                                                <cc1:SolidFillOptions />
+                                                            </optionsserializable>
+                                                        </fillstyle>
+                                                        <seriesserializable>
+                                                            <cc1:Series ArgumentDataMember="ReceivedDate" 
+                                                                ArgumentScaleType="DateTime" ValueDataMembersSerializable="HR">
+                                                                <viewserializable>
+                                                                    <cc1:SideBySideBarSeriesView>
+                                                                    </cc1:SideBySideBarSeriesView>
+                                                                </viewserializable>
+                                                                <labelserializable>
+                                                                    <cc1:SideBySideBarSeriesLabel LineVisible="True">
+                                                                        <fillstyle>
+                                                                            <optionsserializable>
+                                                                                <cc1:SolidFillOptions />
+                                                                            </optionsserializable>
+                                                                        </fillstyle>
+                                                                        <pointoptionsserializable>
+                                                                            <cc1:PointOptions>
+                                                                            </cc1:PointOptions>
+                                                                        </pointoptionsserializable>
+                                                                    </cc1:SideBySideBarSeriesLabel>
+                                                                </labelserializable>
+                                                                <legendpointoptionsserializable>
+                                                                    <cc1:PointOptions>
+                                                                    </cc1:PointOptions>
+                                                                </legendpointoptionsserializable>
+                                                            </cc1:Series>
+                                                            <cc1:Series ArgumentDataMember="ReceivedDate" 
+                                                                ArgumentScaleType="DateTime" ValueDataMembersSerializable="HRVoltage">
+                                                                <viewserializable>
+                                                                    <cc1:SideBySideBarSeriesView>
+                                                                    </cc1:SideBySideBarSeriesView>
+                                                                </viewserializable>
+                                                                <labelserializable>
+                                                                    <cc1:SideBySideBarSeriesLabel LineVisible="True">
+                                                                        <fillstyle>
+                                                                            <optionsserializable>
+                                                                                <cc1:SolidFillOptions />
+                                                                            </optionsserializable>
+                                                                        </fillstyle>
+                                                                        <pointoptionsserializable>
+                                                                            <cc1:PointOptions>
+                                                                            </cc1:PointOptions>
+                                                                        </pointoptionsserializable>
+                                                                    </cc1:SideBySideBarSeriesLabel>
+                                                                </labelserializable>
+                                                                <legendpointoptionsserializable>
+                                                                    <cc1:PointOptions>
+                                                                    </cc1:PointOptions>
+                                                                </legendpointoptionsserializable>
+                                                            </cc1:Series>
+                                                        </seriesserializable>
+                                                        <seriestemplate>
+                                                            <viewserializable>
+                                                                <cc1:SideBySideBarSeriesView>
+                                                                </cc1:SideBySideBarSeriesView>
+                                                            </viewserializable>
+                                                            <labelserializable>
+                                                                <cc1:SideBySideBarSeriesLabel LineVisible="True">
+                                                                    <fillstyle>
+                                                                        <optionsserializable>
+                                                                            <cc1:SolidFillOptions />
+                                                                        </optionsserializable>
+                                                                    </fillstyle>
+                                                                    <pointoptionsserializable>
+                                                                        <cc1:PointOptions>
+                                                                        </cc1:PointOptions>
+                                                                    </pointoptionsserializable>
+                                                                </cc1:SideBySideBarSeriesLabel>
+                                                            </labelserializable>
+                                                            <legendpointoptionsserializable>
+                                                                <cc1:PointOptions>
+                                                                </cc1:PointOptions>
+                                                            </legendpointoptionsserializable>
+                                                        </seriestemplate>
+                                                        <crosshairoptions>
+                                                            <commonlabelpositionserializable>
+                                                                <cc1:CrosshairMousePosition />
+                                                            </commonlabelpositionserializable>
+                                                        </crosshairoptions>
+                                                        <tooltipoptions>
+                                                            <tooltippositionserializable>
+                                                                <cc1:ToolTipMousePosition />
+                                                            </tooltippositionserializable>
+                                                        </tooltipoptions>
+                                                    </dxchartsui:WebChartControl>
                                                 </div>
                                             </asp:Panel>
                                             <br />

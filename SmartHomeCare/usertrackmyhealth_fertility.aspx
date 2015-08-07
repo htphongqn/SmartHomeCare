@@ -193,10 +193,7 @@
                                 <asp:View ID="ViewTable" runat="server">
                                 <div class="item_report">
                                     <div class="fertility">
-                                        <div class="dates_fertility">
-                        
-                        
-                       
+                                        <div class="dates_fertility" style="margin-bottom: 20px;">
                                             <table>
                                                 <tr>
                                                     <td style="width:100px"></td>
