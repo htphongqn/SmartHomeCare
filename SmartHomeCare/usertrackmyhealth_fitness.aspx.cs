@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Web.UI.DataVisualization.Charting;
 using System.Drawing;
+using DevExpress.XtraCharts;
 public partial class usertrackmyhealth_fitness : System.Web.UI.Page
 {
     DBClass _db = new DBClass();
@@ -239,52 +240,110 @@ public partial class usertrackmyhealth_fitness : System.Web.UI.Page
                     break;
             }
         }
+
+        //private void LoadFitness_Graph_Default()
+        //{
+        //    switch (ddlParameter.SelectedValue)
+        //    {
+        //        case "step_counts":
+        //            LoadStepCountsDefault(ddlParameter.SelectedValue);
+        //            break;
+        //        case "distance":
+        //            LoadDistanceDefault(ddlParameter.SelectedValue);
+        //            break;
+        //        case "average_speed":
+        //            LoadAverageSpeedDefault(ddlParameter.SelectedValue);
+        //            break;
+        //        case "calory_burn":
+        //            LoadCaloriesBurnedDefault(ddlParameter.SelectedValue);
+        //            break;
+        //        case "pedometer_duration":
+        //            LoadPedometerDurationDefault(ddlParameter.SelectedValue);
+        //            break;
+        //        default:
+        //            LoadStepCountsDefault("step_counts");
+        //            break;
+        //    }
+        //}
         private void LoadFitness_Graph_Default()
         {
             switch (ddlParameter.SelectedValue)
             {
                 case "step_counts":
-                    LoadStepCountsDefault(ddlParameter.SelectedValue);
+                    LoadStepCounts(ddlParameter.SelectedValue);
                     break;
                 case "distance":
-                    LoadDistanceDefault(ddlParameter.SelectedValue);
+                    LoadDistance(ddlParameter.SelectedValue);
                     break;
                 case "average_speed":
-                    LoadAverageSpeedDefault(ddlParameter.SelectedValue);
+                    LoadAverageSpeed(ddlParameter.SelectedValue);
                     break;
                 case "calory_burn":
-                    LoadCaloriesBurnedDefault(ddlParameter.SelectedValue);
+                    LoadCaloriesBurned(ddlParameter.SelectedValue);
                     break;
                 case "pedometer_duration":
-                    LoadPedometerDurationDefault(ddlParameter.SelectedValue);
+                    LoadPedometerDuration(ddlParameter.SelectedValue);
                     break;
                 default:
-                    LoadStepCountsDefault("step_counts");
+                    LoadStepCounts("step_counts");
                     break;
             }
         }
 
+
+        //private void LoadStepCounts(string ParameterCode)
+        //{
+        //    WebChartFitness.Chart.Series.RemoveAllSeries();
+        //    DataTable dt = _db.GetList_Fitness_Pedometer_Graph_ByParameterCode(userName(), fromDateGraph(), toDateGraph(), ParameterCode);
+        //    if (dt != null && dt.Rows.Count > 0)
+        //    {
+        //        pnEmptyData.Visible = false;
+        //        pnFitness.Visible = true;
+        //        Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
+        //        Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
+        //        sTarget.Title = "Target";
+        //        sSteps.Title = "Step Counts";
+        //        foreach (DataRow row in dt.Rows)
+        //        {
+        //            sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
+        //            sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "Steps"));
+        //        }
+        //        WebChartFitness.Chart.Series.Add(sTarget);
+        //        WebChartFitness.Chart.Series.Add(sSteps);
+        //        WebChartFitness.Chart.Axes.Left.Title.Text = "Steps";
+        //      }
+        //    else
+        //    {
+        //        pnEmptyData.Visible = true;
+        //        pnFitness.Visible = false;
+        //    }
+        //}
         private void LoadStepCounts(string ParameterCode)
         {
-            WebChartFitness.Chart.Series.RemoveAllSeries();
             DataTable dt = _db.GetList_Fitness_Pedometer_Graph_ByParameterCode(userName(), fromDateGraph(), toDateGraph(), ParameterCode);
             if (dt != null && dt.Rows.Count > 0)
             {
                 pnEmptyData.Visible = false;
                 pnFitness.Visible = true;
-                Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
-                Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
-                sTarget.Title = "Target";
-                sSteps.Title = "Step Counts";
-                foreach (DataRow row in dt.Rows)
-                {
-                    sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
-                    sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "Steps"));
-                }
-                WebChartFitness.Chart.Series.Add(sTarget);
-                WebChartFitness.Chart.Series.Add(sSteps);
-                WebChartFitness.Chart.Axes.Left.Title.Text = "Steps";
-              }
+
+                ChartFitness.Series.Clear();
+                string nameOfSeries1 = "Target";
+                DevExpress.XtraCharts.Series Series1 = new DevExpress.XtraCharts.Series(nameOfSeries1, ViewType.StackedBar);
+                Series1.ArgumentDataMember = "ReceivedDate";
+                Series1.ArgumentScaleType = ScaleType.DateTime;
+                Series1.ValueDataMembersSerializable = "TargetPM";
+                ChartFitness.Series.Add(Series1);
+
+                string nameOfSeries2 = "Step Count";
+                DevExpress.XtraCharts.Series Series2 = new DevExpress.XtraCharts.Series(nameOfSeries2, ViewType.StackedBar);
+                Series2.ArgumentDataMember = "ReceivedDate";
+                Series2.ArgumentScaleType = ScaleType.DateTime;
+                Series2.ValueDataMembersSerializable = "Steps";
+                ChartFitness.Series.Add(Series2);
+
+                ChartFitness.DataSource = dt;
+                ChartFitness.DataBind();
+            }
             else
             {
                 pnEmptyData.Visible = true;
@@ -292,26 +351,58 @@ public partial class usertrackmyhealth_fitness : System.Web.UI.Page
             }
         }
 
+        //private void LoadDistance(string ParameterCode)
+        //{
+        //    WebChartFitness.Chart.Series.RemoveAllSeries();
+        //    DataTable dt = _db.GetList_Fitness_Pedometer_Graph_ByParameterCode(userName(), fromDateGraph(), toDateGraph(), ParameterCode);
+        //    if (dt != null && dt.Rows.Count > 0)
+        //    {
+        //        pnEmptyData.Visible = false;
+        //        pnFitness.Visible = true;
+        //        Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
+        //        Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
+        //        sTarget.Title = "Target";
+        //        sSteps.Title = "Distance";
+        //        foreach (DataRow row in dt.Rows)
+        //        {
+        //            sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
+        //            sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "Distance"));
+        //        }
+        //        WebChartFitness.Chart.Series.Add(sTarget);
+        //        WebChartFitness.Chart.Series.Add(sSteps);
+        //        WebChartFitness.Chart.Axes.Left.Title.Text = "Distance";
+        //    }
+        //    else
+        //    {
+        //        pnEmptyData.Visible = true;
+        //        pnFitness.Visible = false;
+        //    }
+        //}
         private void LoadDistance(string ParameterCode)
         {
-            WebChartFitness.Chart.Series.RemoveAllSeries();
             DataTable dt = _db.GetList_Fitness_Pedometer_Graph_ByParameterCode(userName(), fromDateGraph(), toDateGraph(), ParameterCode);
             if (dt != null && dt.Rows.Count > 0)
             {
                 pnEmptyData.Visible = false;
                 pnFitness.Visible = true;
-                Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
-                Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
-                sTarget.Title = "Target";
-                sSteps.Title = "Distance";
-                foreach (DataRow row in dt.Rows)
-                {
-                    sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
-                    sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "Distance"));
-                }
-                WebChartFitness.Chart.Series.Add(sTarget);
-                WebChartFitness.Chart.Series.Add(sSteps);
-                WebChartFitness.Chart.Axes.Left.Title.Text = "Distance";
+
+                ChartFitness.Series.Clear();
+                string nameOfSeries1 = "Target";
+                DevExpress.XtraCharts.Series Series1 = new DevExpress.XtraCharts.Series(nameOfSeries1, ViewType.StackedBar);
+                Series1.ArgumentDataMember = "ReceivedDate";
+                Series1.ArgumentScaleType = ScaleType.DateTime;
+                Series1.ValueDataMembersSerializable = "TargetPM";
+                ChartFitness.Series.Add(Series1);
+
+                string nameOfSeries2 = "Distance";
+                DevExpress.XtraCharts.Series Series2 = new DevExpress.XtraCharts.Series(nameOfSeries2, ViewType.StackedBar);
+                Series2.ArgumentDataMember = "ReceivedDate";
+                Series2.ArgumentScaleType = ScaleType.DateTime;
+                Series2.ValueDataMembersSerializable = "Distance";
+                ChartFitness.Series.Add(Series2);
+
+                ChartFitness.DataSource = dt;
+                ChartFitness.DataBind();
             }
             else
             {
@@ -320,26 +411,58 @@ public partial class usertrackmyhealth_fitness : System.Web.UI.Page
             }
         }
 
+        //private void LoadAverageSpeed(string ParameterCode)
+        //{
+        //    WebChartFitness.Chart.Series.RemoveAllSeries();
+        //    DataTable dt = _db.GetList_Fitness_Pedometer_Graph_ByParameterCode(userName(), fromDateGraph(), toDateGraph(), ParameterCode);
+        //    if (dt != null && dt.Rows.Count > 0)
+        //    {
+        //        pnEmptyData.Visible = false;
+        //        pnFitness.Visible = true;
+        //        Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
+        //        Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
+        //        sTarget.Title = "Target";
+        //        sSteps.Title = "Average Speed";
+        //        foreach (DataRow row in dt.Rows)
+        //        {
+        //            sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
+        //            sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "AverageSpeed"));
+        //        }
+        //        WebChartFitness.Chart.Series.Add(sTarget);
+        //        WebChartFitness.Chart.Series.Add(sSteps);
+        //        WebChartFitness.Chart.Axes.Left.Title.Text = "AverageSpeed";
+        //    }
+        //    else
+        //    {
+        //        pnEmptyData.Visible = true;
+        //        pnFitness.Visible = false;
+        //    }
+        //}
         private void LoadAverageSpeed(string ParameterCode)
         {
-            WebChartFitness.Chart.Series.RemoveAllSeries();
             DataTable dt = _db.GetList_Fitness_Pedometer_Graph_ByParameterCode(userName(), fromDateGraph(), toDateGraph(), ParameterCode);
             if (dt != null && dt.Rows.Count > 0)
             {
                 pnEmptyData.Visible = false;
                 pnFitness.Visible = true;
-                Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
-                Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
-                sTarget.Title = "Target";
-                sSteps.Title = "Average Speed";
-                foreach (DataRow row in dt.Rows)
-                {
-                    sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
-                    sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "AverageSpeed"));
-                }
-                WebChartFitness.Chart.Series.Add(sTarget);
-                WebChartFitness.Chart.Series.Add(sSteps);
-                WebChartFitness.Chart.Axes.Left.Title.Text = "AverageSpeed";
+
+                ChartFitness.Series.Clear();
+                string nameOfSeries1 = "Target";
+                DevExpress.XtraCharts.Series Series1 = new DevExpress.XtraCharts.Series(nameOfSeries1, ViewType.StackedBar);
+                Series1.ArgumentDataMember = "ReceivedDate";
+                Series1.ArgumentScaleType = ScaleType.DateTime;
+                Series1.ValueDataMembersSerializable = "TargetPM";
+                ChartFitness.Series.Add(Series1);
+
+                string nameOfSeries2 = "Average Speed";
+                DevExpress.XtraCharts.Series Series2 = new DevExpress.XtraCharts.Series(nameOfSeries2, ViewType.StackedBar);
+                Series2.ArgumentDataMember = "ReceivedDate";
+                Series2.ArgumentScaleType = ScaleType.DateTime;
+                Series2.ValueDataMembersSerializable = "AverageSpeed";
+                ChartFitness.Series.Add(Series2);
+
+                ChartFitness.DataSource = dt;
+                ChartFitness.DataBind();
             }
             else
             {
@@ -348,26 +471,58 @@ public partial class usertrackmyhealth_fitness : System.Web.UI.Page
             }
         }
 
+        //private void LoadCaloriesBurned(string ParameterCode)
+        //{
+        //    WebChartFitness.Chart.Series.RemoveAllSeries();
+        //    DataTable dt = _db.GetList_Fitness_Pedometer_Graph_ByParameterCode(userName(), fromDateGraph(), toDateGraph(), ParameterCode);
+        //    if (dt != null && dt.Rows.Count > 0)
+        //    {
+        //        pnEmptyData.Visible = false;
+        //        pnFitness.Visible = true;
+        //        Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
+        //        Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
+        //        sTarget.Title = "Target";
+        //        sSteps.Title = "CaloryBurn";
+        //        foreach (DataRow row in dt.Rows)
+        //        {
+        //            sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
+        //            sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "CaloryBurn"));
+        //        }
+        //        WebChartFitness.Chart.Series.Add(sTarget);
+        //        WebChartFitness.Chart.Series.Add(sSteps);
+        //        WebChartFitness.Chart.Axes.Left.Title.Text = "Calory Burn";
+        //    }
+        //    else
+        //    {
+        //        pnEmptyData.Visible = true;
+        //        pnFitness.Visible = false;
+        //    }
+        //}
         private void LoadCaloriesBurned(string ParameterCode)
         {
-            WebChartFitness.Chart.Series.RemoveAllSeries();
             DataTable dt = _db.GetList_Fitness_Pedometer_Graph_ByParameterCode(userName(), fromDateGraph(), toDateGraph(), ParameterCode);
             if (dt != null && dt.Rows.Count > 0)
             {
                 pnEmptyData.Visible = false;
                 pnFitness.Visible = true;
-                Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
-                Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
-                sTarget.Title = "Target";
-                sSteps.Title = "CaloryBurn";
-                foreach (DataRow row in dt.Rows)
-                {
-                    sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
-                    sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "CaloryBurn"));
-                }
-                WebChartFitness.Chart.Series.Add(sTarget);
-                WebChartFitness.Chart.Series.Add(sSteps);
-                WebChartFitness.Chart.Axes.Left.Title.Text = "Calory Burn";
+
+                ChartFitness.Series.Clear();
+                string nameOfSeries1 = "Target";
+                DevExpress.XtraCharts.Series Series1 = new DevExpress.XtraCharts.Series(nameOfSeries1, ViewType.StackedBar);
+                Series1.ArgumentDataMember = "ReceivedDate";
+                Series1.ArgumentScaleType = ScaleType.DateTime;
+                Series1.ValueDataMembersSerializable = "TargetPM";
+                ChartFitness.Series.Add(Series1);
+
+                string nameOfSeries2 = "Colories Burn";
+                DevExpress.XtraCharts.Series Series2 = new DevExpress.XtraCharts.Series(nameOfSeries2, ViewType.StackedBar);
+                Series2.ArgumentDataMember = "ReceivedDate";
+                Series2.ArgumentScaleType = ScaleType.DateTime;
+                Series2.ValueDataMembersSerializable = "CaloryBurn";
+                ChartFitness.Series.Add(Series2);
+
+                ChartFitness.DataSource = dt;
+                ChartFitness.DataBind();
             }
             else
             {
@@ -376,32 +531,64 @@ public partial class usertrackmyhealth_fitness : System.Web.UI.Page
             }
         }
 
+        //private void LoadPedometerDuration(string ParameterCode)
+        //{
+        //    WebChartFitness.Chart.Series.RemoveAllSeries();
+        //    DataTable dt = _db.GetList_Fitness_Pedometer_Graph_ByParameterCode(userName(), fromDateGraph(), toDateGraph(), ParameterCode);
+        //    if (dt != null && dt.Rows.Count < 10)
+        //    {
+        //        ((Steema.TeeChart.Tools.ScrollTool)WebChartFitness.Chart.Tools[0]).StartPosition = 0;
+        //        ((Steema.TeeChart.Tools.ScrollTool)WebChartFitness.Chart.Tools[0]).ViewSegmentSize = dt.Rows.Count / 100;
+        //    }
+        //    if (dt != null && dt.Rows.Count > 0)
+        //    {
+        //        pnEmptyData.Visible = false;
+        //        pnFitness.Visible = true;
+        //        Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
+        //        Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
+        //        sTarget.UseAxis = false;
+        //        sTarget.Title = "Target";
+        //        sSteps.Title = "Duration";
+        //        foreach (DataRow row in dt.Rows)
+        //        {
+        //            sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
+        //            sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "Duration"));
+        //        }
+        //        WebChartFitness.Chart.Series.Add(sTarget);
+        //        WebChartFitness.Chart.Series.Add(sSteps);
+        //        WebChartFitness.Chart.Axes.Left.Title.Text = "Duration";
+        //    }
+        //    else
+        //    {
+        //        pnEmptyData.Visible = true;
+        //        pnFitness.Visible = false;
+        //    }
+        //}
         private void LoadPedometerDuration(string ParameterCode)
         {
-            WebChartFitness.Chart.Series.RemoveAllSeries();
             DataTable dt = _db.GetList_Fitness_Pedometer_Graph_ByParameterCode(userName(), fromDateGraph(), toDateGraph(), ParameterCode);
-            if (dt != null && dt.Rows.Count < 10)
-            {
-                ((Steema.TeeChart.Tools.ScrollTool)WebChartFitness.Chart.Tools[0]).StartPosition = 0;
-                ((Steema.TeeChart.Tools.ScrollTool)WebChartFitness.Chart.Tools[0]).ViewSegmentSize = dt.Rows.Count / 100;
-            }
             if (dt != null && dt.Rows.Count > 0)
             {
                 pnEmptyData.Visible = false;
                 pnFitness.Visible = true;
-                Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
-                Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
-                sTarget.UseAxis = false;
-                sTarget.Title = "Target";
-                sSteps.Title = "Duration";
-                foreach (DataRow row in dt.Rows)
-                {
-                    sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
-                    sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "Duration"));
-                }
-                WebChartFitness.Chart.Series.Add(sTarget);
-                WebChartFitness.Chart.Series.Add(sSteps);
-                WebChartFitness.Chart.Axes.Left.Title.Text = "Duration";
+
+                ChartFitness.Series.Clear();
+                string nameOfSeries1 = "Target";
+                DevExpress.XtraCharts.Series Series1 = new DevExpress.XtraCharts.Series(nameOfSeries1, ViewType.StackedBar);
+                Series1.ArgumentDataMember = "ReceivedDate";
+                Series1.ArgumentScaleType = ScaleType.DateTime;
+                Series1.ValueDataMembersSerializable = "TargetPM";
+                ChartFitness.Series.Add(Series1);
+
+                string nameOfSeries2 = "Pedometer Duration";
+                DevExpress.XtraCharts.Series Series2 = new DevExpress.XtraCharts.Series(nameOfSeries2, ViewType.StackedBar);
+                Series2.ArgumentDataMember = "ReceivedDate";
+                Series2.ArgumentScaleType = ScaleType.DateTime;
+                Series2.ValueDataMembersSerializable = "Duration";
+                ChartFitness.Series.Add(Series2);
+
+                ChartFitness.DataSource = dt;
+                ChartFitness.DataBind();
             }
             else
             {
@@ -410,27 +597,43 @@ public partial class usertrackmyhealth_fitness : System.Web.UI.Page
             }
         }
 
+        //private void LoadStepCountsDefault(string ParameterCode)
+        //{
+        //    WebChartFitness.Chart.Series.RemoveAllSeries();
+        //    //DataTable dt = _db.GetList_Fitness_Pedometer_Graph_Default(userName(), ParameterCode);
+        //    DataTable dt = _db.GetList_Fitness_Pedometer_Graph_ByParameterCode(userName(), null, null, ParameterCode);
+        //    if (dt != null && dt.Rows.Count > 0)
+        //    {
+        //        pnEmptyData.Visible = false;
+        //        pnFitness.Visible = true;
+        //        Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
+        //        Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
+        //        sTarget.Title = "Target";
+        //        sSteps.Title = "Step Counts";
+        //        foreach (DataRow row in dt.Rows)
+        //        {
+        //            sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
+        //            sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "Steps"));
+        //        }
+        //        WebChartFitness.Chart.Series.Add(sTarget);
+        //        WebChartFitness.Chart.Series.Add(sSteps);
+        //        WebChartFitness.Chart.Axes.Left.Title.Text = "Steps";
+        //    }
+        //    else
+        //    {
+        //        pnEmptyData.Visible = true;
+        //        pnFitness.Visible = false;
+        //    }
+        //}
         private void LoadStepCountsDefault(string ParameterCode)
         {
-            WebChartFitness.Chart.Series.RemoveAllSeries();
-            //DataTable dt = _db.GetList_Fitness_Pedometer_Graph_Default(userName(), ParameterCode);
             DataTable dt = _db.GetList_Fitness_Pedometer_Graph_ByParameterCode(userName(), null, null, ParameterCode);
             if (dt != null && dt.Rows.Count > 0)
             {
                 pnEmptyData.Visible = false;
                 pnFitness.Visible = true;
-                Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
-                Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
-                sTarget.Title = "Target";
-                sSteps.Title = "Step Counts";
-                foreach (DataRow row in dt.Rows)
-                {
-                    sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
-                    sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "Steps"));
-                }
-                WebChartFitness.Chart.Series.Add(sTarget);
-                WebChartFitness.Chart.Series.Add(sSteps);
-                WebChartFitness.Chart.Axes.Left.Title.Text = "Steps";
+
+
             }
             else
             {
@@ -439,26 +642,42 @@ public partial class usertrackmyhealth_fitness : System.Web.UI.Page
             }
         }
 
+        //private void LoadDistanceDefault(string ParameterCode)
+        //{
+        //    WebChartFitness.Chart.Series.RemoveAllSeries();
+        //    DataTable dt = _db.GetList_Fitness_Pedometer_Graph_Default(userName(), ParameterCode);
+        //    if (dt != null && dt.Rows.Count > 0)
+        //    {
+        //        pnEmptyData.Visible = false;
+        //        pnFitness.Visible = true;
+        //        Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
+        //        Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
+        //        sTarget.Title = "Target";
+        //        sSteps.Title = "Distance";
+        //        foreach (DataRow row in dt.Rows)
+        //        {
+        //            sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
+        //            sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "Distance"));
+        //        }
+        //        WebChartFitness.Chart.Series.Add(sTarget);
+        //        WebChartFitness.Chart.Series.Add(sSteps);
+        //        WebChartFitness.Chart.Axes.Left.Title.Text = "Distance";
+        //    }
+        //    else
+        //    {
+        //        pnEmptyData.Visible = true;
+        //        pnFitness.Visible = false;
+        //    }
+        //}
         private void LoadDistanceDefault(string ParameterCode)
         {
-            WebChartFitness.Chart.Series.RemoveAllSeries();
             DataTable dt = _db.GetList_Fitness_Pedometer_Graph_Default(userName(), ParameterCode);
             if (dt != null && dt.Rows.Count > 0)
             {
                 pnEmptyData.Visible = false;
                 pnFitness.Visible = true;
-                Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
-                Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
-                sTarget.Title = "Target";
-                sSteps.Title = "Distance";
-                foreach (DataRow row in dt.Rows)
-                {
-                    sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
-                    sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "Distance"));
-                }
-                WebChartFitness.Chart.Series.Add(sTarget);
-                WebChartFitness.Chart.Series.Add(sSteps);
-                WebChartFitness.Chart.Axes.Left.Title.Text = "Distance";
+
+
             }
             else
             {
@@ -467,26 +686,41 @@ public partial class usertrackmyhealth_fitness : System.Web.UI.Page
             }
         }
 
+        //private void LoadAverageSpeedDefault(string ParameterCode)
+        //{
+        //    WebChartFitness.Chart.Series.RemoveAllSeries();
+        //    DataTable dt = _db.GetList_Fitness_Pedometer_Graph_Default(userName(), ParameterCode);
+        //    if (dt != null && dt.Rows.Count > 0)
+        //    {
+        //        pnEmptyData.Visible = false;
+        //        pnFitness.Visible = true;
+        //        Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
+        //        Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
+        //        sTarget.Title = "Target";
+        //        sSteps.Title = "Average Speed";
+        //        foreach (DataRow row in dt.Rows)
+        //        {
+        //            sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
+        //            sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "AverageSpeed"));
+        //        }
+        //        WebChartFitness.Chart.Series.Add(sTarget);
+        //        WebChartFitness.Chart.Series.Add(sSteps);
+        //        WebChartFitness.Chart.Axes.Left.Title.Text = "AverageSpeed";
+        //    }
+        //    else
+        //    {
+        //        pnEmptyData.Visible = true;
+        //        pnFitness.Visible = false;
+        //    }
+        //}
         private void LoadAverageSpeedDefault(string ParameterCode)
         {
-            WebChartFitness.Chart.Series.RemoveAllSeries();
             DataTable dt = _db.GetList_Fitness_Pedometer_Graph_Default(userName(), ParameterCode);
             if (dt != null && dt.Rows.Count > 0)
             {
                 pnEmptyData.Visible = false;
                 pnFitness.Visible = true;
-                Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
-                Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
-                sTarget.Title = "Target";
-                sSteps.Title = "Average Speed";
-                foreach (DataRow row in dt.Rows)
-                {
-                    sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
-                    sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "AverageSpeed"));
-                }
-                WebChartFitness.Chart.Series.Add(sTarget);
-                WebChartFitness.Chart.Series.Add(sSteps);
-                WebChartFitness.Chart.Axes.Left.Title.Text = "AverageSpeed";
+
             }
             else
             {
@@ -495,26 +729,42 @@ public partial class usertrackmyhealth_fitness : System.Web.UI.Page
             }
         }
 
+        //private void LoadCaloriesBurnedDefault(string ParameterCode)
+        //{
+        //    WebChartFitness.Chart.Series.RemoveAllSeries();
+        //    DataTable dt = _db.GetList_Fitness_Pedometer_Graph_Default(userName(), ParameterCode);
+        //    if (dt != null && dt.Rows.Count > 0)
+        //    {
+        //        pnEmptyData.Visible = false;
+        //        pnFitness.Visible = true;
+        //        Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
+        //        Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
+        //        sTarget.Title = "Target";
+        //        sSteps.Title = "CaloryBurn";
+        //        foreach (DataRow row in dt.Rows)
+        //        {
+        //            sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
+        //            sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "CaloryBurn"));
+        //        }
+        //        WebChartFitness.Chart.Series.Add(sTarget);
+        //        WebChartFitness.Chart.Series.Add(sSteps);
+        //        WebChartFitness.Chart.Axes.Left.Title.Text = "Calory Burn";
+        //    }
+        //    else
+        //    {
+        //        pnEmptyData.Visible = true;
+        //        pnFitness.Visible = false;
+        //    }
+        //}
         private void LoadCaloriesBurnedDefault(string ParameterCode)
         {
-            WebChartFitness.Chart.Series.RemoveAllSeries();
             DataTable dt = _db.GetList_Fitness_Pedometer_Graph_Default(userName(), ParameterCode);
             if (dt != null && dt.Rows.Count > 0)
             {
                 pnEmptyData.Visible = false;
                 pnFitness.Visible = true;
-                Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
-                Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
-                sTarget.Title = "Target";
-                sSteps.Title = "CaloryBurn";
-                foreach (DataRow row in dt.Rows)
-                {
-                    sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
-                    sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "CaloryBurn"));
-                }
-                WebChartFitness.Chart.Series.Add(sTarget);
-                WebChartFitness.Chart.Series.Add(sSteps);
-                WebChartFitness.Chart.Axes.Left.Title.Text = "Calory Burn";
+
+
             }
             else
             {
@@ -523,32 +773,48 @@ public partial class usertrackmyhealth_fitness : System.Web.UI.Page
             }
         }
 
+        //private void LoadPedometerDurationDefault(string ParameterCode)
+        //{
+        //    WebChartFitness.Chart.Series.RemoveAllSeries();
+        //    DataTable dt = _db.GetList_Fitness_Pedometer_Graph_Default(userName(), ParameterCode);
+        //    if (dt != null && dt.Rows.Count < 10)
+        //    {
+        //        ((Steema.TeeChart.Tools.ScrollTool)WebChartFitness.Chart.Tools[0]).StartPosition = 0;
+        //        ((Steema.TeeChart.Tools.ScrollTool)WebChartFitness.Chart.Tools[0]).ViewSegmentSize = dt.Rows.Count / 100;
+        //    }
+        //    if (dt != null && dt.Rows.Count > 0)
+        //    {
+        //        pnEmptyData.Visible = false;
+        //        pnFitness.Visible = true;
+        //        Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
+        //        Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
+        //        sTarget.UseAxis = false;
+        //        sTarget.Title = "Target";
+        //        sSteps.Title = "Duration";
+        //        foreach (DataRow row in dt.Rows)
+        //        {
+        //            sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
+        //            sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "Duration"));
+        //        }
+        //        WebChartFitness.Chart.Series.Add(sTarget);
+        //        WebChartFitness.Chart.Series.Add(sSteps);
+        //        WebChartFitness.Chart.Axes.Left.Title.Text = "Duration";
+        //    }
+        //    else
+        //    {
+        //        pnEmptyData.Visible = true;
+        //        pnFitness.Visible = false;
+        //    }
+        //}
         private void LoadPedometerDurationDefault(string ParameterCode)
         {
-            WebChartFitness.Chart.Series.RemoveAllSeries();
             DataTable dt = _db.GetList_Fitness_Pedometer_Graph_Default(userName(), ParameterCode);
-            if (dt != null && dt.Rows.Count < 10)
-            {
-                ((Steema.TeeChart.Tools.ScrollTool)WebChartFitness.Chart.Tools[0]).StartPosition = 0;
-                ((Steema.TeeChart.Tools.ScrollTool)WebChartFitness.Chart.Tools[0]).ViewSegmentSize = dt.Rows.Count / 100;
-            }
             if (dt != null && dt.Rows.Count > 0)
             {
                 pnEmptyData.Visible = false;
                 pnFitness.Visible = true;
-                Steema.TeeChart.Styles.Bar sTarget = new Steema.TeeChart.Styles.Bar();
-                Steema.TeeChart.Styles.Bar sSteps = new Steema.TeeChart.Styles.Bar();
-                sTarget.UseAxis = false;
-                sTarget.Title = "Target";
-                sSteps.Title = "Duration";
-                foreach (DataRow row in dt.Rows)
-                {
-                    sTarget.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "TargetPM"));
-                    sSteps.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "Duration"));
-                }
-                WebChartFitness.Chart.Series.Add(sTarget);
-                WebChartFitness.Chart.Series.Add(sSteps);
-                WebChartFitness.Chart.Axes.Left.Title.Text = "Duration";
+
+
             }
             else
             {

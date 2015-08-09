@@ -12,6 +12,7 @@ using System.Drawing;
 using System.IO;
 using Steema.TeeChart.Web;
 using System.Collections;
+using DevExpress.XtraCharts;
 
 public partial class usertrackmyhealth_heartrate : System.Web.UI.Page
 {
@@ -294,7 +295,12 @@ public partial class usertrackmyhealth_heartrate : System.Web.UI.Page
         }
         else
         {
-            AddSeriesLowHighToWebChart(dt);
+            //AddSeriesLowHighToWebChart(dt);
+
+            string[] sName = { "Low", "High", "Voltage", "HR", "RestHR" };
+            string[] sField = { "LowRestHRValue", "HighRestHRValue", "Voltage", "HR", "RestHR" };
+            LoadChart(dt, sName, sField);
+
             pnHeartRateData.Visible = true;
             pnHRVData.Visible = false;
             pnEmptyData.Visible = false;
@@ -313,7 +319,11 @@ public partial class usertrackmyhealth_heartrate : System.Web.UI.Page
         }
         else
         {
-            AddSeriesLowHighToWebChart(dt);
+            //AddSeriesLowHighToWebChart(dt);
+            string[] sName = { "Low", "High", "Voltage", "HR", "RestHR" };
+            string[] sField = { "LowRestHRValue", "HighRestHRValue", "Voltage", "HR", "RestHR" };
+            LoadChart(dt, sName, sField);
+
             pnHeartRateData.Visible = true;
             pnHRVData.Visible = false;
             pnEmptyData.Visible = false;
@@ -357,108 +367,124 @@ public partial class usertrackmyhealth_heartrate : System.Web.UI.Page
         return type.GetProperties().Where(info => info.PropertyType == type).Select(info => (Color)info.GetValue(null, null));
     }
 
-    private void AddSeriesLowHighToWebChart(DataTable dt)
+    private void LoadChart(DataTable dt, string[] sName, string[] sField)
     {
-        //BindDataToChart2(dt);
-        Steema.TeeChart.Chart ch1 = WebChartHeartRate.Chart;
-        ch1.Series.RemoveAllSeries();
-        tmpChart = new MemoryStream();
-        if (dt != null && dt.Rows.Count > 0)
+        for (int i = 0; i < sName.Count(); i++)
         {
-            Steema.TeeChart.Styles.Line Low = new Steema.TeeChart.Styles.Line();
-            Steema.TeeChart.Styles.Line Hight = new Steema.TeeChart.Styles.Line();
-            Steema.TeeChart.Styles.Line Voltage = new Steema.TeeChart.Styles.Line();
-            Steema.TeeChart.Styles.Points RestHR = new Steema.TeeChart.Styles.Points();
-            Steema.TeeChart.Styles.Line HR = new Steema.TeeChart.Styles.Line();
-            Low.XValues.DateTime = true;
-
-            Low.Color = System.Drawing.Color.Blue;
-            Hight.Color = System.Drawing.Color.Red;
-            Voltage.Color = Color.Blue;
-            HR.Color = Color.Red;
-            RestHR.Color = Color.Orange;
-
-            Low.Title = "Low";
-            Hight.Title = "High";
-            Voltage.Title = "Voltage";
-            HR.Title = "HR";
-            RestHR.Title = "RestHR";
-
-            Voltage.VertAxis = Steema.TeeChart.Styles.VerticalAxis.Right;
-            RestHR.Pointer.Style = Steema.TeeChart.Styles.PointerStyles.Circle;
-
-            RestHR.Pointer.HorizSize = 10;
-            int MinL1 = 0, MaxL1 = 0, MinL2 = 0, MaxL2 = 0, MinR = 0, MaxR = 0;
-
-            float LowRest = 50, HighRest = 100;
-            DataRow dr = _db.GetInfo_HeartRate(userName());
-            if (dr != null)
-            {
-                LowRest = BaseView.GetFloatFieldValue(dr, "HighRestHRValue");
-                HighRest = BaseView.GetFloatFieldValue(dr, "LowRestHRValue");
-            }
-
-            foreach (DataRow row in dt.Rows)
-            {
-                Low.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), LowRest);
-                Hight.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), HighRest + 10);
-                Voltage.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "Voltage"));
-                HR.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "HR"));
-                RestHR.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "RestHR"));
-                if (MinL1 == 0 || (BaseView.GetIntFieldValue(row, "HR") < MinL1 && BaseView.GetIntFieldValue(row, "HR") > 0))
-                {
-                    MinL1 = BaseView.GetIntFieldValue(row, "HR");
-                }
-                if (MinL2 == 0 || (BaseView.GetIntFieldValue(row, "RestHR") < MinL2 && BaseView.GetIntFieldValue(row, "RestHR") > 0))
-                {
-                    MinL2 = BaseView.GetIntFieldValue(row, "RestHR");
-                }
-                if (MinR == 0 || (BaseView.GetIntFieldValue(row, "Voltage") < MinR && BaseView.GetIntFieldValue(row, "Voltage") > 0))
-                {
-                    MinR = BaseView.GetIntFieldValue(row, "Voltage");
-                }
-
-                if (MaxL1 == 0 || (BaseView.GetIntFieldValue(row, "HR") > MaxL1 && BaseView.GetIntFieldValue(row, "HR") > 0))
-                {
-                    MaxL1 = BaseView.GetIntFieldValue(row, "HR");
-                }
-                if (MaxL2 == 0 || (BaseView.GetIntFieldValue(row, "RestHR") > MaxL2 && BaseView.GetIntFieldValue(row, "RestHR") > 0))
-                {
-                    MaxL2 = BaseView.GetIntFieldValue(row, "RestHR");
-                }
-                if (MaxR == 0 || (BaseView.GetIntFieldValue(row, "Voltage") > MaxR && BaseView.GetIntFieldValue(row, "Voltage") > 0))
-                {
-                    MaxR = BaseView.GetIntFieldValue(row, "Voltage");
-                }
-            }
-
-            ch1.Series.Add(Low);
-            ch1.Series.Add(Hight);
-            ch1.Series.Add(Voltage);
-            ch1.Series.Add(HR);
-            ch1.Series.Add(RestHR);
-
-            ch1.Axes.Bottom.SetMinMax(ch1.Series[0].MinXValue(), ch1.Series[0].MaxXValue());
-            ch1.Axes.Bottom.Labels.DateTimeFormat = "dd/MM/yyyy HH:mm";
-            ch1.Axes.Right.SetMinMax(MinR, MaxR);
-            ch1.Axes.Left.SetMinMax(LowRest - 10, HighRest + 10);
-            ch1.Axes.Left.Title.Text = "Heart Rate (bpm)";
-            //Steema.TeeChart.Legend legend = new Steema.TeeChart.Legend(ch1);
-            //ch1.Axes.Left.SetMinMax(20, 110);
-            //ch1.Axes.Right.SetMinMax(500, 550);
-            //ch1.Axes.Left.SetMinMax(40, 110);
-            //ch1.Axes.Left.Visible = false;
-            ch1.Axes.Right.Visible = false;
-
-            ch1.Export.Template.Save(tmpChart);
-            //save template to a Session variable
-            Page.Cache.Add("ch1Scroll", tmpChart, null,
-            DateTime.Now.AddSeconds(40), System.Web.Caching.Cache.NoSlidingExpiration,
-            System.Web.Caching.CacheItemPriority.NotRemovable, null);
-            Session.Add("ch1", tmpChart);
-            ((Steema.TeeChart.Tools.ScrollTool)WebChartHeartRate.Chart.Tools[0]).StartPosition = 0;
+            string nameOfSeries = sName[i];
+            DevExpress.XtraCharts.Series Series = new DevExpress.XtraCharts.Series(nameOfSeries, ViewType.StackedBar);
+            Series.ArgumentDataMember = "ReceivedDate";
+            Series.ArgumentScaleType = ScaleType.DateTime;
+            Series.ValueDataMembersSerializable = sField[i];
+            ChartHeartRate.Series.Add(Series);
         }
+
+        ChartHeartRate.DataSource = dt;
+        ChartHeartRate.DataBind();
     }
+
+    //private void AddSeriesLowHighToWebChart(DataTable dt)
+    //{
+    //    //BindDataToChart2(dt);
+    //    Steema.TeeChart.Chart ch1 = WebChartHeartRate.Chart;
+    //    ch1.Series.RemoveAllSeries();
+    //    tmpChart = new MemoryStream();
+    //    if (dt != null && dt.Rows.Count > 0)
+    //    {
+    //        Steema.TeeChart.Styles.Line Low = new Steema.TeeChart.Styles.Line();
+    //        Steema.TeeChart.Styles.Line Hight = new Steema.TeeChart.Styles.Line();
+    //        Steema.TeeChart.Styles.Line Voltage = new Steema.TeeChart.Styles.Line();
+    //        Steema.TeeChart.Styles.Points RestHR = new Steema.TeeChart.Styles.Points();
+    //        Steema.TeeChart.Styles.Line HR = new Steema.TeeChart.Styles.Line();
+    //        Low.XValues.DateTime = true;
+
+    //        Low.Color = System.Drawing.Color.Blue;
+    //        Hight.Color = System.Drawing.Color.Red;
+    //        Voltage.Color = Color.Blue;
+    //        HR.Color = Color.Red;
+    //        RestHR.Color = Color.Orange;
+
+    //        Low.Title = "Low";
+    //        Hight.Title = "High";
+    //        Voltage.Title = "Voltage";
+    //        HR.Title = "HR";
+    //        RestHR.Title = "RestHR";
+
+    //        Voltage.VertAxis = Steema.TeeChart.Styles.VerticalAxis.Right;
+    //        RestHR.Pointer.Style = Steema.TeeChart.Styles.PointerStyles.Circle;
+
+    //        RestHR.Pointer.HorizSize = 10;
+    //        int MinL1 = 0, MaxL1 = 0, MinL2 = 0, MaxL2 = 0, MinR = 0, MaxR = 0;
+
+    //        float LowRest = 50, HighRest = 100;
+    //        DataRow dr = _db.GetInfo_HeartRate(userName());
+    //        if (dr != null)
+    //        {
+    //            LowRest = BaseView.GetFloatFieldValue(dr, "HighRestHRValue");
+    //            HighRest = BaseView.GetFloatFieldValue(dr, "LowRestHRValue");
+    //        }
+
+    //        foreach (DataRow row in dt.Rows)
+    //        {
+    //            Low.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), LowRest);
+    //            Hight.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), HighRest + 10);
+    //            Voltage.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "Voltage"));
+    //            HR.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "HR"));
+    //            RestHR.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "RestHR"));
+    //            if (MinL1 == 0 || (BaseView.GetIntFieldValue(row, "HR") < MinL1 && BaseView.GetIntFieldValue(row, "HR") > 0))
+    //            {
+    //                MinL1 = BaseView.GetIntFieldValue(row, "HR");
+    //            }
+    //            if (MinL2 == 0 || (BaseView.GetIntFieldValue(row, "RestHR") < MinL2 && BaseView.GetIntFieldValue(row, "RestHR") > 0))
+    //            {
+    //                MinL2 = BaseView.GetIntFieldValue(row, "RestHR");
+    //            }
+    //            if (MinR == 0 || (BaseView.GetIntFieldValue(row, "Voltage") < MinR && BaseView.GetIntFieldValue(row, "Voltage") > 0))
+    //            {
+    //                MinR = BaseView.GetIntFieldValue(row, "Voltage");
+    //            }
+
+    //            if (MaxL1 == 0 || (BaseView.GetIntFieldValue(row, "HR") > MaxL1 && BaseView.GetIntFieldValue(row, "HR") > 0))
+    //            {
+    //                MaxL1 = BaseView.GetIntFieldValue(row, "HR");
+    //            }
+    //            if (MaxL2 == 0 || (BaseView.GetIntFieldValue(row, "RestHR") > MaxL2 && BaseView.GetIntFieldValue(row, "RestHR") > 0))
+    //            {
+    //                MaxL2 = BaseView.GetIntFieldValue(row, "RestHR");
+    //            }
+    //            if (MaxR == 0 || (BaseView.GetIntFieldValue(row, "Voltage") > MaxR && BaseView.GetIntFieldValue(row, "Voltage") > 0))
+    //            {
+    //                MaxR = BaseView.GetIntFieldValue(row, "Voltage");
+    //            }
+    //        }
+
+    //        ch1.Series.Add(Low);
+    //        ch1.Series.Add(Hight);
+    //        ch1.Series.Add(Voltage);
+    //        ch1.Series.Add(HR);
+    //        ch1.Series.Add(RestHR);
+
+    //        ch1.Axes.Bottom.SetMinMax(ch1.Series[0].MinXValue(), ch1.Series[0].MaxXValue());
+    //        ch1.Axes.Bottom.Labels.DateTimeFormat = "dd/MM/yyyy HH:mm";
+    //        ch1.Axes.Right.SetMinMax(MinR, MaxR);
+    //        ch1.Axes.Left.SetMinMax(LowRest - 10, HighRest + 10);
+    //        ch1.Axes.Left.Title.Text = "Heart Rate (bpm)";
+    //        //Steema.TeeChart.Legend legend = new Steema.TeeChart.Legend(ch1);
+    //        //ch1.Axes.Left.SetMinMax(20, 110);
+    //        //ch1.Axes.Right.SetMinMax(500, 550);
+    //        //ch1.Axes.Left.SetMinMax(40, 110);
+    //        //ch1.Axes.Left.Visible = false;
+    //        ch1.Axes.Right.Visible = false;
+
+    //        ch1.Export.Template.Save(tmpChart);
+    //        //save template to a Session variable
+    //        Page.Cache.Add("ch1Scroll", tmpChart, null,
+    //        DateTime.Now.AddSeconds(40), System.Web.Caching.Cache.NoSlidingExpiration,
+    //        System.Web.Caching.CacheItemPriority.NotRemovable, null);
+    //        Session.Add("ch1", tmpChart);
+    //        ((Steema.TeeChart.Tools.ScrollTool)WebChartHeartRate.Chart.Tools[0]).StartPosition = 0;
+    //    }
+    //}
 
     private void CheckZoom(WebChart wChart)
     {
@@ -959,7 +985,7 @@ public partial class usertrackmyhealth_heartrate : System.Web.UI.Page
                 g.Font.Color = Color.Maroon;
                 g.TextOut(clickedX, clickedY, msgText);
             }
-            WebChartHeartRate.Chart.Axes.Bottom.Labels.DateTimeFormat = "MM/dd/yyyy hh:mm:ss tt";
+            //WebChartHeartRate.Chart.Axes.Bottom.Labels.DateTimeFormat = "MM/dd/yyyy hh:mm:ss tt";
         }
         protected void WebChartHeartRate_ClickSeries(object sender, Steema.TeeChart.Styles.Series s, int valueIndex, EventArgs e)
         {

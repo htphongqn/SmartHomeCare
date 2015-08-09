@@ -4,6 +4,9 @@
     Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 <%@ Register assembly="TeeChart" namespace="Steema.TeeChart.Web" tagprefix="tchart" %>
+<%@ Register assembly="DevExpress.XtraCharts.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.XtraCharts" tagprefix="cc1" %>
+<%@ Register Assembly="DevExpress.XtraCharts.v12.1.Web, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.XtraCharts.Web" TagPrefix="dxchartsui" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head1" Runat="Server">
     <link href="styles/tab.css" rel="stylesheet" type="text/css" />
@@ -58,9 +61,68 @@
                         </div>
                     <asp:Panel ID="pnFitness" runat="server" Visible="False">
                         <div align="left">
-                            <tchart:WebChart ID="WebChartFitness" runat="server" AutoPostback="False" Config="AAEAAAD/////AQAAAAAAAAAMAgAAAFJUZWVDaGFydCwgVmVyc2lvbj00LjEuMjAxMy4xMTA4NiwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YzgxMjYyNzZjNzdiZGI3DAMAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhBQEAAAAVU3RlZW1hLlRlZUNoYXJ0LkNoYXJ0PAAAABAuQ3VzdG9tQ2hhcnRSZWN0Ey5QYW5lbC5NYXJnaW5Cb3R0b20RLkhlYWRlci5BbGlnbm1lbnQNLkhlYWRlci5MaW5lcxouSGVhZGVyLkZvbnQuU2hhZG93LkhlaWdodBkuSGVhZGVyLkZvbnQuU2hhZG93LldpZHRoHC5IZWFkZXIuQnJ1c2guR3JhZGllbnQuQW5nbGUgLkhlYWRlci5CcnVzaC5HcmFkaWVudC5EaXJlY3Rpb24eLkhlYWRlci5CcnVzaC5HcmFkaWVudC5WaXNpYmxlGS5Bc3BlY3QuQ29sb3JQYWxldHRlSW5kZXgQLkFzcGVjdC5IZWlnaHQzRA8uQXNwZWN0LldpZHRoM0QOLkFzcGVjdC5WaWV3M0QHVG9vbHMuMBguVG9vbHMuMC5WaWV3U2VnbWVudFNpemUULlRvb2xzLjAuTW91c2VBY3Rpb24WLlRvb2xzLjAuU3RhcnRQb3NpdGlvbhkuVG9vbHMuMC5TZWdtZW50Vmlld1VuaXRzHC5Ub29scy4wLkF0dHJpYnV0ZXMuRHJhZ1pvb20fLlRvb2xzLjAuQXR0cmlidXRlcy5DYW52YXNJbmRleB4uVG9vbHMuMC5BdHRyaWJ1dGVzLkZpbGxUcmFuc3AcLlRvb2xzLjAuQXR0cmlidXRlcy5JbWFnZVN0ciMuVG9vbHMuMC5BdHRyaWJ1dGVzLk5vQ2xpY2tQb3N0YmFjaxguVG9vbHMuMC5ab29tQ2FudmFzSW5kZXgdLlRvb2xzLjAuWm9vbUZpbGxUcmFuc3BhcmVuY3kVLlRvb2xzLjAuWm9vbVBlbkNvbG9yGC5Ub29scy4wLkN1c3RvbVZhcmlhYmxlcxIuQXhlcy5OdW1GaXhlZEF4ZXMTLkF4ZXMuTGVmdC5JR2FwU2l6ZRQuQXhlcy5MZWZ0LklTdGFydFBvcxIuQXhlcy5MZWZ0LklFbmRQb3MULkF4ZXMuTGVmdC5JQXhpc1NpemUWLkF4ZXMuTGVmdC5Jc0RlcHRoQXhpcxIuQXhlcy5Ub3AuSUdhcFNpemUTLkF4ZXMuVG9wLklTdGFydFBvcxEuQXhlcy5Ub3AuSUVuZFBvcxMuQXhlcy5Ub3AuSUF4aXNTaXplFS5BeGVzLlRvcC5Jc0RlcHRoQXhpcxQuQXhlcy5SaWdodC5JR2FwU2l6ZRUuQXhlcy5SaWdodC5JU3RhcnRQb3MTLkF4ZXMuUmlnaHQuSUVuZFBvcxUuQXhlcy5SaWdodC5JQXhpc1NpemUXLkF4ZXMuUmlnaHQuSXNEZXB0aEF4aXMVLkF4ZXMuQm90dG9tLklHYXBTaXplFi5BeGVzLkJvdHRvbS5JU3RhcnRQb3MULkF4ZXMuQm90dG9tLklFbmRQb3MWLkF4ZXMuQm90dG9tLklBeGlzU2l6ZRguQXhlcy5Cb3R0b20uSXNEZXB0aEF4aXMdLkF4ZXMuQm90dG9tLlJlbGF0aXZlUG9zaXRpb24aLkF4ZXMuQm90dG9tLlBvc2l0aW9uVW5pdHMXLkF4ZXMuRGVwdGhUb3AuSUdhcFNpemUYLkF4ZXMuRGVwdGhUb3AuSVN0YXJ0UG9zFi5BeGVzLkRlcHRoVG9wLklFbmRQb3MYLkF4ZXMuRGVwdGhUb3AuSUF4aXNTaXplGi5BeGVzLkRlcHRoVG9wLklzRGVwdGhBeGlzFC5BeGVzLkRlcHRoLklHYXBTaXplFS5BeGVzLkRlcHRoLklTdGFydFBvcxMuQXhlcy5EZXB0aC5JRW5kUG9zFS5BeGVzLkRlcHRoLklBeGlzU2l6ZRcuQXhlcy5EZXB0aC5Jc0RlcHRoQXhpcwAABAYAAAAEAAAAAAABAAQABAAAAAEAAAAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAEGHlN5c3RlbS5EcmF3aW5nLlN0cmluZ0FsaWdubWVudAMAAAAICAYrU3lzdGVtLkRyYXdpbmcuRHJhd2luZzJELkxpbmVhckdyYWRpZW50TW9kZQMAAAABCAgIAQgnU3RlZW1hLlRlZUNoYXJ0LlRvb2xzLlNjcm9sbE1vdXNlQWN0aW9uAgAAAAgoU3RlZW1hLlRlZUNoYXJ0LlRvb2xzLlNjcm9sbFRvb2xWaWV3VW5pdAIAAAABCAgBCAgUU3lzdGVtLkRyYXdpbmcuQ29sb3IDAAAACAgICAgBCAgICAEICAgIAQgICAgBBh1TdGVlbWEuVGVlQ2hhcnQuUG9zaXRpb25Vbml0cwIAAAAICAgIAQgICAgBAgAAAAAAAAAAAAAgQAX8////HlN5c3RlbS5EcmF3aW5nLlN0cmluZ0FsaWdubWVudAEAAAAHdmFsdWVfXwAIAwAAAAAAAAAJBQAAABMAAAALAAAAAAAAAAAAPkAF+v///ytTeXN0ZW0uRHJhd2luZy5EcmF3aW5nMkQuTGluZWFyR3JhZGllbnRNb2RlAQAAAAd2YWx1ZV9fAAgDAAAAAAAAAAEAAAAAAAAAAAAAAAAABgcAAAAgU3RlZW1hLlRlZUNoYXJ0LlRvb2xzLlNjcm9sbFRvb2wUAAAABfj///8nU3RlZW1hLlRlZUNoYXJ0LlRvb2xzLlNjcm9sbE1vdXNlQWN0aW9uAQAAAAd2YWx1ZV9fAAgCAAAAAQAAAAEAAAAF9////yhTdGVlbWEuVGVlQ2hhcnQuVG9vbHMuU2Nyb2xsVG9vbFZpZXdVbml0AQAAAAd2YWx1ZV9fAAgCAAAAAAAAAAAAAAAAAAAAAAYKAAAAAADzAQAAHgAAAAX1////FFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVlCmtub3duQ29sb3IFc3RhdGUBAAAACQcHAwAAAAoAAAAAAAAAAI0AAQAJCgAAAAYAAAAAAAAAOwAAAFsBAAAgAQAAAAAAAAAcAAAAoAIAAIQCAAAAAAAAADsAAABbAQAAIAEAAAAAAAAAHAAAAKACAACEAgAAAAAAAAAAADDABfT///8dU3RlZW1hLlRlZUNoYXJ0LlBvc2l0aW9uVW5pdHMBAAAAB3ZhbHVlX18ACAIAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAREFAAAAAQAAAAkKAAAACw=="
+                            <%--<tchart:WebChart ID="WebChartFitness" runat="server" AutoPostback="False" Config="AAEAAAD/////AQAAAAAAAAAMAgAAAFJUZWVDaGFydCwgVmVyc2lvbj00LjEuMjAxMy4xMTA4NiwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YzgxMjYyNzZjNzdiZGI3DAMAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhBQEAAAAVU3RlZW1hLlRlZUNoYXJ0LkNoYXJ0PAAAABAuQ3VzdG9tQ2hhcnRSZWN0Ey5QYW5lbC5NYXJnaW5Cb3R0b20RLkhlYWRlci5BbGlnbm1lbnQNLkhlYWRlci5MaW5lcxouSGVhZGVyLkZvbnQuU2hhZG93LkhlaWdodBkuSGVhZGVyLkZvbnQuU2hhZG93LldpZHRoHC5IZWFkZXIuQnJ1c2guR3JhZGllbnQuQW5nbGUgLkhlYWRlci5CcnVzaC5HcmFkaWVudC5EaXJlY3Rpb24eLkhlYWRlci5CcnVzaC5HcmFkaWVudC5WaXNpYmxlGS5Bc3BlY3QuQ29sb3JQYWxldHRlSW5kZXgQLkFzcGVjdC5IZWlnaHQzRA8uQXNwZWN0LldpZHRoM0QOLkFzcGVjdC5WaWV3M0QHVG9vbHMuMBguVG9vbHMuMC5WaWV3U2VnbWVudFNpemUULlRvb2xzLjAuTW91c2VBY3Rpb24WLlRvb2xzLjAuU3RhcnRQb3NpdGlvbhkuVG9vbHMuMC5TZWdtZW50Vmlld1VuaXRzHC5Ub29scy4wLkF0dHJpYnV0ZXMuRHJhZ1pvb20fLlRvb2xzLjAuQXR0cmlidXRlcy5DYW52YXNJbmRleB4uVG9vbHMuMC5BdHRyaWJ1dGVzLkZpbGxUcmFuc3AcLlRvb2xzLjAuQXR0cmlidXRlcy5JbWFnZVN0ciMuVG9vbHMuMC5BdHRyaWJ1dGVzLk5vQ2xpY2tQb3N0YmFjaxguVG9vbHMuMC5ab29tQ2FudmFzSW5kZXgdLlRvb2xzLjAuWm9vbUZpbGxUcmFuc3BhcmVuY3kVLlRvb2xzLjAuWm9vbVBlbkNvbG9yGC5Ub29scy4wLkN1c3RvbVZhcmlhYmxlcxIuQXhlcy5OdW1GaXhlZEF4ZXMTLkF4ZXMuTGVmdC5JR2FwU2l6ZRQuQXhlcy5MZWZ0LklTdGFydFBvcxIuQXhlcy5MZWZ0LklFbmRQb3MULkF4ZXMuTGVmdC5JQXhpc1NpemUWLkF4ZXMuTGVmdC5Jc0RlcHRoQXhpcxIuQXhlcy5Ub3AuSUdhcFNpemUTLkF4ZXMuVG9wLklTdGFydFBvcxEuQXhlcy5Ub3AuSUVuZFBvcxMuQXhlcy5Ub3AuSUF4aXNTaXplFS5BeGVzLlRvcC5Jc0RlcHRoQXhpcxQuQXhlcy5SaWdodC5JR2FwU2l6ZRUuQXhlcy5SaWdodC5JU3RhcnRQb3MTLkF4ZXMuUmlnaHQuSUVuZFBvcxUuQXhlcy5SaWdodC5JQXhpc1NpemUXLkF4ZXMuUmlnaHQuSXNEZXB0aEF4aXMVLkF4ZXMuQm90dG9tLklHYXBTaXplFi5BeGVzLkJvdHRvbS5JU3RhcnRQb3MULkF4ZXMuQm90dG9tLklFbmRQb3MWLkF4ZXMuQm90dG9tLklBeGlzU2l6ZRguQXhlcy5Cb3R0b20uSXNEZXB0aEF4aXMdLkF4ZXMuQm90dG9tLlJlbGF0aXZlUG9zaXRpb24aLkF4ZXMuQm90dG9tLlBvc2l0aW9uVW5pdHMXLkF4ZXMuRGVwdGhUb3AuSUdhcFNpemUYLkF4ZXMuRGVwdGhUb3AuSVN0YXJ0UG9zFi5BeGVzLkRlcHRoVG9wLklFbmRQb3MYLkF4ZXMuRGVwdGhUb3AuSUF4aXNTaXplGi5BeGVzLkRlcHRoVG9wLklzRGVwdGhBeGlzFC5BeGVzLkRlcHRoLklHYXBTaXplFS5BeGVzLkRlcHRoLklTdGFydFBvcxMuQXhlcy5EZXB0aC5JRW5kUG9zFS5BeGVzLkRlcHRoLklBeGlzU2l6ZRcuQXhlcy5EZXB0aC5Jc0RlcHRoQXhpcwAABAYAAAAEAAAAAAABAAQABAAAAAEAAAAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAEGHlN5c3RlbS5EcmF3aW5nLlN0cmluZ0FsaWdubWVudAMAAAAICAYrU3lzdGVtLkRyYXdpbmcuRHJhd2luZzJELkxpbmVhckdyYWRpZW50TW9kZQMAAAABCAgIAQgnU3RlZW1hLlRlZUNoYXJ0LlRvb2xzLlNjcm9sbE1vdXNlQWN0aW9uAgAAAAgoU3RlZW1hLlRlZUNoYXJ0LlRvb2xzLlNjcm9sbFRvb2xWaWV3VW5pdAIAAAABCAgBCAgUU3lzdGVtLkRyYXdpbmcuQ29sb3IDAAAACAgICAgBCAgICAEICAgIAQgICAgBBh1TdGVlbWEuVGVlQ2hhcnQuUG9zaXRpb25Vbml0cwIAAAAICAgIAQgICAgBAgAAAAAAAAAAAAAgQAX8////HlN5c3RlbS5EcmF3aW5nLlN0cmluZ0FsaWdubWVudAEAAAAHdmFsdWVfXwAIAwAAAAAAAAAJBQAAABMAAAALAAAAAAAAAAAAPkAF+v///ytTeXN0ZW0uRHJhd2luZy5EcmF3aW5nMkQuTGluZWFyR3JhZGllbnRNb2RlAQAAAAd2YWx1ZV9fAAgDAAAAAAAAAAEAAAAAAAAAAAAAAAAABgcAAAAgU3RlZW1hLlRlZUNoYXJ0LlRvb2xzLlNjcm9sbFRvb2wUAAAABfj///8nU3RlZW1hLlRlZUNoYXJ0LlRvb2xzLlNjcm9sbE1vdXNlQWN0aW9uAQAAAAd2YWx1ZV9fAAgCAAAAAQAAAAEAAAAF9////yhTdGVlbWEuVGVlQ2hhcnQuVG9vbHMuU2Nyb2xsVG9vbFZpZXdVbml0AQAAAAd2YWx1ZV9fAAgCAAAAAAAAAAAAAAAAAAAAAAYKAAAAAADzAQAAHgAAAAX1////FFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVlCmtub3duQ29sb3IFc3RhdGUBAAAACQcHAwAAAAoAAAAAAAAAAI0AAQAJCgAAAAYAAAAAAAAAOwAAAFsBAAAgAQAAAAAAAAAcAAAAoAIAAIQCAAAAAAAAADsAAABbAQAAIAEAAAAAAAAAHAAAAKACAACEAgAAAAAAAAAAADDABfT///8dU3RlZW1hLlRlZUNoYXJ0LlBvc2l0aW9uVW5pdHMBAAAAB3ZhbHVlX18ACAIAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAREFAAAAAQAAAAkKAAAACw=="
                                 GetChartFile="GetChart.aspx" Height="400px" TempChart="Session" 
-                                Width="700px" />
+                                Width="700px" />--%>
+                            <dxchartsui:WebChartControl ID="ChartFitness" runat="server" Height="450px" 
+                                Width="600px">
+                                <diagramserializable>
+                                    <cc1:XYDiagram>
+                                        <axisx visibleinpanesserializable="-1">
+                                            <range sidemarginsenabled="True" />
+                                            <range sidemarginsenabled="True" />
+                                            <range sidemarginsenabled="True" />
+                                        </axisx>
+                                        <axisy visibleinpanesserializable="-1">
+                                            <range sidemarginsenabled="True" />
+                                            <range sidemarginsenabled="True" />
+                                            <range sidemarginsenabled="True" />
+                                        </axisy>
+                                    </cc1:XYDiagram>
+                                </diagramserializable>
+                                <fillstyle>
+                                    <optionsserializable>
+                                        <cc1:SolidFillOptions />
+                                    </optionsserializable>
+                                </fillstyle>
+                                <seriesserializable>
+                                    
+                                    
+                                </seriesserializable>
+                                <seriestemplate>
+                                    <viewserializable>
+                                        <cc1:SideBySideBarSeriesView>
+                                        </cc1:SideBySideBarSeriesView>
+                                    </viewserializable>
+                                    <labelserializable>
+                                        <cc1:SideBySideBarSeriesLabel LineVisible="True">
+                                            <fillstyle>
+                                                <optionsserializable>
+                                                    <cc1:SolidFillOptions />
+                                                </optionsserializable>
+                                            </fillstyle>
+                                            <pointoptionsserializable>
+                                                <cc1:PointOptions>
+                                                </cc1:PointOptions>
+                                            </pointoptionsserializable>
+                                        </cc1:SideBySideBarSeriesLabel>
+                                    </labelserializable>
+                                    <legendpointoptionsserializable>
+                                        <cc1:PointOptions>
+                                        </cc1:PointOptions>
+                                    </legendpointoptionsserializable>
+                                </seriestemplate>
+                                <crosshairoptions>
+                                    <commonlabelpositionserializable>
+                                        <cc1:CrosshairMousePosition />
+                                    </commonlabelpositionserializable>
+                                </crosshairoptions>
+                                <tooltipoptions>
+                                    <tooltippositionserializable>
+                                        <cc1:ToolTipMousePosition />
+                                    </tooltippositionserializable>
+                                </tooltipoptions>
+                            </dxchartsui:WebChartControl>
                         </div>
                     </asp:Panel>
                             <br />           
