@@ -221,73 +221,75 @@ public partial class usertrackothers_sleep : System.Web.UI.Page
         DataTable dt = _db.GetList_Sleep_Rawdata(userName(), fromDate(), toDate());
         if (dt != null && dt.Rows.Count > 0)
         {
-            LoadDrawDataFromDatatable(dt);
+            //LoadDrawDataFromDatatable(dt);
+            ChartSleepMain.DataSource = dt;
+            ChartSleepMain.DataBind();
         }
     }
 
-    private void LoadDrawDataFromDatatable(DataTable dt)
-    {
-        int MinHR = int.MaxValue, MinSkinTemp = int.MaxValue, MinGSR = int.MaxValue, MinX = int.MaxValue, MinY = int.MaxValue, MinZ = int.MaxValue, MinActivity = int.MaxValue,
-            MaxHR = int.MinValue, MaxSkinTemp = int.MinValue, MaxGSR = int.MinValue, MaxX = int.MinValue, MaxY = int.MinValue, MaxZ = int.MinValue, MaxActivity = int.MinValue;
-        foreach (DataRow row in dt.Rows)
-        {
-            MinHR = Math.Min(MinHR, BaseView.GetIntFieldValue(row, "HR"));
-            MaxHR = Math.Max(MaxHR, BaseView.GetIntFieldValue(row, "HR"));
-            MinSkinTemp = Math.Min(MinSkinTemp, BaseView.GetIntFieldValue(row, "SkinTemp"));
-            MaxSkinTemp = Math.Max(MaxSkinTemp, BaseView.GetIntFieldValue(row, "SkinTemp"));
-            MinGSR = Math.Min(MinGSR, BaseView.GetIntFieldValue(row, "GSR"));
-            MaxGSR = Math.Max(MaxGSR, BaseView.GetIntFieldValue(row, "GSR"));
-            MinX = Math.Min(MinX, BaseView.GetIntFieldValue(row, "ValueX"));
-            MaxX = Math.Max(MaxX, BaseView.GetIntFieldValue(row, "ValueX"));
-            MinY = Math.Min(MinY, BaseView.GetIntFieldValue(row, "ValueY"));
-            MaxY = Math.Max(MaxY, BaseView.GetIntFieldValue(row, "ValueY"));
-            MinZ = Math.Min(MinZ, BaseView.GetIntFieldValue(row, "ValueZ"));
-            MaxZ = Math.Max(MaxZ, BaseView.GetIntFieldValue(row, "ValueZ"));
-            MinActivity = Math.Min(MinActivity, BaseView.GetIntFieldValue(row, "ActivityLevel"));
-            MaxActivity = Math.Max(MaxActivity, BaseView.GetIntFieldValue(row, "ActivityLevel"));
-        }
+    //private void LoadDrawDataFromDatatable(DataTable dt)
+    //{
+    //    int MinHR = int.MaxValue, MinSkinTemp = int.MaxValue, MinGSR = int.MaxValue, MinX = int.MaxValue, MinY = int.MaxValue, MinZ = int.MaxValue, MinActivity = int.MaxValue,
+    //        MaxHR = int.MinValue, MaxSkinTemp = int.MinValue, MaxGSR = int.MinValue, MaxX = int.MinValue, MaxY = int.MinValue, MaxZ = int.MinValue, MaxActivity = int.MinValue;
+    //    foreach (DataRow row in dt.Rows)
+    //    {
+    //        MinHR = Math.Min(MinHR, BaseView.GetIntFieldValue(row, "HR"));
+    //        MaxHR = Math.Max(MaxHR, BaseView.GetIntFieldValue(row, "HR"));
+    //        MinSkinTemp = Math.Min(MinSkinTemp, BaseView.GetIntFieldValue(row, "SkinTemp"));
+    //        MaxSkinTemp = Math.Max(MaxSkinTemp, BaseView.GetIntFieldValue(row, "SkinTemp"));
+    //        MinGSR = Math.Min(MinGSR, BaseView.GetIntFieldValue(row, "GSR"));
+    //        MaxGSR = Math.Max(MaxGSR, BaseView.GetIntFieldValue(row, "GSR"));
+    //        MinX = Math.Min(MinX, BaseView.GetIntFieldValue(row, "ValueX"));
+    //        MaxX = Math.Max(MaxX, BaseView.GetIntFieldValue(row, "ValueX"));
+    //        MinY = Math.Min(MinY, BaseView.GetIntFieldValue(row, "ValueY"));
+    //        MaxY = Math.Max(MaxY, BaseView.GetIntFieldValue(row, "ValueY"));
+    //        MinZ = Math.Min(MinZ, BaseView.GetIntFieldValue(row, "ValueZ"));
+    //        MaxZ = Math.Max(MaxZ, BaseView.GetIntFieldValue(row, "ValueZ"));
+    //        MinActivity = Math.Min(MinActivity, BaseView.GetIntFieldValue(row, "ActivityLevel"));
+    //        MaxActivity = Math.Max(MaxActivity, BaseView.GetIntFieldValue(row, "ActivityLevel"));
+    //    }
 
-        Steema.TeeChart.Styles.FastLine sHR = new Steema.TeeChart.Styles.FastLine();
-        sHR.Stairs = true;
-        sHR.Color = Color.Red;
+    //    Steema.TeeChart.Styles.FastLine sHR = new Steema.TeeChart.Styles.FastLine();
+    //    sHR.Stairs = true;
+    //    sHR.Color = Color.Red;
 
-        Steema.TeeChart.Styles.Line sSkinTemp = new Steema.TeeChart.Styles.Line();
-        sSkinTemp.Color = Color.YellowGreen;
+    //    Steema.TeeChart.Styles.Line sSkinTemp = new Steema.TeeChart.Styles.Line();
+    //    sSkinTemp.Color = Color.YellowGreen;
 
-        Steema.TeeChart.Styles.Line sGSR = new Steema.TeeChart.Styles.Line();
-        sGSR.Color = Color.Black;
+    //    Steema.TeeChart.Styles.Line sGSR = new Steema.TeeChart.Styles.Line();
+    //    sGSR.Color = Color.Black;
 
-        Steema.TeeChart.Styles.Line sX = new Steema.TeeChart.Styles.Line();
-        sX.Color = Color.Green;
+    //    Steema.TeeChart.Styles.Line sX = new Steema.TeeChart.Styles.Line();
+    //    sX.Color = Color.Green;
 
-        Steema.TeeChart.Styles.Line sY = new Steema.TeeChart.Styles.Line();
-        sY.Color = Color.DarkRed;
+    //    Steema.TeeChart.Styles.Line sY = new Steema.TeeChart.Styles.Line();
+    //    sY.Color = Color.DarkRed;
 
-        Steema.TeeChart.Styles.Line sZ = new Steema.TeeChart.Styles.Line();
-        sZ.Color = Color.Blue;
+    //    Steema.TeeChart.Styles.Line sZ = new Steema.TeeChart.Styles.Line();
+    //    sZ.Color = Color.Blue;
 
-        Steema.TeeChart.Styles.Line sActility = new Steema.TeeChart.Styles.Line();
-        sActility.Color = Color.Purple;
+    //    Steema.TeeChart.Styles.Line sActility = new Steema.TeeChart.Styles.Line();
+    //    sActility.Color = Color.Purple;
 
-        foreach (DataRow row in dt.Rows)
-        {
-            sHR.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), MaHoaKhongThuNguyen(BaseView.GetFloatFieldValue(row, "HR"), 13, MaxHR, MinHR));
-            sSkinTemp.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), MaHoaKhongThuNguyen(BaseView.GetFloatFieldValue(row, "SkinTemp"), 11, MaxHR, MinHR));
-            sGSR.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), MaHoaKhongThuNguyen(BaseView.GetFloatFieldValue(row, "GSR"), 9, MaxHR, MinHR));
-            sX.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), MaHoaKhongThuNguyen(BaseView.GetFloatFieldValue(row, "ValueX"), 7, MaxHR, MinHR));
-            sY.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), MaHoaKhongThuNguyen(BaseView.GetFloatFieldValue(row, "ValueY"), 5, MaxHR, MinHR));
-            sZ.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), MaHoaKhongThuNguyen(BaseView.GetFloatFieldValue(row, "ValueZ"), 3, MaxHR, MinHR));
-            sActility.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), MaHoaKhongThuNguyen(BaseView.GetFloatFieldValue(row, "ActivityLevel"), 1, MaxHR, MinHR));
-        }
+    //    foreach (DataRow row in dt.Rows)
+    //    {
+    //        sHR.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), MaHoaKhongThuNguyen(BaseView.GetFloatFieldValue(row, "HR"), 13, MaxHR, MinHR));
+    //        sSkinTemp.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), MaHoaKhongThuNguyen(BaseView.GetFloatFieldValue(row, "SkinTemp"), 11, MaxHR, MinHR));
+    //        sGSR.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), MaHoaKhongThuNguyen(BaseView.GetFloatFieldValue(row, "GSR"), 9, MaxHR, MinHR));
+    //        sX.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), MaHoaKhongThuNguyen(BaseView.GetFloatFieldValue(row, "ValueX"), 7, MaxHR, MinHR));
+    //        sY.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), MaHoaKhongThuNguyen(BaseView.GetFloatFieldValue(row, "ValueY"), 5, MaxHR, MinHR));
+    //        sZ.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), MaHoaKhongThuNguyen(BaseView.GetFloatFieldValue(row, "ValueZ"), 3, MaxHR, MinHR));
+    //        sActility.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), MaHoaKhongThuNguyen(BaseView.GetFloatFieldValue(row, "ActivityLevel"), 1, MaxHR, MinHR));
+    //    }
 
-        WebChartDrawData.Chart.Series.Add(sHR);
-        WebChartDrawData.Chart.Series.Add(sSkinTemp);
-        WebChartDrawData.Chart.Series.Add(sGSR);
-        WebChartDrawData.Chart.Series.Add(sX);
-        WebChartDrawData.Chart.Series.Add(sY);
-        WebChartDrawData.Chart.Series.Add(sZ);
-        WebChartDrawData.Chart.Series.Add(sActility);
-    }
+    //    WebChartDrawData.Chart.Series.Add(sHR);
+    //    WebChartDrawData.Chart.Series.Add(sSkinTemp);
+    //    WebChartDrawData.Chart.Series.Add(sGSR);
+    //    WebChartDrawData.Chart.Series.Add(sX);
+    //    WebChartDrawData.Chart.Series.Add(sY);
+    //    WebChartDrawData.Chart.Series.Add(sZ);
+    //    WebChartDrawData.Chart.Series.Add(sActility);
+    //}
 
     private float MaHoaKhongThuNguyen(float Zj, float Position, float Zmax, float Zmin)
     {

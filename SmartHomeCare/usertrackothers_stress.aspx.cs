@@ -140,7 +140,9 @@ public partial class usertrackothers_stress : System.Web.UI.Page
 
         if (dt != null && dt.Rows.Count > 0)
         {
-            AddSeriesLowHighToWebChart(dt);
+            //AddSeriesLowHighToWebChart(dt);
+            ChartStressMain.DataSource = dt;
+            ChartStressMain.DataBind();
             pnStress.Visible = true;
             pnEmptyData.Visible = false;
             pnRawData.Visible = false;
@@ -153,59 +155,59 @@ public partial class usertrackothers_stress : System.Web.UI.Page
         }
     }
 
-    private void AddSeriesLowHighToWebChart(DataTable dt)
-    {
-        Steema.TeeChart.Chart ch1 = WebChartStress.Chart;
-        ch1.Series.Clear();
-        tmpChart = new MemoryStream();
-        //if (Session["WebChartStress"] == null)
-        //{
-        if (dt != null && dt.Rows.Count > 0)
-        {
-            Steema.TeeChart.Styles.Bar bar = new Steema.TeeChart.Styles.Bar();
-            //bar.XValues.DateTime = true;
-            //bar.Color = System.Drawing.Color.Blue;
-            bar.Marks.Visible = false;
-            int MinL1 = 0, MaxL1 = 0;
-            foreach (DataRow row in dt.Rows)
-            {
-                bar.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "StressLevel"));
-                //if (MinL1 == 0 || (BaseView.GetIntFieldValue(row, "StressLevel") < MinL1 && BaseView.GetIntFieldValue(row, "StressLevel") > 0))
-                //{
-                //    MinL1 = BaseView.GetIntFieldValue(row, "StressLevel");
-                //}
-                //if (MaxL1 == 0 || (BaseView.GetIntFieldValue(row, "StressLevel") > MaxL1 && BaseView.GetIntFieldValue(row, "StressLevel") > 0))
-                //{
-                //    MaxL1 = BaseView.GetIntFieldValue(row, "StressLevel");
-                //}
-            }
-            ch1.Axes.Bottom.Labels.DateTimeFormat = "MM/dd/yyyy hh:mm:ss tt";
-            ch1.Axes.Left.Title.Text = "% Stress";
-            ch1.Series.Add(bar);
-            ch1.Axes.Bottom.SetMinMax(ch1.Series[0].MinXValue(), ch1.Series[0].MaxXValue());
-            ch1.Axes.Left.SetMinMax(0, 100);
-            //ch1.Axes.Left.Visible = false;
-            //ch1.Axes.Right.Visible = false;
-            ch1.Export.Template.Save(tmpChart);
-            //save template to a Session variable
-            ((Steema.TeeChart.Tools.ScrollTool)WebChartStress.Chart.Tools[0]).StartPosition = 1;
-            int n = 20 * 100 / dt.Rows.Count;
-            //((Steema.TeeChart.Tools.ScrollTool)WebChartStress.Chart.Tools[0]).ViewSegmentSize = 3;
+    //private void AddSeriesLowHighToWebChart(DataTable dt)
+    //{
+    //    Steema.TeeChart.Chart ch1 = WebChartStress.Chart;
+    //    ch1.Series.Clear();
+    //    tmpChart = new MemoryStream();
+    //    //if (Session["WebChartStress"] == null)
+    //    //{
+    //    if (dt != null && dt.Rows.Count > 0)
+    //    {
+    //        Steema.TeeChart.Styles.Bar bar = new Steema.TeeChart.Styles.Bar();
+    //        //bar.XValues.DateTime = true;
+    //        //bar.Color = System.Drawing.Color.Blue;
+    //        bar.Marks.Visible = false;
+    //        int MinL1 = 0, MaxL1 = 0;
+    //        foreach (DataRow row in dt.Rows)
+    //        {
+    //            bar.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "StressLevel"));
+    //            //if (MinL1 == 0 || (BaseView.GetIntFieldValue(row, "StressLevel") < MinL1 && BaseView.GetIntFieldValue(row, "StressLevel") > 0))
+    //            //{
+    //            //    MinL1 = BaseView.GetIntFieldValue(row, "StressLevel");
+    //            //}
+    //            //if (MaxL1 == 0 || (BaseView.GetIntFieldValue(row, "StressLevel") > MaxL1 && BaseView.GetIntFieldValue(row, "StressLevel") > 0))
+    //            //{
+    //            //    MaxL1 = BaseView.GetIntFieldValue(row, "StressLevel");
+    //            //}
+    //        }
+    //        ch1.Axes.Bottom.Labels.DateTimeFormat = "MM/dd/yyyy hh:mm:ss tt";
+    //        ch1.Axes.Left.Title.Text = "% Stress";
+    //        ch1.Series.Add(bar);
+    //        ch1.Axes.Bottom.SetMinMax(ch1.Series[0].MinXValue(), ch1.Series[0].MaxXValue());
+    //        ch1.Axes.Left.SetMinMax(0, 100);
+    //        //ch1.Axes.Left.Visible = false;
+    //        //ch1.Axes.Right.Visible = false;
+    //        ch1.Export.Template.Save(tmpChart);
+    //        //save template to a Session variable
+    //        ((Steema.TeeChart.Tools.ScrollTool)WebChartStress.Chart.Tools[0]).StartPosition = 1;
+    //        int n = 20 * 100 / dt.Rows.Count;
+    //        //((Steema.TeeChart.Tools.ScrollTool)WebChartStress.Chart.Tools[0]).ViewSegmentSize = 3;
 
-        }
-        //}
-        //else
-        //{
-        //    //retrieve the session stored Chart
-        //    tmpChart = (MemoryStream)Session["WebChartStress"];
-        //    //set the Stream position to 0 as the last read/write
-        //    //will have moved the position to the end of the stream
-        //    tmpChart.Position = 0;
-        //    //import saved Chart
-        //    WebChartStress.Chart.Import.Template.Load(tmpChart);
-        //    //CheckZoom(WebChartHeartRate);
-        //}
-    }
+    //    }
+    //    //}
+    //    //else
+    //    //{
+    //    //    //retrieve the session stored Chart
+    //    //    tmpChart = (MemoryStream)Session["WebChartStress"];
+    //    //    //set the Stream position to 0 as the last read/write
+    //    //    //will have moved the position to the end of the stream
+    //    //    tmpChart.Position = 0;
+    //    //    //import saved Chart
+    //    //    WebChartStress.Chart.Import.Template.Load(tmpChart);
+    //    //    //CheckZoom(WebChartHeartRate);
+    //    //}
+    //}
 
     private void LoadDrawData()
     {
@@ -213,8 +215,10 @@ public partial class usertrackothers_stress : System.Web.UI.Page
         DataTable dt = _db.GetList_Stress_Rawdata_Graph(userName(), fromDate(), toDate());
         if (dt != null && dt.Rows.Count > 0)
         {
-            ChartDrawData.DataSource = dt;
-            ChartDrawData.DataBind();
+            //ChartDrawData.DataSource = dt;
+            //ChartDrawData.DataBind();
+            ChartStress.DataSource = dt;
+            ChartStress.DataBind();
             pnStress.Visible = false;
             pnEmptyData.Visible = false;
             pnRawData.Visible = true;
