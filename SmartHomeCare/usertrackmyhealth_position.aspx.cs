@@ -290,8 +290,8 @@ public partial class usertrackmyhealth_position : System.Web.UI.Page
                         break;
                 }
             }
-            //ChartPosition.DataSource = dt;
-            //ChartPosition.DataBind();
+            //ChartDrawData.DataSource = dt;
+            //ChartDrawData.DataBind();
             dtlPostion.DataSource = dt;
             dtlPostion.DataBind();
             pnEmptyData.Visible = false;
