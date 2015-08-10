@@ -10,6 +10,7 @@ using Steema.TeeChart;
 using System.Drawing;
 using System.Text;
 using System.IO;
+using DevExpress.XtraCharts;
 public partial class usertrackmyhealth_temperature_graph : System.Web.UI.Page
 {
     private DBClass _db = new DBClass();
@@ -229,67 +230,67 @@ public partial class usertrackmyhealth_temperature_graph : System.Web.UI.Page
     
     private void AddSeriesChart(DataTable dt)
     {
-        Steema.TeeChart.Chart ch1 = ChartTemperature.Chart;
+        DevExpress.XtraCharts.Web.WebChartControl ch1 = ChartTemperature;
         if (dt != null && dt.Rows.Count > 0)
         {
-            Steema.TeeChart.Styles.Line sNormal = new Steema.TeeChart.Styles.Line();
-            Steema.TeeChart.Styles.Line sHigh = new Steema.TeeChart.Styles.Line();
-            Steema.TeeChart.Styles.Line sVeryHigh = new Steema.TeeChart.Styles.Line();
-            Steema.TeeChart.Styles.Line sKinTemp = new Steema.TeeChart.Styles.Line();
-            Steema.TeeChart.Styles.Line sAmbTemp = new Steema.TeeChart.Styles.Line();
+            DevExpress.XtraCharts.Series sNormal = new DevExpress.XtraCharts.Series("Normal", DevExpress.XtraCharts.ViewType.Line);
+            DevExpress.XtraCharts.Series sHigh = new DevExpress.XtraCharts.Series("High", DevExpress.XtraCharts.ViewType.Line);
+            DevExpress.XtraCharts.Series sVeryHigh = new DevExpress.XtraCharts.Series("Very High", DevExpress.XtraCharts.ViewType.Line);
+            DevExpress.XtraCharts.Series sKinTemp = new DevExpress.XtraCharts.Series("Skin Temp", DevExpress.XtraCharts.ViewType.Line);
+            DevExpress.XtraCharts.Series sAmbTemp = new DevExpress.XtraCharts.Series("Amb Temp", DevExpress.XtraCharts.ViewType.Line);
 
-            sNormal.Color = System.Drawing.Color.Lime;
-            sHigh.Color = System.Drawing.Color.Orange;
-            sVeryHigh.Color = System.Drawing.Color.OrangeRed;
-            sKinTemp.Color = System.Drawing.Color.Black;
-            sAmbTemp.Color = System.Drawing.Color.Red;
+            sNormal.View.Color = System.Drawing.Color.Lime;
+            sHigh.View.Color = System.Drawing.Color.Orange;
+            sVeryHigh.View.Color = System.Drawing.Color.OrangeRed;
+            sKinTemp.View.Color = System.Drawing.Color.Black;
+            sAmbTemp.View.Color = System.Drawing.Color.Red;
 
-            sNormal.Title = "Normal";
-            sHigh.Title = "High";
-            sVeryHigh.Title = "Very High";
-            sKinTemp.Title = "Skin Temp";
-            sAmbTemp.Title = "Amb Temp";
-
-            sNormal.LinePen.Width = 3;
-            sHigh.LinePen.Width = 3;
-            sVeryHigh.LinePen.Width = 3;
+            //sNormal.LinePen.Width = 3;
+            //sHigh.LinePen.Width = 3;
+            //sVeryHigh.LinePen.Width = 3;
 
             double TempNormal = 97, TempHigh = 100.4, TempVeryHigh = 103.9;
             if (GetIsUSOrMetricForUser(userName()))
             {
-                ch1.Axes.Left.Title.Text = "Temperature (°F)";
+                ChartTitle chartTitle1 = new ChartTitle();
+                chartTitle1.Text = "Temperature (°F)";
+                ch1.Titles.Add(chartTitle1);
+                //ch1.Axes.Left.Title.Text = "Temperature (°F)";
                 TempNormal = 97;
                 TempHigh = 100.4;
                 TempVeryHigh = 103.9;
                 foreach (DataRow row in dt.Rows)
                 {
-                    sNormal.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), TempNormal);
-                    sHigh.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), TempHigh);
-                    sVeryHigh.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), TempVeryHigh);
-                    sKinTemp.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "SkinTemp"));
-                    sAmbTemp.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "AmbTemp"));
+                    sNormal.Points.Add(new DevExpress.XtraCharts.SeriesPoint(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), TempNormal));
+                    sHigh.Points.Add(new DevExpress.XtraCharts.SeriesPoint(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), TempHigh));
+                    sVeryHigh.Points.Add(new DevExpress.XtraCharts.SeriesPoint(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), TempVeryHigh));
+                    sKinTemp.Points.Add(new DevExpress.XtraCharts.SeriesPoint(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "SkinTemp")));
+                    sAmbTemp.Points.Add(new DevExpress.XtraCharts.SeriesPoint(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "AmbTemp")));
                 }
             }
             else
             {                
-                ch1.Axes.Left.Title.Text = "Temperature (°C)";
+                //ch1.Axes.Left.Title.Text = "Temperature (°C)";
+                ChartTitle chartTitle1 = new ChartTitle();
+                chartTitle1.Text = "Temperature (°C)";
+                ch1.Titles.Add(chartTitle1);
                 TempNormal = 36.1;
                 TempHigh = 38;
                 TempVeryHigh = 39.9;
                 foreach (DataRow row in dt.Rows)
                 {
-                    sNormal.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), TempNormal);
-                    sHigh.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), TempHigh);
-                    sVeryHigh.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), TempVeryHigh);
-                    sKinTemp.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "SkinTempC"));
-                    sAmbTemp.Add(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "AmbTempC"));
+                    sNormal.Points.Add(new DevExpress.XtraCharts.SeriesPoint(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), TempNormal));
+                    sHigh.Points.Add(new DevExpress.XtraCharts.SeriesPoint(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), TempHigh));
+                    sVeryHigh.Points.Add(new DevExpress.XtraCharts.SeriesPoint(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), TempVeryHigh));
+                    sKinTemp.Points.Add(new DevExpress.XtraCharts.SeriesPoint(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "SkinTempC")));
+                    sAmbTemp.Points.Add(new DevExpress.XtraCharts.SeriesPoint(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "AmbTempC")));
                 }
             }
 
-            Steema.TeeChart.Legend le = new Steema.TeeChart.Legend(ch1);
+            //Steema.TeeChart.Legend le = new Steema.TeeChart.Legend(ch1);
             
-            ch1.Axes.Bottom.Labels.DateTimeFormat = "MM/dd/yyyy HH:mm";
-            ch1.Axes.Left.SetMinMax(TempNormal - 10, TempVeryHigh + 10);
+            //ch1.Axes.Bottom.Labels.DateTimeFormat = "MM/dd/yyyy HH:mm";
+            //ch1.Axes.Left.SetMinMax(TempNormal - 10, TempVeryHigh + 10);
             ch1.Series.Add(sNormal);
             ch1.Series.Add(sHigh);
             ch1.Series.Add(sVeryHigh);
