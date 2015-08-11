@@ -82,7 +82,7 @@ public partial class usertrackothers_temperature : System.Web.UI.Page
         DataRow row = (DataRow)Session["User"];
         if (row != null)
         {
-            DateTime fromTime = DateTime.MinValue, toTime;
+            DateTime fromTime = DateTime.MinValue, toTime = DateTime.MinValue;
             DateTime.TryParse(txtFromDateChart.Text, out fromTime);
             DateTime.TryParse(txtToDateChart.Text, out toTime);
             if (toTime == DateTime.MinValue)
