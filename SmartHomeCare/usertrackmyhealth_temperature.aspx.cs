@@ -230,6 +230,8 @@ public partial class usertrackmyhealth_temperature_graph : System.Web.UI.Page
     
     private void AddSeriesChart(DataTable dt)
     {
+        ChartTemperature.Series.Clear();
+        ChartTemperature.Titles.Clear();
         DevExpress.XtraCharts.Web.WebChartControl ch1 = ChartTemperature;
         if (dt != null && dt.Rows.Count > 0)
         {

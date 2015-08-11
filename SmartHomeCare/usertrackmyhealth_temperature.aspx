@@ -81,44 +81,11 @@
                                                         GetChartFile="GetChart.aspx" Height="400px" TempChart="Session" 
                                                         Width="700px" />--%>
                                                     <dxchartsui:WebChartControl ID="ChartTemperature" runat="server" Height="400px"
-                                                        Width="700px"><diagramserializable>
-                                                            <cc1:XYDiagram>
-                                                                <axisx visibleinpanesserializable="-1">
-                                                                    <range sidemarginsenabled="True" />
-                                                                </axisx>
-                                                                <axisy visibleinpanesserializable="-1">
-                                                                    <range sidemarginsenabled="True" />
-                                                                </axisy>
-                                                            </cc1:XYDiagram>
-                                                        </diagramserializable><fillstyle>
+                                                        Width="700px"><fillstyle>
                                                             <optionsserializable>
                                                                 <cc1:SolidFillOptions />
                                                             </optionsserializable>
-                                                        </fillstyle><seriesserializable>
-                                                            <cc1:Series Name="Series 2">
-                                                                <viewserializable>
-                                                                    <cc1:LineSeriesView Color="Brown">
-                                                                    </cc1:LineSeriesView>
-                                                                </viewserializable>
-                                                                <labelserializable>
-                                                                    <cc1:PointSeriesLabel LineVisible="True">
-                                                                        <fillstyle>
-                                                                            <optionsserializable>
-                                                                                <cc1:SolidFillOptions />
-                                                                            </optionsserializable>
-                                                                        </fillstyle>
-                                                                        <pointoptionsserializable>
-                                                                            <cc1:PointOptions>
-                                                                            </cc1:PointOptions>
-                                                                        </pointoptionsserializable>
-                                                                    </cc1:PointSeriesLabel>
-                                                                </labelserializable>
-                                                                <legendpointoptionsserializable>
-                                                                    <cc1:PointOptions>
-                                                                    </cc1:PointOptions>
-                                                                </legendpointoptionsserializable>
-                                                            </cc1:Series>
-                                                        </seriesserializable><seriestemplate>
+                                                        </fillstyle><seriestemplate>
                                                             <viewserializable>
                                                                 <cc1:SideBySideBarSeriesView>
                                                                 </cc1:SideBySideBarSeriesView>

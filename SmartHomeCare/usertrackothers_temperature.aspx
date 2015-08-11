@@ -5,6 +5,11 @@
     Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Assembly="TeeChart" Namespace="Steema.TeeChart.Web" TagPrefix="tchart" %>
+
+<%@ Register Assembly="DevExpress.XtraCharts.v12.1.Web, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.XtraCharts.Web" TagPrefix="dxchartsui" %>
+<%@ Register assembly="DevExpress.XtraCharts.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.XtraCharts" tagprefix="cc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head1" runat="Server">
     <link href="styles/tab.css" rel="stylesheet" type="text/css" />
     <link href="styles/control.css" rel="stylesheet" type="text/css" />
@@ -56,8 +61,45 @@
                                         <div class="item_report">
                                             <div id="chart">
                                                 <asp:Panel ID="pnChart" runat="server" Visible="False">
-                                                    <tchart:WebChart ID="ChartTemperature" runat="server" AutoPostback="False" Config="AAEAAAD/////AQAAAAAAAAAMAgAAAFJUZWVDaGFydCwgVmVyc2lvbj00LjEuMjAxMy4xMTA4NiwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YzgxMjYyNzZjNzdiZGI3DAMAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhBQEAAAAVU3RlZW1hLlRlZUNoYXJ0LkNoYXJ0OQAAABAuQ3VzdG9tQ2hhcnRSZWN0Ey5QYW5lbC5NYXJnaW5Cb3R0b20PLkxlZ2VuZC5WaXNpYmxlDS5IZWFkZXIuTGluZXMZLkFzcGVjdC5Db2xvclBhbGV0dGVJbmRleBAuQXNwZWN0LkhlaWdodDNEDy5Bc3BlY3QuV2lkdGgzRA4uQXNwZWN0LlZpZXczRAdUb29scy4wGC5Ub29scy4wLlZpZXdTZWdtZW50U2l6ZRQuVG9vbHMuMC5Nb3VzZUFjdGlvbhYuVG9vbHMuMC5TdGFydFBvc2l0aW9uGS5Ub29scy4wLlNlZ21lbnRWaWV3VW5pdHMcLlRvb2xzLjAuQXR0cmlidXRlcy5EcmFnWm9vbR8uVG9vbHMuMC5BdHRyaWJ1dGVzLkNhbnZhc0luZGV4Hi5Ub29scy4wLkF0dHJpYnV0ZXMuRmlsbFRyYW5zcBwuVG9vbHMuMC5BdHRyaWJ1dGVzLkltYWdlU3RyIy5Ub29scy4wLkF0dHJpYnV0ZXMuTm9DbGlja1Bvc3RiYWNrGC5Ub29scy4wLlpvb21DYW52YXNJbmRleB0uVG9vbHMuMC5ab29tRmlsbFRyYW5zcGFyZW5jeRUuVG9vbHMuMC5ab29tUGVuQ29sb3IYLlRvb2xzLjAuQ3VzdG9tVmFyaWFibGVzEi5BeGVzLk51bUZpeGVkQXhlcxMuQXhlcy5MZWZ0LklHYXBTaXplFC5BeGVzLkxlZnQuSVN0YXJ0UG9zEi5BeGVzLkxlZnQuSUVuZFBvcxQuQXhlcy5MZWZ0LklBeGlzU2l6ZRYuQXhlcy5MZWZ0LklzRGVwdGhBeGlzGC5BeGVzLkxlZnQuVGl0bGUuQ2FwdGlvbhYuQXhlcy5MZWZ0LlRpdGxlLkxpbmVzEi5BeGVzLlRvcC5JR2FwU2l6ZRMuQXhlcy5Ub3AuSVN0YXJ0UG9zES5BeGVzLlRvcC5JRW5kUG9zEy5BeGVzLlRvcC5JQXhpc1NpemUVLkF4ZXMuVG9wLklzRGVwdGhBeGlzFC5BeGVzLlJpZ2h0LklHYXBTaXplFS5BeGVzLlJpZ2h0LklTdGFydFBvcxMuQXhlcy5SaWdodC5JRW5kUG9zFS5BeGVzLlJpZ2h0LklBeGlzU2l6ZRcuQXhlcy5SaWdodC5Jc0RlcHRoQXhpcxUuQXhlcy5Cb3R0b20uSUdhcFNpemUWLkF4ZXMuQm90dG9tLklTdGFydFBvcxQuQXhlcy5Cb3R0b20uSUVuZFBvcxYuQXhlcy5Cb3R0b20uSUF4aXNTaXplGC5BeGVzLkJvdHRvbS5Jc0RlcHRoQXhpcx0uQXhlcy5Cb3R0b20uUmVsYXRpdmVQb3NpdGlvbhouQXhlcy5Cb3R0b20uUG9zaXRpb25Vbml0cxcuQXhlcy5EZXB0aFRvcC5JR2FwU2l6ZRguQXhlcy5EZXB0aFRvcC5JU3RhcnRQb3MWLkF4ZXMuRGVwdGhUb3AuSUVuZFBvcxguQXhlcy5EZXB0aFRvcC5JQXhpc1NpemUaLkF4ZXMuRGVwdGhUb3AuSXNEZXB0aEF4aXMULkF4ZXMuRGVwdGguSUdhcFNpemUVLkF4ZXMuRGVwdGguSVN0YXJ0UG9zEy5BeGVzLkRlcHRoLklFbmRQb3MVLkF4ZXMuRGVwdGguSUF4aXNTaXplFy5BeGVzLkRlcHRoLklzRGVwdGhBeGlzAAAABgAAAAABAAQABAAAAAEAAAAEAQAAAAAAAAEGAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAQYBCAgIAQgnU3RlZW1hLlRlZUNoYXJ0LlRvb2xzLlNjcm9sbE1vdXNlQWN0aW9uAgAAAAgoU3RlZW1hLlRlZUNoYXJ0LlRvb2xzLlNjcm9sbFRvb2xWaWV3VW5pdAIAAAABCAgBCAgUU3lzdGVtLkRyYXdpbmcuQ29sb3IDAAAACAgICAgBCAgICAEICAgIAQgICAgBBh1TdGVlbWEuVGVlQ2hhcnQuUG9zaXRpb25Vbml0cwIAAAAICAgIAQgICAgBAgAAAAAAAAAAAAAgQAAJBAAAAAAAAAAAAAAAAAAAAAAGBQAAACBTdGVlbWEuVGVlQ2hhcnQuVG9vbHMuU2Nyb2xsVG9vbAEAAAAF+v///ydTdGVlbWEuVGVlQ2hhcnQuVG9vbHMuU2Nyb2xsTW91c2VBY3Rpb24BAAAAB3ZhbHVlX18ACAIAAAABAAAAAQAAAAX5////KFN0ZWVtYS5UZWVDaGFydC5Ub29scy5TY3JvbGxUb29sVmlld1VuaXQBAAAAB3ZhbHVlX18ACAIAAAABAAAAAAAAAAAAAAAABggAAAAAAPMBAAAeAAAABff///8UU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAABG5hbWUFdmFsdWUKa25vd25Db2xvcgVzdGF0ZQEAAAAJBwcDAAAACgAAAAAAAAAAjQABAAkIAAAABgAAAAAAAAA7AAAAWwEAACABAAAABgoAAAATVGVtcGVyYXR1cmUgKCDCsEYgKQkLAAAAAAAAACoAAACgAgAAdgIAAAAAAAAAOwAAAFsBAAAgAQAAAAAAAAAqAAAAoAIAAHYCAAAAAAAAAAAAMMAF9P///x1TdGVlbWEuVGVlQ2hhcnQuUG9zaXRpb25Vbml0cwEAAAAHdmFsdWVfXwAIAgAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAABEQQAAAABAAAACQgAAAARCwAAAAEAAAAGDgAAABNUZW1wZXJhdHVyZSAoIMKwRiApCw=="
-                                                        GetChartFile="GetChart.aspx" Height="400px" TempChart="Session" Width="700px" />
+                                                    <%--<tchart:WebChart ID="ChartTemperature" runat="server" AutoPostback="False" Config="AAEAAAD/////AQAAAAAAAAAMAgAAAFJUZWVDaGFydCwgVmVyc2lvbj00LjEuMjAxMy4xMTA4NiwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YzgxMjYyNzZjNzdiZGI3DAMAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhBQEAAAAVU3RlZW1hLlRlZUNoYXJ0LkNoYXJ0OQAAABAuQ3VzdG9tQ2hhcnRSZWN0Ey5QYW5lbC5NYXJnaW5Cb3R0b20PLkxlZ2VuZC5WaXNpYmxlDS5IZWFkZXIuTGluZXMZLkFzcGVjdC5Db2xvclBhbGV0dGVJbmRleBAuQXNwZWN0LkhlaWdodDNEDy5Bc3BlY3QuV2lkdGgzRA4uQXNwZWN0LlZpZXczRAdUb29scy4wGC5Ub29scy4wLlZpZXdTZWdtZW50U2l6ZRQuVG9vbHMuMC5Nb3VzZUFjdGlvbhYuVG9vbHMuMC5TdGFydFBvc2l0aW9uGS5Ub29scy4wLlNlZ21lbnRWaWV3VW5pdHMcLlRvb2xzLjAuQXR0cmlidXRlcy5EcmFnWm9vbR8uVG9vbHMuMC5BdHRyaWJ1dGVzLkNhbnZhc0luZGV4Hi5Ub29scy4wLkF0dHJpYnV0ZXMuRmlsbFRyYW5zcBwuVG9vbHMuMC5BdHRyaWJ1dGVzLkltYWdlU3RyIy5Ub29scy4wLkF0dHJpYnV0ZXMuTm9DbGlja1Bvc3RiYWNrGC5Ub29scy4wLlpvb21DYW52YXNJbmRleB0uVG9vbHMuMC5ab29tRmlsbFRyYW5zcGFyZW5jeRUuVG9vbHMuMC5ab29tUGVuQ29sb3IYLlRvb2xzLjAuQ3VzdG9tVmFyaWFibGVzEi5BeGVzLk51bUZpeGVkQXhlcxMuQXhlcy5MZWZ0LklHYXBTaXplFC5BeGVzLkxlZnQuSVN0YXJ0UG9zEi5BeGVzLkxlZnQuSUVuZFBvcxQuQXhlcy5MZWZ0LklBeGlzU2l6ZRYuQXhlcy5MZWZ0LklzRGVwdGhBeGlzGC5BeGVzLkxlZnQuVGl0bGUuQ2FwdGlvbhYuQXhlcy5MZWZ0LlRpdGxlLkxpbmVzEi5BeGVzLlRvcC5JR2FwU2l6ZRMuQXhlcy5Ub3AuSVN0YXJ0UG9zES5BeGVzLlRvcC5JRW5kUG9zEy5BeGVzLlRvcC5JQXhpc1NpemUVLkF4ZXMuVG9wLklzRGVwdGhBeGlzFC5BeGVzLlJpZ2h0LklHYXBTaXplFS5BeGVzLlJpZ2h0LklTdGFydFBvcxMuQXhlcy5SaWdodC5JRW5kUG9zFS5BeGVzLlJpZ2h0LklBeGlzU2l6ZRcuQXhlcy5SaWdodC5Jc0RlcHRoQXhpcxUuQXhlcy5Cb3R0b20uSUdhcFNpemUWLkF4ZXMuQm90dG9tLklTdGFydFBvcxQuQXhlcy5Cb3R0b20uSUVuZFBvcxYuQXhlcy5Cb3R0b20uSUF4aXNTaXplGC5BeGVzLkJvdHRvbS5Jc0RlcHRoQXhpcx0uQXhlcy5Cb3R0b20uUmVsYXRpdmVQb3NpdGlvbhouQXhlcy5Cb3R0b20uUG9zaXRpb25Vbml0cxcuQXhlcy5EZXB0aFRvcC5JR2FwU2l6ZRguQXhlcy5EZXB0aFRvcC5JU3RhcnRQb3MWLkF4ZXMuRGVwdGhUb3AuSUVuZFBvcxguQXhlcy5EZXB0aFRvcC5JQXhpc1NpemUaLkF4ZXMuRGVwdGhUb3AuSXNEZXB0aEF4aXMULkF4ZXMuRGVwdGguSUdhcFNpemUVLkF4ZXMuRGVwdGguSVN0YXJ0UG9zEy5BeGVzLkRlcHRoLklFbmRQb3MVLkF4ZXMuRGVwdGguSUF4aXNTaXplFy5BeGVzLkRlcHRoLklzRGVwdGhBeGlzAAAABgAAAAABAAQABAAAAAEAAAAEAQAAAAAAAAEGAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAQYBCAgIAQgnU3RlZW1hLlRlZUNoYXJ0LlRvb2xzLlNjcm9sbE1vdXNlQWN0aW9uAgAAAAgoU3RlZW1hLlRlZUNoYXJ0LlRvb2xzLlNjcm9sbFRvb2xWaWV3VW5pdAIAAAABCAgBCAgUU3lzdGVtLkRyYXdpbmcuQ29sb3IDAAAACAgICAgBCAgICAEICAgIAQgICAgBBh1TdGVlbWEuVGVlQ2hhcnQuUG9zaXRpb25Vbml0cwIAAAAICAgIAQgICAgBAgAAAAAAAAAAAAAgQAAJBAAAAAAAAAAAAAAAAAAAAAAGBQAAACBTdGVlbWEuVGVlQ2hhcnQuVG9vbHMuU2Nyb2xsVG9vbAEAAAAF+v///ydTdGVlbWEuVGVlQ2hhcnQuVG9vbHMuU2Nyb2xsTW91c2VBY3Rpb24BAAAAB3ZhbHVlX18ACAIAAAABAAAAAQAAAAX5////KFN0ZWVtYS5UZWVDaGFydC5Ub29scy5TY3JvbGxUb29sVmlld1VuaXQBAAAAB3ZhbHVlX18ACAIAAAABAAAAAAAAAAAAAAAABggAAAAAAPMBAAAeAAAABff///8UU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAABG5hbWUFdmFsdWUKa25vd25Db2xvcgVzdGF0ZQEAAAAJBwcDAAAACgAAAAAAAAAAjQABAAkIAAAABgAAAAAAAAA7AAAAWwEAACABAAAABgoAAAATVGVtcGVyYXR1cmUgKCDCsEYgKQkLAAAAAAAAACoAAACgAgAAdgIAAAAAAAAAOwAAAFsBAAAgAQAAAAAAAAAqAAAAoAIAAHYCAAAAAAAAAAAAMMAF9P///x1TdGVlbWEuVGVlQ2hhcnQuUG9zaXRpb25Vbml0cwEAAAAHdmFsdWVfXwAIAgAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAABEQQAAAABAAAACQgAAAARCwAAAAEAAAAGDgAAABNUZW1wZXJhdHVyZSAoIMKwRiApCw=="
+                                                        GetChartFile="GetChart.aspx" Height="400px" TempChart="Session" Width="700px" />--%>
+                                                        <dxchartsui:WebChartControl ID="ChartTemperature" runat="server" Height="400px"
+                                                        Width="700px"><fillstyle>
+                                                            <optionsserializable>
+                                                                <cc1:SolidFillOptions />
+                                                            </optionsserializable>
+                                                        </fillstyle><seriestemplate>
+                                                            <viewserializable>
+                                                                <cc1:SideBySideBarSeriesView>
+                                                                </cc1:SideBySideBarSeriesView>
+                                                            </viewserializable>
+                                                            <labelserializable>
+                                                                <cc1:SideBySideBarSeriesLabel LineVisible="True">
+                                                                    <fillstyle>
+                                                                        <optionsserializable>
+                                                                            <cc1:SolidFillOptions />
+                                                                        </optionsserializable>
+                                                                    </fillstyle>
+                                                                    <pointoptionsserializable>
+                                                                        <cc1:PointOptions>
+                                                                        </cc1:PointOptions>
+                                                                    </pointoptionsserializable>
+                                                                </cc1:SideBySideBarSeriesLabel>
+                                                            </labelserializable>
+                                                            <legendpointoptionsserializable>
+                                                                <cc1:PointOptions>
+                                                                </cc1:PointOptions>
+                                                            </legendpointoptionsserializable>
+                                                        </seriestemplate><crosshairoptions>
+                                                            <commonlabelpositionserializable>
+                                                                <cc1:CrosshairMousePosition />
+                                                            </commonlabelpositionserializable>
+                                                        </crosshairoptions><tooltipoptions>
+                                                            <tooltippositionserializable>
+                                                                <cc1:ToolTipMousePosition />
+                                                            </tooltippositionserializable>
+                                                        </tooltipoptions>
+                                                        </dxchartsui:WebChartControl>
                                                 </asp:Panel>
                                             </div>
                                             <div align="center" style="padding-top: 20px;">
