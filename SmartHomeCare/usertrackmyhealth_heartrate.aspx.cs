@@ -297,9 +297,7 @@ public partial class usertrackmyhealth_heartrate : System.Web.UI.Page
         {
             //AddSeriesLowHighToWebChart(dt);
 
-            string[] sName = { "Low", "High", "Voltage", "HR", "RestHR" };
-            string[] sField = { "LowRestHRValue", "HighRestHRValue", "Voltage", "HR", "RestHR" };
-            LoadChart(dt, sName, sField);
+            LoadChart(dt);
 
             pnHeartRateData.Visible = true;
             pnHRVData.Visible = false;
@@ -320,9 +318,7 @@ public partial class usertrackmyhealth_heartrate : System.Web.UI.Page
         else
         {
             //AddSeriesLowHighToWebChart(dt);
-            string[] sName = { "Low", "High", "Voltage", "HR", "RestHR" };
-            string[] sField = { "LowRestHRValue", "HighRestHRValue", "Voltage", "HR", "RestHR" };
-            LoadChart(dt, sName, sField);
+            LoadChart(dt);
 
             pnHeartRateData.Visible = true;
             pnHRVData.Visible = false;
@@ -367,20 +363,92 @@ public partial class usertrackmyhealth_heartrate : System.Web.UI.Page
         return type.GetProperties().Where(info => info.PropertyType == type).Select(info => (Color)info.GetValue(null, null));
     }
 
-    private void LoadChart(DataTable dt, string[] sName, string[] sField)
+    private void LoadChart(DataTable dt)
     {
-        for (int i = 0; i < sName.Count(); i++)
-        {
-            string nameOfSeries = sName[i];
-            DevExpress.XtraCharts.Series Series = new DevExpress.XtraCharts.Series(nameOfSeries, ViewType.StackedBar);
-            Series.ArgumentDataMember = "ReceivedDate";
-            Series.ArgumentScaleType = ScaleType.DateTime;
-            Series.ValueDataMembersSerializable = sField[i];
-            ChartHeartRate.Series.Add(Series);
-        }
+        //for (int i = 0; i < sName.Count(); i++)
+        //{
+        //    string nameOfSeries = sName[i];
+        //    DevExpress.XtraCharts.Series Series = new DevExpress.XtraCharts.Series(nameOfSeries, ViewType.StackedBar);
+        //    Series.ArgumentDataMember = "ReceivedDate";
+        //    Series.ArgumentScaleType = ScaleType.DateTime;
+        //    Series.ValueDataMembersSerializable = sField[i];
+        //    ChartHeartRate.Series.Add(Series);
+        //}
 
-        ChartHeartRate.DataSource = dt;
-        ChartHeartRate.DataBind();
+        DevExpress.XtraCharts.Web.WebChartControl ch1 = ChartHeartRate;
+        if (dt != null && dt.Rows.Count > 0)
+        {
+            DevExpress.XtraCharts.Series sLow = new DevExpress.XtraCharts.Series("Low", DevExpress.XtraCharts.ViewType.Line);
+            DevExpress.XtraCharts.Series sHigh = new DevExpress.XtraCharts.Series("High", DevExpress.XtraCharts.ViewType.Line);
+            DevExpress.XtraCharts.Series sVoltage = new DevExpress.XtraCharts.Series("Voltage", DevExpress.XtraCharts.ViewType.Line);
+            DevExpress.XtraCharts.Series sHR = new DevExpress.XtraCharts.Series("HR", DevExpress.XtraCharts.ViewType.Line);
+            DevExpress.XtraCharts.Series sRestHR = new DevExpress.XtraCharts.Series("RestHR", DevExpress.XtraCharts.ViewType.Point);
+
+            sLow.View.Color = System.Drawing.Color.Lime;
+            sHigh.View.Color = System.Drawing.Color.Orange;
+            sVoltage.View.Color = System.Drawing.Color.OrangeRed;
+            sHR.View.Color = System.Drawing.Color.Black;
+            sRestHR.View.Color = System.Drawing.Color.Red;
+
+            int MinL1 = 0, MaxL1 = 0, MinL2 = 0, MaxL2 = 0, MinR = 0, MaxR = 0;
+            float LowRest = 50, HighRest = 100;
+            DataRow dr = _db.GetInfo_HeartRate(userName());
+            if (dr != null)
+            {
+                LowRest = BaseView.GetFloatFieldValue(dr, "HighRestHRValue");
+                HighRest = BaseView.GetFloatFieldValue(dr, "LowRestHRValue");
+            }
+            foreach (DataRow row in dt.Rows)
+            {
+                sLow.Points.Add(new DevExpress.XtraCharts.SeriesPoint(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), LowRest));
+                sHigh.Points.Add(new DevExpress.XtraCharts.SeriesPoint(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), HighRest + 10));
+                sVoltage.Points.Add(new DevExpress.XtraCharts.SeriesPoint(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "Voltage")));
+                sHR.Points.Add(new DevExpress.XtraCharts.SeriesPoint(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "HR")));
+                sRestHR.Points.Add(new DevExpress.XtraCharts.SeriesPoint(BaseView.GetDateTimeFieldValue(row, "ReceivedDate"), BaseView.GetFloatFieldValue(row, "RestHR")));
+                if (MinL1 == 0 || (BaseView.GetIntFieldValue(row, "HR") < MinL1 && BaseView.GetIntFieldValue(row, "HR") > 0))
+                {
+                    MinL1 = BaseView.GetIntFieldValue(row, "HR");
+                }
+                if (MinL2 == 0 || (BaseView.GetIntFieldValue(row, "RestHR") < MinL2 && BaseView.GetIntFieldValue(row, "RestHR") > 0))
+                {
+                    MinL2 = BaseView.GetIntFieldValue(row, "RestHR");
+                }
+                if (MinR == 0 || (BaseView.GetIntFieldValue(row, "Voltage") < MinR && BaseView.GetIntFieldValue(row, "Voltage") > 0))
+                {
+                    MinR = BaseView.GetIntFieldValue(row, "Voltage");
+                }
+
+                if (MaxL1 == 0 || (BaseView.GetIntFieldValue(row, "HR") > MaxL1 && BaseView.GetIntFieldValue(row, "HR") > 0))
+                {
+                    MaxL1 = BaseView.GetIntFieldValue(row, "HR");
+                }
+                if (MaxL2 == 0 || (BaseView.GetIntFieldValue(row, "RestHR") > MaxL2 && BaseView.GetIntFieldValue(row, "RestHR") > 0))
+                {
+                    MaxL2 = BaseView.GetIntFieldValue(row, "RestHR");
+                }
+                if (MaxR == 0 || (BaseView.GetIntFieldValue(row, "Voltage") > MaxR && BaseView.GetIntFieldValue(row, "Voltage") > 0))
+                {
+                    MaxR = BaseView.GetIntFieldValue(row, "Voltage");
+                }
+            }
+            ch1.Series.Add(sLow);
+            ch1.Series.Add(sHigh);
+            ch1.Series.Add(sVoltage);
+            ch1.Series.Add(sHR);
+            ch1.Series.Add(sRestHR);
+
+            ChartTitle chartTitle1 = new ChartTitle();
+            chartTitle1.Text = "Heart Rate (bpm)";
+            ch1.Titles.Add(chartTitle1);
+            //save template to a Session variable
+            Page.Cache.Add("ch1Scroll", tmpChart, null,
+            DateTime.Now.AddSeconds(40), System.Web.Caching.Cache.NoSlidingExpiration,
+            System.Web.Caching.CacheItemPriority.NotRemovable, null);
+            Session.Add("ch1", tmpChart);
+
+            ChartHeartRate.DataSource = dt;
+            ChartHeartRate.DataBind();
+        }
     }
 
     //private void AddSeriesLowHighToWebChart(DataTable dt)
